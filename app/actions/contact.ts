@@ -63,7 +63,7 @@ export async function submitContactForm(data: ContactFormData) {
     if (error instanceof z.ZodError) {
       // Return field-specific errors
       const fieldErrors: Record<string, string> = {}
-      error.errors.forEach((err) => {
+      error.issues.forEach((err) => {
         if (err.path[0]) {
           fieldErrors[err.path[0] as string] = err.message
         }

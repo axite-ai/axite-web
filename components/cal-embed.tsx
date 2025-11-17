@@ -13,20 +13,20 @@ export function CalEmbed() {
 
       // Determine the current theme (light or dark)
       const currentTheme = theme === "system" ? resolvedTheme : theme;
-      const isDark = currentTheme === "dark";
+      const embedTheme = (currentTheme === "dark" ? "dark" : "light") as "light" | "dark";
 
       cal("floatingButton", {
         calLink: "axite/discovery",
         config: {
           layout: "month_view",
-          theme: currentTheme || "light"
+          theme: embedTheme
         },
         buttonText: "Book Discovery Call",
         hideButtonIcon: false,
       });
 
       cal("ui", {
-        theme: currentTheme || "light",
+        theme: embedTheme,
         cssVarsPerTheme: {
           light: {
             "cal-brand": "#292929", // Black for light mode
