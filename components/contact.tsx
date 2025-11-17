@@ -57,13 +57,13 @@ export default function ContactSection() {
     return (
         <section id="contact" className="bg-background py-24 md:py-32">
             <div className="mx-auto max-w-3xl px-8 lg:px-0">
-                <h1 className="text-center text-4xl font-semibold lg:text-5xl">Let's Build Your AI Solution</h1>
-                <p className="mt-6 text-center">Transform your business with custom LLM integrations. Get started with a free consultation.</p>
+                <h1 className="text-center text-4xl font-semibold lg:text-5xl">Start Your AI Integration Journey</h1>
+                <p className="mt-6 text-center">Tell us about your project and we&apos;ll design the right integration approach.</p>
 
                 <Card className="mx-auto mt-12 max-w-lg p-8 shadow-md sm:p-12">
                     <div>
                         <h2 className="text-xl font-semibold">Start Your AI Integration Journey</h2>
-                        <p className="mt-4 text-sm text-muted-foreground">Tell us about your project and we'll help you choose the right AI solution for your business needs.</p>
+                        <p className="mt-4 text-sm text-muted-foreground">Tell us about your project and we&apos;ll help you choose the right AI solution for your business needs.</p>
                     </div>
 
                     <form onSubmit={handleSubmit} className="mt-12">

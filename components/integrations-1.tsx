@@ -15,16 +15,15 @@ export default function IntegrationsSection() {
                 Connect Your Business to Any AI Assistant
               </h2>
               <p className="text-muted-foreground mt-6">
-                We build custom MCP connectors that bridge your business APIs
-                with any LLM platform—ChatGPT, Claude, Gemini, or emerging AI assistants.
-                If it supports integrations, we can connect it to your business.
+                We build custom MCP connectors that allow LLMs to interact with
+                your services. If it exposes an API, we can integrate it.
               </p>
             </div>
 
             <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               <IntegrationCard
                 title="ChatGPT Apps"
-                description="Connect your business API to ChatGPT. Let customers interact with your services through conversational AI—no complex UI needed."
+                description="Expose your services to millions of ChatGPT users."
                 link="https://openai.com/index/introducing-apps-in-chatgpt"
               >
                 <Image
@@ -38,7 +37,7 @@ export default function IntegrationsSection() {
 
               <IntegrationCard
                 title="Claude Connectors"
-                description="Build MCP servers that connect Claude to your business systems. Enable natural language access to your data and workflows."
+                description="High-context, high-accuracy LLM access to your business logic."
                 link="https://claude.com/blog/connectors-directory"
               >
                 <Image
@@ -52,7 +51,7 @@ export default function IntegrationsSection() {
 
               <IntegrationCard
                 title="Custom MCP Servers"
-                description="Expert Model Context Protocol development. We create secure, scalable connectors that let any LLM interface with your business logic."
+                description="Full Model Context Protocol development for secure integrations."
                 link="https://modelcontextprotocol.io/docs/getting-started/intro"
               >
                 <Image
@@ -66,7 +65,7 @@ export default function IntegrationsSection() {
 
               <IntegrationCard
                 title="Gemini Integration"
-                description="Connect Google's Gemini to your business APIs. Leverage multimodal AI capabilities for text, image, and data processing."
+                description="Connect your systems to Gemini's multimodal AI capabilities."
                 link="https://zapier.com/blog/gemini-apps/"
               >
                 <Image
@@ -92,8 +91,8 @@ export default function IntegrationsSection() {
               </IntegrationCard>
 
               <IntegrationCard
-                title="Custom AI Solutions"
-                description="Don't see what you need? We build bespoke LLM integrations tailored to your unique business requirements. Let's discuss your vision."
+                title="Custom Solutions"
+                description="Have a unique system or workflow? We design and develop bespoke integrations that match your architecture and requirements."
                 link="#contact"
                 linkText="Get in Touch"
               >
