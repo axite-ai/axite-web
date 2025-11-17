@@ -4,7 +4,6 @@ import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import * as React from 'react'
-import { Gemini, Replit, MagicUI, VSCodium, MediaWiki, GooglePaLM } from '@/components/logos'
 
 export default function IntegrationsSection() {
     return (
@@ -24,7 +23,7 @@ export default function IntegrationsSection() {
 
             <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               <IntegrationCard
-                title="ChatGPT Connectors"
+                title="ChatGPT Apps"
                 description="Connect your business API to ChatGPT. Let customers interact with your services through conversational AI—no complex UI needed."
                 link="https://openai.com/index/introducing-apps-in-chatgpt"
               >
@@ -38,7 +37,7 @@ export default function IntegrationsSection() {
               </IntegrationCard>
 
               <IntegrationCard
-                title="Claude API Integration"
+                title="Claude Connectors"
                 description="Build MCP servers that connect Claude to your business systems. Enable natural language access to your data and workflows."
                 link="https://claude.com/blog/connectors-directory"
               >

@@ -1,11 +1,59 @@
+"use client"
+
+import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Card } from '@/components/ui/card'
+import { Field, FieldLabel, FieldDescription, FieldError, FieldGroup } from '@/components/ui/field'
+import { submitContactForm, type ContactFormData } from '@/app/actions/contact'
+import { toast } from 'sonner'
 
 export default function ContactSection() {
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [submitted, setSubmitted] = useState(false)
+    const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
+    const [formData, setFormData] = useState<ContactFormData>({
+        fullName: '',
+        email: '',
+        companyWebsite: '',
+        serviceNeeded: '',
+        message: '',
+    })
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault()
+        setIsSubmitting(true)
+        setFieldErrors({}) // Clear previous errors
+
+        try {
+            const result = await submitContactForm(formData)
+
+            if (result.success) {
+                toast.success(result.message)
+                setSubmitted(true)
+                // Reset form
+                setFormData({
+                    fullName: '',
+                    email: '',
+                    companyWebsite: '',
+                    serviceNeeded: '',
+                    message: '',
+                })
+            } else {
+                toast.error(result.error)
+                if ('fieldErrors' in result && result.fieldErrors) {
+                    setFieldErrors(result.fieldErrors)
+                }
+            }
+        } catch (error) {
+            toast.error('Something went wrong. Please try again.')
+        } finally {
+            setIsSubmitting(false)
+        }
+    }
+
     return (
         <section id="contact" className="bg-background py-24 md:py-32">
             <div className="mx-auto max-w-3xl px-8 lg:px-0">
@@ -15,79 +63,101 @@ export default function ContactSection() {
                 <Card className="mx-auto mt-12 max-w-lg p-8 shadow-md sm:p-12">
                     <div>
                         <h2 className="text-xl font-semibold">Start Your AI Integration Journey</h2>
-                        <p className="mt-4 text-sm">Tell us about your project and we'll help you choose the right AI solution for your business needs.</p>
+                        <p className="mt-4 text-sm text-muted-foreground">Tell us about your project and we'll help you choose the right AI solution for your business needs.</p>
                     </div>
 
-                    <form
-                        action=""
-                        className="**:[&>label]:block mt-12 space-y-6 *:space-y-3">
-                        <div>
-                            <Label htmlFor="name">Full name</Label>
-                            <Input
-                                type="text"
-                                id="name"
-                                required
-                            />
-                        </div>
+                    <form onSubmit={handleSubmit} className="mt-12">
+                        <FieldGroup className="@container/field-group">
+                            <Field data-invalid={!!fieldErrors.fullName}>
+                                <FieldLabel htmlFor="name">Full name</FieldLabel>
+                                <Input
+                                    type="text"
+                                    id="name"
+                                    required
+                                    value={formData.fullName}
+                                    onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                                    disabled={isSubmitting}
+                                    aria-invalid={!!fieldErrors.fullName}
+                                />
+                                {fieldErrors.fullName && <FieldError>{fieldErrors.fullName}</FieldError>}
+                            </Field>
 
-                        <div>
-                            <Label htmlFor="email">Work Email</Label>
-                            <Input
-                                type="email"
-                                id="email"
-                                required
-                            />
-                        </div>
+                            <Field data-invalid={!!fieldErrors.email}>
+                                <FieldLabel htmlFor="email">Work Email</FieldLabel>
+                                <Input
+                                    type="email"
+                                    id="email"
+                                    required
+                                    value={formData.email}
+                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                    disabled={isSubmitting}
+                                    aria-invalid={!!fieldErrors.email}
+                                />
+                                {fieldErrors.email && <FieldError>{fieldErrors.email}</FieldError>}
+                            </Field>
 
-                        <div>
-                            <Label htmlFor="country">Country/Region</Label>
-                            <Select>
-                                <SelectTrigger>
-                                    <SelectValue placeholder="Select Country/Region" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectItem value="1">DR Congo</SelectItem>
-                                    <SelectItem value="2">United States</SelectItem>
-                                    <SelectItem value="3">France</SelectItem>
-                                </SelectContent>
-                            </Select>
-                        </div>
+                            <Field data-invalid={!!fieldErrors.companyWebsite}>
+                                <FieldLabel htmlFor="website">Company Website</FieldLabel>
+                                <div className="flex">
+                                    <span className="inline-flex items-center rounded-l-md border border-r-0 border-input bg-muted px-3 text-sm text-muted-foreground">
+                                        https://
+                                    </span>
+                                    <Input
+                                        type="text"
+                                        id="website"
+                                        placeholder="example.com"
+                                        value={formData.companyWebsite}
+                                        onChange={(e) => setFormData({ ...formData, companyWebsite: e.target.value })}
+                                        disabled={isSubmitting}
+                                        aria-invalid={!!fieldErrors.companyWebsite}
+                                        className="rounded-l-none"
+                                    />
+                                </div>
+                                <FieldDescription>Enter your company domain</FieldDescription>
+                                {fieldErrors.companyWebsite && <FieldError>{fieldErrors.companyWebsite}</FieldError>}
+                            </Field>
 
-                        <div>
-                            <Label htmlFor="website">Company Website</Label>
-                            <Input
-                                type="url"
-                                id="website"
-                            />
-                            <span className="text-muted-foreground inline-block text-sm">Must start with 'https'</span>
-                        </div>
+                            <Field data-invalid={!!fieldErrors.serviceNeeded}>
+                                <FieldLabel htmlFor="service">Service Needed</FieldLabel>
+                                <Select
+                                    value={formData.serviceNeeded}
+                                    onValueChange={(value) => setFormData({ ...formData, serviceNeeded: value })}
+                                    disabled={isSubmitting}
+                                    required
+                                >
+                                    <SelectTrigger aria-invalid={!!fieldErrors.serviceNeeded}>
+                                        <SelectValue placeholder="Select Service" />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value="ChatGPT Custom Apps">ChatGPT Custom Apps</SelectItem>
+                                        <SelectItem value="Claude Integration">Claude Integration</SelectItem>
+                                        <SelectItem value="MCP Connectors">MCP Connectors</SelectItem>
+                                        <SelectItem value="Google Gemini">Google Gemini</SelectItem>
+                                        <SelectItem value="Custom AI Solution">Custom AI Solution</SelectItem>
+                                        <SelectItem value="Consulting">Consulting</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                                {fieldErrors.serviceNeeded && <FieldError>{fieldErrors.serviceNeeded}</FieldError>}
+                            </Field>
 
-                        <div>
-                            <Label htmlFor="service">Service Needed</Label>
-                            <Select>
-                                <SelectTrigger>
-                                    <SelectValue placeholder="Select Service" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectItem value="chatgpt">ChatGPT Custom Apps</SelectItem>
-                                    <SelectItem value="claude">Claude Integration</SelectItem>
-                                    <SelectItem value="mcp">MCP Connectors</SelectItem>
-                                    <SelectItem value="gemini">Google Gemini</SelectItem>
-                                    <SelectItem value="custom">Custom AI Solution</SelectItem>
-                                    <SelectItem value="consulting">Consulting</SelectItem>
-                                </SelectContent>
-                            </Select>
-                        </div>
+                            <Field data-invalid={!!fieldErrors.message}>
+                                <FieldLabel htmlFor="msg">Message</FieldLabel>
+                                <Textarea
+                                    id="msg"
+                                    rows={3}
+                                    value={formData.message}
+                                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                    disabled={isSubmitting}
+                                    aria-invalid={!!fieldErrors.message}
+                                />
+                                <FieldDescription>Tell us about your project and needs</FieldDescription>
+                                {fieldErrors.message && <FieldError>{fieldErrors.message}</FieldError>}
+                            </Field>
 
-                        <div>
-                            <Label htmlFor="msg">Message</Label>
-                            <Textarea
-                                id="msg"
-                                rows={3}
-                            />
-                        </div>
-
-                        <Button>Submit</Button>
+                            <Button type="submit" disabled={isSubmitting || submitted} className="w-full">
+                                {submitted ? 'Submitted ✓' : isSubmitting ? 'Sending...' : 'Submit'}
+                            </Button>
+                        </FieldGroup>
                     </form>
                 </Card>
             </div>
