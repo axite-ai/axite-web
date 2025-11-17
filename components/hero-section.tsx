@@ -11,20 +11,20 @@ export default function HeroSection() {
         <>
             <HeroHeader />
             <main className="overflow-x-hidden">
-                <section>
-                    <div className="pb-24 pt-12 md:pb-32 lg:pb-56 lg:pt-44">
+                <section className="bg-background">
+                    <div className="pb-24 pt-32 md:pb-32 md:pt-40">
                         <div className="relative mx-auto flex max-w-6xl flex-col px-6 lg:block">
                             <div className="mx-auto max-w-lg text-center lg:ml-0 lg:w-1/2 lg:text-left">
-                                <h1 className="mt-8 max-w-2xl text-balance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl">Ship 10x Faster with NS</h1>
-                                <p className="mt-8 max-w-2xl text-pretty text-lg">Highly customizable components for building modern websites and applications that look and feel the way you mean it.</p>
+                                <h1 className="max-w-2xl text-balance text-5xl font-medium md:text-6xl xl:text-7xl">Let Your Customers Talk to Your Business</h1>
+                                <p className="mt-6 max-w-2xl text-pretty text-lg">We build MCP connectors that bridge your APIs with any AI assistant—ChatGPT, Claude, Gemini, and beyond—turning complex business logic into simple conversations.</p>
 
-                                <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
+                                <div className="mt-8 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
                                     <Button
                                         asChild
                                         size="lg"
                                         className="px-5 text-base">
-                                        <Link href="#link">
-                                            <span className="text-nowrap">Start Building</span>
+                                        <Link href="#contact">
+                                            <span className="text-nowrap">Get Started</span>
                                         </Link>
                                     </Button>
                                     <Button
@@ -33,27 +33,46 @@ export default function HeroSection() {
                                         size="lg"
                                         variant="ghost"
                                         className="px-5 text-base">
-                                        <Link href="#link">
-                                            <span className="text-nowrap">Request a demo</span>
+                                        <Link href="#integrations">
+                                            <span className="text-nowrap">View Services</span>
                                         </Link>
                                     </Button>
                                 </div>
                             </div>
-                            <Image
-                                className="-z-10 order-first ml-auto h-56 w-full object-cover invert sm:h-96 lg:absolute lg:inset-0 lg:-right-20 lg:-top-96 lg:order-last lg:h-max lg:w-2/3 lg:object-contain dark:mix-blend-lighten dark:invert-0"
-                                src="https://ik.imagekit.io/lrigu76hy/tailark/abstract-bg.jpg?updatedAt=1745733473768"
-                                alt="Abstract Object"
-                                height="4000"
-                                width="3000"
-                            />
+                            <div className="order-first ml-auto w-full lg:absolute lg:right-0 lg:top-0 lg:order-last lg:w-1/2 lg:h-full flex items-center justify-center lg:justify-end">
+                                <Image
+                                    className="object-contain dark:hidden scale-100 lg:scale-150"
+                                    style={{
+                                        maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
+                                        WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)'
+                                    }}
+                                    src="/product-images/2mobile-olap-l.png"
+                                    alt="AI Integration Dashboard"
+                                    width={800}
+                                    height={800}
+                                    priority
+                                />
+                                <Image
+                                    className="hidden object-contain dark:block scale-100 lg:scale-150"
+                                    style={{
+                                        maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
+                                        WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)'
+                                    }}
+                                    src="/product-images/2mobile-olap-d.png"
+                                    alt="AI Integration Dashboard"
+                                    width={800}
+                                    height={800}
+                                    priority
+                                />
+                            </div>
                         </div>
                     </div>
                 </section>
-                <section className="bg-background pb-16 md:pb-32">
+                <section className="bg-background pb-24 md:pb-32">
                     <div className="group relative m-auto max-w-6xl px-6">
                         <div className="flex flex-col items-center md:flex-row">
                             <div className="md:max-w-44 md:border-r md:pr-6">
-                                <p className="text-end text-sm">Powering the best teams</p>
+                                <p className="text-end text-sm">Integrate with any platform</p>
                             </div>
                             <div className="relative py-6 md:w-[calc(100%-11rem)]">
                                 <InfiniteSlider
@@ -61,77 +80,82 @@ export default function HeroSection() {
                                     speed={40}
                                     gap={112}>
                                     <div className="flex">
-                                        <img
-                                            className="mx-auto h-5 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                                            alt="Nvidia Logo"
-                                            height="20"
-                                            width="auto"
-                                        />
-                                    </div>
-
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-4 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/column.svg"
-                                            alt="Column Logo"
-                                            height="16"
-                                            width="auto"
-                                        />
-                                    </div>
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-4 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/github.svg"
-                                            alt="GitHub Logo"
-                                            height="16"
-                                            width="auto"
-                                        />
-                                    </div>
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-5 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/nike.svg"
-                                            alt="Nike Logo"
-                                            height="20"
-                                            width="auto"
-                                        />
-                                    </div>
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-5 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-                                            alt="Lemon Squeezy Logo"
-                                            height="20"
-                                            width="auto"
-                                        />
-                                    </div>
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-4 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/laravel.svg"
-                                            alt="Laravel Logo"
-                                            height="16"
-                                            width="auto"
-                                        />
-                                    </div>
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-7 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/lilly.svg"
-                                            alt="Lilly Logo"
-                                            height="28"
-                                            width="auto"
-                                        />
-                                    </div>
-
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-6 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/openai.svg"
+                                        <Image
+                                            className="mx-auto h-8 w-fit dark:invert dark:brightness-0 dark:contrast-200"
+                                            src="/ai-svgs/openai.svg"
                                             alt="OpenAI Logo"
-                                            height="24"
-                                            width="auto"
+                                            height={32}
+                                            width={100}
+                                        />
+                                    </div>
+
+                                    <div className="flex">
+                                        <Image
+                                            className="mx-auto h-8 w-fit"
+                                            src="/ai-svgs/deepseek-color.svg"
+                                            alt="DeepSeek Logo"
+                                            height={32}
+                                            width={100}
+                                        />
+                                    </div>
+
+                                    <div className="flex">
+                                        <Image
+                                            className="mx-auto h-8 w-fit"
+                                            src="/ai-svgs/claude-color.svg"
+                                            alt="Claude Logo"
+                                            height={32}
+                                            width={100}
+                                        />
+                                    </div>
+
+                                    <div className="flex">
+                                        <Image
+                                            className="mx-auto h-8 w-fit"
+                                            src="/ai-svgs/gemini-color.svg"
+                                            alt="Gemini Logo"
+                                            height={32}
+                                            width={100}
+                                        />
+                                    </div>
+
+                                    <div className="flex">
+                                        <Image
+                                            className="mx-auto h-8 w-fit dark:invert"
+                                            src="/ai-svgs/githubcopilot.svg"
+                                            alt="GitHub Copilot Logo"
+                                            height={32}
+                                            width={100}
+                                        />
+                                    </div>
+
+                                    <div className="flex">
+                                        <Image
+                                            className="mx-auto h-8 w-fit dark:invert"
+                                            src="/ai-svgs/mcp.svg"
+                                            alt="MCP Logo"
+                                            height={32}
+                                            width={100}
+                                        />
+                                    </div>
+
+                                    <div className="flex">
+                                        <Image
+                                            className="mx-auto h-8 w-fit"
+                                            src="/ai-svgs/perplexity-color.svg"
+                                            alt="Perplexity Logo"
+                                            height={32}
+                                            width={100}
+                                        />
+                                    </div>
+
+                                    <div className="flex">
+                                        <Image
+                                            className="mx-auto h-8 w-fit dark:invert"
+                                            src="/ai-svgs/grok.svg"
+                                            alt="Grok Logo"
+                                            height={32}
+                                            width={100}
                                         />
                                     </div>
                                 </InfiniteSlider>

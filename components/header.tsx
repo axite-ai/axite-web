@@ -1,15 +1,16 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Logo } from '@/components/logo'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { ModeToggle } from '@/components/mode-toggle'
 import React from 'react'
 
 const menuItems = [
-    { name: 'Features', href: '#link' },
-    { name: 'Solution', href: '#link' },
-    { name: 'Pricing', href: '#link' },
-    { name: 'About', href: '#link' },
+    { name: 'Services', href: '#integrations' },
+    { name: 'Solutions', href: '#integrations' },
+    { name: 'Contact', href: '#contact' },
 ]
 
 export const HeroHeader = () => {
@@ -27,6 +28,13 @@ export const HeroHeader = () => {
                                 aria-label="home"
                                 className="flex items-center space-x-2">
                                 <Logo />
+                                <Image
+                                    src="/logos/white-trans-full.svg"
+                                    alt="Axite Logo"
+                                    width={240}
+                                    height={60}
+                                    className="hidden h-16 w-auto dark:block"
+                                />
                             </Link>
 
                             <button
@@ -67,19 +75,12 @@ export const HeroHeader = () => {
                                 </ul>
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                <Button
-                                    asChild
-                                    variant="outline"
-                                    size="sm">
-                                    <Link href="#">
-                                        <span>Login</span>
-                                    </Link>
-                                </Button>
+                                <ModeToggle />
                                 <Button
                                     asChild
                                     size="sm">
-                                    <Link href="#">
-                                        <span>Sign Up</span>
+                                    <Link href="#contact">
+                                        <span>Get in Touch</span>
                                     </Link>
                                 </Button>
                             </div>

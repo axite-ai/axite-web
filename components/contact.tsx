@@ -7,15 +7,15 @@ import { Card } from '@/components/ui/card'
 
 export default function ContactSection() {
     return (
-        <section className="py-32">
+        <section id="contact" className="bg-background py-24 md:py-32">
             <div className="mx-auto max-w-3xl px-8 lg:px-0">
-                <h1 className="text-center text-4xl font-semibold lg:text-5xl">Contact Sales</h1>
-                <p className="mt-4 text-center">We'll help you find the right plan and pricing for your business.</p>
+                <h1 className="text-center text-4xl font-semibold lg:text-5xl">Let's Build Your AI Solution</h1>
+                <p className="mt-6 text-center">Transform your business with custom LLM integrations. Get started with a free consultation.</p>
 
-                <Card className="mx-auto mt-12 max-w-lg p-8 shadow-md sm:p-16">
+                <Card className="mx-auto mt-12 max-w-lg p-8 shadow-md sm:p-12">
                     <div>
-                        <h2 className="text-xl font-semibold">Let's get you to the right place</h2>
-                        <p className="mt-4 text-sm">Reach out to our sales team! We’re eager to learn more about how you plan to use our application.</p>
+                        <h2 className="text-xl font-semibold">Start Your AI Integration Journey</h2>
+                        <p className="mt-4 text-sm">Tell us about your project and we'll help you choose the right AI solution for your business needs.</p>
                     </div>
 
                     <form
@@ -63,16 +63,18 @@ export default function ContactSection() {
                         </div>
 
                         <div>
-                            <Label htmlFor="job">Job function</Label>
+                            <Label htmlFor="service">Service Needed</Label>
                             <Select>
                                 <SelectTrigger>
-                                    <SelectValue placeholder="Select Job Function" />
+                                    <SelectValue placeholder="Select Service" />
                                 </SelectTrigger>
                                 <SelectContent>
-                                    <SelectItem value="1">Finance</SelectItem>
-                                    <SelectItem value="2">Education</SelectItem>
-                                    <SelectItem value="3">Legal</SelectItem>
-                                    <SelectItem value="4">More</SelectItem>
+                                    <SelectItem value="chatgpt">ChatGPT Custom Apps</SelectItem>
+                                    <SelectItem value="claude">Claude Integration</SelectItem>
+                                    <SelectItem value="mcp">MCP Connectors</SelectItem>
+                                    <SelectItem value="gemini">Google Gemini</SelectItem>
+                                    <SelectItem value="custom">Custom AI Solution</SelectItem>
+                                    <SelectItem value="consulting">Consulting</SelectItem>
                                 </SelectContent>
                             </Select>
                         </div>
