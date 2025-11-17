@@ -18,6 +18,24 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Axite - Enterprise AI Integration Solutions",
   description: "Custom ChatGPT apps, Claude connectors, and MCP servers for your business. Transform your operations with cutting-edge AI technology.",
+  openGraph: {
+    title: "Axite - Enterprise AI Integration Solutions",
+    description: "Custom ChatGPT apps, Claude connectors, and MCP servers for your business. Transform your operations with cutting-edge AI technology.",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Axite - Enterprise AI Integration Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Axite - Enterprise AI Integration Solutions",
+    description: "Custom ChatGPT apps, Claude connectors, and MCP servers for your business. Transform your operations with cutting-edge AI technology.",
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({
