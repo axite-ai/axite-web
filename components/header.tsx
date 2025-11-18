@@ -8,9 +8,9 @@ import { ModeToggle } from '@/components/mode-toggle'
 import React from 'react'
 
 const menuItems = [
-    { name: 'Services', href: '#integrations' },
-    { name: 'Solutions', href: '#integrations' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Integrations', href: '/#integrations' },
+    { name: 'Devtools', href: '/devtools' },
+    { name: 'Contact', href: '/#contact' },
 ]
 
 export const HeroHeader = () => {
@@ -77,11 +77,11 @@ export const HeroHeader = () => {
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                                 <ModeToggle />
                                 <Button
-                                    asChild
-                                    size="sm">
-                                    <Link href="#contact">
-                                        <span>Get in Touch</span>
-                                    </Link>
+                                    size="sm"
+                                    data-cal-namespace="discovery"
+                                    data-cal-link="axite/discovery"
+                                    data-cal-config='{"layout":"month_view"}'>
+                                    <span>Get in Touch</span>
                                 </Button>
                             </div>
                         </div>

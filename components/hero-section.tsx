@@ -26,21 +26,24 @@ export default function HeroSection() {
                   </p>
 
                   <div className="mt-8 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
-                    <Button asChild size="lg" className="px-5 text-base">
-                      <Link href="#contact">
-                        <span className="text-nowrap">Get Started</span>
-                      </Link>
+                    <Button
+                      size="lg"
+                      className="px-5 text-base"
+                      data-cal-namespace="discovery"
+                      data-cal-link="axite/discovery"
+                      data-cal-config='{"layout":"month_view"}'
+                    >
+                      <span className="text-nowrap">Get Started</span>
                     </Button>
                     <Button
-                      key={2}
-                      asChild
                       size="lg"
                       variant="ghost"
                       className="px-5 text-base"
+                      data-cal-namespace="discovery"
+                      data-cal-link="axite/discovery"
+                      data-cal-config='{"layout":"month_view"}'
                     >
-                      <Link href="#integrations">
-                        <span className="text-nowrap">View Services</span>
-                      </Link>
+                      <span className="text-nowrap">Request a Demo</span>
                     </Button>
                   </div>
                 </div>

@@ -9,21 +9,11 @@ export function CalEmbed() {
 
   useEffect(() => {
     (async function () {
-      const cal = await getCalApi({ namespace: "15min" });
+      const cal = await getCalApi({ namespace: "discovery" });
 
       // Determine the current theme (light or dark)
       const currentTheme = theme === "system" ? resolvedTheme : theme;
       const embedTheme = (currentTheme === "dark" ? "dark" : "light") as "light" | "dark";
-
-      cal("floatingButton", {
-        calLink: "axite/discovery",
-        config: {
-          layout: "month_view",
-          theme: embedTheme
-        },
-        buttonText: "Book Discovery Call",
-        hideButtonIcon: false,
-      });
 
       cal("ui", {
         theme: embedTheme,
