@@ -3,18 +3,18 @@ import { Zap, Code, Shield, Workflow } from 'lucide-react'
 
 export default function FeaturesSection() {
     return (
-      <section className="py-24 md:py-32">
+      <section className="bg-background py-32 md:py-40">
         <div className="mx-auto max-w-6xl px-6">
           {/* Features Grid */}
-          <div className="mb-24 grid gap-12 lg:grid-cols-2 lg:gap-8">
+          <div className="mb-32 grid gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="flex flex-col justify-center">
-              <h2 className="text-3xl font-semibold md:text-4xl">
+              <h2 className="text-3xl font-semibold md:text-4xl lg:text-5xl">
                 AI Assistants Are the Next App Store
               </h2>
               <p className="text-muted-foreground mt-6 text-lg">
                 Most companies don't have a ChatGPT or Claude app. We build them for you — fast. Your product becomes instantly accessible, voice-controlled, and LLM-native.
               </p>
-              <div className="mt-8 space-y-4">
+              <div className="mt-8 space-y-6">
                 <div className="flex gap-4">
                   <div className="bg-primary/10 flex h-12 w-12 shrink-0 items-center justify-center rounded-lg">
                     <Zap className="text-primary h-6 w-6" />
@@ -62,7 +62,7 @@ export default function FeaturesSection() {
           </div>
 
           {/* Second Feature */}
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="relative order-2 lg:order-1">
               <Image
                 src="/product-images/dt-angle-dl-l.png"
@@ -80,13 +80,13 @@ export default function FeaturesSection() {
               />
             </div>
             <div className="order-1 flex flex-col justify-center lg:order-2">
-              <h2 className="text-3xl font-semibold md:text-4xl">
+              <h2 className="text-3xl font-semibold md:text-4xl lg:text-5xl">
                 What We Build
               </h2>
               <p className="text-muted-foreground mt-6 text-lg" id="how-it-works">
                 We develop three types of AI integrations, all powered by our AI integration engine — the infrastructure that makes your product AI-native.
               </p>
-              <div className="mt-8 space-y-4">
+              <div className="mt-8 space-y-6">
                 <div className="flex gap-4">
                   <div className="bg-primary/10 flex h-12 w-12 shrink-0 items-center justify-center rounded-lg">
                     <Shield className="text-primary h-6 w-6" />

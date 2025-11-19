@@ -55,7 +55,7 @@ export default function ContactSection() {
     }
 
     return (
-        <section id="contact" className="bg-background py-24 md:py-32">
+        <section id="contact" className="bg-background py-32 md:py-40">
             <div className="mx-auto max-w-3xl px-8 lg:px-0">
                 <Card className="mx-auto max-w-lg p-8 shadow-md sm:p-12">
                     <div>

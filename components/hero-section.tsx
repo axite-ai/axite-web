@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
@@ -5,6 +7,15 @@ import Image from 'next/image'
 import { HeroHeader } from './header'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
+import { Play } from 'lucide-react'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
 
 export default function HeroSection() {
     return (
@@ -12,7 +23,7 @@ export default function HeroSection() {
         <HeroHeader />
         <main className="overflow-x-hidden">
           <section className="bg-background">
-            <div className="pb-24 pt-32 md:pb-32 md:pt-40">
+            <div className="pb-32 pt-32 md:pb-40 md:pt-40">
               <div className="relative mx-auto flex max-w-6xl flex-col px-6 lg:block">
                 <div className="mx-auto max-w-lg text-center lg:ml-0 lg:w-1/2 lg:text-left">
                   <h1 className="max-w-2xl text-balance text-5xl font-medium md:text-6xl xl:text-7xl">
@@ -32,16 +43,34 @@ export default function HeroSection() {
                     >
                       <span className="text-nowrap">Book a 20-Minute Discovery Call</span>
                     </Button>
-                    <Button
-                      size="lg"
-                      variant="ghost"
-                      className="px-5 text-base"
-                      data-cal-namespace="discovery"
-                      data-cal-link="axite/discovery"
-                      data-cal-config='{"layout":"month_view"}'
-                    >
-                      <span className="text-nowrap">See How It Works</span>
-                    </Button>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button
+                          size="lg"
+                          variant="ghost"
+                          className="px-5 text-base"
+                        >
+                          <Play className="mr-2 h-5 w-5" />
+                          <span className="text-nowrap">See How It Works</span>
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-[90vw] w-full lg:max-w-7xl">
+                        <DialogHeader>
+                          <DialogTitle>See AskMyMoney in Action</DialogTitle>
+                          <DialogDescription>
+                            Watch how we built an AI-powered financial assistant using our GPT App platform
+                          </DialogDescription>
+                        </DialogHeader>
+                        <div className="aspect-video w-full">
+                          <iframe
+                            src="https://player.vimeo.com/video/1138583939?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1"
+                            className="h-full w-full rounded-lg"
+                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                            title="AskMyMoney GPT Demo"
+                          />
+                        </div>
+                      </DialogContent>
+                    </Dialog>
                   </div>
                 </div>
                 <div className="order-first ml-auto w-full lg:absolute lg:right-0 lg:top-0 lg:order-last lg:w-1/2 lg:h-full flex items-center justify-center lg:justify-end">
