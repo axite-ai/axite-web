@@ -5,20 +5,12 @@ import { cn } from '@/lib/utils';
 
 const links = [
     {
-        title: 'Services',
+        title: 'GPT Apps',
         href: '#integrations',
     },
     {
-        title: 'ChatGPT Apps',
-        href: '#integrations',
-    },
-    {
-        title: 'Claude Connectors',
-        href: '#integrations',
-    },
-    {
-        title: 'MCP Servers',
-        href: '#integrations',
+        title: 'How It Works',
+        href: '#how-it-works',
     },
     {
         title: 'Contact',

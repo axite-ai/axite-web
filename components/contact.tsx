@@ -57,13 +57,10 @@ export default function ContactSection() {
     return (
         <section id="contact" className="bg-background py-24 md:py-32">
             <div className="mx-auto max-w-3xl px-8 lg:px-0">
-                <h1 className="text-center text-4xl font-semibold lg:text-5xl">Start Your AI Integration Journey</h1>
-                <p className="mt-6 text-center">Tell us about your project and we&apos;ll design the right integration approach.</p>
-
-                <Card className="mx-auto mt-12 max-w-lg p-8 shadow-md sm:p-12">
+                <Card className="mx-auto max-w-lg p-8 shadow-md sm:p-12">
                     <div>
-                        <h2 className="text-xl font-semibold">Start Your AI Integration Journey</h2>
-                        <p className="mt-4 text-sm text-muted-foreground">Tell us about your project and we&apos;ll help you choose the right AI solution for your business needs.</p>
+                        <h2 className="text-2xl font-semibold">Launch Your AI App</h2>
+                        <p className="mt-4 text-sm text-muted-foreground">Tell us what you&apos;re building and we&apos;ll get you live on ChatGPT, Claude, and Gemini in days.</p>
                     </div>
 
                     <form onSubmit={handleSubmit} className="mt-12">
@@ -129,12 +126,11 @@ export default function ContactSection() {
                                         <SelectValue placeholder="Select Service" />
                                     </SelectTrigger>
                                     <SelectContent>
-                                        <SelectItem value="ChatGPT Custom Apps">ChatGPT Custom Apps</SelectItem>
-                                        <SelectItem value="Claude Integration">Claude Integration</SelectItem>
-                                        <SelectItem value="MCP Connectors">MCP Connectors</SelectItem>
-                                        <SelectItem value="Google Gemini">Google Gemini</SelectItem>
-                                        <SelectItem value="Custom AI Solution">Custom AI Solution</SelectItem>
-                                        <SelectItem value="Consulting">Consulting</SelectItem>
+                                        <SelectItem value="Customer-Facing GPT App">Customer-Facing GPT App</SelectItem>
+                                        <SelectItem value="Internal AI Automation">Internal AI Automation</SelectItem>
+                                        <SelectItem value="Multi-Platform Launch">Multi-Platform Launch (ChatGPT + Claude + Gemini)</SelectItem>
+                                        <SelectItem value="Custom MCP Integration">Custom MCP Integration</SelectItem>
+                                        <SelectItem value="Not Sure - Need Guidance">Not Sure - Need Guidance</SelectItem>
                                     </SelectContent>
                                 </Select>
                                 {fieldErrors.serviceNeeded && <FieldError>{fieldErrors.serviceNeeded}</FieldError>}
@@ -155,7 +151,7 @@ export default function ContactSection() {
                             </Field>
 
                             <Button type="submit" disabled={isSubmitting || submitted} className="w-full">
-                                {submitted ? 'Submitted ✓' : isSubmitting ? 'Sending...' : 'Submit'}
+                                {submitted ? 'Submitted ✓' : isSubmitting ? 'Sending...' : 'Book Your Discovery Call'}
                             </Button>
                         </FieldGroup>
                     </form>

@@ -9,13 +9,10 @@ export default function FeaturesSection() {
           <div className="mb-24 grid gap-12 lg:grid-cols-2 lg:gap-8">
             <div className="flex flex-col justify-center">
               <h2 className="text-3xl font-semibold md:text-4xl">
-                From API to AI Assitant in Days
+                AI Assistants Are the Next App Store
               </h2>
               <p className="text-muted-foreground mt-6 text-lg">
-                We develop production-grade MCP connectors that transform your
-                existing business APIs into AI-accessible interfaces. Your users
-                can access your services through ChatGPT, Claude, or any LLM
-                that supports integrations.
+                Most companies don't have a ChatGPT or Claude app. We build them for you — fast. Your product becomes instantly accessible, voice-controlled, and LLM-native.
               </p>
               <div className="mt-8 space-y-4">
                 <div className="flex gap-4">
@@ -24,10 +21,10 @@ export default function FeaturesSection() {
                   </div>
                   <div>
                     <h3 className="font-semibold">
-                      Rapid Connector Development
+                      New Distribution Channel
                     </h3>
                     <p className="text-muted-foreground text-sm">
-                      Custom MCP servers built and deployed in days, not months
+                      Your product becomes discoverable by millions inside ChatGPT and Claude
                     </p>
                   </div>
                 </div>
@@ -37,11 +34,10 @@ export default function FeaturesSection() {
                   </div>
                   <div>
                     <h3 className="font-semibold">
-                      Works with Your Existing APIs
+                      Zero Engineering Burden
                     </h3>
                     <p className="text-muted-foreground text-sm">
-                      No migrations required. Axite connects directly to your
-                      current infrastructure.
+                      We turn your existing API into a fully functional GPT App
                     </p>
                   </div>
                 </div>
@@ -85,12 +81,10 @@ export default function FeaturesSection() {
             </div>
             <div className="order-1 flex flex-col justify-center lg:order-2">
               <h2 className="text-3xl font-semibold md:text-4xl">
-                Secure, Scalable, Production Ready
+                What We Build
               </h2>
-              <p className="text-muted-foreground mt-6 text-lg">
-                Every connector is engineered for enterprise-grade
-                authentication, encryption, and reliability. Your data stays
-                protected while remaining accessible to AI assistants.
+              <p className="text-muted-foreground mt-6 text-lg" id="how-it-works">
+                We develop three types of AI integrations, all powered by our AI integration engine — the infrastructure that makes your product AI-native.
               </p>
               <div className="mt-8 space-y-4">
                 <div className="flex gap-4">
@@ -98,10 +92,9 @@ export default function FeaturesSection() {
                     <Shield className="text-primary h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="font-semibold">Enterprise Security</h3>
+                    <h3 className="font-semibold">Customer-Facing GPT Apps</h3>
                     <p className="text-muted-foreground text-sm">
-                      Standards-based authentication, encryption, and request
-                      validation.
+                      Let your users access your product directly inside AI assistants
                     </p>
                   </div>
                 </div>
@@ -110,10 +103,9 @@ export default function FeaturesSection() {
                     <Workflow className="text-primary h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="font-semibold">Multi-Platform Support</h3>
+                    <h3 className="font-semibold">Internal AI Automations</h3>
                     <p className="text-muted-foreground text-sm">
-                      A single connector can serve ChatGPT, Claude, Gemini,
-                      Perplexity, and more.
+                      Let your team automate workflows through your systems
                     </p>
                   </div>
                 </div>

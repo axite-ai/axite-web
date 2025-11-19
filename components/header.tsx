@@ -8,8 +8,8 @@ import { ModeToggle } from '@/components/mode-toggle'
 import React from 'react'
 
 const menuItems = [
-    { name: 'Integrations', href: '/#integrations' },
-    { name: 'Devtools', href: '/devtools' },
+    { name: 'GPT Apps', href: '/#integrations' },
+    { name: 'How It Works', href: '/#how-it-works' },
     { name: 'Contact', href: '/#contact' },
 ]
 
@@ -81,7 +81,7 @@ export const HeroHeader = () => {
                                     data-cal-namespace="discovery"
                                     data-cal-link="axite/discovery"
                                     data-cal-config='{"layout":"month_view"}'>
-                                    <span>Get in Touch</span>
+                                    <span>Book a Call</span>
                                 </Button>
                             </div>
                         </div>
