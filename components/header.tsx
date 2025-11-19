@@ -8,7 +8,7 @@ import { ModeToggle } from '@/components/mode-toggle'
 import React from 'react'
 
 const menuItems = [
-    { name: 'GPT Apps', href: '/#integrations' },
+    { name: 'Solutions', href: '/#integrations' },
     { name: 'How It Works', href: '/#how-it-works' },
     { name: 'Contact', href: '/#contact' },
 ]

@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import { Zap, Code, Shield, Workflow } from 'lucide-react'
+import { Zap, Code, Shield, Workflow, Plug } from 'lucide-react'
 
 export default function FeaturesSection() {
     return (
-      <section className="bg-background py-32 md:py-40">
+      <section className="bg-background py-24 md:py-32">
         <div className="mx-auto max-w-6xl px-6">
           {/* Features Grid */}
           <div className="mb-32 grid gap-12 lg:grid-cols-2 lg:gap-16">
@@ -12,7 +12,7 @@ export default function FeaturesSection() {
                 AI Assistants Are the Next App Store
               </h2>
               <p className="text-muted-foreground mt-6 text-lg">
-                Most companies don't have a ChatGPT or Claude app. We build them for you — fast. Your product becomes instantly accessible, voice-controlled, and LLM-native.
+                Your competitors will launch AI-native experiences. You can beat them to it.
               </p>
               <div className="mt-8 space-y-6">
                 <div className="flex gap-4">
@@ -24,7 +24,7 @@ export default function FeaturesSection() {
                       New Distribution Channel
                     </h3>
                     <p className="text-muted-foreground text-sm">
-                      Your product becomes discoverable by millions inside ChatGPT and Claude
+                      Your product becomes instantly discoverable inside platforms with 300M+ weekly users
                     </p>
                   </div>
                 </div>
@@ -63,20 +63,28 @@ export default function FeaturesSection() {
 
           {/* Second Feature */}
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-            <div className="relative order-2 lg:order-1">
+            <div className="relative order-2 lg:order-1 flex items-center justify-center overflow-hidden">
               <Image
                 src="/product-images/dt-angle-dl-l.png"
                 alt="Mobile AI Integration"
-                width={600}
-                height={400}
-                className="dark:hidden"
+                width={800}
+                height={533}
+                className="dark:hidden scale-125"
+                style={{
+                  maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+                  WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+                }}
               />
               <Image
                 src="/product-images/dt-angle-dl-d.png"
                 alt="Mobile AI Integration"
-                width={600}
-                height={400}
-                className="hidden dark:block"
+                width={800}
+                height={533}
+                className="hidden dark:block scale-125"
+                style={{
+                  maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+                  WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+                }}
               />
             </div>
             <div className="order-1 flex flex-col justify-center lg:order-2">
@@ -84,7 +92,7 @@ export default function FeaturesSection() {
                 What We Build
               </h2>
               <p className="text-muted-foreground mt-6 text-lg" id="how-it-works">
-                We develop three types of AI integrations, all powered by our AI integration engine — the infrastructure that makes your product AI-native.
+                We build three types of AI integrations that make your product accessible inside modern AI assistants—for your customers or your internal team.
               </p>
               <div className="mt-8 space-y-6">
                 <div className="flex gap-4">
@@ -94,7 +102,10 @@ export default function FeaturesSection() {
                   <div>
                     <h3 className="font-semibold">Customer-Facing GPT Apps</h3>
                     <p className="text-muted-foreground text-sm">
-                      Let your users access your product directly inside AI assistants
+                      Let your customers access your product directly inside ChatGPT, Claude, and Gemini.
+                    </p>
+                    <p className="text-muted-foreground text-sm mt-1">
+                      Examples: search data, trigger actions, generate reports, retrieve account info.
                     </p>
                   </div>
                 </div>
@@ -103,9 +114,26 @@ export default function FeaturesSection() {
                     <Workflow className="text-primary h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="font-semibold">Internal AI Automations</h3>
+                    <h3 className="font-semibold">Internal Automations</h3>
                     <p className="text-muted-foreground text-sm">
-                      Let your team automate workflows through your systems
+                      Automate repetitive workflows across your internal systems using AI assistants.
+                    </p>
+                    <p className="text-muted-foreground text-sm mt-1">
+                      Examples: CRM updates, reporting, data entry, operations tasks.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="bg-primary/10 flex h-12 w-12 shrink-0 items-center justify-center rounded-lg">
+                    <Plug className="text-primary h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Custom AI Integrations</h3>
+                    <p className="text-muted-foreground text-sm">
+                      We build secure connectors between your APIs, databases, and LLMs.
+                    </p>
+                    <p className="text-muted-foreground text-sm mt-1">
+                      Examples: MCP connectors, custom endpoints, multi-system workflows.
                     </p>
                   </div>
                 </div>

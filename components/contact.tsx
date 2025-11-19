@@ -55,12 +55,12 @@ export default function ContactSection() {
     }
 
     return (
-        <section id="contact" className="bg-background py-32 md:py-40">
+        <section id="contact" className="bg-background py-24 md:py-32">
             <div className="mx-auto max-w-3xl px-8 lg:px-0">
                 <Card className="mx-auto max-w-lg p-8 shadow-md sm:p-12">
                     <div>
-                        <h2 className="text-2xl font-semibold">Launch Your AI App</h2>
-                        <p className="mt-4 text-sm text-muted-foreground">Tell us what you&apos;re building and we&apos;ll get you live on ChatGPT, Claude, and Gemini in days.</p>
+                        <h2 className="text-2xl font-semibold">Not Ready for a Call?</h2>
+                        <p className="mt-4 text-sm text-muted-foreground">Tell us about your product or workflow and our engineers will reply within 12 hours with specific next steps.</p>
                     </div>
 
                     <form onSubmit={handleSubmit} className="mt-12">
@@ -114,44 +114,91 @@ export default function ContactSection() {
                                 {fieldErrors.companyWebsite && <FieldError>{fieldErrors.companyWebsite}</FieldError>}
                             </Field>
 
-                            <Field data-invalid={!!fieldErrors.serviceNeeded}>
-                                <FieldLabel htmlFor="service">Service Needed</FieldLabel>
-                                <Select
-                                    value={formData.serviceNeeded}
-                                    onValueChange={(value) => setFormData({ ...formData, serviceNeeded: value })}
-                                    disabled={isSubmitting}
-                                    required
-                                >
-                                    <SelectTrigger aria-invalid={!!fieldErrors.serviceNeeded}>
-                                        <SelectValue placeholder="Select Service" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="Customer-Facing GPT App">Customer-Facing GPT App</SelectItem>
-                                        <SelectItem value="Internal AI Automation">Internal AI Automation</SelectItem>
-                                        <SelectItem value="Multi-Platform Launch">Multi-Platform Launch (ChatGPT + Claude + Gemini)</SelectItem>
-                                        <SelectItem value="Custom MCP Integration">Custom MCP Integration</SelectItem>
-                                        <SelectItem value="Not Sure - Need Guidance">Not Sure - Need Guidance</SelectItem>
-                                    </SelectContent>
-                                </Select>
+                            <Field data-invalid={!!fieldErrors.serviceNeeded} className="space-y-3">
+                                <FieldLabel>What do you need built?</FieldLabel>
+                                <div className="space-y-2">
+                                    <label className="flex items-start gap-3 rounded-lg border p-3 cursor-pointer hover:bg-muted/50 transition-colors">
+                                        <input
+                                            type="radio"
+                                            name="serviceNeeded"
+                                            value="GPT app for customers"
+                                            checked={formData.serviceNeeded === "GPT app for customers"}
+                                            onChange={(e) => setFormData({ ...formData, serviceNeeded: e.target.value })}
+                                            disabled={isSubmitting}
+                                            className="mt-0.5"
+                                            required
+                                        />
+                                        <span className="text-sm">GPT app for customers</span>
+                                    </label>
+                                    <label className="flex items-start gap-3 rounded-lg border p-3 cursor-pointer hover:bg-muted/50 transition-colors">
+                                        <input
+                                            type="radio"
+                                            name="serviceNeeded"
+                                            value="Internal automation"
+                                            checked={formData.serviceNeeded === "Internal automation"}
+                                            onChange={(e) => setFormData({ ...formData, serviceNeeded: e.target.value })}
+                                            disabled={isSubmitting}
+                                            className="mt-0.5"
+                                        />
+                                        <span className="text-sm">Internal automation</span>
+                                    </label>
+                                    <label className="flex items-start gap-3 rounded-lg border p-3 cursor-pointer hover:bg-muted/50 transition-colors">
+                                        <input
+                                            type="radio"
+                                            name="serviceNeeded"
+                                            value="Operational workflow"
+                                            checked={formData.serviceNeeded === "Operational workflow"}
+                                            onChange={(e) => setFormData({ ...formData, serviceNeeded: e.target.value })}
+                                            disabled={isSubmitting}
+                                            className="mt-0.5"
+                                        />
+                                        <span className="text-sm">Operational workflow</span>
+                                    </label>
+                                    <label className="flex items-start gap-3 rounded-lg border p-3 cursor-pointer hover:bg-muted/50 transition-colors">
+                                        <input
+                                            type="radio"
+                                            name="serviceNeeded"
+                                            value="Connect our API to AI assistants"
+                                            checked={formData.serviceNeeded === "Connect our API to AI assistants"}
+                                            onChange={(e) => setFormData({ ...formData, serviceNeeded: e.target.value })}
+                                            disabled={isSubmitting}
+                                            className="mt-0.5"
+                                        />
+                                        <span className="text-sm">Connect our API to AI assistants</span>
+                                    </label>
+                                    <label className="flex items-start gap-3 rounded-lg border p-3 cursor-pointer hover:bg-muted/50 transition-colors">
+                                        <input
+                                            type="radio"
+                                            name="serviceNeeded"
+                                            value="Something else"
+                                            checked={formData.serviceNeeded === "Something else"}
+                                            onChange={(e) => setFormData({ ...formData, serviceNeeded: e.target.value })}
+                                            disabled={isSubmitting}
+                                            className="mt-0.5"
+                                        />
+                                        <span className="text-sm">Something else</span>
+                                    </label>
+                                </div>
                                 {fieldErrors.serviceNeeded && <FieldError>{fieldErrors.serviceNeeded}</FieldError>}
                             </Field>
 
                             <Field data-invalid={!!fieldErrors.message}>
-                                <FieldLabel htmlFor="msg">Message</FieldLabel>
+                                <FieldLabel htmlFor="msg">Describe your product or workflow</FieldLabel>
                                 <Textarea
                                     id="msg"
-                                    rows={3}
+                                    rows={4}
                                     value={formData.message}
                                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                     disabled={isSubmitting}
                                     aria-invalid={!!fieldErrors.message}
+                                    placeholder="What does your product do? What would you like to automate or make AI-accessible?"
                                 />
-                                <FieldDescription>Tell us about your project and needs</FieldDescription>
+                                <FieldDescription>You&apos;ll receive a detailed response from our engineers within 12 hours. No spam. No sales pressure. Just technical guidance.</FieldDescription>
                                 {fieldErrors.message && <FieldError>{fieldErrors.message}</FieldError>}
                             </Field>
 
                             <Button type="submit" disabled={isSubmitting || submitted} className="w-full">
-                                {submitted ? 'Submitted ✓' : isSubmitting ? 'Sending...' : 'Book Your Discovery Call'}
+                                {submitted ? 'Submitted ✓' : isSubmitting ? 'Sending...' : 'Send Product Details'}
                             </Button>
                         </FieldGroup>
                     </form>

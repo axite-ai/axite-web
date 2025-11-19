@@ -5,12 +5,12 @@ import Image from 'next/image'
 export default function IntegrationsSection() {
     return (
         <section id="integrations">
-            <div className="bg-muted dark:bg-background py-32 md:py-40">
+            <div className="bg-muted dark:bg-background py-24 md:py-32">
                 <div className="mx-auto flex flex-col px-6 md:grid md:max-w-5xl md:grid-cols-2 md:gap-16">
                     <div className="order-last mt-12 flex flex-col gap-12 md:order-first md:mt-0">
                         <div className="space-y-6">
                             <h2 className="text-balance text-3xl font-semibold md:text-4xl lg:text-5xl">Your GPT App connects to every assistant</h2>
-                            <p className="text-muted-foreground">One integration. Every platform. We build ChatGPT apps, Claude apps, and Gemini apps — plus internal AI automations for your team.</p>
+                            <p className="text-muted-foreground">One integration gives you instant presence across every major AI assistant. No extra engineering required.</p>
                             <Button
                                 variant="outline"
                                 size="sm"

@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 
 const links = [
     {
-        title: 'GPT Apps',
+        title: 'Solutions',
         href: '#integrations',
     },
     {
@@ -20,7 +20,7 @@ const links = [
 
 export default function FooterSection() {
     return (
-      <footer className="bg-background py-32 md:py-40">
+      <footer className="bg-background py-16 md:py-20">
         <div className="mx-auto max-w-5xl px-6">
           <Link
             href="/"
