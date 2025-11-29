@@ -16,24 +16,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Axite - Enterprise AI Integration Solutions",
-  description: "Custom ChatGPT apps, Claude connectors, and MCP servers for your business. Transform your operations with cutting-edge AI technology.",
+  title: "Axite - Make Your Product Usable by AI Agents",
+  description: "Production-grade MCP servers and agent workflows for API-first companies. We design and ship the tools, permissions, and safety checks so agents can reliably use your product across ChatGPT, Claude, and future ecosystems.",
   openGraph: {
-    title: "Axite - Enterprise AI Integration Solutions",
-    description: "Custom ChatGPT apps, Claude connectors, and MCP servers for your business. Transform your operations with cutting-edge AI technology.",
+    title: "Axite - Make Your Product Usable by AI Agents",
+    description: "Production-grade MCP servers and agent workflows for API-first companies. We design and ship the tools, permissions, and safety checks so agents can reliably use your product across ChatGPT, Claude, and future ecosystems.",
     images: [
       {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Axite - Enterprise AI Integration Solutions",
+        alt: "Axite - Make Your Product Usable by AI Agents",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Axite - Enterprise AI Integration Solutions",
-    description: "Custom ChatGPT apps, Claude connectors, and MCP servers for your business. Transform your operations with cutting-edge AI technology.",
+    title: "Axite - Make Your Product Usable by AI Agents",
+    description: "Production-grade MCP servers and agent workflows for API-first companies. We design and ship the tools, permissions, and safety checks so agents can reliably use your product across ChatGPT, Claude, and future ecosystems.",
     images: ["/og.png"],
   },
 };

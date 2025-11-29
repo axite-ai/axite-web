@@ -9,13 +9,14 @@ export default function IntegrationsSection() {
                 <div className="mx-auto flex flex-col px-6 md:grid md:max-w-5xl md:grid-cols-2 md:gap-16">
                     <div className="order-last mt-12 flex flex-col gap-12 md:order-first md:mt-0">
                         <div className="space-y-6">
-                            <h2 className="text-balance text-3xl font-semibold md:text-4xl lg:text-5xl">Your GPT App connects to every assistant</h2>
-                            <p className="text-muted-foreground">One integration gives you instant presence across every major AI assistant. No extra engineering required.</p>
+                            <h2 className="text-balance text-3xl font-semibold md:text-4xl lg:text-5xl">One Integration, Every Platform</h2>
+                            <p className="text-muted-foreground">Your MCP server works across ChatGPT, Claude Desktop, Gemini, and every future agent platform. No vendor lock-in. No per-platform custom work.</p>
+                            <p className="text-muted-foreground text-sm">Ship once. Distribute everywhere.</p>
                             <Button
                                 variant="outline"
                                 size="sm"
                                 asChild>
-                                <Link href="#contact">Launch Your AI App</Link>
+                                <Link href="#contact">Request Agent-Native Audit</Link>
                             </Button>
                         </div>
                     </div>
@@ -25,33 +26,33 @@ export default function IntegrationsSection() {
                             <div className="grid grid-cols-2 gap-2">
                                 <Integration
                                     icon={<Image src="/ai-svgs/openai.svg" alt="ChatGPT" width={36} height={36} className="dark:invert dark:brightness-0 dark:contrast-200" />}
-                                    name="ChatGPT App"
-                                    description="Reach 300M+ weekly users"
+                                    name="ChatGPT"
+                                    description="300M+ weekly users"
                                 />
                                 <Integration
                                     icon={<Image src="/ai-svgs/claude-color.svg" alt="Claude" width={36} height={36} />}
-                                    name="Claude App"
-                                    description="Power-user distribution"
+                                    name="Claude Desktop"
+                                    description="MCP-native platform"
                                 />
                                 <Integration
                                     icon={<Image src="/ai-svgs/gemini-color.svg" alt="Gemini" width={36} height={36} />}
-                                    name="Gemini App"
-                                    description="Multimodal AI access"
+                                    name="Gemini"
+                                    description="Multimodal workflows"
                                 />
                                 <Integration
                                     icon={<Image src="/ai-svgs/perplexity-color.svg" alt="Perplexity" width={36} height={36} />}
                                     name="Perplexity"
-                                    description="Research-focused users"
+                                    description="Research workflows"
                                 />
                                 <Integration
-                                    icon={<Image src="/ai-svgs/githubcopilot.svg" alt="Internal AI" width={36} height={36} className="dark:invert" />}
-                                    name="Internal AI"
-                                    description="Team automations"
+                                    icon={<Image src="/ai-svgs/githubcopilot.svg" alt="GitHub Copilot" width={36} height={36} className="dark:invert" />}
+                                    name="GitHub Copilot"
+                                    description="Developer agents"
                                 />
                                 <Integration
-                                    icon={<Image src="/ai-svgs/n8n-color.svg" alt="Custom" width={36} height={36} />}
-                                    name="Custom Workflows"
-                                    description="Bespoke integrations"
+                                    icon={<Image src="/ai-svgs/n8n-color.svg" alt="Custom Agents" width={36} height={36} />}
+                                    name="Custom Agents"
+                                    description="Bespoke implementations"
                                 />
                             </div>
                         </div>

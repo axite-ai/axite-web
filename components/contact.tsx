@@ -59,8 +59,11 @@ export default function ContactSection() {
             <div className="mx-auto max-w-3xl px-8 lg:px-0">
                 <Card className="mx-auto max-w-lg p-8 shadow-md sm:p-12">
                     <div>
-                        <h2 className="text-2xl font-semibold">Not Ready for a Call?</h2>
-                        <p className="mt-4 text-sm text-muted-foreground">Tell us about your product or workflow and our engineers will reply within 12 hours with specific next steps.</p>
+                        <h2 className="text-2xl font-semibold">Get Your Free Agent-Native Audit</h2>
+                        <p className="mt-4 text-base">We'll send you 2-3 mapped agent workflows tailored to your product within 12 hours.</p>
+                        <p className="mt-3 text-sm font-medium text-muted-foreground">
+                            Performed by actual MCP engineers. No sales pressure. We respond to every submission.
+                        </p>
                     </div>
 
                     <form onSubmit={handleSubmit} className="mt-12">
@@ -115,56 +118,56 @@ export default function ContactSection() {
                             </Field>
 
                             <Field data-invalid={!!fieldErrors.serviceNeeded} className="space-y-3">
-                                <FieldLabel>What do you need built?</FieldLabel>
+                                <FieldLabel>What are you interested in?</FieldLabel>
                                 <div className="space-y-2">
                                     <label className="flex items-start gap-3 rounded-lg border p-3 cursor-pointer hover:bg-muted/50 transition-colors">
                                         <input
                                             type="radio"
                                             name="serviceNeeded"
-                                            value="GPT app for customers"
-                                            checked={formData.serviceNeeded === "GPT app for customers"}
+                                            value="Agent-Native Launch (MCP server + agent app)"
+                                            checked={formData.serviceNeeded === "Agent-Native Launch (MCP server + agent app)"}
                                             onChange={(e) => setFormData({ ...formData, serviceNeeded: e.target.value })}
                                             disabled={isSubmitting}
                                             className="mt-0.5"
                                             required
                                         />
-                                        <span className="text-sm">GPT app for customers</span>
+                                        <span className="text-sm">Agent-Native Launch (MCP server + agent app)</span>
                                     </label>
                                     <label className="flex items-start gap-3 rounded-lg border p-3 cursor-pointer hover:bg-muted/50 transition-colors">
                                         <input
                                             type="radio"
                                             name="serviceNeeded"
-                                            value="Internal automation"
-                                            checked={formData.serviceNeeded === "Internal automation"}
+                                            value="Agent workflow design consultation"
+                                            checked={formData.serviceNeeded === "Agent workflow design consultation"}
                                             onChange={(e) => setFormData({ ...formData, serviceNeeded: e.target.value })}
                                             disabled={isSubmitting}
                                             className="mt-0.5"
                                         />
-                                        <span className="text-sm">Internal automation</span>
+                                        <span className="text-sm">Agent workflow design consultation</span>
                                     </label>
                                     <label className="flex items-start gap-3 rounded-lg border p-3 cursor-pointer hover:bg-muted/50 transition-colors">
                                         <input
                                             type="radio"
                                             name="serviceNeeded"
-                                            value="Operational workflow"
-                                            checked={formData.serviceNeeded === "Operational workflow"}
+                                            value="Existing MCP server review/improvement"
+                                            checked={formData.serviceNeeded === "Existing MCP server review/improvement"}
                                             onChange={(e) => setFormData({ ...formData, serviceNeeded: e.target.value })}
                                             disabled={isSubmitting}
                                             className="mt-0.5"
                                         />
-                                        <span className="text-sm">Operational workflow</span>
+                                        <span className="text-sm">Existing MCP server review/improvement</span>
                                     </label>
                                     <label className="flex items-start gap-3 rounded-lg border p-3 cursor-pointer hover:bg-muted/50 transition-colors">
                                         <input
                                             type="radio"
                                             name="serviceNeeded"
-                                            value="Connect our API to AI assistants"
-                                            checked={formData.serviceNeeded === "Connect our API to AI assistants"}
+                                            value="Agent Growth & Reliability (retainer)"
+                                            checked={formData.serviceNeeded === "Agent Growth & Reliability (retainer)"}
                                             onChange={(e) => setFormData({ ...formData, serviceNeeded: e.target.value })}
                                             disabled={isSubmitting}
                                             className="mt-0.5"
                                         />
-                                        <span className="text-sm">Connect our API to AI assistants</span>
+                                        <span className="text-sm">Agent Growth & Reliability (retainer)</span>
                                     </label>
                                     <label className="flex items-start gap-3 rounded-lg border p-3 cursor-pointer hover:bg-muted/50 transition-colors">
                                         <input
@@ -183,7 +186,7 @@ export default function ContactSection() {
                             </Field>
 
                             <Field data-invalid={!!fieldErrors.message}>
-                                <FieldLabel htmlFor="msg">Describe your product or workflow</FieldLabel>
+                                <FieldLabel htmlFor="msg">Describe your API-first product</FieldLabel>
                                 <Textarea
                                     id="msg"
                                     rows={4}
@@ -191,14 +194,14 @@ export default function ContactSection() {
                                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                     disabled={isSubmitting}
                                     aria-invalid={!!fieldErrors.message}
-                                    placeholder="What does your product do? What would you like to automate or make AI-accessible?"
+                                    placeholder="What does your product do? What workflows could agents automate? (e.g., booking, payments, data retrieval, transactions)"
                                 />
-                                <FieldDescription>You&apos;ll receive a detailed response from our engineers within 12 hours. No spam. No sales pressure. Just technical guidance.</FieldDescription>
+                                <FieldDescription>The more specific you are, the better our analysis. We respond to every submission.</FieldDescription>
                                 {fieldErrors.message && <FieldError>{fieldErrors.message}</FieldError>}
                             </Field>
 
                             <Button type="submit" disabled={isSubmitting || submitted} className="w-full">
-                                {submitted ? 'Submitted ✓' : isSubmitting ? 'Sending...' : 'Send Product Details'}
+                                {submitted ? 'Submitted ✓' : isSubmitting ? 'Sending...' : 'Request Agent-Native Audit'}
                             </Button>
                         </FieldGroup>
                     </form>

@@ -27,21 +27,34 @@ export default function HeroSection() {
               <div className="relative mx-auto flex max-w-6xl flex-col px-6 lg:block">
                 <div className="relative z-10 mx-auto max-w-lg text-center lg:ml-0 lg:w-1/2 lg:text-left">
                   <h1 className="max-w-2xl text-balance text-5xl font-medium md:text-6xl xl:text-7xl">
-                    Launch Your Company's GPT App in Days, Not Months
+                    Make Your Product Usable by AI Agents
                   </h1>
                   <p className="mt-6 max-w-2xl text-pretty text-lg">
-                    We turn your existing API, product, or workflow into a fully functional GPT/Claude/Gemini app. Live in days, not months.
+                    AI agents are becoming a new interface layer. If your product can't be used by them, you get left behind.
+                  </p>
+                  <p className="mt-4 max-w-2xl text-pretty text-base text-muted-foreground">
+                    Axite builds production-grade MCP infrastructure so agents can reliably use your product across ChatGPT, Claude, Gemini, and future ecosystems. Get agent-ready in 4-6 weeks.
                   </p>
 
                   <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
                     <Button
                       size="lg"
                       className="px-6 text-base w-full sm:w-auto"
+                      asChild
+                    >
+                      <Link href="#contact">
+                        <span className="text-nowrap">Request Free Audit</span>
+                      </Link>
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="px-6 text-base w-full sm:w-auto"
                       data-cal-namespace="discovery"
                       data-cal-link="axite/discovery"
                       data-cal-config='{"layout":"month_view"}'
                     >
-                      <span className="text-nowrap">Book a 15-Minute Discovery Call</span>
+                      <span className="text-nowrap">Book a Call</span>
                     </Button>
                     <Dialog>
                       <DialogTrigger asChild>
@@ -72,14 +85,9 @@ export default function HeroSection() {
                       </DialogContent>
                     </Dialog>
                   </div>
-                  <div className="mt-4 text-center lg:text-left">
-                    <Link
-                      href="#contact"
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors underline-offset-4 hover:underline"
-                    >
-                      Not ready for a call? Tell us about your product or workflow.
-                    </Link>
-                  </div>
+                  <p className="mt-3 text-center text-xs text-muted-foreground lg:text-left">
+                    Fast response. No meetings. Real engineers.
+                  </p>
                 </div>
                 <div className="order-first ml-auto w-full lg:absolute lg:right-0 lg:top-0 lg:order-last lg:w-1/2 lg:h-full flex items-center justify-center lg:justify-end lg:z-0">
                   <Image

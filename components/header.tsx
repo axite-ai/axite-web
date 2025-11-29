@@ -78,10 +78,10 @@ export const HeroHeader = () => {
                                 <ModeToggle />
                                 <Button
                                     size="sm"
-                                    data-cal-namespace="discovery"
-                                    data-cal-link="axite/discovery"
-                                    data-cal-config='{"layout":"month_view"}'>
-                                    <span>Book a Call</span>
+                                    asChild>
+                                    <Link href="/#contact">
+                                        <span>Request Audit</span>
+                                    </Link>
                                 </Button>
                             </div>
                         </div>

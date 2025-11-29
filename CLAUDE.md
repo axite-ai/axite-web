@@ -4,7 +4,24 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Axite is a marketing website built with Next.js 16 (App Router) and React 19, focused on enterprise AI integration solutions. The site features a single-page layout with sections for hero, features, integrations, contact form, and footer.
+Axite is a marketing website built with Next.js 16 (App Router) and React 19. Axite enables API-first companies to become agent-native by designing and building MCP-based tools and agent apps. The site features a single-page layout with sections for hero, features, integrations, contact form, and footer.
+
+### Company Positioning
+
+**Mission**: Axite enables API-first companies to become agent-native.
+
+**What We Do**: We design and deliver MCP-based tools and agent apps that let AI agents reliably search, create, update, and transact inside real products—driving usage, automation, and revenue, not just conversation.
+
+**Target Customers**: API-first SaaS and platforms where users do things, not just read data (e.g., payments, e-commerce, logistics, HR, developer tools, CRMs, data APIs, operations platforms).
+
+**Core Value Proposition**: "We make your product usable by AI agents—safely, reliably, and across ecosystems."
+
+**Main Offer**: Agent-Native Launch—In 4–6 weeks, your product becomes agent-native with a production-ready MCP server and reference agent app.
+
+**Brand Pillars**:
+1. **Agent-First Workflows**: We design actual agent workflows (booking, paying, syncing, analyzing), not just API mirrors
+2. **Reliability & Security**: Least-privilege tool design, scoped permissions, input validation, confirmation steps, logging, and safety checks
+3. **Cross-Ecosystem Reach**: One MCP server → accessible from ChatGPT, Claude, Gemini, and future agents
 
 ## Tech Stack
 

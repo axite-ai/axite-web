@@ -157,8 +157,7 @@ export default function FooterSection() {
           </div>
           <span className="text-muted-foreground block text-center text-sm">
             {" "}
-            © {new Date().getFullYear()} Axite. All rights reserved. Enterprise
-            AI Integration Solutions.
+            © {new Date().getFullYear()} Axite. All rights reserved. Agent-Native Infrastructure for API-First Products.
           </span>
         </div>
       </footer>
