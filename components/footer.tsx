@@ -1,4 +1,4 @@
-import { Logo } from '@/components/logo'
+import { Logo, LogoDark } from '@/components/logo'
 import Link from 'next/link'
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
@@ -28,13 +28,7 @@ export default function FooterSection() {
             className="mx-auto block size-fit"
           >
             <Logo />
-            <Image
-              src="/logos/white-trans-full.svg"
-              alt="Axite Logo"
-              width={240}
-              height={60}
-              className="hidden h-16 w-auto dark:block"
-            />
+            <LogoDark />
           </Link>
 
           <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">

@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Logo } from '@/components/logo'
+import { Logo, LogoDark } from '@/components/logo'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ModeToggle } from '@/components/mode-toggle'
@@ -28,13 +28,7 @@ export const HeroHeader = () => {
                                 aria-label="home"
                                 className="flex items-center space-x-2">
                                 <Logo />
-                                <Image
-                                    src="/logos/white-trans-full.svg"
-                                    alt="Axite Logo"
-                                    width={240}
-                                    height={60}
-                                    className="hidden h-16 w-auto dark:block"
-                                />
+                                <LogoDark />
                             </Link>
 
                             <button

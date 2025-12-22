@@ -1,13 +1,13 @@
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 
-export const Logo = ({ className, uniColor }: { className?: string; uniColor?: boolean }) => {
+export const Logo = ({ className }: { className?: string }) => {
     return (
         <Image
-            src="/logos/black-trans-full.svg"
+            src="/logos/new-black-full.svg"
             alt="Axite Logo"
-            width={240}
-            height={60}
+            width={200}
+            height={200}
             className={cn('h-16 w-auto dark:hidden', className)}
         />
     )
@@ -16,44 +16,33 @@ export const Logo = ({ className, uniColor }: { className?: string; uniColor?: b
 export const LogoDark = ({ className }: { className?: string }) => {
     return (
         <Image
-            src="/logos/white-trans-full.svg"
+            src="/logos/new-white-full.svg"
             alt="Axite Logo"
-            width={240}
-            height={60}
+            width={200}
+            height={200}
             className={cn('hidden h-16 w-auto dark:block', className)}
         />
     )
 }
 
-export const LogoIcon = ({ className, uniColor }: { className?: string; uniColor?: boolean }) => {
+export const LogoIcon = ({ className }: { className?: string }) => {
     return (
-        <svg
-            width="18"
-            height="18"
-            viewBox="0 0 18 18"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className={cn('size-5', className)}>
-            <path
-                d="M3 0H5V18H3V0ZM13 0H15V18H13V0ZM18 3V5H0V3H18ZM0 15V13H18V15H0Z"
-                fill={uniColor ? 'currentColor' : 'url(#logo-gradient)'}
+        <>
+            <Image
+                src="/logos/new-black-x.svg"
+                alt="Axite Icon"
+                width={50}
+                height={50}
+                className={cn('size-7 dark:hidden', className)}
             />
-            <defs>
-                <linearGradient
-                    id="logo-gradient"
-                    x1="10"
-                    y1="0"
-                    x2="10"
-                    y2="20"
-                    gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#9B99FE" />
-                    <stop
-                        offset="1"
-                        stopColor="#2BC8B7"
-                    />
-                </linearGradient>
-            </defs>
-        </svg>
+            <Image
+                src="/logos/new-white-x.svg"
+                alt="Axite Icon"
+                width={50}
+                height={50}
+                className={cn('hidden size-7 dark:block', className)}
+            />
+        </>
     )
 }
 
