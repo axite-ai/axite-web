@@ -15,7 +15,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.axite.ai";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Axite - Make Your Product Usable by AI Agents",
   description: "Production-grade MCP servers and agent workflows for API-first companies. We design and ship the tools, permissions, and safety checks so agents can reliably use your product across ChatGPT, Claude, and future ecosystems.",
   openGraph: {
