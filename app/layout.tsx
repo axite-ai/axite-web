@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.axite.ai";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://axite.ai";
 
 const organizationJsonLd = {
   "@context": "https://schema.org",

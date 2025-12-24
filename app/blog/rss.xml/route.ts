@@ -1,6 +1,6 @@
 import { getAllPosts } from "@/lib/blog";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.axite.ai";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://axite.ai";
 
 export async function GET() {
   const posts = getAllPosts();

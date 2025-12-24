@@ -68,13 +68,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         "@type": "ListItem",
         position: 1,
         name: "Blog",
-        item: "https://www.axite.ai/blog",
+        item: "https://axite.ai/blog",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: post.title,
-        item: `https://www.axite.ai/blog/${post.slug}`,
+        item: `https://axite.ai/blog/${post.slug}`,
       },
     ],
   };
