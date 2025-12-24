@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/docs",
-      "destination": "https://axite.ai/docs"
+      "destination": "https://axite.mintlify.dev/docs"
     },
     {
       "source": "/docs/:match*",
-      "destination": "https://axite.ai/docs/:match*"
+      "destination": "https://axite.mintlify.dev/docs/:match*"
     }
   ]
 }
