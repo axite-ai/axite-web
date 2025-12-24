@@ -10,6 +10,7 @@ import React from 'react'
 const menuItems = [
     { name: 'Solutions', href: '/#integrations' },
     { name: 'How It Works', href: '/#how-it-works' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/#contact' },
 ]
 

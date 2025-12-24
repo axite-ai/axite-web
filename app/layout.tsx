@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -16,6 +17,19 @@ const geistMono = Geist_Mono({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.axite.ai";
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Axite",
+  url: siteUrl,
+  logo: `${siteUrl}/og.png`,
+  sameAs: [
+    "https://x.com/axitehq",
+    "https://linkedin.com/company/axitehq",
+    "https://www.instagram.com/axitehq/",
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -50,10 +64,24 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <script src="//code.tidio.co/h474vzguvcnk1wvlrb7n78s5sc5u2igv.js" async></script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-Q6F7Q9WKCS"
+          strategy="afterInteractive"
+        />
+        <Script id="google-tag" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Q6F7Q9WKCS');`}
+        </Script>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

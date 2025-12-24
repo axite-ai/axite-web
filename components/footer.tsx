@@ -13,6 +13,10 @@ const links = [
         href: '#how-it-works',
     },
     {
+        title: 'Blog',
+        href: '/blog',
+    },
+    {
         title: 'Contact',
         href: '#contact',
     },
