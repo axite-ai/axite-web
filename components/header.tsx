@@ -8,10 +8,10 @@ import { ModeToggle } from '@/components/mode-toggle'
 import React from 'react'
 
 const menuItems = [
-    { name: 'Solutions', href: '/#integrations' },
-    { name: 'How It Works', href: '/#how-it-works' },
+    { name: 'Product', href: '/product' },
+    { name: 'Engineering', href: '/engineering' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/#contact' },
+    { name: 'Contact', href: '#contact' },
 ]
 
 export const HeroHeader = () => {
@@ -74,7 +74,7 @@ export const HeroHeader = () => {
                                 <Button
                                     size="sm"
                                     asChild>
-                                    <Link href="/#contact">
+                                    <Link href="#contact">
                                         <span>Request Audit</span>
                                     </Link>
                                 </Button>

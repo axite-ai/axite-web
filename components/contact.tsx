@@ -61,6 +61,15 @@ export default function ContactSection() {
                     <div>
                         <h2 className="text-2xl font-semibold">Get Your Free Agent-Native Audit</h2>
                         <p className="mt-4 text-base">We'll send you 2-3 mapped agent workflows tailored to your product within 12 hours.</p>
+                        <div className="mt-5 rounded-lg border bg-muted/40 p-4 text-sm">
+                            <p className="font-medium">Audit output format:</p>
+                            <ul className="mt-3 space-y-2 text-muted-foreground">
+                                <li>• Workflow steps and user outcome</li>
+                                <li>• Required APIs and data sources</li>
+                                <li>• Tool list with permissions model</li>
+                                <li>• Estimated effort and sequencing</li>
+                            </ul>
+                        </div>
                         <p className="mt-3 text-sm font-medium text-muted-foreground">
                             Performed by actual MCP engineers. No sales pressure. We respond to every submission.
                         </p>

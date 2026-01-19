@@ -27,13 +27,13 @@ export default function HeroSection() {
               <div className="relative mx-auto flex max-w-6xl flex-col px-6 lg:block">
                 <div className="relative z-10 mx-auto max-w-lg text-center lg:ml-0 lg:w-1/2 lg:text-left">
                   <h1 className="max-w-2xl text-balance text-5xl font-medium md:text-6xl xl:text-7xl">
-                    Make Your Product Usable by AI Agents
+                    Turn your API into agent-safe MCP workflows
                   </h1>
                   <p className="mt-6 max-w-2xl text-pretty text-lg">
-                    AI agents are becoming a new interface layer. If your product can't be used by them, you get left behind.
+                    Ship workflows that run cleanly inside ChatGPT, Claude, Gemini, and every future agent ecosystem.
                   </p>
                   <p className="mt-4 max-w-2xl text-pretty text-base text-muted-foreground">
-                    Axite builds production-grade MCP infrastructure so agents can reliably use your product across ChatGPT, Claude, Gemini, and future ecosystems. Get agent-ready in 4-6 weeks.
+                    Axite builds MCP servers, tool catalogs, and agent apps so customers can complete real transactions safely. Get agent-ready in 4-6 weeks.
                   </p>
 
                   <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
@@ -44,6 +44,16 @@ export default function HeroSection() {
                     >
                       <Link href="#contact">
                         <span className="text-nowrap">Request Free Audit</span>
+                      </Link>
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="secondary"
+                      className="px-6 text-base w-full sm:w-auto"
+                      asChild
+                    >
+                      <Link href="#examples">
+                        <span className="text-nowrap">See Example Workflow Map</span>
                       </Link>
                     </Button>
                     <Button

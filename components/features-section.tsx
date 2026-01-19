@@ -8,8 +8,8 @@ export default function FeaturesSection() {
         <section className="bg-background py-24 md:py-32">
             <div className="@container mx-auto max-w-6xl px-6">
                 <div className="text-center">
-                    <h2 className="text-balance text-4xl font-semibold lg:text-5xl">What Axite Delivers</h2>
-                    <p className="text-muted-foreground mt-3 text-lg">Agent-native infrastructure without the chaos.</p>
+                    <h2 className="text-balance text-4xl font-semibold lg:text-5xl">How Axite makes MCP reliable</h2>
+                    <p className="text-muted-foreground mt-3 text-lg">Workflows, safety rails, and cross-ecosystem distribution.</p>
                 </div>
                 <div className="@min-4xl:max-w-full @min-4xl:grid-cols-3 mx-auto mt-12 grid max-w-sm gap-6 md:mt-16">
                     <Card className="group">
