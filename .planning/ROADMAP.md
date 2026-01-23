@@ -48,11 +48,13 @@ Plans:
   3. shared-data package (pricing, products) inlined to project
   4. icons package inlined or replaced with lucide-react
   5. tsconfig base configurations inlined
-**Plans**: 2 plans
+**Plans**: 4 plans
 
 Plans:
-- [ ] 02-01-PLAN.md - Copy all 7 packages to lib/ directory
-- [ ] 02-02-PLAN.md - Configure tsconfig path aliases and clean package.json files
+- [x] 02-01-PLAN.md - Copy all 7 packages to lib/ directory
+- [x] 02-02-PLAN.md - Configure tsconfig path aliases and clean package.json files
+- [ ] 02-03-PLAN.md - Wire apps/www/tsconfig.json to lib/ packages (gap closure)
+- [ ] 02-04-PLAN.md - Remove packages/ directory (gap closure)
 
 ### Phase 3: Project Configuration
 **Goal**: Standalone Next.js 15.5.9 project with working Tailwind and TypeScript configuration
@@ -147,7 +149,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Extraction | 2/2 | Complete ✓ | 2026-01-22 |
-| 2. Package Inlining | 0/2 | Not started | - |
+| 2. Package Inlining | 2/4 | Gap closure | - |
 | 3. Project Configuration | 0/? | Not started | - |
 | 4. Development Environment | 0/? | Not started | - |
 | 5. Content Infrastructure | 0/? | Not started | - |
@@ -156,4 +158,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 8. Minimal Branding | 0/? | Not started | - |
 
 ---
-*Last updated: 2026-01-22*
+*Last updated: 2026-01-23*
