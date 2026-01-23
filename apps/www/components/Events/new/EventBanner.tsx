@@ -178,7 +178,7 @@ const Logo = () => (
       d="M63.708 110.284c-2.86 3.601-8.658 1.628-8.727-2.97l-1.007-67.251h45.22c8.19 0 12.758 9.46 7.665 15.874z"
     ></path>
     <path
-      fill="#3ecf8e"
+      fill="#3B63F3"
       d="M45.317 2.071c2.86-3.601 8.657-1.628 8.726 2.97l.442 67.251H9.83c-8.19 0-12.759-9.46-7.665-15.875z"
     ></path>
     <defs>
@@ -190,8 +190,8 @@ const Logo = () => (
         y2="71.829"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#249361"></stop>
-        <stop offset="1" stopColor="#3ecf8e"></stop>
+        <stop stopColor="#2C4BC7"></stop>
+        <stop offset="1" stopColor="#3B63F3"></stop>
       </linearGradient>
       <linearGradient
         id="b"

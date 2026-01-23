@@ -22,7 +22,7 @@ export default function App() {
   const [isConnected, setIsConnected] = useState(false);
   const [activeUsers, setActiveUsers] = useState([]);
   const [isDrawing, setIsDrawing] = useState(false);
-  const [currentColor, setCurrentColor] = useState('#3ecf8e');
+  const [currentColor, setCurrentColor] = useState('#3B63F3');
   
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
@@ -342,7 +342,7 @@ export default function App() {
   };
   
   // Color selection
-  const colors = ['#3ecf8e', '#f43f5e', '#60a5fa', '#a78bfa', '#ffffff'];
+  const colors = ['#3B63F3', '#f43f5e', '#60a5fa', '#a78bfa', '#ffffff'];
   
   const selectColor = (color) => {
     setCurrentColor(color);
