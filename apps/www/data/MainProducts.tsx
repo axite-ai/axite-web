@@ -1,6 +1,3 @@
-import { products } from 'shared-data'
-import { PRODUCT_NAMES, PRODUCT_SHORTNAMES } from 'shared-data/products'
-
 export type ProductType = {
   [key: string]: {
     name: string
@@ -13,66 +10,55 @@ export type ProductType = {
 }
 
 const MainProducts: ProductType = {
-  [PRODUCT_SHORTNAMES.DATABASE]: {
-    name: PRODUCT_NAMES.DATABASE,
-    icon: products.database.icon[24],
+  overview: {
+    name: 'Overview',
+    icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
     description: (
       <>
-        Every project is <strong>a full Postgres database</strong>, the world's most trusted
-        relational database.
+        The <strong>agent governance platform</strong> that provides policy enforcement, identity
+        management, and audit trails for AI agents.
       </>
     ),
-    description_short: 'Fully portable Postgres database',
+    description_short: 'Agent governance control plane',
     label: '',
-    url: '/database',
+    url: '/product',
   },
-  [PRODUCT_SHORTNAMES.AUTHENTICATION]: {
-    name: PRODUCT_NAMES.AUTHENTICATION,
-    icon: products.authentication.icon[24],
+  policy: {
+    name: 'Policy Enforcement',
+    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
     description: (
       <>
-        <strong>Add user sign ups and logins</strong>, securing your data with Row Level Security.
+        <strong>Allow, deny, or require approval</strong> for agent actions at the gateway level.
       </>
     ),
-    description_short: 'User Management out of the box',
+    description_short: 'Control what agents can do',
     label: '',
-    url: '/auth',
+    url: '/product/policy',
   },
-  [PRODUCT_SHORTNAMES.STORAGE]: {
-    name: PRODUCT_NAMES.STORAGE,
-    icon: products.storage.icon[24],
+  identity: {
+    name: 'Identity & RBAC',
+    icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z',
     description: (
       <>
-        <strong>Store, organize, and serve</strong> large files, from videos to images.
+        <strong>Role-based access control</strong> for agents, tools, and actions with
+        least-privilege defaults.
       </>
     ),
-    description_short: 'Serverless storage for any media',
+    description_short: 'RBAC for agents and tools',
     label: '',
-    url: '/storage',
+    url: '/product/identity',
   },
-  [PRODUCT_SHORTNAMES.FUNCTIONS]: {
-    name: PRODUCT_NAMES.FUNCTIONS,
-    icon: products.functions.icon[24],
+  audit: {
+    name: 'Audit Trails',
+    icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
     description: (
       <>
-        Easily write custom code <strong>without deploying or scaling servers.</strong>
+        <strong>Complete decision traces</strong> and logs for compliance and debugging.
       </>
     ),
-    description_short: 'Deploy code globally on the edge',
+    description_short: 'Audit-grade evidence and logs',
     label: '',
-    url: '/edge-functions',
-  },
-  [PRODUCT_SHORTNAMES.REALTIME]: {
-    name: PRODUCT_NAMES.REALTIME,
-    icon: products.realtime.icon[24],
-    description: (
-      <>
-        <strong>Build multiplayer experiences</strong> with real-time data synchronization.
-      </>
-    ),
-    description_short: 'Synchronize and broadcast events',
-    label: '',
-    url: '/realtime',
+    url: '/product/audit',
   },
 }
 
