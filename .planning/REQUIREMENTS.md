@@ -7,7 +7,7 @@
 - [x] **EXTRACT-01**: Clone Supabase repo and extract /apps/www code
 - [x] **EXTRACT-02**: Resolve workspace:* and catalog: dependency protocols to explicit versions
 - [x] **EXTRACT-03**: Inline required packages (ui, config, shared-data, icons, tsconfig)
-- [ ] **EXTRACT-04**: Get local development server running (pnpm dev works)
+- [x] **EXTRACT-04**: Get local development server running (pnpm dev works)
 
 ### Infrastructure
 
@@ -54,7 +54,7 @@
 | EXTRACT-01 | Phase 1 | Complete |
 | EXTRACT-02 | Phase 1 | Complete |
 | EXTRACT-03 | Phase 2 | Complete |
-| EXTRACT-04 | Phase 4 | Pending |
+| EXTRACT-04 | Phase 4 | Complete |
 | INFRA-01 | Phase 3 | Complete |
 | INFRA-02 | Phase 3 | Complete |
 | INFRA-03 | Phase 3 | Complete |
