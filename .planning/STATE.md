@@ -98,4 +98,4 @@ None
 
 Last session: 2026-01-23
 Stopped at: Completed 09-05-PLAN.md (Phase Verification)
-Resume: Run `/gsd:execute-plan` for Phase 10
+Resume: Run `/gsd:discuss-phase 10` or `/gsd:plan-phase 10` for next phase

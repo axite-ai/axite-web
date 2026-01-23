@@ -52,18 +52,18 @@ Requirements for Axite rebrand milestone. Visual + content rebrand (not blog con
 
 ### Navigation
 
-- [ ] **NAV-01**: Header navigation updated with Axite page structure (Product, Pricing, Enterprise, Blog, Trust)
-- [ ] **NAV-02**: Supabase-specific nav items removed (Auth, Database, Storage, etc.)
-- [ ] **NAV-03**: Footer navigation reflects Axite site structure
-- [ ] **NAV-04**: Mobile navigation works with updated structure
+- [x] **NAV-01**: Header navigation updated with Axite page structure (Product, Pricing, Enterprise, Blog, Trust)
+- [x] **NAV-02**: Supabase-specific nav items removed (Auth, Database, Storage, etc.)
+- [x] **NAV-03**: Footer navigation reflects Axite site structure
+- [x] **NAV-04**: Mobile navigation works with updated structure
 
 ### Cleanup
 
-- [ ] **CLEAN-01**: Supabase product pages removed or hidden (Auth, Database, Storage, Realtime, Edge Functions, Vector, Cron, Queues)
-- [ ] **CLEAN-02**: Comparison/switch-from pages removed
-- [ ] **CLEAN-03**: Framework-specific pages removed (nextjs, etc.)
-- [ ] **CLEAN-04**: Launch Week content removed
-- [ ] **CLEAN-05**: All "Supabase" text references replaced with "Axite" (except blog content)
+- [x] **CLEAN-01**: Supabase product pages removed or hidden (Auth, Database, Storage, Realtime, Edge Functions, Vector, Cron, Queues)
+- [x] **CLEAN-02**: Comparison/switch-from pages removed
+- [x] **CLEAN-03**: Framework-specific pages removed (nextjs, etc.)
+- [x] **CLEAN-04**: Launch Week content removed
+- [x] **CLEAN-05**: All "Supabase" text references replaced with "Axite" (except blog content)
 
 ### Blog
 
@@ -149,15 +149,15 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TRUST-02 | Phase 10 | Pending |
 | TRUST-03 | Phase 10 | Pending |
 | TRUST-04 | Phase 10 | Pending |
-| NAV-01 | Phase 9 | Pending |
-| NAV-02 | Phase 9 | Pending |
-| NAV-03 | Phase 9 | Pending |
-| NAV-04 | Phase 9 | Pending |
-| CLEAN-01 | Phase 9 | Pending |
-| CLEAN-02 | Phase 9 | Pending |
-| CLEAN-03 | Phase 9 | Pending |
-| CLEAN-04 | Phase 9 | Pending |
-| CLEAN-05 | Phase 9 | Pending |
+| NAV-01 | Phase 9 | Complete |
+| NAV-02 | Phase 9 | Complete |
+| NAV-03 | Phase 9 | Complete |
+| NAV-04 | Phase 9 | Complete |
+| CLEAN-01 | Phase 9 | Complete |
+| CLEAN-02 | Phase 9 | Complete |
+| CLEAN-03 | Phase 9 | Complete |
+| CLEAN-04 | Phase 9 | Complete |
+| CLEAN-05 | Phase 9 | Complete |
 | BLOG-01 | Phase 11 | Pending |
 | BLOG-02 | Phase 11 | Pending |
 | BLOG-03 | Phase 11 | Pending |
@@ -175,4 +175,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-01-23*
-*Last updated: 2026-01-23 (Phase 8 complete)*
+*Last updated: 2026-01-23 (Phase 9 complete)*

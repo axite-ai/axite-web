@@ -19,7 +19,7 @@ See `.planning/milestones/v1.0-ROADMAP.md` for full v1.0 roadmap archive.
 **Milestone Goal:** Transform the extracted Supabase site into a fully branded Axite marketing presence with proper identity, messaging, and deployment to axite.ai.
 
 - [x] **Phase 8: Visual Foundation** - Colors, typography, Tailwind config (completed 2026-01-23)
-- [ ] **Phase 9: Navigation & Cleanup** - Update nav structure, remove Supabase pages
+- [x] **Phase 9: Navigation & Cleanup** - Update nav structure, remove Supabase pages (completed 2026-01-23)
 - [ ] **Phase 10: Content Pages** - Homepage, Product, Enterprise, Pricing, Trust pages
 - [ ] **Phase 11: Blog Compatibility** - Ensure blog works with new branding
 - [ ] **Phase 12: Deployment** - Vercel deploy, domain config, production
@@ -52,11 +52,11 @@ Plans:
   5. No "Supabase" text visible in navigation or UI chrome (blog content excluded)
 
 Plans:
-- [ ] 09-01: Update main nav data and Axite product/module definitions (wave 1)
-- [ ] 09-02: Update Product dropdown component and nav buttons (wave 1, depends on 09-01)
-- [ ] 09-03: Update footer data and component for Axite branding (wave 1)
-- [ ] 09-04: Update mobile menu and create removed-pages documentation (wave 2, depends on 09-01, 09-02)
-- [ ] 09-05: Verify all success criteria and create verification document (wave 3, depends on all)
+- [x] 09-01: Update main nav data and Axite product/module definitions (wave 1)
+- [x] 09-02: Update Product dropdown component and nav buttons (wave 2)
+- [x] 09-03: Update footer data and component for Axite branding (wave 1)
+- [x] 09-04: Update mobile menu and create removed-pages documentation (wave 2)
+- [x] 09-05: Verify all success criteria and create verification document (wave 3)
 
 ### Phase 10: Content Pages
 **Goal**: All content pages display Axite messaging (policy, identity, audit pillars)
@@ -110,11 +110,11 @@ Phases execute in numeric order: 8 -> 9 -> 10 -> 11 -> 12
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 8. Visual Foundation | v1.1 | 5/5 | Complete | 2026-01-23 |
-| 9. Navigation & Cleanup | v1.1 | 0/5 | Planned | - |
+| 9. Navigation & Cleanup | v1.1 | 5/5 | Complete | 2026-01-23 |
 | 10. Content Pages | v1.1 | 0/? | Not started | - |
 | 11. Blog Compatibility | v1.1 | 0/? | Not started | - |
 | 12. Deployment | v1.1 | 0/? | Not started | - |
 
 ---
 *Roadmap created: 2026-01-23*
-*Last updated: 2026-01-23 (Phase 9 planned)*
+*Last updated: 2026-01-23 (Phase 9 complete)*
