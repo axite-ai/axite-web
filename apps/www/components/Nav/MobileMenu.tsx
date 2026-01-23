@@ -6,18 +6,16 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import type { Dispatch, SetStateAction } from 'react'
 
-import { Accordion, Button, TextLink } from 'ui'
+import { Accordion, Button } from 'ui'
 import { DEFAULT_EASE } from '~/lib/animations'
 import MenuItem from './MenuItem'
 
-import { useIsLoggedIn, useIsUserLoading } from 'common'
+import { useIsUserLoading } from 'common'
 import * as supabaseLogoWordmarkDark from 'common/assets/images/supabase-logo-wordmark--dark.png'
 import * as supabaseLogoWordmarkLight from 'common/assets/images/supabase-logo-wordmark--light.png'
 import { ChevronRight } from 'lucide-react'
+import MainProductsData from '~/data/MainProducts'
 import ProductModulesData from '~/data/ProductModules'
-import staticContent from '.generated/staticContent/_index.json'
-
-import { useSendTelemetryEvent } from '~/lib/telemetry'
 
 interface Props {
   open: boolean
@@ -26,10 +24,7 @@ interface Props {
 }
 
 const MobileMenu = ({ open, setOpen, menu }: Props) => {
-  const isLoggedIn = useIsLoggedIn()
   const isUserLoading = useIsUserLoading()
-  const sendTelemetryEvent = useSendTelemetryEvent()
-  const { jobsCount } = staticContent
 
   const container = {
     hidden: { opacity: 0 },
@@ -57,7 +52,8 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
     <>
       {menuItem.title === 'Product' ? (
         <>
-          {Object.values(menuItem.subMenu)?.map((component: any) => (
+          {/* Main Products */}
+          {Object.values(menuItem.subMenu || MainProductsData)?.map((component: any) => (
             <MenuItem
               key={component.name}
               title={component.name}
@@ -66,9 +62,10 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
               icon={component.icon}
             />
           ))}
+          {/* Product Modules */}
           <div>
             <div className="group flex items-center p-2 text-foreground-lighter text-xs uppercase tracking-widest font-mono">
-              Modules
+              Resources
             </div>
             <ul className="flex flex-col gap-0">
               {Object.values(ProductModulesData).map((productModule) => (
@@ -83,7 +80,7 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
             </ul>
           </div>
           <Link
-            href="/features"
+            href="/docs/quickstart"
             className="
               flex items-center justify-between group text-sm
               p-4 mt-4 gap-2
@@ -95,9 +92,9 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
             "
           >
             <div className="flex flex-col gap-1 !leading-3">
-              <span>Features</span>
+              <span>Get started</span>
               <span className="text-foreground-lighter text-xs leading-4">
-                Explore everything you can do with Supabase.
+                Add governance to your AI agents in minutes.
               </span>
             </div>
             <ChevronRight
@@ -106,67 +103,6 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
             />
           </Link>
         </>
-      ) : menuItem.title === 'Developers' ? (
-        <div className="px-3 mb-2 flex flex-col gap-6">
-          {menuItem.subMenu['navigation'].map((column: any) => (
-            <div key={column.label} className="flex flex-col gap-3">
-              {column.label !== 'Developers' && (
-                <label className="text-foreground-lighter text-xs uppercase tracking-widest font-mono">
-                  {column.label}
-                </label>
-              )}
-              {column.links.map((link: any) => (
-                <TextLink
-                  hasChevron={false}
-                  key={link.text}
-                  url={link.url}
-                  label={link.text}
-                  counter={link.text === 'Careers' && jobsCount > 0 ? jobsCount : undefined}
-                  className="focus-visible:ring-offset-4 focus-visible:ring-offset-background-overlay !mt-0"
-                />
-              ))}
-            </div>
-          ))}
-
-          <div className="flex flex-col py-2">
-            <label className="text-foreground-lighter text-xs uppercase tracking-widest font-mono">
-              Troubleshooting
-            </label>
-            <TextLink
-              hasChevron={false}
-              url={menuItem.subMenu['footer']['support'].url}
-              label={menuItem.subMenu['footer']['support'].text}
-              className="focus-visible:ring-offset-4 focus-visible:ring-offset-background-overlay"
-            />
-            <TextLink
-              hasChevron={false}
-              url={menuItem.subMenu['footer']['systemStatus'].url}
-              label={menuItem.subMenu['footer']['systemStatus'].text}
-              className="focus-visible:ring-offset-4 focus-visible:ring-offset-background-overlay"
-            />
-          </div>
-        </div>
-      ) : menuItem.title === 'Solutions' ? (
-        <div className="px-3 mb-2 flex flex-col gap-6">
-          {menuItem.subMenu['navigation'].map((column: any) => (
-            <div key={column.label} className="flex flex-col gap-3">
-              {column.label !== 'Solutions' && (
-                <label className="text-foreground-lighter text-xs uppercase tracking-widest font-mono">
-                  {column.label}
-                </label>
-              )}
-              {column.links.map((link: any) => (
-                <TextLink
-                  hasChevron={false}
-                  key={link.text}
-                  url={link.url}
-                  label={link.text}
-                  className="focus-visible:ring-offset-4 focus-visible:ring-offset-background-overlay !mt-0"
-                />
-              ))}
-            </div>
-          ))}
-        </div>
       ) : null}
     </>
   )
@@ -224,7 +160,7 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
                   src={supabaseLogoWordmarkLight}
                   width={124}
                   height={24}
-                  alt="Supabase Logo"
+                  alt="Axite Logo"
                   className="dark:hidden"
                   priority
                 />
@@ -232,7 +168,7 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
                   src={supabaseLogoWordmarkDark}
                   width={124}
                   height={24}
-                  alt="Supabase Logo"
+                  alt="Axite Logo"
                   className="hidden dark:block"
                   priority
                 />
@@ -266,52 +202,20 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
             <div className="absolute bottom-0 left-0 right-0 top-auto w-full bg-alternative flex items-stretch p-4 gap-4">
               {!isUserLoading && (
                 <>
-                  {isLoggedIn ? (
-                    <Link href="/dashboard/projects" passHref legacyBehavior>
-                      <Button block asChild>
-                        <a type={undefined} className="h-10 py-4">
-                          Dashboard
-                        </a>
-                      </Button>
-                    </Link>
-                  ) : (
-                    <>
-                      <Link
-                        href="https://supabase.com/dashboard"
-                        passHref
-                        legacyBehavior
-                        onClick={() =>
-                          sendTelemetryEvent({
-                            action: 'sign_in_button_clicked',
-                            properties: { buttonLocation: 'Mobile Nav' },
-                          })
-                        }
-                      >
-                        <Button block type="default" asChild>
-                          <a type={undefined} className="h-10 py-4">
-                            Sign in
-                          </a>
-                        </Button>
-                      </Link>
-                      <Link
-                        href="https://supabase.com/dashboard"
-                        passHref
-                        legacyBehavior
-                        onClick={() =>
-                          sendTelemetryEvent({
-                            action: 'start_project_button_clicked',
-                            properties: { buttonLocation: 'Mobile Nav' },
-                          })
-                        }
-                      >
-                        <Button block asChild>
-                          <a type={undefined} className="h-10 py-4">
-                            Start your project
-                          </a>
-                        </Button>
-                      </Link>
-                    </>
-                  )}
+                  <Link href="/contact/sales" passHref legacyBehavior>
+                    <Button block type="default" asChild>
+                      <a type={undefined} className="h-10 py-4">
+                        Contact sales
+                      </a>
+                    </Button>
+                  </Link>
+                  <Link href="/docs/quickstart" passHref legacyBehavior>
+                    <Button block asChild>
+                      <a type={undefined} className="h-10 py-4">
+                        Get started
+                      </a>
+                    </Button>
+                  </Link>
                 </>
               )}
             </div>
