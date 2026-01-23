@@ -65,10 +65,12 @@ Plans:
   2. Tailwind 3.4.x config compiles without errors
   3. All TypeScript path aliases (@ui/*, @common/*, etc.) resolve correctly
   4. TypeScript compilation succeeds with no path resolution errors
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 03-01: TBD
+- [ ] 03-01-PLAN.md - Create shared tsconfig base and update lib packages
+- [ ] 03-02-PLAN.md - Fix Tailwind config (remove missing build dependency, update content paths)
+- [ ] 03-03-PLAN.md - Clean next.config.mjs and create .env.example
 
 ### Phase 4: Development Environment
 **Goal**: Local development server runs and displays content
@@ -148,9 +150,9 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Extraction | 2/2 | Complete ✓ | 2026-01-22 |
-| 2. Package Inlining | 4/4 | Complete ✓ | 2026-01-23 |
-| 3. Project Configuration | 0/? | Not started | - |
+| 1. Foundation & Extraction | 2/2 | Complete | 2026-01-22 |
+| 2. Package Inlining | 4/4 | Complete | 2026-01-23 |
+| 3. Project Configuration | 0/3 | Planned | - |
 | 4. Development Environment | 0/? | Not started | - |
 | 5. Content Infrastructure | 0/? | Not started | - |
 | 6. Page Structure | 0/? | Not started | - |
