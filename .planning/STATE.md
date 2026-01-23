@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-01-22)
 ## Current Position
 
 Phase: 5 of 8 (Content Infrastructure)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-01-23 - Completed 05-01-PLAN.md (Stub CMS Fetching)
+Last activity: 2026-01-23 - Completed 05-02-PLAN.md (Blog Post Rendering Verification)
 
-Progress: [█████░░░░░] 52% (13/25 plans complete)
+Progress: [█████░░░░░] 56% (14/25 plans complete)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 13
-- Average duration: 4.2 min
-- Total execution time: 54 min
+- Total plans completed: 14
+- Average duration: 4.1 min
+- Total execution time: 58 min
 
 **By Phase:**
 
@@ -31,11 +31,11 @@ Progress: [█████░░░░░] 52% (13/25 plans complete)
 | 02 | 4 | 9.5 min | 2.4 min |
 | 03 | 3 | 5 min | 1.7 min |
 | 04 | 3 | 26.5 min | 8.8 min |
-| 05 | 1 | 6 min | 6 min |
+| 05 | 2 | 10 min | 5 min |
 
 **Recent Trend:**
-- Last 5 plans: 2 min, 1.5 min, 3 min, 22 min, 6 min
-- Trend: Plan 05-01 normal duration (CMS stubbing straightforward)
+- Last 5 plans: 1.5 min, 3 min, 22 min, 6 min, 4 min
+- Trend: Plan 05-02 fast (verification-only, no code changes)
 
 *Updated after each plan completion*
 
@@ -77,6 +77,8 @@ Recent decisions affecting current work:
 - Use dynamic port allocation instead of hardcoded port 3000
 - Stub CMS functions to return empty results instead of making failed API calls
 - Static MDX posts in _blog/ are the only data source
+- Static blog posts at /blog/[slug] work correctly without code changes
+- code-hike theme imports correctly via config/ path alias
 
 ### Pending Todos
 
@@ -86,9 +88,10 @@ None yet.
 
 - Placeholder Supabase URL in use - will need actual configuration in Phase 6 (Backend Integration)
 - apps/www directory still contains Supabase-specific content and branding (expected, will be addressed in Phase 8)
+- React hooks warning from @payloadcms/live-preview-react in dev mode (non-blocking, pages render correctly)
 
 ## Session Continuity
 
 Last session: 2026-01-23
-Stopped at: Completed 05-01-PLAN.md (Stub CMS Fetching)
-Resume file: None (ready for 05-02)
+Stopped at: Completed 05-02-PLAN.md (Blog Post Rendering Verification)
+Resume file: None (ready for 05-03)
