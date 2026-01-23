@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-22)
 
 **Core value:** Get a professional, working marketing website deployed to axite.ai using battle-tested code instead of AI-generated slop.
-**Current focus:** Phase 2 verified complete - Ready for Phase 3
+**Current focus:** Phase 3 in progress - Project Configuration
 
 ## Current Position
 
-Phase: 2 of 8 (Package Inlining) - COMPLETE
-Plan: 4 of 4 in current phase (gap closure complete, packages/ removed)
-Status: Phase complete
-Last activity: 2026-01-23 - Completed 02-04-PLAN.md (Remove packages/ directory)
+Phase: 3 of 8 (Project Configuration)
+Plan: 3 of 3 in current phase (next.config.mjs cleanup complete)
+Status: In progress
+Last activity: 2026-01-23 - Completed 03-03-PLAN.md (Next.js Config Cleanup)
 
-Progress: [██░░░░░░░░] 25% (2/8 phases verified)
+Progress: [███░░░░░░░] 30% (9/30 plans complete)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
-- Average duration: 2.6 min
-- Total execution time: 16.5 min
+- Total plans completed: 9
+- Average duration: 2.4 min
+- Total execution time: 21.5 min
 
 **By Phase:**
 
@@ -29,9 +29,10 @@ Progress: [██░░░░░░░░] 25% (2/8 phases verified)
 |-------|-------|-------|----------|
 | 01 | 2 | 7 min | 3.5 min |
 | 02 | 4 | 9.5 min | 2.4 min |
+| 03 | 3 | 5 min | 1.7 min |
 
 **Recent Trend:**
-- Last 5 plans: 4 min, 2 min, 4 min, 2 min, 1.5 min
+- Last 5 plans: 2 min, 4 min, 2 min, 1.5 min, 2 min
 - Trend: Stable to improving
 
 *Updated after each plan completion*
@@ -57,6 +58,9 @@ Recent decisions affecting current work:
 - Keep contentlayer, ~/* and @/* aliases for backwards compatibility
 - Use ../../lib/ relative paths from apps/www to lib/ packages
 - Fixed lib/ui-patterns tsconfig to reference lib/ before packages/ removal
+- Remove Sentry integration entirely (Supabase-specific, can add our own later)
+- Disable getAssetPrefix (no CDN asset hosting for standalone)
+- Remove local packages from transpilePackages (TypeScript aliases handle resolution)
 
 ### Pending Todos
 
@@ -71,5 +75,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-23
-Stopped at: Completed 02-04-PLAN.md (Remove packages/ directory) - Phase 2 fully complete
-Resume file: None (ready for Phase 3)
+Stopped at: Completed 03-03-PLAN.md (Next.js Config Cleanup) - Phase 3 plan 3 complete
+Resume file: None (ready for next plan)
