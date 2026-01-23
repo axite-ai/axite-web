@@ -83,7 +83,7 @@ const Footer = (props: Props) => {
                 src={supabaseLogoWordmarkLight}
                 width={160}
                 height={30}
-                alt="Supabase Logo"
+                alt="Axite Logo"
                 className="dark:hidden"
                 priority
               />
@@ -91,11 +91,12 @@ const Footer = (props: Props) => {
                 src={supabaseLogoWordmarkDark}
                 width={160}
                 height={30}
-                alt="Supabase Logo"
+                alt="Axite Logo"
                 className="hidden dark:block"
                 priority
               />
             </Link>
+            {/* Social links - TODO: Update to Axite accounts when available */}
             <div className="flex space-x-5">
               <a
                 href="https://twitter.com/supabase"
@@ -177,7 +178,7 @@ const Footer = (props: Props) => {
           </div>
         </div>
         <div className="border-default mt-32 flex justify-between border-t pt-8">
-          <small className="small">&copy; Supabase Inc</small>
+          <small className="small">&copy; Axite Inc</small>
           <div className={cn(forceDark && 'hidden')}>
             <ThemeToggle forceDark={forceDark} />
           </div>
