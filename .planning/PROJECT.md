@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A new marketing website for Axite built on Supabase's open-source www codebase. The site will replace the current AI-generated marketing site with a polished, production-tested foundation that can be gradually customized to match Axite's brand and messaging.
+A standalone Next.js marketing website for Axite, extracted from Supabase's production-grade open-source www codebase. The site has a working production build and can be deployed to axite.ai, with Supabase branding still in place pending future customization.
 
 ## Core Value
 
@@ -12,55 +12,68 @@ Get a professional, working marketing website deployed to axite.ai using battle-
 
 ### Validated
 
-(None yet — ship to validate)
+- ✓ Extract Supabase's /apps/www into a standalone Next.js application — v1.0
+- ✓ Inline required shared packages (ui, common, config, shared-data, icons, tsconfig) — v1.0
+- ✓ Get the site running locally (pnpm dev works) — v1.0
+- ✓ Production build works (pnpm build + pnpm start) — v1.0
 
 ### Active
 
-- [ ] Extract Supabase's /apps/www into a standalone Next.js application
-- [ ] Inline required shared packages (ui, common, config, shared-data)
-- [ ] Get the site running locally
 - [ ] Deploy vanilla Supabase www to axite.ai
-- [ ] Swap logo/basic branding (minimal changes for v1)
+- [ ] Swap logo/basic branding (minimal changes)
 
 ### Out of Scope
 
-- Full content replacement — deferred to future milestone
-- Theme/color customization — deferred to future milestone
+- Full content replacement — future milestone
+- Theme/color customization — future milestone
 - New features beyond what Supabase www provides — not the goal
 - Maintaining compatibility with Supabase upstream — flattening makes this impractical
 
 ## Context
 
-**Current state**: Axite has an existing marketing site at axite-web/ built with Next.js 16, but it was AI-generated and doesn't meet quality standards. The site uses Tailwind CSS v4, Radix UI, and has basic sections (hero, features, contact form, etc.).
+**Current state (v1.0 shipped):** Standalone Next.js 15.5.9 application with:
+- 23,672 lines of TypeScript/JavaScript
+- 7 inlined packages from Supabase monorepo
+- Working dev server with hot reload
+- Blog/MDX system with Code Hike syntax highlighting
+- Full page structure with navigation and theme switching
+- Production build verified
 
-**Why Supabase**: Supabase's marketing site is open-source, well-designed, and battle-tested. Using it as a foundation lets Axite benefit from professional UI work without starting from scratch.
+**Tech stack:**
+- Next.js 15.5.9 (hybrid Pages + App Router)
+- React 18.3.1
+- Tailwind CSS 3.4.1
+- Radix UI (30+ primitives)
+- MDX with Code Hike for blog
+- TypeScript 5.9
 
-**Source**: Supabase's website lives in their monorepo at github.com/supabase/supabase under /apps/www. It uses:
-- Next.js (App Router)
-- Turborepo (monorepo tooling)
-- Shared packages under /packages/ (ui, common, config, shared-data)
-
-**Directory structure**:
+**Directory structure:**
 ```
 axite/
-├── axite-web/     # Current site (keep until ready to switch)
-└── axite-new/     # This project - new site based on Supabase
+├── axite-web/     # Old site (keep until ready to switch)
+└── axite-new/     # This project - extracted Supabase www
+    ├── apps/www/  # Main Next.js application
+    └── lib/       # Inlined packages (ui, common, config, etc.)
 ```
 
 ## Constraints
 
-- **Architecture**: Flatten to standalone Next.js app (no Turborepo) — simpler to maintain
+- **Architecture**: Standalone Next.js app (no Turborepo) — extraction complete
 - **Deployment**: Must deploy to axite.ai domain
-- **Scope**: v1 is vanilla Supabase with minimal branding — get it live first, customize later
+- **Scope**: Production build ready, branding deferred to next milestone
 
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Use Supabase www as base | Battle-tested, professional UI vs. rebuilding from scratch | — Pending |
-| Flatten to standalone app | Simpler maintenance, no monorepo complexity | — Pending |
-| Keep current site until ready | No downtime, can compare side-by-side | — Pending |
-| Deploy vanilla first | Ship fast, validate approach before investing in customization | — Pending |
+| Use Supabase www as base | Battle-tested, professional UI vs. rebuilding from scratch | ✓ Good |
+| Flatten to standalone app | Simpler maintenance, no monorepo complexity | ✓ Good |
+| Keep current site until ready | No downtime, can compare side-by-side | ✓ Good |
+| Shallow clone (depth 1) | Minimal download, source history not needed | ✓ Good |
+| Copy all packages to lib/ | Simpler than selective, can audit usage later | ✓ Good |
+| No-op storage adapter for SSR | Prevents server-side storage errors | ✓ Good |
+| Stub CMS functions | Static MDX only, no failed API calls | ✓ Good |
+| Defer branding to v1.1 | Ship working build first, customize later | — Pending |
 
 ---
-*Last updated: 2026-01-22 after initialization*
+*Last updated: 2026-01-23 after v1.0 milestone*
