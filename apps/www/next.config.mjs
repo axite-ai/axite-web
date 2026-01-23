@@ -44,8 +44,15 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   trailingSlash: false,
   transpilePackages: [
-    // Local lib/ packages are already TypeScript, no transpilation needed
-    // Only external packages that need it:
+    // Local lib/ packages need transpilation when resolved via pnpm file: links
+    'ui',
+    'ui-patterns',
+    'common',
+    'config',
+    'icons',
+    'shared-data',
+    'api-types',
+    // External packages:
     '@octokit/plugin-paginate-graphql',
   ],
   experimental: {

@@ -4,7 +4,7 @@
   "description": "Supabase main website",
   "private": true,
   "scripts": {
-    "dev": "pnpm run content:build && next --port 3000",
+    "dev": "pnpm run content:build && next dev",
     "build": "pnpm run content:build && next build",
     "export": "next export",
     "start": "next start",

@@ -19,7 +19,8 @@ const CommandContext = createContext<
 
 const useCommandContext = () => {
   const ctx = useContext(CommandContext)
-  if (!ctx) throw Error('`useCommandContext` must be used within a `CommandProvider`')
+  // Return undefined instead of throwing - allows hooks to be used outside CommandProvider
+  // This is needed for standalone marketing sites that don't use the command menu
   return ctx
 }
 

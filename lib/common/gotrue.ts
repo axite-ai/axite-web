@@ -200,15 +200,28 @@ async function debuggableNavigatorLock<R>(
   }
 }
 
+// No-op storage for SSR (server-side rendering)
+const noopStorage = {
+  getItem: () => null,
+  setItem: () => {},
+  removeItem: () => {},
+}
+
+// Use localStorage on client, no-op on server
+const getStorage = () => {
+  if (typeof window !== 'undefined' && 'localStorage' in window) {
+    return window.localStorage
+  }
+  return noopStorage
+}
+
 export const gotrueClient = new AuthClient({
   url: process.env.NEXT_PUBLIC_GOTRUE_URL,
   storageKey: STORAGE_KEY,
   detectSessionInUrl: shouldDetectSessionInUrl,
   debug: debug ? (persistedDebug ? logIndexedDB : true) : false,
   lock: navigatorLockEnabled ? debuggableNavigatorLock : undefined,
-  ...('localStorage' in globalThis
-    ? { storage: globalThis.localStorage, userStorage: globalThis.localStorage }
-    : null),
+  storage: getStorage(),
 })
 
 export type { User }
