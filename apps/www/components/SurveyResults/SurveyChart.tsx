@@ -10,8 +10,38 @@ import {
   DropdownMenuTrigger,
 } from 'ui'
 import { ChevronsUpDown } from 'lucide-react'
-import TwoOptionToggle from '../../../studio/components/ui/TwoOptionToggle'
 import CodeBlock from '~/components/CodeBlock/CodeBlock'
+
+// Inline TwoOptionToggle - replaces missing studio component
+function TwoOptionToggle({
+  options,
+  activeOption,
+  onClickOption,
+  borderOverride,
+}: {
+  options: [string, string]
+  activeOption: string
+  onClickOption: (option: any) => void
+  borderOverride?: string
+}) {
+  return (
+    <div className={`flex rounded border ${borderOverride || 'border-default'} overflow-hidden`}>
+      {options.map((option) => (
+        <button
+          key={option}
+          onClick={() => onClickOption(option.toLowerCase())}
+          className={`px-3 py-1 text-xs font-mono uppercase tracking-wide transition-colors ${
+            activeOption === option.toLowerCase()
+              ? 'bg-foreground text-background'
+              : 'bg-transparent text-foreground-light hover:text-foreground'
+          }`}
+        >
+          {option}
+        </button>
+      ))}
+    </div>
+  )
+}
 
 // Separate Supabase client for survey project
 const externalSupabase = createClient(
