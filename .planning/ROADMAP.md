@@ -50,10 +50,13 @@ Plans:
   3. Mobile hamburger menu works with updated navigation
   4. Navigating to old Supabase product URLs (Auth, Database, Storage, etc.) returns 404 or redirects
   5. No "Supabase" text visible in navigation or UI chrome (blog content excluded)
-**Plans**: TBD
 
 Plans:
-- [ ] 09-01: TBD
+- [ ] 09-01: Update main nav data and Axite product/module definitions (wave 1)
+- [ ] 09-02: Update Product dropdown component and nav buttons (wave 1, depends on 09-01)
+- [ ] 09-03: Update footer data and component for Axite branding (wave 1)
+- [ ] 09-04: Update mobile menu and create removed-pages documentation (wave 2, depends on 09-01, 09-02)
+- [ ] 09-05: Verify all success criteria and create verification document (wave 3, depends on all)
 
 ### Phase 10: Content Pages
 **Goal**: All content pages display Axite messaging (policy, identity, audit pillars)
@@ -107,11 +110,11 @@ Phases execute in numeric order: 8 -> 9 -> 10 -> 11 -> 12
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 8. Visual Foundation | v1.1 | 5/5 | Complete | 2026-01-23 |
-| 9. Navigation & Cleanup | v1.1 | 0/? | Not started | - |
+| 9. Navigation & Cleanup | v1.1 | 0/5 | Planned | - |
 | 10. Content Pages | v1.1 | 0/? | Not started | - |
 | 11. Blog Compatibility | v1.1 | 0/? | Not started | - |
 | 12. Deployment | v1.1 | 0/? | Not started | - |
 
 ---
 *Roadmap created: 2026-01-23*
-*Last updated: 2026-01-23 (Phase 8 complete)*
+*Last updated: 2026-01-23 (Phase 9 planned)*
