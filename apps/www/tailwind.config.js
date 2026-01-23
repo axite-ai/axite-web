@@ -1,4 +1,4 @@
-const config = require('config/tailwind.config')
+const config = require('../../lib/config/tailwind.config')
 
 module.exports = config({
   content: [
@@ -9,8 +9,9 @@ module.exports = config({
     './lib/mdx/mdxComponents.tsx',
     './pages/**/*.{tsx,mdx}',
     './app/**/*.{tsx,ts,js}',
-    './../../packages/ui/src/**/*.{tsx,ts,js}',
-    './../../packages/ui-patterns/src/**/*.{tsx,ts,js}',
+    // Updated from packages/ to lib/
+    './../../lib/ui/src/**/*.{tsx,ts,js}',
+    './../../lib/ui-patterns/src/**/*.{tsx,ts,js}',
   ],
   theme: {
     extend: {
