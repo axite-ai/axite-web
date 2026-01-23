@@ -33,7 +33,7 @@ Requirements for Axite rebrand milestone. Visual + content rebrand (not blog con
 
 - [ ] **PROD-01**: Product overview page describes Axite control plane
 - [ ] **PROD-02**: Key features section covers: Policy enforcement, Identity/RBAC, Audit trails
-- [ ] **PROD-03**: How it works section (agent → Axite → tools flow)
+- [ ] **PROD-03**: How it works section (agent -> Axite -> tools flow)
 - [ ] **PROD-04**: Integration/compatibility section (MCP servers, tools)
 
 ### Pricing Page
@@ -124,55 +124,55 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| VIS-01 | TBD | Pending |
-| VIS-02 | TBD | Pending |
-| VIS-03 | TBD | Pending |
-| VIS-04 | TBD | Pending |
-| HOME-01 | TBD | Pending |
-| HOME-02 | TBD | Pending |
-| HOME-03 | TBD | Pending |
-| HOME-04 | TBD | Pending |
-| HOME-05 | TBD | Pending |
-| ENT-01 | TBD | Pending |
-| ENT-02 | TBD | Pending |
-| ENT-03 | TBD | Pending |
-| ENT-04 | TBD | Pending |
-| PROD-01 | TBD | Pending |
-| PROD-02 | TBD | Pending |
-| PROD-03 | TBD | Pending |
-| PROD-04 | TBD | Pending |
-| PRICE-01 | TBD | Pending |
-| PRICE-02 | TBD | Pending |
-| PRICE-03 | TBD | Pending |
-| PRICE-04 | TBD | Pending |
-| TRUST-01 | TBD | Pending |
-| TRUST-02 | TBD | Pending |
-| TRUST-03 | TBD | Pending |
-| TRUST-04 | TBD | Pending |
-| NAV-01 | TBD | Pending |
-| NAV-02 | TBD | Pending |
-| NAV-03 | TBD | Pending |
-| NAV-04 | TBD | Pending |
-| CLEAN-01 | TBD | Pending |
-| CLEAN-02 | TBD | Pending |
-| CLEAN-03 | TBD | Pending |
-| CLEAN-04 | TBD | Pending |
-| CLEAN-05 | TBD | Pending |
-| BLOG-01 | TBD | Pending |
-| BLOG-02 | TBD | Pending |
-| BLOG-03 | TBD | Pending |
-| BLOG-04 | TBD | Pending |
-| DEPLOY-01 | TBD | Pending |
-| DEPLOY-02 | TBD | Pending |
-| DEPLOY-03 | TBD | Pending |
-| DEPLOY-04 | TBD | Pending |
-| DEPLOY-05 | TBD | Pending |
+| VIS-01 | Phase 8 | Pending |
+| VIS-02 | Phase 8 | Pending |
+| VIS-03 | Phase 8 | Pending |
+| VIS-04 | Phase 8 | Pending |
+| HOME-01 | Phase 10 | Pending |
+| HOME-02 | Phase 10 | Pending |
+| HOME-03 | Phase 10 | Pending |
+| HOME-04 | Phase 10 | Pending |
+| HOME-05 | Phase 10 | Pending |
+| ENT-01 | Phase 10 | Pending |
+| ENT-02 | Phase 10 | Pending |
+| ENT-03 | Phase 10 | Pending |
+| ENT-04 | Phase 10 | Pending |
+| PROD-01 | Phase 10 | Pending |
+| PROD-02 | Phase 10 | Pending |
+| PROD-03 | Phase 10 | Pending |
+| PROD-04 | Phase 10 | Pending |
+| PRICE-01 | Phase 10 | Pending |
+| PRICE-02 | Phase 10 | Pending |
+| PRICE-03 | Phase 10 | Pending |
+| PRICE-04 | Phase 10 | Pending |
+| TRUST-01 | Phase 10 | Pending |
+| TRUST-02 | Phase 10 | Pending |
+| TRUST-03 | Phase 10 | Pending |
+| TRUST-04 | Phase 10 | Pending |
+| NAV-01 | Phase 9 | Pending |
+| NAV-02 | Phase 9 | Pending |
+| NAV-03 | Phase 9 | Pending |
+| NAV-04 | Phase 9 | Pending |
+| CLEAN-01 | Phase 9 | Pending |
+| CLEAN-02 | Phase 9 | Pending |
+| CLEAN-03 | Phase 9 | Pending |
+| CLEAN-04 | Phase 9 | Pending |
+| CLEAN-05 | Phase 9 | Pending |
+| BLOG-01 | Phase 11 | Pending |
+| BLOG-02 | Phase 11 | Pending |
+| BLOG-03 | Phase 11 | Pending |
+| BLOG-04 | Phase 11 | Pending |
+| DEPLOY-01 | Phase 12 | Pending |
+| DEPLOY-02 | Phase 12 | Pending |
+| DEPLOY-03 | Phase 12 | Pending |
+| DEPLOY-04 | Phase 12 | Pending |
+| DEPLOY-05 | Phase 12 | Pending |
 
 **Coverage:**
-- v1.1 requirements: 41 total
-- Mapped to phases: 0
-- Unmapped: 41 (will be mapped during roadmap creation)
+- v1.1 requirements: 43 total
+- Mapped to phases: 43
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-01-23*
-*Last updated: 2026-01-23 after initial definition*
+*Last updated: 2026-01-23 after roadmap creation*
