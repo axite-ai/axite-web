@@ -114,7 +114,7 @@ h6:not(.overwrite) {
 }
 
 .heading-gradient-brand {
-  @apply text-[#3ECF8E00] bg-clip-text bg-gradient-to-b from-brand to-brand/80;
+  @apply text-[#3B63F300] bg-clip-text bg-gradient-to-b from-brand to-brand/80;
 }
 
 .toc-animate {
@@ -171,8 +171,8 @@ h6:not(.overwrite) {
 }
 
 ::selection {
-  background-color: #6ee7b7 !important;
-  color: #333 !important;
+  background-color: #93b4ff !important;  /* Light navy for selection */
+  color: #1e293b !important;             /* Dark text for contrast */
 }
 
 .section--bg-masked {
@@ -204,7 +204,7 @@ h6:not(.overwrite) {
 }
 
 .stroke-text.fill {
-  -webkit-text-fill-color: #1ae88f;
+  -webkit-text-fill-color: #3B63F3;  /* Navy fill */
 }
 
 /* Database page */
@@ -388,7 +388,7 @@ launch week
 }
 
 .auth-container {
-  background: linear-gradient(270deg, #71fb8e, #acecbc);
+  background: linear-gradient(270deg, #3B63F3, #00B3A4);
   background-size: 400% 400%;
 
   -webkit-animation: AnimationName 14s ease infinite;
@@ -661,7 +661,7 @@ launch week
     );
   }
   .gradient-text-100 {
-    background-image: -webkit-linear-gradient(45deg, #fff 0%, var(--colors-green12) 100%);
+    background-image: -webkit-linear-gradient(45deg, #fff 0%, #3B63F3 100%);
   }
 
   .gradient-text-500 {
