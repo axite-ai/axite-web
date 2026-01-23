@@ -132,10 +132,12 @@ Plans:
   3. All pages load without 404 or 500 errors
   4. No missing CSS classes (Tailwind content paths correct)
   5. Build output size is reasonable (no obvious missing tree-shaking)
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 07-01: TBD
+- [ ] 07-01-PLAN.md — Add missing @mdx-js/loader and fix Tailwind CSS class error
+- [ ] 07-02-PLAN.md — Replace missing TwoOptionToggle import with inline component
+- [ ] 07-03-PLAN.md — Run production build and verify success criteria
 
 ### Phase 8: Minimal Branding
 **Goal**: Site displays Axite branding instead of Supabase
@@ -163,7 +165,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 4. Development Environment | 3/3 | Complete | 2026-01-23 |
 | 5. Content Infrastructure | 3/3 | Complete | 2026-01-23 |
 | 6. Page Structure | 4/4 | Complete | 2026-01-23 |
-| 7. Production Build | 0/? | Not started | - |
+| 7. Production Build | 0/3 | Not started | - |
 | 8. Minimal Branding | 0/? | Not started | - |
 
 ---
