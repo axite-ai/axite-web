@@ -1,6 +1,40 @@
 {
+  "$schema": "https://json-schema.org/tsconfig",
   "compilerOptions": {
-    "jsx": "react",
-    "skipLibCheck": true
-  }
+    "target": "ES2021",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "ui": ["./lib/ui"],
+      "ui/*": ["./lib/ui/*"],
+      "common": ["./lib/common"],
+      "common/*": ["./lib/common/*"],
+      "shared-data": ["./lib/shared-data"],
+      "shared-data/*": ["./lib/shared-data/*"],
+      "config": ["./lib/config"],
+      "config/*": ["./lib/config/*"],
+      "icons": ["./lib/icons"],
+      "icons/*": ["./lib/icons/*"],
+      "ui-patterns": ["./lib/ui-patterns"],
+      "ui-patterns/*": ["./lib/ui-patterns/*"],
+      "api-types": ["./lib/api-types"],
+      "api-types/*": ["./lib/api-types/*"],
+      "@/*": ["./*"]
+    },
+    "plugins": [{ "name": "next" }]
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules", "packages"]
 }
