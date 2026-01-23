@@ -5,7 +5,9 @@
  * Variables use HSL values without the hsl() wrapper (just "H S% L%")
  * because Tailwind transforms them with alpha values.
  *
- * This is a stub file - values will be refined in Phase 8 (Theme & Branding).
+ * Axite Brand Colors:
+ * - Primary Navy: #3B63F3 (HSL 224, 90%, 59%)
+ * - Accent Teal: #00B3A4 (HSL 174, 100%, 35%)
  */
 
 :root {
@@ -18,7 +20,7 @@
   /* Background colors */
   --background-default: 0 0% 100%;
   --background-alternative-default: 0 0% 98%;
-  --background-selection: 153 60% 85%;
+  --background-selection: 224 60% 90%;
   --background-surface-100: 0 0% 100%;
   --background-surface-200: 0 0% 98%;
   --background-surface-300: 0 0% 96%;
@@ -30,14 +32,16 @@
   --border-strong: 0 0% 80%;
   --border-stronger: 0 0% 70%;
 
-  /* Brand colors (placeholder - will be replaced in Phase 8) */
-  --brand-default: 153 60% 53%;
-  --brand-300: 153 55% 65%;
-  --brand-500: 153 65% 45%;
+  /* Brand colors - Axite Navy and Teal */
+  --brand-default: 224 90% 59%;      /* Primary Navy #3B63F3 */
+  --brand-300: 224 85% 70%;          /* Lighter Navy */
+  --brand-500: 224 95% 50%;          /* Darker Navy */
+  --brand-accent: 174 100% 35%;      /* Accent Teal #00B3A4 */
+  --brand-accent-light: 174 80% 50%; /* Lighter Teal */
 
   /* Additional variables used in gradients and components */
   --colors-purple7: #7c3aed;
-  --colors-green12: #22c55e;
+  --colors-green12: #3B63F3;  /* Replace green with navy */
 
   /* Auth UI and misc */
   --auth-ui-card-height: 50vh;
@@ -55,7 +59,7 @@
   /* Background colors - dark mode */
   --background-default: 0 0% 7%;
   --background-alternative-default: 0 0% 10%;
-  --background-selection: 153 40% 25%;
+  --background-selection: 224 40% 25%;
   --background-surface-100: 0 0% 9%;
   --background-surface-200: 0 0% 12%;
   --background-surface-300: 0 0% 15%;
@@ -67,12 +71,14 @@
   --border-strong: 0 0% 28%;
   --border-stronger: 0 0% 35%;
 
-  /* Brand colors stay the same in dark mode */
-  --brand-default: 153 60% 53%;
-  --brand-300: 153 55% 65%;
-  --brand-500: 153 65% 45%;
+  /* Brand colors stay vibrant in dark mode */
+  --brand-default: 224 90% 65%;      /* Slightly lighter Navy for dark bg */
+  --brand-300: 224 80% 75%;
+  --brand-500: 224 95% 55%;
+  --brand-accent: 174 100% 45%;      /* Slightly lighter Teal */
+  --brand-accent-light: 174 80% 55%;
 
   /* Additional variables - adjusted for dark mode */
   --colors-purple7: #8b5cf6;
-  --colors-green12: #4ade80;
+  --colors-green12: #5B7FF5;  /* Lighter navy for dark mode */
 }
