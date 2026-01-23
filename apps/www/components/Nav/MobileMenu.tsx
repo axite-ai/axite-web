@@ -212,7 +212,7 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
             initial="hidden"
             animate="show"
             exit="exit"
-            className="bg-overlay fixed overflow-hidden inset-0 z-50 h-screen max-h-screen w-screen supports-[height:100cqh]:h-[100cqh] supports-[height:100svh]:h-[100svh] transform"
+            className="bg-background fixed overflow-hidden inset-0 z-50 h-screen max-h-screen w-screen supports-[height:100cqh]:h-[100cqh] supports-[height:100svh]:h-[100svh] transform"
           >
             <div className="absolute h-16 px-6 flex items-center justify-between w-screen left-0 top-0 z-50 bg-overlay before:content[''] before:absolute before:w-full before:h-3 before:inset-0 before:top-full before:bg-gradient-to-b before:from-background-overlay before:to-transparent">
               <Link
@@ -325,7 +325,8 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
             initial="hidden"
             animate="show"
             exit="exit"
-            className="bg-alternative fixed overflow-hidden inset-0 z-40 h-screen w-screen transform"
+            onClick={() => setOpen(false)}
+            className="bg-alternative fixed overflow-hidden inset-0 z-40 h-screen w-screen transform cursor-pointer"
           />
         )}
       </AnimatePresence>
