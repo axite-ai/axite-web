@@ -1,67 +1,53 @@
 import { PrivacySettings } from 'ui-patterns/PrivacySettings'
-import { skillBasedSolutions, useCaseSolutions } from 'data/Solutions'
 
 const footerData = [
   {
     title: 'Product',
     links: [
       {
-        text: 'Database',
-        url: '/database',
+        text: 'Overview',
+        url: '/product',
       },
       {
-        text: 'Auth',
-        url: '/auth',
+        text: 'Policy Enforcement',
+        url: '/product/policy',
       },
       {
-        text: 'Functions',
-        url: '/edge-functions',
+        text: 'Identity & RBAC',
+        url: '/product/identity',
       },
       {
-        text: 'Realtime',
-        url: '/realtime',
+        text: 'Audit Trails',
+        url: '/product/audit',
       },
       {
-        text: 'Storage',
-        url: '/storage',
+        text: 'MCP Servers',
+        url: '/product/mcp-servers',
       },
       {
-        text: 'Vector',
-        url: '/modules/vector',
-      },
-      {
-        text: 'Cron',
-        url: '/modules/cron',
+        text: 'Integrations',
+        url: '/product/integrations',
       },
       {
         text: 'Pricing',
         url: '/pricing',
       },
-      {
-        text: 'Launch Week',
-        url: '/launch-week',
-      },
-    ],
-  },
-  {
-    title: 'Solutions',
-    links: [
-      ...skillBasedSolutions.solutions.map((solution) => ({
-        text: solution.text,
-        url: solution.url,
-      })),
-      ...useCaseSolutions.solutions.map((solution) => ({
-        text: solution.text,
-        url: solution.url,
-      })),
     ],
   },
   {
     title: 'Resources',
     links: [
       {
+        text: 'Documentation',
+        url: '/docs',
+      },
+      {
         text: 'Blog',
         url: '/blog',
+      },
+      {
+        text: 'Changelog',
+        url: '/changelog',
       },
       {
         text: 'Support',
@@ -69,76 +55,7 @@ const footerData = [
       },
       {
         text: 'System Status',
-        url: 'https://status.supabase.com/',
-      },
-      {
-        text: 'Become a Partner',
-        url: '/partners',
-      },
-      {
-        text: 'Integrations',
-        url: '/partners/integrations',
-      },
-      {
-        text: 'Brand Assets',
-        url: '/brand-assets',
-      },
-      {
-        text: 'Security & Compliance',
-        url: '/security',
-      },
-      {
-        text: 'DPA',
-        url: '/legal/dpa',
-      },
-      {
-        text: 'SOC2',
-        url: '/security',
-      },
-      {
-        text: 'HIPAA',
-        url: 'https://forms.supabase.com/hipaa2',
-      },
-    ],
-  },
-  {
-    title: 'Developers',
-    links: [
-      {
-        text: 'Documentation',
-        url: '/docs',
-      },
-      {
-        text: 'Supabase UI',
-        url: 'https://supabase.com/ui',
-      },
-      {
-        text: 'Changelog',
-        url: '/changelog',
-      },
-      {
-        text: 'Careers',
-        url: '/careers',
-      },
-      {
-        text: 'Contributing',
-        url: 'https://github.com/supabase/supabase/blob/master/CONTRIBUTING.md',
-      },
-      {
-        text: 'Open Source',
-        url: '/open-source',
-      },
-      {
-        text: 'SupaSquad',
-        url: '/supasquad',
-      },
-      {
-        text: 'DevTo',
-        url: 'https://dev.to/supabase',
-      },
-      {
-        text: 'RSS',
-        url: '/rss.xml',
+        url: '/status',
       },
     ],
   },
@@ -146,13 +63,30 @@ const footerData = [
     title: 'Company',
     links: [
       {
-        text: 'Company',
-        url: '/company',
+        text: 'About',
+        url: '/about',
       },
       {
-        text: 'General Availability',
-        url: '/ga',
+        text: 'Enterprise',
+        url: '/enterprise',
       },
+      {
+        text: 'Trust Center',
+        url: '/trust',
+      },
+      {
+        text: 'Careers',
+        url: '/careers',
+      },
+      {
+        text: 'Contact',
+        url: '/contact/sales',
+      },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
       {
         text: 'Terms of Service',
         url: '/terms',
@@ -166,28 +100,12 @@ const footerData = [
         component: PrivacySettings,
       },
       {
-        text: 'Acceptable Use Policy',
-        url: '/aup',
+        text: 'Security',
+        url: '/security',
       },
       {
-        text: 'Support Policy',
-        url: '/support-policy',
-      },
-      {
-        text: 'Service Level Agreement',
-        url: '/sla',
-      },
-      {
-        text: 'Humans.txt',
-        url: '/humans.txt',
-      },
-      {
-        text: 'Lawyers.txt',
-        url: '/lawyers.txt',
-      },
-      {
-        text: 'Security.txt',
-        url: '/.well-known/security.txt',
+        text: 'DPA',
+        url: '/legal/dpa',
       },
     ],
   },
