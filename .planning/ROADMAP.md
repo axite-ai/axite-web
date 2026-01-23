@@ -12,7 +12,7 @@ This roadmap extracts Supabase's production-grade marketing site (apps/www) into
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation & Extraction** - Clone Supabase repo and resolve workspace/catalog protocols
+- [x] **Phase 1: Foundation & Extraction** - Clone Supabase repo and resolve workspace/catalog protocols
 - [ ] **Phase 2: Package Inlining** - Inline all required monorepo packages into standalone structure
 - [ ] **Phase 3: Project Configuration** - Configure standalone Next.js, Tailwind, and TypeScript paths
 - [ ] **Phase 4: Development Environment** - Get local development server running
@@ -35,8 +35,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md - Clone Supabase repo and extract www app with packages
-- [ ] 01-02-PLAN.md - Convert workspace/catalog protocols and verify pnpm install
+- [x] 01-01-PLAN.md - Clone Supabase repo and extract www app with packages
+- [x] 01-02-PLAN.md - Convert workspace/catalog protocols and verify pnpm install
 
 ### Phase 2: Package Inlining
 **Goal**: All required monorepo packages inlined into standalone project structure
@@ -145,7 +145,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Extraction | 0/2 | Planned | - |
+| 1. Foundation & Extraction | 2/2 | Complete ✓ | 2026-01-22 |
 | 2. Package Inlining | 0/? | Not started | - |
 | 3. Project Configuration | 0/? | Not started | - |
 | 4. Development Environment | 0/? | Not started | - |
