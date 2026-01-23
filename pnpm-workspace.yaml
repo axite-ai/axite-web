@@ -1,6 +1,6 @@
 packages:
   - apps/*
-  - packages/*
+  - lib/*
   - blocks/*
   - e2e/*
 
