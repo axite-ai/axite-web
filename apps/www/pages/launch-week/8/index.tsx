@@ -22,11 +22,13 @@ const LaunchWeekPrizeSection = dynamic(
 )
 const CTABanner = dynamic(() => import('~/components/CTABanner'))
 
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_MISC_USE_URL ?? 'http://localhost:54321',
-  // ANON KEY
-  process.env.NEXT_PUBLIC_MISC_USE_ANON_KEY!
-)
+// Only create client if credentials are available (Supabase-specific feature)
+const supabaseUrl = process.env.NEXT_PUBLIC_MISC_USE_URL
+const supabaseKey = process.env.NEXT_PUBLIC_MISC_USE_ANON_KEY
+const supabaseAdmin =
+  supabaseUrl && supabaseKey
+    ? createClient(supabaseUrl, supabaseKey)
+    : null
 
 export default function TicketHome() {
   const { query } = useRouter()

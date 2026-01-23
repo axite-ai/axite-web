@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState, useRef, useCallback } from 'react'
-import { createClient } from '@supabase/supabase-js'
+import { createClient, SupabaseClient } from '@supabase/supabase-js'
 import { motion } from 'framer-motion'
 import {
   Button,
@@ -43,11 +43,23 @@ function TwoOptionToggle({
   )
 }
 
-// Separate Supabase client for survey project
-const externalSupabase = createClient(
-  process.env.NEXT_PUBLIC_SURVEY_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SURVEY_SUPABASE_ANON_KEY!
-)
+// Separate Supabase client for survey project - lazy initialization
+let externalSupabase: SupabaseClient | null = null
+
+function getSurveySupabase(): SupabaseClient | null {
+  if (externalSupabase) return externalSupabase
+
+  const url = process.env.NEXT_PUBLIC_SURVEY_SUPABASE_URL
+  const key = process.env.NEXT_PUBLIC_SURVEY_SUPABASE_ANON_KEY
+
+  if (!url || !key) {
+    // Survey database not configured - return null
+    return null
+  }
+
+  externalSupabase = createClient(url, key)
+  return externalSupabase
+}
 
 // Sentinel for “no filter”
 const NO_FILTER = 'unset'
@@ -146,10 +158,19 @@ function useSurveyData(
         setIsLoading(true)
         setError(null)
 
+        // Get the Supabase client lazily
+        const supabase = getSurveySupabase()
+        if (!supabase) {
+          // Survey database not configured - return empty results
+          setChartData([])
+          setIsLoading(false)
+          return
+        }
+
         let data, fetchError
 
         const functionParamsData = functionParams(activeFilters)
-        const { data: functionData, error: functionError } = await externalSupabase.rpc(
+        const { data: functionData, error: functionError } = await supabase.rpc(
           functionName,
           functionParamsData
         )

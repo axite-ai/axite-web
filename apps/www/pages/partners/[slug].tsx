@@ -9,6 +9,11 @@ function PartnerPage() {
 
 // This function gets called at build time
 export const getStaticPaths: GetStaticPaths = async () => {
+  // Return empty paths when Supabase is not configured
+  if (!supabase) {
+    return { paths: [], fallback: 'blocking' }
+  }
+
   const { data: slugs } = await supabase.from('partners').select('slug')
 
   const paths: {
@@ -29,6 +34,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 // This also gets called at build time
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  // Return notFound when Supabase is not configured
+  if (!supabase) {
+    return { notFound: true }
+  }
+
   let { data: partner } = await supabase
     .from('partners')
     .select('*')

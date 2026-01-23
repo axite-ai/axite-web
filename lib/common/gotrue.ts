@@ -215,8 +215,12 @@ const getStorage = () => {
   return noopStorage
 }
 
+// Use placeholder URL if GOTRUE_URL is not set to prevent build-time errors
+// Auth features will not work without proper configuration
+const gotrueUrl = process.env.NEXT_PUBLIC_GOTRUE_URL || 'https://placeholder.supabase.co/auth/v1'
+
 export const gotrueClient = new AuthClient({
-  url: process.env.NEXT_PUBLIC_GOTRUE_URL,
+  url: gotrueUrl,
   storageKey: STORAGE_KEY,
   detectSessionInUrl: shouldDetectSessionInUrl,
   debug: debug ? (persistedDebug ? logIndexedDB : true) : false,

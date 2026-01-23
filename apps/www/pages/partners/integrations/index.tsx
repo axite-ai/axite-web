@@ -13,6 +13,14 @@ import type { Partner } from '~/types/partners'
 import TileGrid from '../../../components/Partners/TileGrid'
 
 export async function getStaticProps() {
+  // Return empty partners when Supabase is not configured
+  if (!supabase) {
+    return {
+      props: { partners: [] },
+      revalidate: 1800,
+    }
+  }
+
   const { data: partners } = await supabase
     .from('partners')
     .select('*')
@@ -51,6 +59,9 @@ function IntegrationPartnersPage(props: Props) {
 
   useEffect(() => {
     const searchPartners = async () => {
+      // Return empty results when Supabase is not configured
+      if (!supabase) return []
+
       setIsSearching(true)
 
       let query = supabase
