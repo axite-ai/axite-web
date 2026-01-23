@@ -47,52 +47,52 @@ const monokaiCustomTheme = {
       color: '#bf79db',
     },
     'hljs-string': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-bullet': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-subst': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-title': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
       fontWeight: 'normal',
     },
     'hljs-section': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
       fontWeight: 'normal',
     },
     'hljs-emphasis': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-type': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
       fontWeight: 'normal',
     },
     'hljs-built_in': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-builtin-name': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-selector-attr': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-selector-pseudo': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-addition': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-variable': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-template-tag': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-template-variable': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-comment': {
       color: '#75715e',
@@ -161,52 +161,52 @@ const monokaiCustomTheme = {
       color: '#bf79db',
     },
     'hljs-string': {
-      color: '#1B9657',
+      color: '#2C4BC7',
     },
     'hljs-bullet': {
-      color: '#1B9657',
+      color: '#2C4BC7',
     },
     'hljs-subst': {
-      color: '#1B9657',
+      color: '#2C4BC7',
     },
     'hljs-title': {
-      color: '#1B9657',
+      color: '#2C4BC7',
       fontWeight: 'normal',
     },
     'hljs-section': {
-      color: '#1B9657',
+      color: '#2C4BC7',
       fontWeight: 'normal',
     },
     'hljs-emphasis': {
-      color: '#1B9657',
+      color: '#2C4BC7',
     },
     'hljs-type': {
-      color: '#1B9657',
+      color: '#2C4BC7',
       fontWeight: 'normal',
     },
     'hljs-built_in': {
-      color: '#1B9657',
+      color: '#2C4BC7',
     },
     'hljs-builtin-name': {
-      color: '#1B9657',
+      color: '#2C4BC7',
     },
     'hljs-selector-attr': {
-      color: '#1B9657',
+      color: '#2C4BC7',
     },
     'hljs-selector-pseudo': {
-      color: '#1B9657',
+      color: '#2C4BC7',
     },
     'hljs-addition': {
-      color: '#1B9657',
+      color: '#2C4BC7',
     },
     'hljs-variable': {
-      color: '#1B9657',
+      color: '#2C4BC7',
     },
     'hljs-template-tag': {
-      color: '#1B9657',
+      color: '#2C4BC7',
     },
     'hljs-template-variable': {
-      color: '#1B9657',
+      color: '#2C4BC7',
     },
     'hljs-comment': {
       color: '#75715e',
