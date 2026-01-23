@@ -114,11 +114,13 @@ Plans:
   3. Mobile navigation menu functions correctly
   4. Footer renders with all link sections
   5. Theme switching (light/dark) works across pages
-**Plans**: 2 plans
+**Plans**: 4 plans (2 executed, 2 gap closure)
 
 Plans:
 - [x] 06-01-PLAN.md - Verify page rendering (homepage, pricing, blog with Layout)
 - [x] 06-02-PLAN.md - Human verification of navigation, footer, and theme
+- [ ] 06-03-PLAN.md - Fix mobile menu usability (gap closure)
+- [ ] 06-04-PLAN.md - Fix theme switching cascade (gap closure)
 
 ### Phase 7: Production Build
 **Goal**: Production build succeeds and outputs deployable artifacts
@@ -160,9 +162,9 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 3. Project Configuration | 3/3 | Complete | 2026-01-23 |
 | 4. Development Environment | 3/3 | Complete | 2026-01-23 |
 | 5. Content Infrastructure | 3/3 | Complete | 2026-01-23 |
-| 6. Page Structure | 2/2 | Gaps found | - |
+| 6. Page Structure | 2/4 | Gap closure | - |
 | 7. Production Build | 0/? | Not started | - |
 | 8. Minimal Branding | 0/? | Not started | - |
 
 ---
-*Last updated: 2026-01-23 (Phase 6 executed, gaps found: mobile menu, theme switching)*
+*Last updated: 2026-01-23 (Phase 6 gap closure plans created: 06-03, 06-04)*
