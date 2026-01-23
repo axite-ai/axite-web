@@ -91,4 +91,4 @@ None - Phase 8 complete, ready for Phase 9.
 
 Last session: 2026-01-23
 Stopped at: Completed Phase 8 (Visual Foundation)
-Resume: Continue with Phase 9 (Messaging/Content)
+Resume: Run `/gsd:discuss-phase 9` or `/gsd:plan-phase 9` to continue
