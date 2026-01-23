@@ -13,7 +13,7 @@ This roadmap extracts Supabase's production-grade marketing site (apps/www) into
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation & Extraction** - Clone Supabase repo and resolve workspace/catalog protocols
-- [ ] **Phase 2: Package Inlining** - Inline all required monorepo packages into standalone structure
+- [x] **Phase 2: Package Inlining** - Inline all required monorepo packages into standalone structure
 - [ ] **Phase 3: Project Configuration** - Configure standalone Next.js, Tailwind, and TypeScript paths
 - [ ] **Phase 4: Development Environment** - Get local development server running
 - [ ] **Phase 5: Content Infrastructure** - Set up blog/MDX system with Contentlayer migration
@@ -53,8 +53,8 @@ Plans:
 Plans:
 - [x] 02-01-PLAN.md - Copy all 7 packages to lib/ directory
 - [x] 02-02-PLAN.md - Configure tsconfig path aliases and clean package.json files
-- [ ] 02-03-PLAN.md - Wire apps/www/tsconfig.json to lib/ packages (gap closure)
-- [ ] 02-04-PLAN.md - Remove packages/ directory (gap closure)
+- [x] 02-03-PLAN.md - Wire apps/www/tsconfig.json to lib/ packages (gap closure)
+- [x] 02-04-PLAN.md - Remove packages/ directory (gap closure)
 
 ### Phase 3: Project Configuration
 **Goal**: Standalone Next.js 15.5.9 project with working Tailwind and TypeScript configuration
@@ -149,7 +149,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Extraction | 2/2 | Complete ✓ | 2026-01-22 |
-| 2. Package Inlining | 2/4 | Gap closure | - |
+| 2. Package Inlining | 4/4 | Complete ✓ | 2026-01-23 |
 | 3. Project Configuration | 0/? | Not started | - |
 | 4. Development Environment | 0/? | Not started | - |
 | 5. Content Infrastructure | 0/? | Not started | - |

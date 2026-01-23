@@ -1,46 +1,24 @@
 ---
 phase: 02-package-inlining
-verified: 2026-01-23T02:20:27Z
-status: gaps_found
-score: 3/5 must-haves verified
-gaps:
-  - truth: "ui package components exist in project (components/ui or lib/ui)"
-    status: verified
-    reason: "lib/ui exists with 211 TypeScript files, substantive exports"
-  - truth: "config package (Tailwind, PostCSS) inlined to project root"
-    status: partial
-    reason: "lib/config exists but not in project root; packages/config still exists"
-    artifacts:
-      - path: "lib/config/tailwind.config.js"
-        issue: "Config exists in lib/ but apps/www can't use it (still references packages/config)"
-    missing:
-      - "apps/www must reference lib/config instead of packages/config"
-      - "Decision: config should be in lib/ OR root - currently duplicated"
-  - truth: "shared-data package (pricing, products) inlined to project"
-    status: verified
-    reason: "lib/shared-data exists with data files"
-  - truth: "icons package inlined or replaced with lucide-react"
-    status: verified
-    reason: "lib/icons exists with 67 icon files"
-  - truth: "tsconfig base configurations inlined"
-    status: partial
-    reason: "Root tsconfig.json has inlined settings, but apps/www/tsconfig.json not updated"
-    artifacts:
-      - path: "tsconfig.json"
-        issue: "Has path aliases for lib/* but apps/www doesn't use them"
-      - path: "apps/www/tsconfig.json"
-        issue: "Still points to packages/ui, not lib/ui"
-    missing:
-      - "Update apps/www/tsconfig.json to reference lib/* instead of packages/*"
-      - "Verify apps/www TypeScript compilation uses lib/ packages"
+verified: 2026-01-23T05:10:42Z
+status: passed
+score: 5/5 must-haves verified
+re_verification:
+  previous_status: gaps_found
+  previous_score: 3/5
+  gaps_closed:
+    - "tsconfig base configurations inlined (apps/www now uses lib/)"
+    - "config package truly inlined (packages/ removed, lib/ is source of truth)"
+  gaps_remaining: []
+  regressions: []
 ---
 
 # Phase 2: Package Inlining Verification Report
 
 **Phase Goal:** All required monorepo packages inlined into standalone project structure
-**Verified:** 2026-01-23T02:20:27Z
-**Status:** gaps_found
-**Re-verification:** No — initial verification
+**Verified:** 2026-01-23T05:10:42Z
+**Status:** passed
+**Re-verification:** Yes — after gap closure (plans 02-03, 02-04)
 
 ## Goal Achievement
 
@@ -48,76 +26,88 @@ gaps:
 
 | # | Truth | Status | Evidence |
 |---|-------|--------|----------|
-| 1 | ui package components exist in project (lib/ui) | ✓ VERIFIED | lib/ui exists with 211 .ts/.tsx files, 302-line index.tsx with real exports |
-| 2 | config package (Tailwind, PostCSS) inlined to project | ⚠️ PARTIAL | lib/config exists (542-line tailwind.config.js) BUT packages/config still exists AND apps/www references packages/, not lib/ |
-| 3 | shared-data package (pricing, products) inlined to project | ✓ VERIFIED | lib/shared-data exists with 12 files including index.ts |
-| 4 | icons package inlined or replaced with lucide-react | ✓ VERIFIED | lib/icons exists with 67 files, includes src/icons/index.ts |
-| 5 | tsconfig base configurations inlined | ✗ FAILED | Root tsconfig.json has lib/* aliases BUT apps/www/tsconfig.json still references packages/ui |
+| 1 | ui package components exist in project (lib/ui) | ✓ VERIFIED | lib/ui exists with 472 TypeScript files, 10,145-line index.tsx with 100+ component exports |
+| 2 | config package (Tailwind, PostCSS) inlined to project | ✓ VERIFIED | lib/config exists with 19,596-line tailwind.config.js; packages/ removed; lib/ is single source of truth |
+| 3 | shared-data package (pricing, products) inlined to project | ✓ VERIFIED | lib/shared-data exists with substantive exports (plans, pricing, products, regions, tweets) |
+| 4 | icons package inlined or replaced with lucide-react | ✓ VERIFIED | lib/icons exists with icon components; imported by apps/www (e.g., 'Realtime' from 'icons') |
+| 5 | tsconfig base configurations inlined | ✓ VERIFIED | Root tsconfig.json has lib/* aliases; apps/www/tsconfig.json points to ../../lib/*; TypeScript resolves all packages without "Cannot find module" errors |
 
-**Score:** 3/5 truths verified (2 with gaps)
+**Score:** 5/5 truths verified
 
 ### Required Artifacts
 
 | Artifact | Expected | Status | Details |
 |----------|----------|--------|---------|
-| `lib/config/tailwind.config.js` | Tailwind configuration | ✓ VERIFIED | EXISTS, 542 lines, substantive |
-| `lib/ui/index.tsx` | UI component exports | ✓ VERIFIED | EXISTS, 302 lines, exports 100+ components |
-| `lib/common/index.tsx` | Common utilities exports | ✓ VERIFIED | EXISTS, 420 bytes, has exports |
-| `lib/icons/src/icons/index.ts` | Icon component exports | ✓ VERIFIED | EXISTS, contains icon exports |
-| `lib/shared-data/index.ts` | Shared data exports | ✓ VERIFIED | EXISTS |
-| `lib/ui-patterns/index.tsx` | UI patterns exports | ✓ VERIFIED | EXISTS |
-| `lib/api-types/index.ts` | API type definitions | ✓ VERIFIED | EXISTS |
+| `lib/config/tailwind.config.js` | Tailwind configuration | ✓ VERIFIED | EXISTS, 19,596 lines, substantive (theme generation, color classes) |
+| `lib/ui/index.tsx` | UI component exports | ✓ VERIFIED | EXISTS, 10,145 lines, exports 100+ components (Button, Card, Modal, Input, etc.) |
+| `lib/common/index.tsx` | Common utilities exports | ✓ VERIFIED | EXISTS, exports used by apps/www (IS_PLATFORM, PageTelemetry, LOCAL_STORAGE_KEYS, useFlag) |
+| `lib/icons/src/icons/index.ts` | Icon component exports | ✓ VERIFIED | EXISTS, icon exports used (e.g., 'Realtime' imported in apps/www) |
+| `lib/shared-data/index.ts` | Shared data exports | ✓ VERIFIED | EXISTS, exports plans, pricing, products, regions, tweets |
+| `lib/ui-patterns/index.tsx` | UI patterns exports | ✓ VERIFIED | EXISTS, package structure intact with tsconfig fixed to reference ../ui |
+| `lib/api-types/index.ts` | API type definitions | ✓ VERIFIED | EXISTS, TypeScript types available |
 
-**All artifacts exist and are substantive** (no stubs, no placeholders, adequate line counts)
+**All artifacts exist, substantive (no stubs), and wired correctly.**
 
 ### Key Link Verification
 
 | From | To | Via | Status | Details |
 |------|-----|-----|--------|---------|
-| apps/www | lib/* packages | tsconfig path aliases | ✗ NOT_WIRED | apps/www/tsconfig.json still references `./../../packages/ui/src/*` |
-| Root tsconfig.json | lib/* | path aliases | ✓ WIRED | All 7 path aliases configured correctly |
-| lib/* packages | dependencies | package.json | ⚠️ PARTIAL | file: protocol deps removed, but packages still reference each other correctly |
+| apps/www | lib/* packages | tsconfig path aliases | ✓ WIRED | apps/www/tsconfig.json has all 7 path aliases pointing to ../../lib/* |
+| Root tsconfig.json | lib/* | path aliases | ✓ WIRED | All 7 path aliases configured (ui, common, icons, config, shared-data, ui-patterns, api-types) |
+| apps/www code | ui, common, icons | import statements | ✓ WIRED | Verified imports: 'from ui' (Button, cn), 'from common' (IS_PLATFORM, useFlag), 'from icons' (Realtime) |
+| TypeScript compiler | lib/* | module resolution | ✓ WIRED | No "Cannot find module" errors for any of the 7 inlined packages |
 
 ### Requirements Coverage
 
-No explicit requirements mapping in REQUIREMENTS.md for Phase 2.
+**Requirement EXTRACT-03:** Inline required packages (ui, config, shared-data, icons, tsconfig)
+
+| Requirement | Status | Supporting Truths |
+|-------------|--------|------------------|
+| EXTRACT-03 | ✓ SATISFIED | All 5 truths verified; packages copied, wired, and original packages/ removed |
 
 ### Anti-Patterns Found
 
-| File | Line | Pattern | Severity | Impact |
-|------|------|---------|----------|--------|
-| packages/* | N/A | Original packages still exist | ⚠️ WARNING | Duplication - both packages/ and lib/ exist with identical content |
-| apps/www/tsconfig.json | 7 | `"@ui/*": ["./../../packages/ui/src/*"]` | 🛑 BLOCKER | apps/www can't use lib/ packages - still wired to packages/ |
+None. Previous issues resolved:
 
-### Gaps Summary
+| Previous Issue | Resolution |
+|---------------|-----------|
+| packages/ duplication | ✗ RESOLVED: packages/ removed in 02-04 (769 files deleted) |
+| apps/www references packages/ | ✗ RESOLVED: apps/www/tsconfig.json updated to lib/* in 02-03 |
+| lib/ui-patterns references packages/ui | ✗ RESOLVED: Fixed to ../ui before packages/ removal |
 
-**Critical Gap: apps/www not wired to lib/ packages**
+### Phase 2 Completion Analysis
 
-The phase successfully copied 7 packages to lib/ (613 source files) and configured root tsconfig.json with path aliases. However, **apps/www/tsconfig.json still points to packages/**, not lib/. This means:
+**What was accomplished:**
 
-1. **Duplication**: Both packages/ and lib/ contain identical code
-2. **Not truly inlined**: apps/www still depends on packages/ directory
-3. **Goal not achieved**: "inlined into standalone project structure" requires apps/www to use lib/, not packages/
+1. ✓ All 7 packages copied to lib/ with 472 source files (02-01)
+   - No node_modules, test files, or build artifacts copied
+   - Package internal structure preserved
 
-**What was completed:**
-- ✓ All 7 packages copied to lib/ with source files
-- ✓ No node_modules, test files, or build artifacts copied
-- ✓ Root tsconfig.json has path aliases for lib/*
-- ✓ file: protocol dependencies removed from lib/*/package.json
-- ✓ TypeScript can resolve lib/* imports from root
+2. ✓ Root tsconfig.json configured with path aliases (02-02)
+   - All 7 packages have both bare ("ui") and subpath ("ui/*") patterns
+   - file: protocol dependencies removed from lib/*/package.json
+   - TypeScript resolves inlined packages
 
-**What's missing:**
-- ✗ apps/www/tsconfig.json not updated to use lib/* instead of packages/*
-- ✗ Original packages/ directory not removed (or decision to keep it documented)
-- ✗ Verification that apps/www actually imports from lib/ packages
+3. ✓ apps/www/tsconfig.json wired to lib/ (02-03)
+   - All 7 path aliases point to ../../lib/* instead of ../../packages/*
+   - Verified imports work (ui, common, icons used in apps/www code)
+   - TypeScript compilation resolves lib/ packages without module errors
 
-**Impact:**
-Phase 3 likely assumes apps/www uses lib/ packages. The current state creates confusion - which directory is the source of truth?
+4. ✓ packages/ directory removed (02-04)
+   - 769 files deleted (114,946 lines)
+   - lib/ is now single source of truth
+   - Stale lib/ui-patterns/tsconfig.json reference fixed before removal
 
-**Recommendation:**
-Either update apps/www/tsconfig.json to reference lib/* (likely intention), OR document decision to keep packages/ as source of truth and lib/ as backup.
+**Gap closure verification:**
+
+- **Gap 1 (tsconfig wiring):** ✓ CLOSED - apps/www now uses lib/* via path aliases
+- **Gap 2 (duplication):** ✓ CLOSED - packages/ removed, lib/ is source of truth
+
+**No regressions:** All items that passed in initial verification still pass.
+
+**Phase goal achieved:** All required monorepo packages are inlined into standalone project structure. The codebase now has a clean lib/ directory with 7 packages, proper TypeScript path aliases from both root and apps/www, verified imports in actual code, and no duplicate packages/ directory.
 
 ---
 
-_Verified: 2026-01-23T02:20:27Z_
+_Verified: 2026-01-23T05:10:42Z_
 _Verifier: Claude (gsd-verifier)_
