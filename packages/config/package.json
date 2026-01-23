@@ -4,7 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "clean": "rimraf node_modules"
   },
   "dependencies": {
@@ -17,8 +16,8 @@
     "tailwindcss-radix": "^2.0.0"
   },
   "devDependencies": {
-    "tailwindcss": "catalog:",
+    "tailwindcss": "3.4.1",
     "tailwindcss-animate": "^1.0.6",
-    "typescript": "catalog:"
+    "typescript": "~5.9.0"
   }
 }

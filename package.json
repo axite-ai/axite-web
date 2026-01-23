@@ -6,7 +6,6 @@
   "license": "Apache-2.0",
   "private": true,
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "build": "turbo run build",
     "build:cms": "turbo run build --filter=cms --parallel",
     "build:studio": "turbo run build --filter=studio",
@@ -44,7 +43,7 @@
   },
   "devDependencies": {
     "@aws-sdk/client-secrets-manager": "^3.823.0",
-    "@types/node": "catalog:",
+    "@types/node": "^22.0.0",
     "eslint": "^9.0.0",
     "prettier": "3.2.4",
     "prettier-plugin-sql-cst": "^0.11.0",
@@ -52,11 +51,11 @@
     "sass": "^1.72.0",
     "supabase": "^2.65.6",
     "supports-color": "^8.0.0",
-    "tailwindcss": "catalog:",
-    "tsx": "catalog:",
+    "tailwindcss": "3.4.1",
+    "tsx": "4.20.3",
     "turbo": "2.3.3",
-    "typescript": "catalog:",
-    "zod": "catalog:"
+    "typescript": "~5.9.0",
+    "zod": "^3.25.76"
   },
   "repository": {
     "type": "git",
@@ -66,6 +65,13 @@
     "pnpm": "10.24",
     "node": ">=22"
   },
-  "keywords": ["postgres", "firebase", "storage", "functions", "database", "auth"],
+  "keywords": [
+    "postgres",
+    "firebase",
+    "storage",
+    "functions",
+    "database",
+    "auth"
+  ],
   "packageManager": "pnpm@10.24.0"
 }

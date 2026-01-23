@@ -4,7 +4,6 @@
   "main": "next.js",
   "license": "MIT",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "clean": "rimraf node_modules"
   },
   "devDependencies": {
@@ -16,6 +15,6 @@
     "eslint-config-next": "^15.5.0",
     "eslint-config-prettier": "^10.0.0",
     "eslint-config-turbo": "^2.5.0",
-    "typescript": "catalog:"
+    "typescript": "~5.9.0"
   }
 }

@@ -5,11 +5,10 @@
   "main": "./index.ts",
   "types": "./index.ts",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "clean": "rimraf node_modules"
   },
   "devDependencies": {
-    "tsconfig": "workspace:"
+    "tsconfig": "file:../tsconfig"
   },
   "author": "",
   "license": "MIT"
