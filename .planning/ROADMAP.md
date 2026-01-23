@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Package Inlining** - Inline all required monorepo packages into standalone structure
 - [x] **Phase 3: Project Configuration** - Configure standalone Next.js, Tailwind, and TypeScript paths
 - [x] **Phase 4: Development Environment** - Get local development server running
-- [ ] **Phase 5: Content Infrastructure** - Set up blog/MDX system with Contentlayer migration
+- [x] **Phase 5: Content Infrastructure** - Set up blog/MDX system with Contentlayer migration
 - [ ] **Phase 6: Page Structure** - Extract page layouts, navigation, and footer
 - [ ] **Phase 7: Production Build** - Achieve successful production build
 - [ ] **Phase 8: Minimal Branding** - Swap logo and apply basic Axite identity
@@ -100,9 +100,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 05-01-PLAN.md - Stub CMS post fetching to use static MDX only
-- [ ] 05-02-PLAN.md - Verify individual blog post pages render MDX content
-- [ ] 05-03-PLAN.md - Human verification of blog rendering (visual check)
+- [x] 05-01-PLAN.md - Stub CMS post fetching to use static MDX only
+- [x] 05-02-PLAN.md - Verify individual blog post pages render MDX content
+- [x] 05-03-PLAN.md - Human verification of blog rendering (visual check)
 
 ### Phase 6: Page Structure
 **Goal**: Core page layouts, navigation, and footer working across the site
@@ -158,10 +158,10 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 2. Package Inlining | 4/4 | Complete | 2026-01-23 |
 | 3. Project Configuration | 3/3 | Complete | 2026-01-23 |
 | 4. Development Environment | 3/3 | Complete | 2026-01-23 |
-| 5. Content Infrastructure | 0/? | Not started | - |
+| 5. Content Infrastructure | 3/3 | Complete | 2026-01-23 |
 | 6. Page Structure | 0/? | Not started | - |
 | 7. Production Build | 0/? | Not started | - |
 | 8. Minimal Branding | 0/? | Not started | - |
 
 ---
-*Last updated: 2026-01-22 (Phase 4 planned)*
+*Last updated: 2026-01-23 (Phase 5 complete)*
