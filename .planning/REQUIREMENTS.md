@@ -14,7 +14,7 @@
 - [x] **INFRA-01**: Configure standalone Next.js 15.5.9 project (next.config.mjs, tsconfig.json)
 - [x] **INFRA-02**: Set up Tailwind 3.4.x with inlined config (not v4)
 - [x] **INFRA-03**: Fix all TypeScript path aliases (@ui/*, @common/*, etc.)
-- [ ] **INFRA-04**: Production build succeeds (pnpm build works)
+- [x] **INFRA-04**: Production build succeeds (pnpm build works)
 
 ### Content
 
@@ -58,7 +58,7 @@
 | INFRA-01 | Phase 3 | Complete |
 | INFRA-02 | Phase 3 | Complete |
 | INFRA-03 | Phase 3 | Complete |
-| INFRA-04 | Phase 7 | Pending |
+| INFRA-04 | Phase 7 | Complete |
 | CONTENT-01 | Phase 5 | Complete |
 | CONTENT-02 | Phase 6 | Complete |
 | CONTENT-03 | Phase 6 | Complete |
