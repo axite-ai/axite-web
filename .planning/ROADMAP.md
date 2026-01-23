@@ -97,10 +97,12 @@ Plans:
   2. Blog index page lists posts with correct metadata
   3. Code syntax highlighting works in MDX content
   4. No Contentlayer-related build warnings or errors
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 05-01: TBD
+- [ ] 05-01-PLAN.md - Stub CMS post fetching to use static MDX only
+- [ ] 05-02-PLAN.md - Verify individual blog post pages render MDX content
+- [ ] 05-03-PLAN.md - Human verification of blog rendering (visual check)
 
 ### Phase 6: Page Structure
 **Goal**: Core page layouts, navigation, and footer working across the site
