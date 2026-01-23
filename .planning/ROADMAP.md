@@ -32,10 +32,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. All workspace:* protocol references replaced with explicit versions or local paths
   3. All catalog: protocol references replaced with actual semver versions
   4. pnpm install runs without protocol resolution errors
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: TBD
+- [ ] 01-01-PLAN.md - Clone Supabase repo and extract www app with packages
+- [ ] 01-02-PLAN.md - Convert workspace/catalog protocols and verify pnpm install
 
 ### Phase 2: Package Inlining
 **Goal**: All required monorepo packages inlined into standalone project structure
@@ -144,7 +145,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Extraction | 0/? | Not started | - |
+| 1. Foundation & Extraction | 0/2 | Planned | - |
 | 2. Package Inlining | 0/? | Not started | - |
 | 3. Project Configuration | 0/? | Not started | - |
 | 4. Development Environment | 0/? | Not started | - |
