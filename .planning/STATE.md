@@ -12,7 +12,7 @@ See: .planning/PROJECT.md (updated 2026-01-22)
 Phase: 3 of 8 (Project Configuration) - COMPLETE
 Plan: 3 of 3 in current phase (all plans complete)
 Status: Phase complete
-Last activity: 2026-01-23 - Completed 03-01-PLAN.md (TypeScript Configuration)
+Last activity: 2026-01-23 - Completed 03-02-PLAN.md (Tailwind CSS Configuration)
 
 Progress: [███░░░░░░░] 30% (3/8 phases complete)
 
@@ -61,6 +61,9 @@ Recent decisions affecting current work:
 - Remove Sentry integration entirely (Supabase-specific, can add our own later)
 - Disable getAssetPrefix (no CDN asset hosting for standalone)
 - Remove local packages from transpilePackages (TypeScript aliases handle resolution)
+- Replace build artifact dependency with inline color stub using CSS variables
+- Add lib/* to pnpm workspace for dependency resolution
+- Remove non-existent package dependencies (ai-commands, eslint-config-supabase)
 
 ### Pending Todos
 
@@ -75,5 +78,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-23
-Stopped at: Completed 03-01-PLAN.md (TypeScript Configuration) - Phase 3 fully complete
+Stopped at: Completed 03-02-PLAN.md (Tailwind CSS Configuration) - Phase 3 fully complete
 Resume file: None (ready for Phase 4)
