@@ -19,8 +19,8 @@
 ### Content
 
 - [x] **CONTENT-01**: Blog/MDX infrastructure working (may require Contentlayer migration)
-- [ ] **CONTENT-02**: Basic page layouts functional (homepage, about, pricing, etc.)
-- [ ] **CONTENT-03**: Navigation and footer working
+- [x] **CONTENT-02**: Basic page layouts functional (homepage, about, pricing, etc.)
+- [x] **CONTENT-03**: Navigation and footer working
 
 ### Branding
 
@@ -60,8 +60,8 @@
 | INFRA-03 | Phase 3 | Complete |
 | INFRA-04 | Phase 7 | Pending |
 | CONTENT-01 | Phase 5 | Complete |
-| CONTENT-02 | Phase 6 | Pending |
-| CONTENT-03 | Phase 6 | Pending |
+| CONTENT-02 | Phase 6 | Complete |
+| CONTENT-03 | Phase 6 | Complete |
 | BRAND-01 | Phase 8 | Pending |
 
 ---
