@@ -2,7 +2,7 @@
 
 ## Overview
 
-This roadmap extracts Supabase's production-grade marketing site (apps/www) into a standalone Next.js application for Axite. The journey moves bottom-up through dependency extraction, progresses through infrastructure configuration and content system setup, and culminates in a production-ready build with minimal Axite branding. Each phase produces a verifiable artifact, with the final phase delivering a deployable site.
+This roadmap extracts Supabase's production-grade marketing site (apps/www) into a standalone Next.js application for Axite. The journey moves bottom-up through dependency extraction, progresses through infrastructure configuration and content system setup, and culminates in a production-ready build. Each phase produces a verifiable artifact.
 
 ## Phases
 
@@ -19,7 +19,6 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 5: Content Infrastructure** - Set up blog/MDX system with Contentlayer migration
 - [x] **Phase 6: Page Structure** - Extract page layouts, navigation, and footer
 - [x] **Phase 7: Production Build** - Achieve successful production build
-- [ ] **Phase 8: Minimal Branding** - Swap logo and apply basic Axite identity
 
 ## Phase Details
 
@@ -139,23 +138,10 @@ Plans:
 - [x] 07-02-PLAN.md — Replace missing TwoOptionToggle import with inline component
 - [x] 07-03-PLAN.md — Run production build and verify success criteria
 
-### Phase 8: Minimal Branding
-**Goal**: Site displays Axite branding instead of Supabase
-**Depends on**: Phase 7
-**Requirements**: BRAND-01
-**Success Criteria** (what must be TRUE):
-  1. Axite logo appears in header and footer
-  2. Browser tab shows Axite title and favicon
-  3. No Supabase logo visible on homepage or navigation
-**Plans**: TBD
-
-Plans:
-- [ ] 08-01: TBD
-
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -166,7 +152,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 5. Content Infrastructure | 3/3 | Complete | 2026-01-23 |
 | 6. Page Structure | 4/4 | Complete | 2026-01-23 |
 | 7. Production Build | 3/3 | Complete | 2026-01-23 |
-| 8. Minimal Branding | 0/? | Not started | - |
 
 ---
-*Last updated: 2026-01-23 (Phase 7 complete — production build verified, all 5/5 success criteria passed)*
+*Last updated: 2026-01-23 (Phase 8 removed — milestone complete)*

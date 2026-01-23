@@ -22,10 +22,6 @@
 - [x] **CONTENT-02**: Basic page layouts functional (homepage, about, pricing, etc.)
 - [x] **CONTENT-03**: Navigation and footer working
 
-### Branding
-
-- [ ] **BRAND-01**: Swap logo and apply minimal Axite branding (colors optional)
-
 ---
 
 ## v2 (Deferred)
@@ -62,7 +58,5 @@
 | CONTENT-01 | Phase 5 | Complete |
 | CONTENT-02 | Phase 6 | Complete |
 | CONTENT-03 | Phase 6 | Complete |
-| BRAND-01 | Phase 8 | Pending |
-
 ---
-*Last updated: 2026-01-23*
+*Last updated: 2026-01-23 (BRAND-01 removed — deferred to future milestone)*
