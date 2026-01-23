@@ -81,10 +81,12 @@ Plans:
   2. Homepage loads in browser at localhost:3000
   3. Navigation between pages works without crashes
   4. Hot reload functions when editing components
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: TBD
+- [ ] 04-01-PLAN.md - Fix CSS imports (create variable stub, update paths from packages/ to lib/)
+- [ ] 04-02-PLAN.md - Stub common package exports and clean instrumentation
+- [ ] 04-03-PLAN.md - Verify dev environment works (server, homepage, navigation, hot reload)
 
 ### Phase 5: Content Infrastructure
 **Goal**: Blog and MDX content system fully operational
@@ -153,11 +155,11 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 1. Foundation & Extraction | 2/2 | Complete | 2026-01-22 |
 | 2. Package Inlining | 4/4 | Complete | 2026-01-23 |
 | 3. Project Configuration | 3/3 | Complete | 2026-01-23 |
-| 4. Development Environment | 0/? | Not started | - |
+| 4. Development Environment | 0/3 | In Progress | - |
 | 5. Content Infrastructure | 0/? | Not started | - |
 | 6. Page Structure | 0/? | Not started | - |
 | 7. Production Build | 0/? | Not started | - |
 | 8. Minimal Branding | 0/? | Not started | - |
 
 ---
-*Last updated: 2026-01-23 (Phase 3 complete)*
+*Last updated: 2026-01-22 (Phase 4 planned)*
