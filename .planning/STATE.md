@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-22)
 
 **Core value:** Get a professional, working marketing website deployed to axite.ai using battle-tested code instead of AI-generated slop.
-**Current focus:** Phase 4 complete - Development environment fully functional, ready for Phase 5 (Content Infrastructure)
+**Current focus:** Phase 5 in progress - Content infrastructure (CMS stubbed, blog working with static posts)
 
 ## Current Position
 
-Phase: 4 of 8 (Development Environment)
-Plan: 3 of 3 in current phase
-Status: Phase complete
-Last activity: 2026-01-23 - Completed 04-03-PLAN.md (Dev Environment Verification)
+Phase: 5 of 8 (Content Infrastructure)
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-01-23 - Completed 05-01-PLAN.md (Stub CMS Fetching)
 
-Progress: [█████░░░░░] 48% (12/25 plans complete)
+Progress: [█████░░░░░] 52% (13/25 plans complete)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 12
+- Total plans completed: 13
 - Average duration: 4.2 min
-- Total execution time: 48 min
+- Total execution time: 54 min
 
 **By Phase:**
 
@@ -31,10 +31,11 @@ Progress: [█████░░░░░] 48% (12/25 plans complete)
 | 02 | 4 | 9.5 min | 2.4 min |
 | 03 | 3 | 5 min | 1.7 min |
 | 04 | 3 | 26.5 min | 8.8 min |
+| 05 | 1 | 6 min | 6 min |
 
 **Recent Trend:**
-- Last 5 plans: 1.5 min, 2 min, 1.5 min, 3 min, 22 min
-- Trend: Plan 04-03 longer due to runtime debugging and verification checkpoint
+- Last 5 plans: 2 min, 1.5 min, 3 min, 22 min, 6 min
+- Trend: Plan 05-01 normal duration (CMS stubbing straightforward)
 
 *Updated after each plan completion*
 
@@ -74,6 +75,8 @@ Recent decisions affecting current work:
 - Transpile local lib/ packages in Next.js for proper TypeScript handling
 - Return no-op functions from hooks when React context unavailable
 - Use dynamic port allocation instead of hardcoded port 3000
+- Stub CMS functions to return empty results instead of making failed API calls
+- Static MDX posts in _blog/ are the only data source
 
 ### Pending Todos
 
@@ -82,10 +85,10 @@ None yet.
 ### Blockers/Concerns
 
 - Placeholder Supabase URL in use - will need actual configuration in Phase 6 (Backend Integration)
-- apps/www directory still contains Supabase-specific content and branding (expected, will be addressed in Phase 5)
+- apps/www directory still contains Supabase-specific content and branding (expected, will be addressed in Phase 8)
 
 ## Session Continuity
 
 Last session: 2026-01-23
-Stopped at: Completed 04-03-PLAN.md (Dev Environment Verification) - Phase 4 complete
-Resume file: None (ready for Phase 5)
+Stopped at: Completed 05-01-PLAN.md (Stub CMS Fetching)
+Resume file: None (ready for 05-02)
