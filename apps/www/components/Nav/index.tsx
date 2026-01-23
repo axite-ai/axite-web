@@ -189,10 +189,12 @@ const Nav = ({ hideNavbar, stickyNavbar = true }: Props) => {
                 )}
               </div>
             </div>
-            <HamburgerButton
-              toggleFlyOut={() => setOpen(true)}
-              showLaunchWeekNavMode={showLaunchWeekNavMode}
-            />
+            {!open && (
+              <HamburgerButton
+                toggleFlyOut={() => setOpen(true)}
+                showLaunchWeekNavMode={showLaunchWeekNavMode}
+              />
+            )}
           </div>
           <MobileMenu open={open} setOpen={setOpen} menu={menu} />
         </nav>
