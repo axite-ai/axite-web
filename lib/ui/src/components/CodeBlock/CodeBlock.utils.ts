@@ -48,49 +48,49 @@ export const monokaiCustomTheme = (isDarkMode: boolean) => {
       color: `hsl(var(--brand-link))`,
     },
     'hljs-bullet': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-subst': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-title': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
       fontWeight: 'normal',
     },
     'hljs-section': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
       fontWeight: 'normal',
     },
     'hljs-emphasis': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-type': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
       fontWeight: 'normal',
     },
     'hljs-built_in': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-builtin-name': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-selector-attr': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-selector-pseudo': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-addition': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-variable': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-template-tag': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-template-variable': {
-      color: '#3ECF8E',
+      color: '#3B63F3',
     },
     'hljs-comment': {
       color: isDarkMode ? '#999' : '#888',
