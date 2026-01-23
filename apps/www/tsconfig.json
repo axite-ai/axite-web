@@ -1,13 +1,24 @@
 {
   "compilerOptions": {
-    // @deprecated: use @/ instead of importing from root
     "baseUrl": ".",
     "paths": {
       "contentlayer/generated": ["./.contentlayer/generated"],
-      // ~/ is deprecated, use @/ instead
       "~/*": ["./*"],
       "@/*": ["./*"],
-      "@ui/*": ["./../../packages/ui/src/*"]
+      "ui": ["./../../lib/ui"],
+      "ui/*": ["./../../lib/ui/*"],
+      "common": ["./../../lib/common"],
+      "common/*": ["./../../lib/common/*"],
+      "shared-data": ["./../../lib/shared-data"],
+      "shared-data/*": ["./../../lib/shared-data/*"],
+      "config": ["./../../lib/config"],
+      "config/*": ["./../../lib/config/*"],
+      "icons": ["./../../lib/icons"],
+      "icons/*": ["./../../lib/icons/*"],
+      "ui-patterns": ["./../../lib/ui-patterns"],
+      "ui-patterns/*": ["./../../lib/ui-patterns/*"],
+      "api-types": ["./../../lib/api-types"],
+      "api-types/*": ["./../../lib/api-types/*"]
     },
     "downlevelIteration": true,
     "target": "ES2021",
@@ -36,7 +47,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".contentlayer/generated",
-    "./../../packages/ui/src/**/*.d.ts"
+    ".contentlayer/generated"
   ]
 }
