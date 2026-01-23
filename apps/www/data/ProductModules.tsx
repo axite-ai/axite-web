@@ -1,44 +1,41 @@
-import {
-  PRODUCT_MODULES_NAMES,
-  PRODUCT_MODULES,
-  PRODUCT_MODULES_SHORTNAMES,
-} from 'shared-data/products'
 import { ProductType } from './MainProducts'
 
 const ProductModules: ProductType = {
-  [PRODUCT_MODULES_SHORTNAMES.VECTOR]: {
-    name: PRODUCT_MODULES_NAMES.VECTOR,
-    icon: PRODUCT_MODULES.vector.icon[24],
+  mcpServers: {
+    name: 'MCP Servers',
+    icon: 'M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2',
     description: (
       <>
-        Integrate your favorite ML-models to{' '}
-        <strong>store, index and search vector embeddings</strong>.
+        <strong>Pre-built MCP servers</strong> for common integrations via ContextForge.
       </>
     ),
-    description_short: 'AI toolkit to manage embeddings',
+    description_short: 'Pre-built MCP server catalog',
     label: '',
-    url: '/modules/vector',
+    url: '/product/mcp-servers',
   },
-  [PRODUCT_MODULES_SHORTNAMES.CRON]: {
-    name: PRODUCT_MODULES_NAMES.CRON,
-    icon: PRODUCT_MODULES['cron'].icon[24],
-    description: <>Schedule and manage recurring Jobs.</>,
-    description_short: 'Schedule and manage recurring Jobs',
-    label: '',
-    url: '/modules/cron',
-  },
-  [PRODUCT_MODULES_SHORTNAMES.QUEUES]: {
-    name: PRODUCT_MODULES_NAMES.QUEUES,
-    icon: PRODUCT_MODULES.queues.icon[24],
+  integrations: {
+    name: 'Integrations',
+    icon: 'M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z',
     description: (
       <>
-        Native Postgres queuing solution for dedicated message queues with the simplicity of SQL and{' '}
-        zero additional infrastructure.
+        Connect to <strong>databases, APIs, and services</strong> through governed channels.
       </>
     ),
-    description_short: 'Durable Message Queues with guaranteed delivery',
+    description_short: 'Governed tool connections',
     label: '',
-    url: '/modules/queues',
+    url: '/product/integrations',
+  },
+  docs: {
+    name: 'Documentation',
+    icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253',
+    description: (
+      <>
+        Guides and API reference for <strong>implementing Axite</strong> in your stack.
+      </>
+    ),
+    description_short: 'Guides and API reference',
+    label: '',
+    url: '/docs',
   },
 }
 
