@@ -44,7 +44,8 @@
   --lw-secondary-color: #8a8f98;
 }
 
-.dark {
+.dark,
+[data-theme*="dark"] {
   /* Foreground colors (text) - inverted for dark mode */
   --foreground-default: 0 0% 98%;
   --foreground-light: 0 0% 85%;
