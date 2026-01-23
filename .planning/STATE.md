@@ -5,56 +5,47 @@
 See: .planning/PROJECT.md (updated 2026-01-23)
 
 **Core value:** Get a professional, working marketing website deployed to axite.ai using battle-tested code instead of AI-generated slop.
-**Current focus:** v1.0 complete — planning next milestone
+**Current focus:** v1.1 Axite Rebrand — visual + content rebrand + deploy
 
 ## Current Position
 
-Milestone: v1.0 Supabase Extraction — COMPLETE
-Phase: 7 of 7 (all complete)
-Status: Milestone shipped, ready for v1.1 planning
-Last activity: 2026-01-23 — v1.0 milestone complete
+Milestone: v1.1 Axite Rebrand
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-01-23 — Milestone v1.1 started
 
-Progress: [██████████] 100% (22/22 plans complete)
-
-## Performance Metrics
-
-**v1.0 Milestone:**
-- Total plans completed: 22
-- Total phases: 7
-- Average duration per plan: 4.7 min
-- Total execution time: 104 min
-- Timeline: 2 days (Jan 22-23, 2026)
-
-**By Phase:**
-
-| Phase | Plans | Total | Avg/Plan |
-|-------|-------|-------|----------|
-| 01 | 2 | 7 min | 3.5 min |
-| 02 | 4 | 9.5 min | 2.4 min |
-| 03 | 3 | 5 min | 1.7 min |
-| 04 | 3 | 26.5 min | 8.8 min |
-| 05 | 3 | 13 min | 4.3 min |
-| 06 | 4 | 31 min | 7.8 min |
-| 07 | 3 | 12 min | 4.0 min |
+Progress: [░░░░░░░░░░] 0%
 
 ## Accumulated Context
 
 ### Decisions
 
 Key decisions logged in PROJECT.md Key Decisions table.
-Full milestone decisions archived in .planning/milestones/v1.0-ROADMAP.md
+Full v1.0 decisions archived in .planning/milestones/v1.0-ROADMAP.md
+
+### Brand Identity
+
+**Product:** Agent Governance Platform — control plane for agent actions
+**Voice:** Calm, precise, mechanism-first, evidence-first
+**Messaging pillars:**
+1. Enforceable Policy — allow/deny/approve at the gateway
+2. Identity + Least Privilege — RBAC for agents, tools, and actions
+3. Audit-Grade Evidence — logs + decision traces
+
+**Assets:** Logo/colors to be provided by user (not included in scope)
 
 ### Pending Todos
 
-None — milestone complete.
+None — milestone starting fresh.
 
 ### Blockers/Concerns
 
-- Placeholder Supabase URL still in use — needs real configuration if backend features required
-- Supabase branding remains — will be addressed in v1.1
+- Logo and brand assets needed from user before visual rebrand phase
+- Supabase branding deeply embedded in code — will need thorough audit
 
 ## Session Continuity
 
 Last session: 2026-01-23
-Stopped at: v1.0 milestone complete
-Resume: `/gsd:new-milestone` to start v1.1 planning
+Stopped at: Defining requirements
+Resume: Complete requirements definition, then roadmap

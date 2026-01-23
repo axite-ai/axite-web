@@ -19,8 +19,10 @@ Get a professional, working marketing website deployed to axite.ai using battle-
 
 ### Active
 
-- [ ] Deploy vanilla Supabase www to axite.ai
-- [ ] Swap logo/basic branding (minimal changes)
+- [ ] Visual rebrand — Axite logo, colors, typography, imagery (replacing all Supabase visuals)
+- [ ] Content rebrand — Homepage, product pages, pricing, navigation with Axite messaging
+- [ ] Keep blog structure — Blog posts remain as-is (SEO/content strategy is future milestone)
+- [ ] Deploy to axite.ai — Get rebranded site live
 
 ### Out of Scope
 
@@ -28,6 +30,17 @@ Get a professional, working marketing website deployed to axite.ai using battle-
 - Theme/color customization — future milestone
 - New features beyond what Supabase www provides — not the goal
 - Maintaining compatibility with Supabase upstream — flattening makes this impractical
+
+## Current Milestone: v1.1 Axite Rebrand
+
+**Goal:** Transform the extracted Supabase site into a fully branded Axite marketing presence with proper identity, messaging, and deployment.
+
+**Target features:**
+- Complete visual identity swap (logo, colors, typography, imagery)
+- Content replacement with Axite positioning (homepage, product, pricing — not blog)
+- Deploy to axite.ai
+
+**Brand identity:** Agent Governance Platform — control plane for agent actions with policy, identity, and audit across every tool call. Voice: calm, precise, mechanism-first, evidence-first.
 
 ## Context
 
@@ -76,4 +89,4 @@ axite/
 | Defer branding to v1.1 | Ship working build first, customize later | — Pending |
 
 ---
-*Last updated: 2026-01-23 after v1.0 milestone*
+*Last updated: 2026-01-23 after starting v1.1 milestone*
