@@ -51,18 +51,18 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| EXTRACT-01 | — | Pending |
-| EXTRACT-02 | — | Pending |
-| EXTRACT-03 | — | Pending |
-| EXTRACT-04 | — | Pending |
-| INFRA-01 | — | Pending |
-| INFRA-02 | — | Pending |
-| INFRA-03 | — | Pending |
-| INFRA-04 | — | Pending |
-| CONTENT-01 | — | Pending |
-| CONTENT-02 | — | Pending |
-| CONTENT-03 | — | Pending |
-| BRAND-01 | — | Pending |
+| EXTRACT-01 | Phase 1 | Pending |
+| EXTRACT-02 | Phase 1 | Pending |
+| EXTRACT-03 | Phase 2 | Pending |
+| EXTRACT-04 | Phase 4 | Pending |
+| INFRA-01 | Phase 3 | Pending |
+| INFRA-02 | Phase 3 | Pending |
+| INFRA-03 | Phase 3 | Pending |
+| INFRA-04 | Phase 7 | Pending |
+| CONTENT-01 | Phase 5 | Pending |
+| CONTENT-02 | Phase 6 | Pending |
+| CONTENT-03 | Phase 6 | Pending |
+| BRAND-01 | Phase 8 | Pending |
 
 ---
 *Last updated: 2026-01-22*
