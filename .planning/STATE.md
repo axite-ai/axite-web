@@ -5,24 +5,24 @@
 See: .planning/PROJECT.md (updated 2026-01-24)
 
 **Core value:** Get a professional, working marketing website deployed to axite.ai using battle-tested code instead of AI-generated slop.
-**Current focus:** v1.2 Landing Page Refactor - Phase 12 Complete
+**Current focus:** v1.2 Landing Page Refactor - Phase 13 In Progress
 
 ## Current Position
 
 Milestone: v1.2 Landing Page Refactor
-Phase: 12 of 17 (Cleanup) - COMPLETE
-Plan: 7 of 7 complete (all plans done)
-Status: Phase complete
-Last activity: 2026-01-24 - Completed 12-07-PLAN.md (Verify Build and Routes)
+Phase: 13 of 17 (Header & Hero)
+Plan: 1 of 3 complete
+Status: In progress
+Last activity: 2026-01-24 - Completed 13-01-PLAN.md (Minimal Header)
 
-Progress: [##################..] 96% (47/~49 plans - v1.0+v1.1 complete, v1.2 phase 12 complete)
+Progress: [##################..] 97% (48/~49 plans - v1.0+v1.1 complete, v1.2 phase 13 started)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 47 (15 v1.0 + 24 v1.1 + 8 v1.2)
+- Total plans completed: 48 (15 v1.0 + 24 v1.1 + 9 v1.2)
 - Average duration: ~20 min
-- Total execution time: ~14.4 hours
+- Total execution time: ~14.5 hours
 
 **By Phase:**
 
@@ -34,6 +34,7 @@ Progress: [##################..] 96% (47/~49 plans - v1.0+v1.1 complete, v1.2 ph
 | 10 (v1.1) | 7 | ~75 min | ~11 min |
 | 11 (v1.1) | 6 | ~15 min | ~2.5 min |
 | 12 (v1.2) | 8 | ~13 min | ~1.6 min |
+| 13 (v1.2) | 1 | ~4 min | ~4 min |
 
 *Updated after each plan completion*
 
@@ -58,6 +59,11 @@ v1.2 cleanup decisions:
 - KEEP blog system (user requested restoration)
 - Remove solutions pages and data (Supabase-specific audience content)
 - Remove Product, Pricing, Enterprise pages (redirect to /)
+
+v1.2 phase 13 decisions:
+- Header shows only logo + single CTA ("Book Security Review")
+- No navigation links in header (pages still accessible via direct URL)
+- Mobile hamburger removed (no items to show)
 
 ### Phase 12 Verification Results
 
@@ -87,5 +93,5 @@ None
 ## Session Continuity
 
 Last session: 2026-01-24
-Stopped at: Phase 12 complete
-Resume: `/gsd:plan-phase 13`
+Stopped at: Completed 13-01-PLAN.md
+Resume: `/gsd:execute-plan 13-02`
