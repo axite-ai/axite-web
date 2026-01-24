@@ -1,16 +1,12 @@
 import {
-  Activity,
   ArrowLeftRight,
   ClipboardCheck,
-  Cloud,
   FolderLock,
   Globe2,
   LayoutList,
   Lock,
-  Server,
   ShieldCheck,
   Users,
-  Wrench,
 } from 'lucide-react'
 import RequestADemoForm from 'components/Forms/RequestADemoForm'
 
@@ -44,7 +40,7 @@ export default {
     heading: <>Flexible deployment options</>,
     stories: [
       {
-        icon: Cloud,
+        url: '/contact/sales',
         heading: 'Managed Cloud',
         subheading: (
           <>
@@ -54,7 +50,7 @@ export default {
         ),
       },
       {
-        icon: Server,
+        url: '/contact/sales',
         heading: 'Private Deployment',
         subheading: (
           <>
@@ -64,7 +60,7 @@ export default {
         ),
       },
       {
-        icon: Wrench,
+        url: '/contact/sales',
         heading: 'Customer-Managed',
         subheading: (
           <>

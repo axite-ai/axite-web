@@ -46,7 +46,7 @@ const Enterprise: NextPage = () => (
       <EnterprisePerformance {...content.performance} />
       <EnterpriseSecurity {...content.security} />
       <EnterpriseSupport {...content.support} />
-      <EnterpriseQuote {...content.quote} />
+      {content.quote?.quote && <EnterpriseQuote {...content.quote} />}
       <CTAForm />
     </Layout>
   </>
