@@ -1,4 +1,41 @@
 module.exports = [
+  // Landing page refactor - removed pages redirect to homepage
+  {
+    permanent: false,
+    source: '/product',
+    destination: '/',
+  },
+  {
+    permanent: false,
+    source: '/product/:path*',
+    destination: '/',
+  },
+  {
+    permanent: false,
+    source: '/pricing',
+    destination: '/',
+  },
+  {
+    permanent: false,
+    source: '/enterprise',
+    destination: '/',
+  },
+  {
+    permanent: false,
+    source: '/blog',
+    destination: '/',
+  },
+  {
+    permanent: false,
+    source: '/blog/:path*',
+    destination: '/',
+  },
+  {
+    permanent: false,
+    source: '/solutions/:path*',
+    destination: '/',
+  },
+  // Existing redirects
   {
     permanent: true,
     source: '/auth/Auth',
