@@ -16,28 +16,28 @@ export default () => {
       heading: (
         <>
           <span className="block text-[#F4FFFA00] bg-clip-text bg-gradient-to-b from-foreground to-foreground-light">
-            Build in a weekend
+            Ship agents your
           </span>
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#3B63F3] via-[#3B63F3] to-[#00B3A4] block md:ml-0">
-            Scale to millions
+            security team can approve
           </span>
         </>
       ),
       subheading: (
         <>
-          Supabase is the Postgres development platform. <br className="hidden md:block" />
-          Start your project with a Postgres database, Authentication, instant APIs, Edge Functions,
-          Realtime subscriptions, Storage, and Vector embeddings.
+          Axite is the agent governance control plane. <br className="hidden md:block" />
+          Start your deployment with an MCP gateway, centralized policy (allow/deny/approve),
+          RBAC, approvals, and audit-grade logs with decision traces.
         </>
       ),
       image: '/images/index/gradient-bg.png',
       cta: {
-        label: 'Start your project',
-        link: 'https://app.supabase.com',
+        label: 'Try the sandbox',
+        link: '/docs/quickstart',
       },
       secondaryCta: {
-        label: 'Documentation',
-        link: '/docs',
+        label: 'Book a security review',
+        link: '/contact/sales',
       },
     },
     productsSection: {
@@ -171,7 +171,7 @@ export default () => {
     },
     twitterSocialSection: {
       heading: 'Join the community',
-      subheading: 'Discover what our community has to say about their Supabase experience.',
+      subheading: 'Discover what developers are saying about Axite.',
       ctas: (
         <Button asChild type="default" size="small" icon={<IconDiscord />}>
           <Link
