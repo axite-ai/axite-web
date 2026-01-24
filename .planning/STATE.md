@@ -11,18 +11,18 @@ See: .planning/PROJECT.md (updated 2026-01-23)
 
 Milestone: v1.1 Axite Rebrand
 Phase: 10 of 12 (Content Pages)
-Plan: 1 of 7 complete (10-01)
+Plan: 3 of 7 complete (10-03)
 Status: In progress
-Last activity: 2026-01-24 - Completed 10-01-PLAN.md (Homepage Hero Update)
+Last activity: 2026-01-24 - Completed 10-03-PLAN.md (Pricing Page Update)
 
 Progress: [################....] 80% (10/12 phases in progress)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 27 (15 v1.0 + 12 v1.1)
+- Total plans completed: 28 (15 v1.0 + 13 v1.1)
 - Average duration: ~28 min
-- Total execution time: ~12.6 hours
+- Total execution time: ~12.9 hours
 
 **By Phase:**
 
@@ -31,7 +31,7 @@ Progress: [################....] 80% (10/12 phases in progress)
 | 1-7 (v1.0) | 15 | ~11h | ~45 min |
 | 8 (v1.1) | 6 | ~12 min | ~2 min |
 | 9 (v1.1) | 5 | ~42 min | ~8 min |
-| 10 (v1.1) | 1 | ~5 min | ~5 min |
+| 10 (v1.1) | 2 | ~24 min | ~12 min |
 
 *Updated after each plan completion*
 
@@ -57,6 +57,10 @@ Recent v1.1 decisions:
 - Mobile CTAs consistent with desktop: Contact sales + Get started
 - ProductDropdown uses inline Axite data instead of MainProducts
 - MainProducts kept as Supabase structure (homepage depends on those keys)
+- Two-tier pricing: Sandbox (free, rate-limited) and Enterprise (custom)
+- Sandbox: 1k requests/day, 7-day trace retention, community support
+- Enterprise: Unlimited, extended retention, dedicated support, SSO, SLAs
+- Deployment options: Managed Cloud, Private Deployment, Customer-Managed
 
 ### Brand Identity
 
@@ -83,11 +87,17 @@ Recent v1.1 decisions:
 - CTAs: "Try the sandbox" -> /docs/quickstart, "Book a security review" -> /contact/sales
 - content.tsx: Updated heroSection and twitterSocialSection
 
+**Plan 03 complete (Pricing Page):**
+- Two-tier pricing: Sandbox (free) and Enterprise (custom)
+- Sandbox features: policy engine, RBAC, audit trails, MCP gateway (rate-limited)
+- Enterprise features: unlimited API, SSO, SLAs, deployment options
+- Simplified PricingPlans component for 2-column layout
+- Removed compute/disk/addons sections (Supabase-specific)
+
 **Remaining plans:**
-- 10-02: Product sections update
-- 10-03: Pricing page
-- 10-04: Additional content pages
-- 10-05 through 10-07: Further content updates
+- 10-04: About/Contact pages
+- 10-06: CTA and banner updates
+- 10-07: Phase verification
 
 ### Pending Todos
 
@@ -96,9 +106,10 @@ None
 ### Blockers/Concerns
 
 - Logo and brand assets needed from user before visual rebrand phase
+- FAQs section still shows Supabase content (future plan will update)
 
 ## Session Continuity
 
 Last session: 2026-01-24
-Stopped at: Completed 10-01-PLAN.md (Homepage Hero Update)
+Stopped at: Completed 10-03-PLAN.md (Pricing Page Update)
 Resume: Run `/gsd:execute-phase 10` to continue with remaining plans
