@@ -11,18 +11,18 @@ See: .planning/PROJECT.md (updated 2026-01-24)
 
 Milestone: v1.2 Landing Page Refactor
 Phase: 12 of 17 (Cleanup)
-Plan: Ready to plan
-Status: Ready to plan Phase 12
-Last activity: 2026-01-24 - Roadmap created for v1.2
+Plan: 2 of 7 complete
+Status: In progress
+Last activity: 2026-01-24 - Completed 12-02-PLAN.md (Delete Blog System)
 
-Progress: [################....] 80% (39/~49 plans - v1.0+v1.1 complete, v1.2 starting)
+Progress: [################....] 82% (41/~49 plans - v1.0+v1.1 complete, v1.2 phase 12 in progress)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 39 (15 v1.0 + 24 v1.1)
-- Average duration: ~25 min
-- Total execution time: ~14.2 hours
+- Total plans completed: 41 (15 v1.0 + 24 v1.1 + 2 v1.2)
+- Average duration: ~21 min
+- Total execution time: ~14.3 hours
 
 **By Phase:**
 
@@ -33,6 +33,7 @@ Progress: [################....] 80% (39/~49 plans - v1.0+v1.1 complete, v1.2 st
 | 9 (v1.1) | 5 | ~42 min | ~8 min |
 | 10 (v1.1) | 7 | ~75 min | ~11 min |
 | 11 (v1.1) | 6 | ~15 min | ~2.5 min |
+| 12 (v1.2) | 2 | ~3 min | ~1.5 min |
 
 *Updated after each plan completion*
 
@@ -52,6 +53,9 @@ v1.2 design constraint:
 - For each section, search existing Supabase components first
 - Evaluate and select best existing design to adapt
 - No creative generation of new layouts/visuals
+
+v1.2 cleanup decisions:
+- Remove entire blog system as part of landing page refactor
 
 ### Brand Identity
 
@@ -74,5 +78,5 @@ None
 ## Session Continuity
 
 Last session: 2026-01-24
-Stopped at: v1.2 roadmap creation complete
-Resume: `/gsd:plan-phase 12`
+Stopped at: Completed 12-02-PLAN.md (Delete Blog System)
+Resume: `/gsd:execute-plan 12-03`
