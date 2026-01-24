@@ -6,13 +6,13 @@ import type { Metadata } from 'next'
 export const revalidate = 30
 
 export const metadata: Metadata = {
-  title: 'Supabase Blog: the Postgres development platform',
-  description: 'Get all your Supabase News on the Supabase blog.',
+  title: 'Axite Blog',
+  description: 'Latest news and updates from the Axite team.',
   openGraph: {
-    title: 'Supabase Blog: the Postgres development platform',
-    description: 'Get all your Supabase News on the Supabase blog.',
-    url: 'https://supabase.com/blog',
-    images: [{ url: 'https://supabase.com/images/og/supabase-og.png' }],
+    title: 'Axite Blog',
+    description: 'Latest news and updates from the Axite team.',
+    url: 'https://axite.ai/blog',
+    images: [{ url: 'https://axite.ai/images/blog/axite/placeholder-og.png' }],
   },
 }
 
