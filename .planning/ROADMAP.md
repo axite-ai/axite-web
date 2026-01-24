@@ -21,7 +21,7 @@ See `.planning/milestones/v1.0-ROADMAP.md` for full v1.0 roadmap archive.
 - [x] **Phase 8: Visual Foundation** - Colors, typography, Tailwind config (completed 2026-01-23)
 - [x] **Phase 9: Navigation & Cleanup** - Update nav structure, remove Supabase pages (completed 2026-01-23)
 - [x] **Phase 10: Content Pages** - Homepage, Product, Enterprise, Pricing, Trust pages (completed 2026-01-24)
-- [ ] **Phase 11: Blog Compatibility** - Ensure blog works with new branding
+- [x] **Phase 11: Blog Compatibility** - Ensure blog works with new branding (completed 2026-01-24)
 - [ ] **Phase 12: Deployment** - Vercel deploy, domain config, production
 
 ## Phase Details
@@ -91,7 +91,12 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 11-01: TBD
+- [x] 11-01: Blog author and image setup (wave 1)
+- [x] 11-02: Blog page metadata updates (wave 1)
+- [x] 11-03: Delete Supabase blog posts (wave 2)
+- [x] 11-04: Create Axite posts part 1 (wave 2)
+- [x] 11-05: Create Axite posts part 2 (wave 2)
+- [x] 11-06: Verify all success criteria (wave 3)
 
 ### Phase 12: Deployment
 **Goal**: Site is live at axite.ai with working HTTPS
@@ -117,9 +122,9 @@ Phases execute in numeric order: 8 -> 9 -> 10 -> 11 -> 12
 | 8. Visual Foundation | v1.1 | 5/5 | Complete | 2026-01-23 |
 | 9. Navigation & Cleanup | v1.1 | 5/5 | Complete | 2026-01-23 |
 | 10. Content Pages | v1.1 | 7/7 | Complete | 2026-01-24 |
-| 11. Blog Compatibility | v1.1 | 0/? | Not started | - |
+| 11. Blog Compatibility | v1.1 | 6/6 | Complete | 2026-01-24 |
 | 12. Deployment | v1.1 | 0/? | Not started | - |
 
 ---
 *Roadmap created: 2026-01-23*
-*Last updated: 2026-01-24 (Phase 10 complete)*
+*Last updated: 2026-01-24 (Phase 11 complete)*
