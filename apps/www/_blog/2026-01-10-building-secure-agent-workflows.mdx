@@ -1,0 +1,155 @@
+---
+title: 'Building Secure Agent Workflows'
+description: 'Engineering patterns for designing agent workflows with security built in from the start.'
+author: axite_team
+image: axite/placeholder-og.png
+thumb: axite/placeholder-thumb.png
+categories:
+  - engineering
+tags:
+  - architecture
+  - security
+  - workflows
+date: '2026-01-10'
+toc_depth: 3
+---
+
+Security cannot be bolted on after the fact. This post covers engineering patterns for building agent workflows that are secure by design.
+
+## The Workflow Security Challenge
+
+Agent workflows often involve:
+
+- Multiple agents collaborating on a task
+- Sensitive data flowing between steps
+- External API calls and integrations
+- Human approval checkpoints
+
+Each step is a potential security boundary that needs protection.
+
+## Pattern 1: Gateway-First Architecture
+
+Route all agent actions through Axite before they reach their destination:
+
+```
+Agent → Axite Gateway → Tool/API
+         ↓
+    Policy Evaluation
+         ↓
+    Audit Logging
+```
+
+This ensures no action bypasses governance, regardless of how the agent is implemented.
+
+### Implementation
+
+```typescript
+// Instead of direct API calls
+const response = await fetch('https://api.example.com/data')
+
+// Route through Axite
+const response = await axite.request({
+  tool: 'http_request',
+  params: {
+    url: 'https://api.example.com/data',
+    method: 'GET'
+  }
+})
+```
+
+## Pattern 2: Approval Workflows
+
+For high-risk actions, require human approval before execution:
+
+```typescript
+const approvalWorkflow = {
+  trigger: {
+    action: 'send_email',
+    conditions: [
+      { field: 'recipients.count', greaterThan: 100 }
+    ]
+  },
+  approval: {
+    required: 2,  // Two approvers needed
+    timeout: '4h',
+    escalation: 'manager'
+  }
+}
+```
+
+The agent pauses, the approval request is sent, and execution continues only after approval.
+
+## Pattern 3: Data Classification
+
+Tag sensitive data and enforce handling rules:
+
+```typescript
+const dataClassification = {
+  pii: {
+    patterns: ['ssn', 'social_security', 'date_of_birth'],
+    rules: [
+      { action: 'deny', unless: { agent: { role: 'hr-agent' } } },
+      { action: 'log', level: 'sensitive' }
+    ]
+  },
+  financial: {
+    patterns: ['account_number', 'routing_number', 'credit_card'],
+    rules: [
+      { action: 'require_approval', always: true },
+      { action: 'encrypt', inTransit: true }
+    ]
+  }
+}
+```
+
+## Pattern 4: Blast Radius Limits
+
+Prevent runaway agents with rate limits and scope restrictions:
+
+```typescript
+const blastRadiusLimits = {
+  agentId: 'data-processor',
+  limits: {
+    actionsPerMinute: 100,
+    deletesPerHour: 10,
+    externalCallsPerDay: 1000
+  },
+  onLimitReached: 'pause_and_alert'
+}
+```
+
+## Pattern 5: Secure Handoffs
+
+When agents pass work to each other, maintain security context:
+
+```typescript
+const handoff = axite.createHandoff({
+  from: 'research-agent',
+  to: 'writing-agent',
+  data: researchResults,
+  permissions: 'inherit_limited',  // Only pass necessary permissions
+  audit: true
+})
+```
+
+<Admonition type="note">
+  Handoff audit logs create a complete chain of custody for multi-agent workflows.
+</Admonition>
+
+## Putting It Together
+
+A secure agent workflow combines these patterns:
+
+1. All actions through the gateway
+2. Approval for high-risk operations
+3. Data classification and handling rules
+4. Rate limits and blast radius controls
+5. Secure handoffs between agents
+
+The result is a workflow where security is built in, not added on.
+
+## Further Reading
+
+- [Policy Enforcement](/blog/policy-enforcement-for-ai-agents) - Deep dive on policies
+- [Identity and RBAC](/blog/identity-and-rbac-for-agent-systems) - Agent identity management
+- [Audit Logs](/docs/audit) - Complete audit trail documentation
