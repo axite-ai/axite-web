@@ -23,7 +23,9 @@ Get a professional, working marketing website deployed to axite.ai using battle-
 
 ### Active
 
-(No active milestone — ready to define next)
+- [ ] Refactor to single focused landing page (YC-style conversion pattern)
+- [ ] Keep Trust Center as standalone page
+- [ ] Remove other v1.1 pages (Product, Enterprise, Pricing, Blog)
 
 ### Out of Scope
 
@@ -31,6 +33,26 @@ Get a professional, working marketing website deployed to axite.ai using battle-
 - Imagery replacement — keep Supabase imagery for now
 - Full blog content strategy — separate milestone
 - Maintaining compatibility with Supabase upstream — flattening makes this impractical
+
+## Current Milestone: v1.2 Landing Page Refactor
+
+**Goal:** Transform multi-page site into a focused single landing page following YC-style conversion patterns, optimized for enterprise security buyer journey.
+
+**Target structure:**
+1. Minimal header (Logo + CTA only, no nav)
+2. Hero (outcome-first headline, subhead, primary CTA)
+3. Proof demo (placeholder using existing Supabase demo component)
+4. Trust strip (SOC2 status, compliance artifacts — no testimonial)
+5. Problem → Transformation blocks
+6. 3 Pillars (Policy, Identity, Audit)
+7. How it works (3 steps)
+8. Security detail (link to /trust)
+9. Final CTA block
+10. Minimal footer (Docs, Trust, Terms/Privacy, contact)
+
+**Primary CTA:** "Book Security Review" (placeholder booking link)
+**Keep:** /trust page
+**Remove:** /product, /enterprise, /pricing, /blog (and all blog posts)
 
 ## Brand Identity
 
@@ -96,4 +118,4 @@ axite/
 | Manual deployment | User handles Vercel/domain setup outside GSD | ✓ Good |
 
 ---
-*Last updated: 2026-01-24 after completing v1.1 milestone*
+*Last updated: 2026-01-24 after starting v1.2 milestone*
