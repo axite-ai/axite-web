@@ -1,122 +1,107 @@
 # Requirements: Axite Marketing Website
 
-**Defined:** 2026-01-23
+**Defined:** 2026-01-24
 **Core Value:** Get a professional, working marketing website deployed to axite.ai using battle-tested code instead of AI-generated slop.
 
-## v1.1 Requirements
+## v1.2 Requirements
 
-Requirements for Axite rebrand milestone. Visual + content rebrand (not blog content) + deployment.
+Requirements for Landing Page Refactor milestone. Single focused landing page following YC-style conversion patterns.
 
-### Visual Identity
+**Design Constraint:** For each section, search existing Supabase components, layouts, SVGs, and page sections. Evaluate and select the best existing design to adapt. No creative generation of new layouts/visuals.
 
-- [x] **VIS-01**: Color palette swapped to Axite colors (Primary Navy #3B63F3, Accent Teal #00B3A4)
-- [x] **VIS-02**: Typography scheme updated to match Axite brand voice (calm, precise, authoritative)
-- [x] **VIS-03**: Tailwind theme configuration reflects new color/typography tokens
-- [x] **VIS-04**: All UI components render with new color scheme (buttons, links, cards, etc.)
+### Header
 
-### Homepage
+- [ ] **LP-01**: Minimal header with logo only (no navigation links)
+- [ ] **LP-02**: Single primary CTA button ("Book Security Review") in header
 
-- [ ] **HOME-01**: Hero section displays Axite value prop (Agent Governance Platform messaging)
-- [ ] **HOME-02**: Product feature sections adapted for Axite (policy, identity, audit pillars)
-- [ ] **HOME-03**: Social proof section present (placeholder testimonials or trust signals)
-- [ ] **HOME-04**: CTAs updated (e.g., "Try the sandbox", "Book a demo")
-- [ ] **HOME-05**: Footer updated with Axite links and branding
+### Hero
 
-### Enterprise Page
+- [ ] **LP-03**: Outcome-first headline (not feature-first)
+- [ ] **LP-04**: One-line subhead (who it's for + what it does)
+- [ ] **LP-05**: Primary CTA "Book Security Review" (placeholder booking link)
+- [ ] **LP-06**: Secondary "View Docs" link (visually lighter)
 
-- [ ] **ENT-01**: Enterprise page adapted for Axite security/compliance messaging
-- [ ] **ENT-02**: Security certifications section present (SOC2 status, compliance)
-- [ ] **ENT-03**: Deployment options described (on-prem, cloud, hybrid if applicable)
-- [ ] **ENT-04**: Enterprise CTA (contact sales / book security review)
+### Proof Demo
 
-### Product Page
+- [ ] **LP-07**: Reuse existing Supabase demo component (e.g., logs panel, ETLVisual) showing Allowed/Blocked + decision trace
 
-- [ ] **PROD-01**: Product overview page describes Axite control plane
-- [ ] **PROD-02**: Key features section covers: Policy enforcement, Identity/RBAC, Audit trails
-- [ ] **PROD-03**: How it works section (agent -> Axite -> tools flow)
-- [ ] **PROD-04**: Integration/compatibility section (MCP servers, tools)
+### Trust Strip
 
-### Pricing Page
+- [ ] **LP-08**: SOC2 Type II status badge/indicator
+- [ ] **LP-09**: Link to Trust Center (/trust)
 
-- [ ] **PRICE-01**: Pricing page displays Axite tiers (or "Contact us" for enterprise)
-- [ ] **PRICE-02**: Feature comparison table present
-- [ ] **PRICE-03**: FAQ section addresses common questions
-- [ ] **PRICE-04**: CTA to start trial or contact sales
+### Problem to Transformation
 
-### Trust Center / Security Page
+- [ ] **LP-10**: 2-3 blocks mapping "current pain" → "what changes with Axite"
 
-- [ ] **TRUST-01**: Trust/Security page exists with compliance status
-- [ ] **TRUST-02**: Data handling practices described
-- [ ] **TRUST-03**: SLA information present (or placeholder)
-- [ ] **TRUST-04**: Link to status page (or placeholder)
+### Three Pillars
 
-### Navigation
+- [ ] **LP-11**: Enforceable Policy pillar with existing visual/component
+- [ ] **LP-12**: Identity/Least Privilege pillar with existing visual/component
+- [ ] **LP-13**: Audit Evidence pillar with existing visual/component (e.g., logs panel)
 
-- [x] **NAV-01**: Header navigation updated with Axite page structure (Product, Pricing, Enterprise, Blog, Trust)
-- [x] **NAV-02**: Supabase-specific nav items removed (Auth, Database, Storage, etc.)
-- [x] **NAV-03**: Footer navigation reflects Axite site structure
-- [x] **NAV-04**: Mobile navigation works with updated structure
+### How It Works
+
+- [ ] **LP-14**: Step 1: Connect tools/MCP servers
+- [ ] **LP-15**: Step 2: Define policies/identities
+- [ ] **LP-16**: Step 3: Monitor/audit
+- [ ] **LP-17**: Primary CTA repeated below steps
+
+### Security Detail
+
+- [ ] **LP-18**: Link to Trust Center
+- [ ] **LP-19**: Data handling summary
+- [ ] **LP-20**: Skimmable security info block
+
+### Final CTA
+
+- [ ] **LP-21**: One sentence restating outcome + primary CTA
+
+### Footer
+
+- [ ] **LP-22**: Minimal footer (Docs link, Trust Center, Terms/Privacy, contact email)
 
 ### Cleanup
 
-- [x] **CLEAN-01**: Supabase product pages removed or hidden (Auth, Database, Storage, Realtime, Edge Functions, Vector, Cron, Queues)
-- [x] **CLEAN-02**: Comparison/switch-from pages removed
-- [x] **CLEAN-03**: Framework-specific pages removed (nextjs, etc.)
-- [x] **CLEAN-04**: Launch Week content removed
-- [x] **CLEAN-05**: All "Supabase" text references replaced with "Axite" (except blog content)
+- [ ] **CLEAN-06**: Remove /product page
+- [ ] **CLEAN-07**: Remove /enterprise page
+- [ ] **CLEAN-08**: Remove /pricing page
+- [ ] **CLEAN-09**: Remove /blog and all blog posts
+- [ ] **CLEAN-10**: Remove unused v1.1 components
 
-### Blog
+### Keep
 
-- [ ] **BLOG-01**: Blog index page functional with existing posts
-- [ ] **BLOG-02**: Blog navigation/header shows Axite branding (colors/typography)
-- [ ] **BLOG-03**: Individual blog posts render correctly
-- [ ] **BLOG-04**: Blog content remains unchanged (Supabase posts kept for now)
-
-### Deployment
-
-- [ ] **DEPLOY-01**: Site deployed to Vercel
-- [ ] **DEPLOY-02**: axite.ai domain configured and working
-- [ ] **DEPLOY-03**: Production build passes without errors
-- [ ] **DEPLOY-04**: Environment variables configured for production
-- [ ] **DEPLOY-05**: HTTPS working on custom domain
+- [ ] **KEEP-01**: /trust page remains functional
+- [ ] **KEEP-02**: Legal pages remain (terms, privacy)
 
 ## Future Requirements
 
-Deferred to future milestones. Tracked but not in v1.1 roadmap.
+Deferred to future milestones.
 
-### Logo & Imagery
+### Logo & Brand Assets
 
 - **LOGO-01**: Axite logo in header, footer, favicon
 - **LOGO-02**: OG images updated with Axite branding
-- **IMG-01**: Product screenshots replaced with Axite UI
-- **IMG-02**: Illustrations/graphics updated to Axite style
 
-### Blog Content
+### Documentation
 
-- **BLOG-05**: New Axite blog posts
-- **BLOG-06**: Supabase posts removed or archived
-- **BLOG-07**: SEO optimization for Axite content
+- **DOCS-01**: External documentation site
+- **DOCS-02**: API reference
 
-### Additional Pages
+### Interactive Features
 
-- **PAGE-01**: Documentation (hosted or linked)
-- **PAGE-02**: Case studies / customer stories
-- **PAGE-03**: About page / team
-- **PAGE-04**: Careers page
+- **DEMO-01**: Live sandbox/playground
+- **DEMO-02**: Interactive product demo
 
 ## Out of Scope
 
-Explicitly excluded. Documented to prevent scope creep.
-
 | Feature | Reason |
 |---------|--------|
-| Logo replacement | User providing assets separately; keep Supabase logo for now |
-| Imagery replacement | Keep Supabase imagery for reference; replace in future milestone |
-| Blog content rewrite | SEO considerations; separate milestone |
-| Documentation site | Out of scope for marketing site |
-| Interactive demos | Future feature |
-| Analytics integration | Can add post-launch |
-| A/B testing | Premature optimization |
+| Blog | Removed in v1.2, may return in future milestone |
+| Multi-page site structure | Consolidating to single landing page |
+| Custom illustrations/SVGs | Reusing existing Supabase assets |
+| Real booking integration | Using placeholder link for now |
+| Real testimonials | Trust artifacts only until available |
 
 ## Traceability
 
@@ -124,55 +109,41 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| VIS-01 | Phase 8 | Complete |
-| VIS-02 | Phase 8 | Complete |
-| VIS-03 | Phase 8 | Complete |
-| VIS-04 | Phase 8 | Complete |
-| HOME-01 | Phase 10 | Pending |
-| HOME-02 | Phase 10 | Pending |
-| HOME-03 | Phase 10 | Pending |
-| HOME-04 | Phase 10 | Pending |
-| HOME-05 | Phase 10 | Pending |
-| ENT-01 | Phase 10 | Pending |
-| ENT-02 | Phase 10 | Pending |
-| ENT-03 | Phase 10 | Pending |
-| ENT-04 | Phase 10 | Pending |
-| PROD-01 | Phase 10 | Pending |
-| PROD-02 | Phase 10 | Pending |
-| PROD-03 | Phase 10 | Pending |
-| PROD-04 | Phase 10 | Pending |
-| PRICE-01 | Phase 10 | Pending |
-| PRICE-02 | Phase 10 | Pending |
-| PRICE-03 | Phase 10 | Pending |
-| PRICE-04 | Phase 10 | Pending |
-| TRUST-01 | Phase 10 | Pending |
-| TRUST-02 | Phase 10 | Pending |
-| TRUST-03 | Phase 10 | Pending |
-| TRUST-04 | Phase 10 | Pending |
-| NAV-01 | Phase 9 | Complete |
-| NAV-02 | Phase 9 | Complete |
-| NAV-03 | Phase 9 | Complete |
-| NAV-04 | Phase 9 | Complete |
-| CLEAN-01 | Phase 9 | Complete |
-| CLEAN-02 | Phase 9 | Complete |
-| CLEAN-03 | Phase 9 | Complete |
-| CLEAN-04 | Phase 9 | Complete |
-| CLEAN-05 | Phase 9 | Complete |
-| BLOG-01 | Phase 11 | Pending |
-| BLOG-02 | Phase 11 | Pending |
-| BLOG-03 | Phase 11 | Pending |
-| BLOG-04 | Phase 11 | Pending |
-| DEPLOY-01 | Phase 12 | Pending |
-| DEPLOY-02 | Phase 12 | Pending |
-| DEPLOY-03 | Phase 12 | Pending |
-| DEPLOY-04 | Phase 12 | Pending |
-| DEPLOY-05 | Phase 12 | Pending |
+| LP-01 | TBD | Pending |
+| LP-02 | TBD | Pending |
+| LP-03 | TBD | Pending |
+| LP-04 | TBD | Pending |
+| LP-05 | TBD | Pending |
+| LP-06 | TBD | Pending |
+| LP-07 | TBD | Pending |
+| LP-08 | TBD | Pending |
+| LP-09 | TBD | Pending |
+| LP-10 | TBD | Pending |
+| LP-11 | TBD | Pending |
+| LP-12 | TBD | Pending |
+| LP-13 | TBD | Pending |
+| LP-14 | TBD | Pending |
+| LP-15 | TBD | Pending |
+| LP-16 | TBD | Pending |
+| LP-17 | TBD | Pending |
+| LP-18 | TBD | Pending |
+| LP-19 | TBD | Pending |
+| LP-20 | TBD | Pending |
+| LP-21 | TBD | Pending |
+| LP-22 | TBD | Pending |
+| CLEAN-06 | TBD | Pending |
+| CLEAN-07 | TBD | Pending |
+| CLEAN-08 | TBD | Pending |
+| CLEAN-09 | TBD | Pending |
+| CLEAN-10 | TBD | Pending |
+| KEEP-01 | TBD | Pending |
+| KEEP-02 | TBD | Pending |
 
 **Coverage:**
-- v1.1 requirements: 43 total
-- Mapped to phases: 43
-- Unmapped: 0
+- v1.2 requirements: 29 total
+- Mapped to phases: 0
+- Unmapped: 29
 
 ---
-*Requirements defined: 2026-01-23*
-*Last updated: 2026-01-23 (Phase 9 complete)*
+*Requirements defined: 2026-01-24*
+*Last updated: 2026-01-24 after v1.2 definition*
