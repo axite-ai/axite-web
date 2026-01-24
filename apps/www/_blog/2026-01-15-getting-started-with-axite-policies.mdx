@@ -1,0 +1,99 @@
+---
+title: 'Getting Started with Axite Policies'
+description: 'A step-by-step guide to deploying your first agent governance policy with Axite.'
+author: axite_team
+image: axite/placeholder-og.png
+thumb: axite/placeholder-thumb.png
+categories:
+  - developers
+tags:
+  - tutorial
+  - policy
+  - quickstart
+date: '2026-01-15'
+toc_depth: 3
+---
+
+This guide walks you through deploying your first Axite policy in under 10 minutes.
+
+## Prerequisites
+
+- An Axite account (request access at [axite.ai](/contact/sales))
+- An existing AI agent or MCP-compatible tool
+- Basic familiarity with JSON or TypeScript
+
+## Step 1: Connect Your Agent
+
+First, point your agent to the Axite gateway. If you are using MCP tools, update your configuration:
+
+```json
+{
+  "mcpServers": {
+    "axite-gateway": {
+      "url": "https://gateway.axite.ai",
+      "apiKey": "your-api-key"
+    }
+  }
+}
+```
+
+## Step 2: Define Your First Policy
+
+Create a simple policy that requires approval for any external API calls:
+
+```typescript
+// policies/external-api-approval.ts
+export const externalApiPolicy = {
+  name: 'external-api-approval',
+  description: 'Require approval for external API calls',
+  rules: [
+    {
+      action: 'require_approval',
+      conditions: [
+        { field: 'tool.type', equals: 'http_request' },
+        { field: 'request.url', notStartsWith: 'https://internal.' }
+      ],
+      approvers: ['security-team']
+    }
+  ]
+}
+```
+
+## Step 3: Deploy the Policy
+
+Use the Axite CLI to deploy:
+
+```bash
+axite policy deploy policies/external-api-approval.ts
+```
+
+Or deploy via the dashboard UI.
+
+## Step 4: Test the Policy
+
+Have your agent attempt an external API call. You should see:
+
+1. The request appear in the Axite dashboard
+2. An approval request sent to the security-team channel
+3. The agent waiting for approval before proceeding
+
+## Step 5: Review the Audit Log
+
+Navigate to the Audit section in your dashboard. You will see:
+
+- The original request
+- The policy that matched
+- The decision (require_approval)
+- The approval status and approver
+
+<Admonition type="note">
+  All audit logs are retained for 90 days by default. Enterprise plans include custom retention periods.
+</Admonition>
+
+## What is Next?
+
+- Explore [policy conditions](/docs/policies/conditions) for more complex rules
+- Set up [identity and roles](/docs/identity) for your agents
+- Configure [approval workflows](/docs/approvals) for your team
+
+Need help? Join our community or contact support.
