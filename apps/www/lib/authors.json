@@ -1,5 +1,12 @@
 [
   {
+    "author_id": "axite_team",
+    "author": "Axite Team",
+    "position": "",
+    "author_url": "https://axite.ai",
+    "author_image_url": "/images/avatars/axite-team.png"
+  },
+  {
     "author_id": "angelico_de_los_reyes",
     "author": "Angelico de los Reyes",
     "position": "Engineering",
