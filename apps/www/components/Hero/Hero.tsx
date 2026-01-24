@@ -28,19 +28,6 @@ const Hero = () => {
                 <div className="flex items-center gap-2">
                   <Button asChild size="medium">
                     <Link
-                      href="/docs/quickstart"
-                      onClick={() =>
-                        sendTelemetryEvent({
-                          action: 'try_sandbox_button_clicked',
-                          properties: { buttonLocation: 'Homepage Hero' },
-                        })
-                      }
-                    >
-                      Try the sandbox
-                    </Link>
-                  </Button>
-                  <Button asChild size="medium" type="default">
-                    <Link
                       href="/contact/sales"
                       onClick={() =>
                         sendTelemetryEvent({
@@ -49,7 +36,20 @@ const Hero = () => {
                         })
                       }
                     >
-                      Book a security review
+                      Book Security Review
+                    </Link>
+                  </Button>
+                  <Button asChild size="medium" type="default">
+                    <Link
+                      href="/docs"
+                      onClick={() =>
+                        sendTelemetryEvent({
+                          action: 'view_docs_clicked',
+                          properties: { buttonLocation: 'Homepage Hero' },
+                        })
+                      }
+                    >
+                      View Docs
                     </Link>
                   </Button>
                 </div>
