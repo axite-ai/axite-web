@@ -1,0 +1,140 @@
+---
+title: 'Real-time Policy Decisions at Scale'
+description: 'How Axite evaluates thousands of policy decisions per second without adding latency to agent operations.'
+author: axite_team
+image: axite/placeholder-og.png
+thumb: axite/placeholder-thumb.png
+categories:
+  - engineering
+tags:
+  - performance
+  - architecture
+  - policy
+date: '2026-01-03'
+toc_depth: 3
+---
+
+When an agent needs to take an action, it cannot wait. Axite's policy engine is designed to make decisions in milliseconds, even at scale.
+
+## The Performance Challenge
+
+Consider an agent processing customer requests:
+
+- Each request might trigger 5-10 tool calls
+- Each tool call requires policy evaluation
+- Evaluation must check multiple policies
+- The result must be logged for audit
+
+At 1000 requests per minute, that is 10000 policy evaluations per minute - all of which must complete in under 10ms to avoid degrading agent performance.
+
+## Axite Policy Engine Architecture
+
+The Axite policy engine uses a multi-tier evaluation strategy:
+
+```
+Request -> Cache Check -> Policy Evaluation -> Decision -> Audit Log
+              |               |
+         Cache Hit      Async Logging
+```
+
+### Tier 1: Decision Cache
+
+Many policy decisions are deterministic. If the same agent requests the same action with the same context, the result will be the same.
+
+```typescript
+interface CacheKey {
+  agentId: string
+  actionType: string
+  resourceHash: string
+  policyVersion: string
+}
+```
+
+Cache hits return in under 1ms.
+
+### Tier 2: Compiled Policies
+
+Policies are compiled to optimized decision trees at deployment time:
+
+```typescript
+// Before: Runtime interpretation
+if (conditions.every(c => evaluate(c, context))) {
+  return rule.action
+}
+
+// After: Compiled decision tree
+return policyTree.evaluate(context)  // O(log n) vs O(n)
+```
+
+### Tier 3: Parallel Evaluation
+
+When multiple policies apply, they are evaluated in parallel:
+
+```typescript
+const results = await Promise.all(
+  applicablePolicies.map(p => p.evaluate(context))
+)
+return mergeDecisions(results)
+```
+
+## Benchmarks
+
+Axite policy evaluation performance:
+
+| Scenario | P50 | P99 |
+|----------|-----|-----|
+| Cache hit | 0.3ms | 1ms |
+| Simple policy (3 rules) | 1.2ms | 3ms |
+| Complex policy (20 rules) | 2.8ms | 8ms |
+| Multi-policy (5 policies) | 3.1ms | 10ms |
+
+## Async Audit Logging
+
+Audit logging does not block the decision path:
+
+```typescript
+// Decision returns immediately
+const decision = await policyEngine.evaluate(request)
+
+// Logging happens async
+setImmediate(() => {
+  auditLogger.log({
+    request,
+    decision,
+    trace: decision.trace
+  })
+})
+
+return decision
+```
+
+Logs are durably stored within 100ms of the decision, but the agent does not wait.
+
+## Edge Deployment
+
+For latency-sensitive applications, Axite policies can be deployed to edge locations:
+
+- Policy evaluation happens in the same region as the agent
+- Only audit logs are sent to central storage
+- Typical added latency: under 5ms
+
+<Admonition type="tip">
+  Use the Axite dashboard to monitor policy evaluation latency. Set alerts for P99 exceeding your SLA.
+</Admonition>
+
+## Scaling Considerations
+
+The Axite gateway scales horizontally. Each node:
+
+- Maintains a local policy cache
+- Receives policy updates via pub/sub
+- Independently evaluates decisions
+- Ships audit logs to central storage
+
+No coordination is required between nodes for policy evaluation.
+
+## Conclusion
+
+Fast policy decisions require careful architecture. Axite combines caching, compilation, parallelization, and async logging to deliver sub-10ms decisions at any scale.
+
+Want to learn more about Axite's architecture? [Contact our team](/contact/sales) for a technical deep-dive.
