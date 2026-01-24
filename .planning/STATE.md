@@ -88,4 +88,4 @@ None
 
 Last session: 2026-01-24
 Stopped at: Phase 12 complete
-Resume: Next phase when ready
+Resume: `/gsd:plan-phase 13`

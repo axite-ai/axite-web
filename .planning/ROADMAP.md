@@ -35,7 +35,7 @@ See `.planning/milestones/v1.0-ROADMAP.md` for full v1.0 roadmap archive.
 
 **Design Constraint:** For each section, search existing Supabase components, layouts, SVGs, and page sections first. Evaluate and select the best existing design to adapt. No creative generation of new layouts/visuals.
 
-- [ ] **Phase 12: Cleanup** - Remove old pages for clean slate
+- [x] **Phase 12: Cleanup** - Remove old pages for clean slate (completed 2026-01-24)
 - [ ] **Phase 13: Header & Hero** - Minimal header and outcome-first hero section
 - [ ] **Phase 14: Proof & Trust** - Demo component and trust indicators
 - [ ] **Phase 15: Value Proposition** - Problem/Transformation and Three Pillars sections
@@ -52,13 +52,19 @@ See `.planning/milestones/v1.0-ROADMAP.md` for full v1.0 roadmap archive.
   1. Navigating to /product returns 404 or redirects to homepage
   2. Navigating to /enterprise returns 404 or redirects to homepage
   3. Navigating to /pricing returns 404 or redirects to homepage
-  4. Navigating to /blog returns 404 or redirects to homepage
+  4. /blog page loads correctly (blog system kept per user request)
   5. /trust page loads correctly with security information
   6. /terms and /privacy pages load correctly
-**Plans**: TBD
+**Plans**: 7 plans in 3 waves
 
 Plans:
-- [ ] 12-01: TBD
+- [x] 12-01: Delete page files and data (wave 1)
+- [x] 12-02: Delete blog system (wave 1) — REVERTED: blog kept per user request
+- [x] 12-03: Delete Pricing and Enterprise components (wave 1)
+- [x] 12-04: Update navigation (wave 2)
+- [x] 12-05: Update footer (wave 2)
+- [x] 12-06: Add redirects (wave 2)
+- [x] 12-07: Verify build and routes (wave 3)
 
 ### Phase 13: Header & Hero
 **Goal**: Landing page has minimal header and compelling outcome-first hero
@@ -143,7 +149,7 @@ Phases 12-17 to be executed in order.
 | 9. Navigation & Cleanup | v1.1 | 5/5 | Complete | 2026-01-23 |
 | 10. Content Pages | v1.1 | 7/7 | Complete | 2026-01-24 |
 | 11. Blog Compatibility | v1.1 | 6/6 | Complete | 2026-01-24 |
-| 12. Cleanup | v1.2 | 0/? | Not started | - |
+| 12. Cleanup | v1.2 | 6/7 | Complete | 2026-01-24 |
 | 13. Header & Hero | v1.2 | 0/? | Not started | - |
 | 14. Proof & Trust | v1.2 | 0/? | Not started | - |
 | 15. Value Proposition | v1.2 | 0/? | Not started | - |
