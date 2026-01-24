@@ -11,18 +11,18 @@ See: .planning/PROJECT.md (updated 2026-01-24)
 
 Milestone: v1.2 Landing Page Refactor
 Phase: 13 of 17 (Header & Hero)
-Plan: 1 of 3 complete
+Plan: 2 of 3 complete
 Status: In progress
-Last activity: 2026-01-24 - Completed 13-01-PLAN.md (Minimal Header)
+Last activity: 2026-01-24 - Completed 13-02-PLAN.md (Hero Messaging)
 
-Progress: [##################..] 97% (48/~49 plans - v1.0+v1.1 complete, v1.2 phase 13 started)
+Progress: [##################..] 98% (49/~50 plans - v1.0+v1.1 complete, v1.2 phase 13 in progress)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 48 (15 v1.0 + 24 v1.1 + 9 v1.2)
-- Average duration: ~20 min
-- Total execution time: ~14.5 hours
+- Total plans completed: 49 (15 v1.0 + 24 v1.1 + 10 v1.2)
+- Average duration: ~18 min
+- Total execution time: ~14.6 hours
 
 **By Phase:**
 
@@ -34,7 +34,7 @@ Progress: [##################..] 97% (48/~49 plans - v1.0+v1.1 complete, v1.2 ph
 | 10 (v1.1) | 7 | ~75 min | ~11 min |
 | 11 (v1.1) | 6 | ~15 min | ~2.5 min |
 | 12 (v1.2) | 8 | ~13 min | ~1.6 min |
-| 13 (v1.2) | 1 | ~4 min | ~4 min |
+| 13 (v1.2) | 2 | ~9 min | ~4.5 min |
 
 *Updated after each plan completion*
 
@@ -64,6 +64,9 @@ v1.2 phase 13 decisions:
 - Header shows only logo + single CTA ("Book Security Review")
 - No navigation links in header (pages still accessible via direct URL)
 - Mobile hamburger removed (no items to show)
+- Hero headline: "Complete visibility and control over every agent action" (outcome-first)
+- Hero subhead: "The agent governance platform for enterprises" (audience-identifying)
+- Hero CTAs: "Book Security Review" (primary, /contact/sales) + "View Docs" (secondary, /docs)
 
 ### Phase 12 Verification Results
 
@@ -93,5 +96,5 @@ None
 ## Session Continuity
 
 Last session: 2026-01-24
-Stopped at: Completed 13-01-PLAN.md
-Resume: `/gsd:execute-plan 13-02`
+Stopped at: Completed 13-02-PLAN.md
+Resume: `/gsd:execute-plan 13-03`
