@@ -76,10 +76,12 @@ Plans:
   3. Hero headline communicates outcome (what users get), not features
   4. Hero subhead identifies target audience and what Axite does in one line
   5. "Book Security Review" primary CTA and "View Docs" secondary link visible
-**Plans**: TBD
+**Plans**: 3 plans in 2 waves
 
 Plans:
-- [ ] 13-01: TBD
+- [ ] 13-01: Simplify header to logo + CTA (wave 1)
+- [ ] 13-02: Update hero copy and CTAs (wave 1)
+- [ ] 13-03: Verify phase success criteria (wave 2)
 
 ### Phase 14: Proof & Trust
 **Goal**: Landing page demonstrates product capability and establishes trust
