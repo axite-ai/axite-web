@@ -1,0 +1,125 @@
+---
+title: 'Audit Trails: Complete Visibility Into Agent Actions'
+description: 'How Axite provides audit-grade logging with decision traces for full transparency into what your agents are doing.'
+author: axite_team
+image: axite/placeholder-og.png
+thumb: axite/placeholder-thumb.png
+categories:
+  - product
+tags:
+  - audit
+  - compliance
+  - visibility
+date: '2026-01-08'
+toc_depth: 3
+---
+
+When something goes wrong with an AI agent, the first question is always "what happened?" Axite's audit system provides the answer with complete decision traces.
+
+## The Visibility Problem
+
+Most agent systems log outcomes but not reasoning. You know the agent sent an email, but not:
+
+- Why it decided to send that email
+- What policies were evaluated
+- What data influenced the decision
+- Who or what approved the action
+
+This gap makes debugging difficult and compliance audits nearly impossible.
+
+## Axite Audit Architecture
+
+Every action that passes through Axite generates a comprehensive audit record:
+
+```typescript
+interface AuditRecord {
+  id: string
+  timestamp: string
+  agent: AgentIdentity
+  action: ActionRequest
+  decision: 'allow' | 'deny' | 'require_approval'
+  policies: PolicyEvaluation[]
+  context: Record<string, any>
+  trace: DecisionTrace
+}
+```
+
+### Decision Traces
+
+The decision trace shows exactly how Axite reached its conclusion:
+
+```json
+{
+  "trace": {
+    "policiesEvaluated": 3,
+    "matchingPolicies": [
+      {
+        "name": "data-access-policy",
+        "rules": [
+          {
+            "condition": "data.classification == 'internal'",
+            "result": true
+          },
+          {
+            "condition": "agent.role in ['analyst', 'admin']",
+            "result": true
+          }
+        ],
+        "decision": "allow"
+      }
+    ],
+    "finalDecision": "allow",
+    "decisionTime": "2.3ms"
+  }
+}
+```
+
+## Querying Audit Logs
+
+Axite provides powerful query capabilities:
+
+```typescript
+// Find all denied actions in the last 24 hours
+const deniedActions = await axite.audit.query({
+  decision: 'deny',
+  timeRange: { last: '24h' }
+})
+
+// Find all actions by a specific agent
+const agentActions = await axite.audit.query({
+  agentId: 'data-processor-1',
+  timeRange: { from: '2026-01-01', to: '2026-01-08' }
+})
+
+// Find all actions touching sensitive data
+const sensitiveAccess = await axite.audit.query({
+  'context.data.classification': 'pii'
+})
+```
+
+## Compliance Reports
+
+Generate audit reports for compliance reviews:
+
+- **SOC 2** - Access logs, policy enforcement records
+- **HIPAA** - PHI access tracking, approval workflows
+- **GDPR** - Data access logs, consent verification
+
+<Admonition type="tip">
+  Schedule automated compliance reports to run weekly. They are delivered to your security team's inbox every Monday.
+</Admonition>
+
+## Retention and Export
+
+Audit logs are retained for 90 days by default. Enterprise plans support:
+
+- Custom retention periods (up to 7 years)
+- Export to your SIEM or data warehouse
+- Real-time streaming to external systems
+
+## Getting Started
+
+1. Audit logging is enabled by default for all Axite accounts
+2. Access the Audit dashboard to view recent activity
+3. Set up [alerts](/docs/audit/alerts) for specific conditions
+4. Configure [exports](/docs/audit/export) for long-term storage
