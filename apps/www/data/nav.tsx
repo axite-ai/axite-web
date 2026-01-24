@@ -5,6 +5,10 @@ export const getMenu = () => ({
       url: '/docs',
     },
     {
+      title: 'Blog',
+      url: '/blog',
+    },
+    {
       title: 'Trust',
       url: '/trust',
     },

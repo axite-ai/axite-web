@@ -9,6 +9,10 @@ const footerData = [
         url: '/docs',
       },
       {
+        text: 'Blog',
+        url: '/blog',
+      },
+      {
         text: 'Trust Center',
         url: '/trust',
       },

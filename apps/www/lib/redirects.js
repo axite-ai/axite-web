@@ -22,16 +22,6 @@ module.exports = [
   },
   {
     permanent: false,
-    source: '/blog',
-    destination: '/',
-  },
-  {
-    permanent: false,
-    source: '/blog/:path*',
-    destination: '/',
-  },
-  {
-    permanent: false,
     source: '/solutions/:path*',
     destination: '/',
   },
