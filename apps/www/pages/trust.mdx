@@ -1,0 +1,173 @@
+import {
+  KeyIcon,
+  UserGroupIcon,
+  ShieldCheckIcon,
+  ClipboardCheckIcon,
+  ServerIcon,
+  LockClosedIcon,
+} from '@heroicons/react/outline'
+import { Activity, Lock, Eye, FileText } from 'lucide-react'
+import Layout from '../layouts/Layout'
+
+export const meta = {
+  type: 'lp',
+  title: 'Trust & Security at Axite',
+  description:
+    'Axite is built with security-first principles. Learn about our compliance roadmap, data handling practices, and security measures.',
+}
+
+export const Section = ({ children, icon, img }) => (
+  <div>
+    {icon && (
+      <div className="border shadow-background-surface-300 not-prose bg-surface-100 -mb-4 flex h-10 w-10 items-center justify-center rounded-full">
+        <figure className="w-5 h-5 flex items-center justify-center">{icon}</figure>
+      </div>
+    )}
+    {img && <div className="-mb-4 flex h-12 w-12 items-center justify-center">{img}</div>}
+    {children}
+  </div>
+)
+
+<div className="container mx-auto px-8 sm:px-16 xl:px-20 grid grid-cols-12 items-center my-8">
+  <div className="col-span-12 lg:col-span-6">
+    <h1 className="xl:text-5xl mb-4 [&_p]:m-0">Trust & Security at Axite</h1>
+    <h2 className="text-xl text-foreground-light max-w-xl m-0 [&_p]:m-0">
+      Axite is built with security-first principles. We're committed to earning and maintaining your trust through transparent practices and continuous improvement.
+    </h2>
+  </div>
+  <div className="col-span-12 lg:col-span-5 lg:col-start-8 m-0 [&_p]:m-0 flex items-center justify-center">
+    <div className="w-32 h-32 rounded-full bg-brand/10 flex items-center justify-center">
+      <ShieldCheckIcon className="w-16 h-16 text-brand" strokeWidth={1} />
+    </div>
+  </div>
+</div>
+
+<div className="container mx-auto px-8 sm:px-16 xl:px-20 mb-16">
+
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-16">
+
+<Section icon={<ShieldCheckIcon strokeWidth={1}/>}>
+
+### SOC 2 Type II
+
+Axite is actively working toward SOC 2 Type II certification. We've implemented the controls and are in the audit process.
+
+**Status:** In Progress
+
+We prioritize security controls that matter for agent governance: access control, audit logging, and data protection.
+
+</Section>
+
+<Section icon={<Lock strokeWidth={1}/>}>
+
+### Data Encryption
+
+All data is encrypted at rest using AES-256 and in transit via TLS 1.3.
+
+Agent requests, policy decisions, and audit logs are encrypted before storage. Encryption keys are managed through industry-standard key management practices.
+
+</Section>
+
+<Section icon={<Eye strokeWidth={1}/>}>
+
+### Audit Logging
+
+Every agent action, policy decision, and administrative change is logged with full context.
+
+Audit logs are:
+- Immutable (append-only)
+- Encrypted at rest
+- Retained per your plan tier
+- Exportable for compliance
+
+</Section>
+
+<Section icon={<KeyIcon strokeWidth={1}/>}>
+
+### Secrets Management
+
+Secrets (API keys, tokens) are never logged in audit trails or decision traces.
+
+We use secure secret storage with automatic rotation support. Secrets in transit are always encrypted and never exposed in logs.
+
+</Section>
+
+<Section icon={<UserGroupIcon strokeWidth={1}/>}>
+
+### Access Control
+
+Axite enforces role-based access control (RBAC) for both users and agents.
+
+Administrative access requires authentication. Agent identities are verified before policy evaluation. Least-privilege is the default.
+
+</Section>
+
+<Section icon={<ServerIcon strokeWidth={1}/>}>
+
+### Infrastructure Security
+
+Axite's managed cloud runs on hardened infrastructure with:
+
+- Network isolation and firewalls
+- Regular security patching
+- Intrusion detection monitoring
+- DDoS protection
+
+</Section>
+
+<Section icon={<ClipboardCheckIcon strokeWidth={1}/>}>
+
+### Vulnerability Management
+
+We conduct regular security assessments including:
+
+- Automated dependency scanning
+- Static code analysis
+- Penetration testing (annual)
+- Responsible disclosure program
+
+Report security issues to security@axite.ai
+
+</Section>
+
+<Section icon={<FileText strokeWidth={1}/>}>
+
+### Data Handling
+
+**What we store:**
+- Agent requests (configurable retention)
+- Policy decisions and traces
+- Administrative audit logs
+
+**What we don't store:**
+- Secrets or credentials
+- Unnecessary PII
+- Raw tool responses (optional)
+
+</Section>
+
+</div>
+
+</div>
+
+## Deployment Options & Data Residency
+
+Axite offers flexible deployment options to meet your data residency and compliance requirements:
+
+| Deployment | Data Location | Availability |
+|------------|---------------|--------------|
+| Managed Cloud | US (default), EU available | Now |
+| Private Deployment | Your cloud account | By request |
+| Customer-Managed | Your infrastructure | Design partner |
+
+For specific compliance requirements or data residency needs, [contact our team](/contact/sales).
+
+## Questions?
+
+If you have questions about Axite's security practices or need documentation for your security review, please reach out:
+
+- **Security inquiries:** security@axite.ai
+- **Compliance documentation:** [Book a security review](/contact/sales)
+- **General questions:** [Contact us](/contact/sales)
+
+export default (context) => <Layout meta={meta} children={context.children} context={context} />
