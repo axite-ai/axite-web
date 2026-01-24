@@ -1,0 +1,89 @@
+---
+title: 'Policy Enforcement for AI Agents'
+description: 'How Axite enforces allow, deny, and approval policies at the gateway level for complete agent control.'
+author: axite_team
+image: axite/placeholder-og.png
+thumb: axite/placeholder-thumb.png
+categories:
+  - product
+tags:
+  - policy
+  - governance
+  - security
+date: '2026-01-18'
+toc_depth: 3
+---
+
+Policies are the foundation of agent governance. Without clear rules about what agents can and cannot do, organizations face unpredictable behavior and compliance risks.
+
+## The Policy Problem
+
+Traditional access control was designed for humans. Users authenticate, receive permissions, and make decisions within those boundaries. Agents operate differently - they make thousands of decisions autonomously, often in milliseconds.
+
+This scale requires a new approach: declarative policies enforced at the gateway.
+
+## Axite Policy Architecture
+
+Axite policies follow a simple model:
+
+```typescript
+interface Policy {
+  name: string
+  description: string
+  rules: Rule[]
+  priority: number
+}
+
+interface Rule {
+  action: 'allow' | 'deny' | 'require_approval'
+  conditions: Condition[]
+  tools?: string[]
+  resources?: string[]
+}
+```
+
+### Policy Evaluation
+
+When an agent requests an action, Axite evaluates all applicable policies:
+
+1. **Match** - Find policies that apply to this agent and action
+2. **Evaluate** - Check conditions against the current context
+3. **Decide** - Return allow, deny, or require approval
+4. **Log** - Record the decision with full context
+
+### Example: Data Access Policy
+
+```typescript
+const sensitiveDataPolicy = {
+  name: 'sensitive-data-access',
+  description: 'Restrict access to PII and financial data',
+  rules: [
+    {
+      action: 'deny',
+      conditions: [
+        { field: 'data.classification', equals: 'pii' },
+        { field: 'agent.role', notIn: ['compliance-agent', 'hr-agent'] }
+      ]
+    },
+    {
+      action: 'require_approval',
+      conditions: [
+        { field: 'data.classification', equals: 'financial' },
+        { field: 'amount', greaterThan: 10000 }
+      ]
+    }
+  ]
+}
+```
+
+## Real-Time Enforcement
+
+Policies are evaluated in real-time at the MCP gateway. There is no batch processing, no eventual consistency - every action is checked before execution.
+
+<Admonition type="tip">
+  Start with permissive policies and tighten over time. Axite's audit logs show exactly what actions agents are taking, helping you refine policies based on real behavior.
+</Admonition>
+
+## Next Steps
+
+Learn how to [write your first policy](/docs/policies) or explore [identity and RBAC](/blog/identity-and-rbac-for-agent-systems) for the next layer of control.
