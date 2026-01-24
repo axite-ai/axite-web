@@ -3,26 +3,17 @@ import Link from 'next/link'
 import { Check } from 'lucide-react'
 import { plans } from 'shared-data/plans'
 import { Button, cn } from 'ui'
-import { Organization } from '~/data/organizations'
 import { useSendTelemetryEvent } from '~/lib/telemetry'
-import UpgradePlan from './UpgradePlan'
 
-interface PricingPlansProps {
-  organizations?: Organization[]
-  hasExistingOrganizations?: boolean
-}
-
-const PricingPlans = ({ organizations, hasExistingOrganizations }: PricingPlansProps) => {
+const PricingPlans = () => {
   const sendTelemetryEvent = useSendTelemetryEvent()
 
   return (
     <div className="mx-auto lg:container lg:px-16 xl:px-12 flex flex-col">
       <div className="relative z-10 mx-auto w-full px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-md grid lg:max-w-none lg:grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-0">
+        <div className="mx-auto max-w-md grid lg:max-w-none lg:grid-cols-2 gap-4 lg:max-w-4xl">
           {plans.map((plan) => {
-            const isProPlan = plan.name === 'Pro'
-            const isTeamPlan = plan.name === 'Team'
-            const isUpgradablePlan = isProPlan || isTeamPlan
+            const isSandboxPlan = plan.name === 'Sandbox'
             const features = plan.features
             const footer = plan.footer
 
@@ -31,7 +22,7 @@ const PricingPlans = ({ organizations, hasExistingOrganizations }: PricingPlansP
                 action: 'www_pricing_plan_cta_clicked',
                 properties: {
                   plan: plan.name,
-                  showUpgradeText: isUpgradablePlan && hasExistingOrganizations ? true : false,
+                  showUpgradeText: false,
                   section: 'main',
                 },
               })
@@ -41,17 +32,11 @@ const PricingPlans = ({ organizations, hasExistingOrganizations }: PricingPlansP
               <div
                 key={`row-${plan.name}`}
                 className={cn(
-                  'flex flex-col border xl:border-r-0 last:border-r bg-surface-75 rounded-xl xl:rounded-none first:rounded-l-xl last:rounded-r-xl',
-                  isProPlan && 'border-foreground-muted !border-2 !rounded-xl xl:-my-8',
-                  isTeamPlan && 'xl:border-l-0'
+                  'flex flex-col border bg-surface-75 rounded-xl',
+                  isSandboxPlan && 'border-foreground-muted border-2'
                 )}
               >
-                <div
-                  className={cn(
-                    'px-8 xl:px-4 2xl:px-8 pt-6',
-                    isProPlan ? 'rounded-tr-[9px] rounded-tl-[9px]' : ''
-                  )}
-                >
+                <div className="px-8 pt-6">
                   <div className="flex items-center gap-2">
                     <div className="flex items-center gap-2 pb-2">
                       <h3 className="text-foreground text-2xl font-normal uppercase flex items-center gap-4 font-mono">
@@ -64,37 +49,24 @@ const PricingPlans = ({ organizations, hasExistingOrganizations }: PricingPlansP
                       )}
                     </div>
                   </div>
-                  <p
-                    className={cn(
-                      'text-foreground-light mb-4 text-sm 2xl:pr-4',
-                      isProPlan && 'xl:mb-12'
-                    )}
-                  >
+                  <p className="text-foreground-light mb-4 text-sm 2xl:pr-4">
                     {plan.description}
                   </p>
-                  {isUpgradablePlan && hasExistingOrganizations ? (
-                    <UpgradePlan
-                      planId={plan.planId}
-                      organizations={organizations}
-                      onClick={sendPricingEvent}
-                    />
-                  ) : (
-                    <Button
-                      block
-                      size="large"
-                      type={plan.name === 'Enterprise' ? 'default' : 'primary'}
-                      asChild
-                    >
-                      <Link href={plan.href} onClick={sendPricingEvent}>
-                        {plan.cta}
-                      </Link>
-                    </Button>
-                  )}
+                  <Button
+                    block
+                    size="large"
+                    type={isSandboxPlan ? 'primary' : 'default'}
+                    asChild
+                  >
+                    <Link href={plan.href} onClick={sendPricingEvent}>
+                      {plan.cta}
+                    </Link>
+                  </Button>
 
                   <div
                     className={cn(
-                      'text-foreground flex items-baseline text-5xl font-normal lg:text-4xl xl:text-4xl border-b border-default lg:min-h-[175px]',
-                      plan.priceLabel ? 'py-6 lg:pb-0 pt-6' : 'py-8 lg:pb-0 lg:pt-10'
+                      'text-foreground flex items-baseline text-5xl font-normal lg:text-4xl xl:text-4xl border-b border-default',
+                      plan.priceLabel ? 'py-6 pt-6' : 'py-8 pt-10'
                     )}
                   >
                     <div className="flex flex-col gap-1">
@@ -130,14 +102,6 @@ const PricingPlans = ({ organizations, hasExistingOrganizations }: PricingPlansP
                               >
                                 {plan.warning}
                               </span>
-                              {(plan.name === 'Pro' || plan.name === 'Team') && (
-                                <Link
-                                  href="#addon-compute"
-                                  className="hover:underline text-foreground-lighter text-[13px] m-0 p-0 leading-3"
-                                >
-                                  Need more compute?
-                                </Link>
-                              )}
                             </div>
                           )}
                         </div>
@@ -145,12 +109,7 @@ const PricingPlans = ({ organizations, hasExistingOrganizations }: PricingPlansP
                     </div>
                   </div>
                 </div>
-                <div
-                  className={cn(
-                    'border-default flex rounded-bl-[4px] rounded-br-[4px] flex-1 flex-col px-8 xl:px-4 2xl:px-8 py-6',
-                    isProPlan && 'mb-0.5 rounded-bl-[4px] rounded-br-[4px]'
-                  )}
-                >
+                <div className="border-default flex rounded-bl-[4px] rounded-br-[4px] flex-1 flex-col px-8 py-6">
                   {plan.preface && (
                     <p className="text-foreground-lighter text-[13px] mt-2 mb-4">{plan.preface}</p>
                   )}
