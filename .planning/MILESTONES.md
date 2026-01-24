@@ -25,6 +25,27 @@
 
 **Git range:** `545de7a` (docs: initialize project) → `172220c` (chore: remove phase 8)
 
-**What's next:** Deploy to axite.ai, then customize branding and content in future milestone.
+---
+
+## v1.1 Axite Rebrand (Shipped: 2026-01-24)
+
+**Delivered:** Transformed the Supabase site into a fully branded Axite marketing presence with visual identity, navigation, content pages, and blog.
+
+**Phases completed:** 8-11 (23 plans total)
+
+**Key accomplishments:**
+
+- Visual foundation: Navy (#3B63F3) and Teal (#00B3A4) color scheme, Inter font, semibold headings
+- Navigation: Axite nav structure (Product, Pricing, Enterprise, Blog, Trust), footer updates
+- Content pages: Homepage hero, product pillars (Policy, Identity, Audit), pricing tiers, enterprise page, trust page
+- Blog: 10 Axite blog posts, axite_team author, proper metadata
+- Cleanup: Removed all Supabase product pages, comparison pages, framework pages
+
+**Stats:**
+
+- 4 phases, 23 plans
+- 2 days from milestone start to completion (Jan 23-24, 2026)
+
+**Note:** Deployment to axite.ai handled manually outside GSD workflow.
 
 ---

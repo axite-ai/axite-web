@@ -3,7 +3,7 @@
 ## Milestones
 
 - [x] **v1.0 Supabase Extraction** - Phases 1-7 (shipped 2026-01-23)
-- [ ] **v1.1 Axite Rebrand** - Phases 8-12 (in progress)
+- [x] **v1.1 Axite Rebrand** - Phases 8-11 (shipped 2026-01-24)
 
 ## Phases
 
@@ -14,15 +14,19 @@ See `.planning/milestones/v1.0-ROADMAP.md` for full v1.0 roadmap archive.
 
 </details>
 
-### v1.1 Axite Rebrand (In Progress)
+<details>
+<summary>v1.1 Axite Rebrand (Phases 8-11) - SHIPPED 2026-01-24</summary>
 
-**Milestone Goal:** Transform the extracted Supabase site into a fully branded Axite marketing presence with proper identity, messaging, and deployment to axite.ai.
+**Milestone Goal:** Transform the extracted Supabase site into a fully branded Axite marketing presence with proper identity and messaging.
 
 - [x] **Phase 8: Visual Foundation** - Colors, typography, Tailwind config (completed 2026-01-23)
 - [x] **Phase 9: Navigation & Cleanup** - Update nav structure, remove Supabase pages (completed 2026-01-23)
 - [x] **Phase 10: Content Pages** - Homepage, Product, Enterprise, Pricing, Trust pages (completed 2026-01-24)
 - [x] **Phase 11: Blog Compatibility** - Ensure blog works with new branding (completed 2026-01-24)
-- [ ] **Phase 12: Deployment** - Vercel deploy, domain config, production
+
+**Note:** Deployment (original Phase 12) handled manually outside GSD workflow.
+
+</details>
 
 ## Phase Details
 
@@ -98,24 +102,10 @@ Plans:
 - [x] 11-05: Create Axite posts part 2 (wave 2)
 - [x] 11-06: Verify all success criteria (wave 3)
 
-### Phase 12: Deployment
-**Goal**: Site is live at axite.ai with working HTTPS
-**Depends on**: Phase 11
-**Requirements**: DEPLOY-01, DEPLOY-02, DEPLOY-03, DEPLOY-04, DEPLOY-05
-**Success Criteria** (what must be TRUE):
-  1. Production build completes without errors
-  2. Site is accessible at https://axite.ai
-  3. All pages load correctly in production (no broken links or missing assets)
-  4. HTTPS certificate is valid and working
-**Plans**: TBD
-
-Plans:
-- [ ] 12-01: TBD
-
 ## Progress
 
-**Execution Order:**
-Phases execute in numeric order: 8 -> 9 -> 10 -> 11 -> 12
+**v1.1 Complete:**
+Phases 8-11 executed in order. Deployment handled manually.
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
@@ -123,8 +113,7 @@ Phases execute in numeric order: 8 -> 9 -> 10 -> 11 -> 12
 | 9. Navigation & Cleanup | v1.1 | 5/5 | Complete | 2026-01-23 |
 | 10. Content Pages | v1.1 | 7/7 | Complete | 2026-01-24 |
 | 11. Blog Compatibility | v1.1 | 6/6 | Complete | 2026-01-24 |
-| 12. Deployment | v1.1 | 0/? | Not started | - |
 
 ---
 *Roadmap created: 2026-01-23*
-*Last updated: 2026-01-24 (Phase 11 complete)*
+*Last updated: 2026-01-24 (v1.1 complete — deployment manual)*
