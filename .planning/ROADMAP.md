@@ -91,10 +91,11 @@ Plans:
   1. Demo component shows Allowed/Blocked decisions with decision trace
   2. SOC2 Type II status indicator visible (badge or text)
   3. Link to Trust Center (/trust) present and functional
-**Plans**: TBD
+**Plans**: 2 plans in 2 waves
 
 Plans:
-- [ ] 14-01: TBD
+- [ ] 14-01: Build ProofSection component (PolicyDemo + TrustStrip) (wave 1)
+- [ ] 14-02: Integration and verification (wave 2)
 
 ### Phase 15: Value Proposition
 **Goal**: Landing page clearly communicates problem-to-solution transformation and core pillars
@@ -153,7 +154,7 @@ Phases 12-17 to be executed in order.
 | 11. Blog Compatibility | v1.1 | 6/6 | Complete | 2026-01-24 |
 | 12. Cleanup | v1.2 | 7/7 | Complete | 2026-01-24 |
 | 13. Header & Hero | v1.2 | 3/3 | Complete | 2026-01-24 |
-| 14. Proof & Trust | v1.2 | 0/? | Not started | - |
+| 14. Proof & Trust | v1.2 | 0/2 | Not started | - |
 | 15. Value Proposition | v1.2 | 0/? | Not started | - |
 | 16. Action & Close | v1.2 | 0/? | Not started | - |
 | 17. Verification | v1.2 | 0/? | Not started | - |
