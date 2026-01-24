@@ -97,7 +97,7 @@ Deferred to future milestones.
 
 | Feature | Reason |
 |---------|--------|
-| Blog | Removed in v1.2, may return in future milestone |
+| Blog | Kept per user request (CLEAN-09 skipped) |
 | Multi-page site structure | Consolidating to single landing page |
 | Custom illustrations/SVGs | Reusing existing Supabase assets |
 | Real booking integration | Using placeholder link for now |
@@ -109,12 +109,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| LP-01 | Phase 13 | Pending |
-| LP-02 | Phase 13 | Pending |
-| LP-03 | Phase 13 | Pending |
-| LP-04 | Phase 13 | Pending |
-| LP-05 | Phase 13 | Pending |
-| LP-06 | Phase 13 | Pending |
+| LP-01 | Phase 13 | Complete |
+| LP-02 | Phase 13 | Complete |
+| LP-03 | Phase 13 | Complete |
+| LP-04 | Phase 13 | Complete |
+| LP-05 | Phase 13 | Complete |
+| LP-06 | Phase 13 | Complete |
 | LP-07 | Phase 14 | Pending |
 | LP-08 | Phase 14 | Pending |
 | LP-09 | Phase 14 | Pending |
@@ -131,13 +131,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LP-20 | Phase 16 | Pending |
 | LP-21 | Phase 16 | Pending |
 | LP-22 | Phase 16 | Pending |
-| CLEAN-06 | Phase 12 | Pending |
-| CLEAN-07 | Phase 12 | Pending |
-| CLEAN-08 | Phase 12 | Pending |
-| CLEAN-09 | Phase 12 | Pending |
-| CLEAN-10 | Phase 12 | Pending |
-| KEEP-01 | Phase 12 | Pending |
-| KEEP-02 | Phase 12 | Pending |
+| CLEAN-06 | Phase 12 | Complete |
+| CLEAN-07 | Phase 12 | Complete |
+| CLEAN-08 | Phase 12 | Complete |
+| CLEAN-09 | Phase 12 | Skipped (blog kept per user request) |
+| CLEAN-10 | Phase 12 | Complete |
+| KEEP-01 | Phase 12 | Complete |
+| KEEP-02 | Phase 12 | Complete |
 
 **Coverage:**
 - v1.2 requirements: 29 total

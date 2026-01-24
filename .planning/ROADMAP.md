@@ -36,7 +36,7 @@ See `.planning/milestones/v1.0-ROADMAP.md` for full v1.0 roadmap archive.
 **Design Constraint:** For each section, search existing Supabase components, layouts, SVGs, and page sections first. Evaluate and select the best existing design to adapt. No creative generation of new layouts/visuals.
 
 - [x] **Phase 12: Cleanup** - Remove old pages for clean slate (completed 2026-01-24)
-- [ ] **Phase 13: Header & Hero** - Minimal header and outcome-first hero section
+- [x] **Phase 13: Header & Hero** - Minimal header and outcome-first hero section (completed 2026-01-24)
 - [ ] **Phase 14: Proof & Trust** - Demo component and trust indicators
 - [ ] **Phase 15: Value Proposition** - Problem/Transformation and Three Pillars sections
 - [ ] **Phase 16: Action & Close** - How It Works, Security Detail, Final CTA, Footer
@@ -79,9 +79,9 @@ Plans:
 **Plans**: 3 plans in 2 waves
 
 Plans:
-- [ ] 13-01: Simplify header to logo + CTA (wave 1)
-- [ ] 13-02: Update hero copy and CTAs (wave 1)
-- [ ] 13-03: Verify phase success criteria (wave 2)
+- [x] 13-01: Simplify header to logo + CTA (wave 1)
+- [x] 13-02: Update hero copy and CTAs (wave 1)
+- [x] 13-03: Verify phase success criteria (wave 2)
 
 ### Phase 14: Proof & Trust
 **Goal**: Landing page demonstrates product capability and establishes trust
@@ -151,8 +151,8 @@ Phases 12-17 to be executed in order.
 | 9. Navigation & Cleanup | v1.1 | 5/5 | Complete | 2026-01-23 |
 | 10. Content Pages | v1.1 | 7/7 | Complete | 2026-01-24 |
 | 11. Blog Compatibility | v1.1 | 6/6 | Complete | 2026-01-24 |
-| 12. Cleanup | v1.2 | 6/7 | Complete | 2026-01-24 |
-| 13. Header & Hero | v1.2 | 0/? | Not started | - |
+| 12. Cleanup | v1.2 | 7/7 | Complete | 2026-01-24 |
+| 13. Header & Hero | v1.2 | 3/3 | Complete | 2026-01-24 |
 | 14. Proof & Trust | v1.2 | 0/? | Not started | - |
 | 15. Value Proposition | v1.2 | 0/? | Not started | - |
 | 16. Action & Close | v1.2 | 0/? | Not started | - |
