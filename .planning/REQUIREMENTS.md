@@ -32,7 +32,7 @@ Requirements for Landing Page Refactor milestone. Single focused landing page fo
 
 ### Problem to Transformation
 
-- [ ] **LP-10**: 2-3 blocks mapping "current pain" → "what changes with Axite"
+- [ ] **LP-10**: 2-3 blocks mapping "current pain" -> "what changes with Axite"
 
 ### Three Pillars
 
@@ -109,41 +109,41 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| LP-01 | TBD | Pending |
-| LP-02 | TBD | Pending |
-| LP-03 | TBD | Pending |
-| LP-04 | TBD | Pending |
-| LP-05 | TBD | Pending |
-| LP-06 | TBD | Pending |
-| LP-07 | TBD | Pending |
-| LP-08 | TBD | Pending |
-| LP-09 | TBD | Pending |
-| LP-10 | TBD | Pending |
-| LP-11 | TBD | Pending |
-| LP-12 | TBD | Pending |
-| LP-13 | TBD | Pending |
-| LP-14 | TBD | Pending |
-| LP-15 | TBD | Pending |
-| LP-16 | TBD | Pending |
-| LP-17 | TBD | Pending |
-| LP-18 | TBD | Pending |
-| LP-19 | TBD | Pending |
-| LP-20 | TBD | Pending |
-| LP-21 | TBD | Pending |
-| LP-22 | TBD | Pending |
-| CLEAN-06 | TBD | Pending |
-| CLEAN-07 | TBD | Pending |
-| CLEAN-08 | TBD | Pending |
-| CLEAN-09 | TBD | Pending |
-| CLEAN-10 | TBD | Pending |
-| KEEP-01 | TBD | Pending |
-| KEEP-02 | TBD | Pending |
+| LP-01 | Phase 13 | Pending |
+| LP-02 | Phase 13 | Pending |
+| LP-03 | Phase 13 | Pending |
+| LP-04 | Phase 13 | Pending |
+| LP-05 | Phase 13 | Pending |
+| LP-06 | Phase 13 | Pending |
+| LP-07 | Phase 14 | Pending |
+| LP-08 | Phase 14 | Pending |
+| LP-09 | Phase 14 | Pending |
+| LP-10 | Phase 15 | Pending |
+| LP-11 | Phase 15 | Pending |
+| LP-12 | Phase 15 | Pending |
+| LP-13 | Phase 15 | Pending |
+| LP-14 | Phase 16 | Pending |
+| LP-15 | Phase 16 | Pending |
+| LP-16 | Phase 16 | Pending |
+| LP-17 | Phase 16 | Pending |
+| LP-18 | Phase 16 | Pending |
+| LP-19 | Phase 16 | Pending |
+| LP-20 | Phase 16 | Pending |
+| LP-21 | Phase 16 | Pending |
+| LP-22 | Phase 16 | Pending |
+| CLEAN-06 | Phase 12 | Pending |
+| CLEAN-07 | Phase 12 | Pending |
+| CLEAN-08 | Phase 12 | Pending |
+| CLEAN-09 | Phase 12 | Pending |
+| CLEAN-10 | Phase 12 | Pending |
+| KEEP-01 | Phase 12 | Pending |
+| KEEP-02 | Phase 12 | Pending |
 
 **Coverage:**
 - v1.2 requirements: 29 total
-- Mapped to phases: 0
-- Unmapped: 29
+- Mapped to phases: 29
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-01-24*
-*Last updated: 2026-01-24 after v1.2 definition*
+*Last updated: 2026-01-24 after v1.2 roadmap creation*

@@ -5,16 +5,17 @@
 See: .planning/PROJECT.md (updated 2026-01-24)
 
 **Core value:** Get a professional, working marketing website deployed to axite.ai using battle-tested code instead of AI-generated slop.
-**Current focus:** v1.2 Landing Page Refactor - defining requirements
+**Current focus:** v1.2 Landing Page Refactor - Phase 12 Cleanup
 
 ## Current Position
 
 Milestone: v1.2 Landing Page Refactor
-Phase: Not started (defining requirements)
-Status: Defining requirements
-Last activity: 2026-01-24 - Started v1.2 milestone
+Phase: 12 of 17 (Cleanup)
+Plan: Ready to plan
+Status: Ready to plan Phase 12
+Last activity: 2026-01-24 - Roadmap created for v1.2
 
-Progress: [....................] 0% (defining requirements)
+Progress: [################....] 80% (39/~49 plans - v1.0+v1.1 complete, v1.2 starting)
 
 ## Performance Metrics
 
@@ -40,27 +41,17 @@ Progress: [....................] 0% (defining requirements)
 ### Decisions
 
 Key decisions logged in PROJECT.md Key Decisions table.
-Full v1.0 decisions archived in .planning/milestones/v1.0-ROADMAP.md
 
-Recent v1.1 decisions:
-- Defer logo replacement to future milestone (user providing assets separately)
-- Keep Supabase blog content unchanged (SEO considerations)
+Recent v1.1 decisions (still relevant):
+- Defer logo replacement to future milestone
 - Brand voice: calm, precise, mechanism-first, evidence-first
-- Inter font chosen as primary geometric sans-serif (open source, UI-optimized)
-- Font-weight 600 (semibold) for headings - confident but not heavy
-- Selection color #93b4ff (light navy) for brand consistency
-- Navy-to-teal gradient for hero text (maintains visual interest)
-- Consistent navy (#3B63F3) for all SVG fills
-- Keep social links as placeholders until Axite accounts available
-- Simplified dropdown to two columns (Platform + Resources)
-- Contact sales CTA replaces Sign in (no auth system yet)
-- Mobile CTAs consistent with desktop: Contact sales + Get started
-- ProductDropdown uses inline Axite data instead of MainProducts
-- MainProducts kept as Supabase structure (homepage depends on those keys)
-- Two-tier pricing: Sandbox (free, rate-limited) and Enterprise (custom)
-- Sandbox: 1k requests/day, 7-day trace retention, community support
-- Enterprise: Unlimited, extended retention, dedicated support, SSO, SLAs
-- Deployment options: Managed Cloud, Private Deployment, Customer-Managed
+- Navy (#3B63F3) primary, Teal (#00B3A4) accent
+- Inter font, semibold (600) headings
+
+v1.2 design constraint:
+- For each section, search existing Supabase components first
+- Evaluate and select best existing design to adapt
+- No creative generation of new layouts/visuals
 
 ### Brand Identity
 
@@ -71,52 +62,6 @@ Recent v1.1 decisions:
 2. Identity + Least Privilege - RBAC for agents, tools, and actions
 3. Audit-Grade Evidence - logs + decision traces
 
-**Colors:**
-- Primary Navy: #3B63F3
-- Accent Teal: #00B3A4
-
-**Typography:**
-- Font: Inter (geometric sans-serif)
-- Headings: Semibold (600)
-
-### Phase 10 Summary
-
-**All plans complete:**
-- 10-01: Homepage Hero (Axite headline, CTAs)
-- 10-02: Homepage Products (Policy, Identity, Audit pillars)
-- 10-03: Pricing Page (Sandbox + Enterprise tiers)
-- 10-04: Enterprise Page (deployment options, compliance)
-- 10-05: Product Page (/product with control plane explanation)
-- 10-06: Trust Page (/trust with security practices)
-- 10-07: Phase Verification (build fixes, VERIFICATION.md)
-
-**Key outcome:** All content pages now display Axite messaging:
-- Homepage: "Ship agents your security team can approve"
-- Products: Policy, Identity, Audit pillars
-- Pricing: Two-tier model (Sandbox free, Enterprise custom)
-- Enterprise: Deployment options with honest SOC 2 status
-- Product: Control plane explanation with how-it-works flow
-- Trust: Security practices and compliance information
-
-### Phase 11 Summary
-
-**Blog Compatibility** - Complete
-
-All plans complete:
-- 11-01: Blog Author and Image Setup (axite_team author, placeholder images)
-- 11-02: Blog Page Metadata (Axite titles, descriptions, OG tags)
-- 11-03: Delete Supabase Blog Posts (verified deletion, only Axite posts remain)
-- 11-04: Blog Posts Wave 1 (5 Axite posts: intro, policy, getting started, RBAC, workflows)
-- 11-05: Blog Posts Wave 2 (5 more posts: audit, compliance, engineering, integration, future)
-- 11-06: Phase Verification (all checks pass, zero Supabase references)
-
-**Key outcome:** Blog system fully compatible with Axite:
-- 10 Axite blog posts with proper formatting
-- All posts use axite_team author
-- Categories: product (4), developers (2), engineering (2), company (2)
-- 20 unique tags for filtering
-- No Supabase references in visible blog content
-
 ### Pending Todos
 
 None
@@ -124,10 +69,10 @@ None
 ### Blockers/Concerns
 
 - Logo and brand assets needed from user before visual rebrand phase
-- FAQs section still shows Supabase content (future plan will update)
+- FAQs section still shows Supabase content (will be removed in cleanup)
 
 ## Session Continuity
 
 Last session: 2026-01-24
-Stopped at: v1.2 requirements definition
-Resume: Continue `/gsd:new-milestone`
+Stopped at: v1.2 roadmap creation complete
+Resume: `/gsd:plan-phase 12`
