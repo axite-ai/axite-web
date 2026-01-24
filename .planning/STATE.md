@@ -11,18 +11,18 @@ See: .planning/PROJECT.md (updated 2026-01-23)
 
 Milestone: v1.1 Axite Rebrand
 Phase: 10 of 12 (Content Pages)
-Plan: 3 of 7 complete (10-03)
+Plan: 3 of 7 complete (10-01, 10-02, 10-03)
 Status: In progress
-Last activity: 2026-01-24 - Completed 10-03-PLAN.md (Pricing Page Update)
+Last activity: 2026-01-24 - Completed 10-02-PLAN.md (Homepage Products Section)
 
 Progress: [################....] 80% (10/12 phases in progress)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 28 (15 v1.0 + 13 v1.1)
-- Average duration: ~28 min
-- Total execution time: ~12.9 hours
+- Total plans completed: 29 (15 v1.0 + 14 v1.1)
+- Average duration: ~27 min
+- Total execution time: ~13.3 hours
 
 **By Phase:**
 
@@ -31,7 +31,7 @@ Progress: [################....] 80% (10/12 phases in progress)
 | 1-7 (v1.0) | 15 | ~11h | ~45 min |
 | 8 (v1.1) | 6 | ~12 min | ~2 min |
 | 9 (v1.1) | 5 | ~42 min | ~8 min |
-| 10 (v1.1) | 2 | ~24 min | ~12 min |
+| 10 (v1.1) | 3 | ~47 min | ~16 min |
 
 *Updated after each plan completion*
 
@@ -87,6 +87,13 @@ Recent v1.1 decisions:
 - CTAs: "Try the sandbox" -> /docs/quickstart, "Book a security review" -> /contact/sales
 - content.tsx: Updated heroSection and twitterSocialSection
 
+**Plan 02 complete (Homepage Products):**
+- ProductModules.tsx: Three governance pillars (Policy, Identity, Audit)
+- Products/index.tsx: Agent Governance Platform overview card
+- MCP Gateway card with policy routing description
+- Removed all Supabase product cards and visuals
+- New tagline: "One platform. Policy, identity, and audit..."
+
 **Plan 03 complete (Pricing Page):**
 - Two-tier pricing: Sandbox (free) and Enterprise (custom)
 - Sandbox features: policy engine, RBAC, audit trails, MCP gateway (rate-limited)
@@ -111,5 +118,5 @@ None
 ## Session Continuity
 
 Last session: 2026-01-24
-Stopped at: Completed 10-03-PLAN.md (Pricing Page Update)
+Stopped at: Completed 10-02-PLAN.md (Homepage Products Section)
 Resume: Run `/gsd:execute-phase 10` to continue with remaining plans
