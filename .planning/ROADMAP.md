@@ -20,7 +20,7 @@ See `.planning/milestones/v1.0-ROADMAP.md` for full v1.0 roadmap archive.
 
 - [x] **Phase 8: Visual Foundation** - Colors, typography, Tailwind config (completed 2026-01-23)
 - [x] **Phase 9: Navigation & Cleanup** - Update nav structure, remove Supabase pages (completed 2026-01-23)
-- [ ] **Phase 10: Content Pages** - Homepage, Product, Enterprise, Pricing, Trust pages
+- [x] **Phase 10: Content Pages** - Homepage, Product, Enterprise, Pricing, Trust pages (completed 2026-01-24)
 - [ ] **Phase 11: Blog Compatibility** - Ensure blog works with new branding
 - [ ] **Phase 12: Deployment** - Vercel deploy, domain config, production
 
@@ -69,10 +69,15 @@ Plans:
   4. Enterprise page addresses security/compliance with deployment options
   5. Pricing page shows tier options (or contact-us for enterprise)
   6. Trust/Security page exists with compliance and data handling info
-**Plans**: TBD
 
 Plans:
-- [ ] 10-01: TBD
+- [x] 10-01: Update homepage hero with Axite messaging (wave 1)
+- [x] 10-02: Update homepage products section with governance pillars (wave 1)
+- [x] 10-03: Update pricing page for Sandbox + Enterprise tiers (wave 1)
+- [x] 10-04: Update enterprise page with Axite content (wave 2)
+- [x] 10-05: Create product overview page (wave 2)
+- [x] 10-06: Create trust/security page (wave 2)
+- [x] 10-07: Verify all success criteria (wave 3)
 
 ### Phase 11: Blog Compatibility
 **Goal**: Blog functions correctly with Axite branding while preserving existing content
@@ -111,10 +116,10 @@ Phases execute in numeric order: 8 -> 9 -> 10 -> 11 -> 12
 |-------|-----------|----------------|--------|-----------|
 | 8. Visual Foundation | v1.1 | 5/5 | Complete | 2026-01-23 |
 | 9. Navigation & Cleanup | v1.1 | 5/5 | Complete | 2026-01-23 |
-| 10. Content Pages | v1.1 | 0/? | Not started | - |
+| 10. Content Pages | v1.1 | 7/7 | Complete | 2026-01-24 |
 | 11. Blog Compatibility | v1.1 | 0/? | Not started | - |
 | 12. Deployment | v1.1 | 0/? | Not started | - |
 
 ---
 *Roadmap created: 2026-01-23*
-*Last updated: 2026-01-23 (Phase 9 complete)*
+*Last updated: 2026-01-24 (Phase 10 complete)*
