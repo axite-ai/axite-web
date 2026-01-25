@@ -4,6 +4,7 @@ import Layout from '~/components/Layouts/Default'
 import Hero from '~/components/Hero/Hero'
 import Logos from '~/components/logos'
 
+const ProofSection = dynamic(() => import('~/components/ProofSection'))
 const Products = dynamic(() => import('~/components/Products/index'))
 const HeroFrameworks = dynamic(() => import('~/components/Hero/HeroFrameworks'))
 const CustomerStories = dynamic(() => import('components/CustomerStories'))
@@ -19,6 +20,7 @@ const Index = () => {
   return (
     <Layout>
       <Hero />
+      <ProofSection />
       <Logos />
       <Products {...content.productsSection} />
       <HeroFrameworks />
