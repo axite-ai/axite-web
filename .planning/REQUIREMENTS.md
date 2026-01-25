@@ -23,12 +23,12 @@ Requirements for Landing Page Refactor milestone. Single focused landing page fo
 
 ### Proof Demo
 
-- [ ] **LP-07**: Reuse existing Supabase demo component (e.g., logs panel, ETLVisual) showing Allowed/Blocked + decision trace
+- [x] **LP-07**: Reuse existing Supabase demo component (e.g., logs panel, ETLVisual) showing Allowed/Blocked + decision trace
 
 ### Trust Strip
 
-- [ ] **LP-08**: SOC2 Type II status badge/indicator
-- [ ] **LP-09**: Link to Trust Center (/trust)
+- [x] **LP-08**: SOC2 Type II status badge/indicator
+- [x] **LP-09**: Link to Trust Center (/trust)
 
 ### Problem to Transformation
 
@@ -115,9 +115,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LP-04 | Phase 13 | Complete |
 | LP-05 | Phase 13 | Complete |
 | LP-06 | Phase 13 | Complete |
-| LP-07 | Phase 14 | Pending |
-| LP-08 | Phase 14 | Pending |
-| LP-09 | Phase 14 | Pending |
+| LP-07 | Phase 14 | Complete |
+| LP-08 | Phase 14 | Complete |
+| LP-09 | Phase 14 | Complete |
 | LP-10 | Phase 15 | Pending |
 | LP-11 | Phase 15 | Pending |
 | LP-12 | Phase 15 | Pending |

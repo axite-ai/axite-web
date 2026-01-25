@@ -117,4 +117,4 @@ None
 
 Last session: 2026-01-25
 Stopped at: Completed Phase 14 (Proof & Trust)
-Resume: `/gsd:execute-plan 15-01` (Footer phase)
+Resume: `/gsd:plan-phase 15` (Value Proposition phase)

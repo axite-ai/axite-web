@@ -37,7 +37,7 @@ See `.planning/milestones/v1.0-ROADMAP.md` for full v1.0 roadmap archive.
 
 - [x] **Phase 12: Cleanup** - Remove old pages for clean slate (completed 2026-01-24)
 - [x] **Phase 13: Header & Hero** - Minimal header and outcome-first hero section (completed 2026-01-24)
-- [ ] **Phase 14: Proof & Trust** - Demo component and trust indicators
+- [x] **Phase 14: Proof & Trust** - Demo component and trust indicators (completed 2026-01-25)
 - [ ] **Phase 15: Value Proposition** - Problem/Transformation and Three Pillars sections
 - [ ] **Phase 16: Action & Close** - How It Works, Security Detail, Final CTA, Footer
 - [ ] **Phase 17: Verification** - Final verification of landing page
@@ -94,8 +94,8 @@ Plans:
 **Plans**: 2 plans in 2 waves
 
 Plans:
-- [ ] 14-01: Build ProofSection component (PolicyDemo + TrustStrip) (wave 1)
-- [ ] 14-02: Integration and verification (wave 2)
+- [x] 14-01: Build ProofSection component (PolicyDemo + TrustStrip) (wave 1)
+- [x] 14-02: Integration and verification (wave 2)
 
 ### Phase 15: Value Proposition
 **Goal**: Landing page clearly communicates problem-to-solution transformation and core pillars
@@ -154,7 +154,7 @@ Phases 12-17 to be executed in order.
 | 11. Blog Compatibility | v1.1 | 6/6 | Complete | 2026-01-24 |
 | 12. Cleanup | v1.2 | 7/7 | Complete | 2026-01-24 |
 | 13. Header & Hero | v1.2 | 3/3 | Complete | 2026-01-24 |
-| 14. Proof & Trust | v1.2 | 0/2 | Not started | - |
+| 14. Proof & Trust | v1.2 | 2/2 | Complete | 2026-01-25 |
 | 15. Value Proposition | v1.2 | 0/? | Not started | - |
 | 16. Action & Close | v1.2 | 0/? | Not started | - |
 | 17. Verification | v1.2 | 0/? | Not started | - |
