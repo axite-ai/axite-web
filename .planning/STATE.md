@@ -5,17 +5,17 @@
 See: .planning/PROJECT.md (updated 2026-01-24)
 
 **Core value:** Get a professional, working marketing website deployed to axite.ai using battle-tested code instead of AI-generated slop.
-**Current focus:** v1.2 Landing Page Refactor - Phase 13 Complete
+**Current focus:** v1.2 Landing Page Refactor - Phase 14 Complete
 
 ## Current Position
 
 Milestone: v1.2 Landing Page Refactor
-Phase: 13 of 17 (Header & Hero)
-Plan: 3 of 3 complete
+Phase: 14 of 17 (Proof & Trust)
+Plan: 2 of 2 complete
 Status: Phase complete
-Last activity: 2026-01-24 - Completed 13-03-PLAN.md (Verification)
+Last activity: 2026-01-25 - Completed 14-02-PLAN.md (Homepage Integration)
 
-Progress: [##################..] 98% (50/~51 plans - v1.0+v1.1 complete, v1.2 phase 13 complete)
+Progress: [##################..] 98% (52/~53 plans - v1.0+v1.1+phase 12-14 complete)
 
 ## Performance Metrics
 
@@ -35,6 +35,7 @@ Progress: [##################..] 98% (50/~51 plans - v1.0+v1.1 complete, v1.2 ph
 | 11 (v1.1) | 6 | ~15 min | ~2.5 min |
 | 12 (v1.2) | 8 | ~13 min | ~1.6 min |
 | 13 (v1.2) | 3 | ~11 min | ~3.7 min |
+| 14 (v1.2) | 2 | ~6 min | ~3 min |
 
 *Updated after each plan completion*
 
@@ -67,6 +68,16 @@ v1.2 phase 13 decisions:
 - Hero headline: "Complete visibility and control over every agent action" (outcome-first)
 - Hero subhead: "The agent governance platform for enterprises" (audience-identifying)
 - Hero CTAs: "Book Security Review" (primary, /contact/sales) + "View Docs" (secondary, /docs)
+
+v1.2 phase 14 decisions:
+- ProofSection placed after Hero, before Logos section
+
+### Phase 14 Verification Results
+
+All success criteria verified:
+1. Demo component shows Allowed/Blocked decisions with decision trace
+2. SOC2 Type II status indicator visible (badge + "In Progress" text)
+3. Link to Trust Center (/trust) present and functional
 
 ### Phase 13 Verification Results
 
@@ -104,6 +115,6 @@ None
 
 ## Session Continuity
 
-Last session: 2026-01-24
-Stopped at: Completed Phase 13 (Header & Hero)
-Resume: `/gsd:execute-plan 14-01` (Footer phase)
+Last session: 2026-01-25
+Stopped at: Completed Phase 14 (Proof & Trust)
+Resume: `/gsd:execute-plan 15-01` (Footer phase)
