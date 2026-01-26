@@ -11,18 +11,18 @@ See: .planning/PROJECT.md (updated 2026-01-24)
 
 Milestone: v1.2 Landing Page Refactor
 Phase: 15 of 17 (Value Proposition)
-Plan: 1 of 3 complete
+Plan: 2 of 3 complete
 Status: In progress
-Last activity: 2026-01-26 - Completed 15-01-PLAN.md (TransformationSection)
+Last activity: 2026-01-26 - Completed 15-02-PLAN.md (Pillars Section)
 
-Progress: [##################..] 98% (53/~55 plans - v1.0+v1.1+phase 12-15 in progress)
+Progress: [##################..] 98% (54/~55 plans - v1.0+v1.1+phase 12-15 in progress)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 50 (15 v1.0 + 24 v1.1 + 11 v1.2)
-- Average duration: ~18 min
-- Total execution time: ~14.6 hours
+- Total plans completed: 52 (15 v1.0 + 24 v1.1 + 13 v1.2)
+- Average duration: ~17 min
+- Total execution time: ~14.7 hours
 
 **By Phase:**
 
@@ -36,7 +36,7 @@ Progress: [##################..] 98% (53/~55 plans - v1.0+v1.1+phase 12-15 in pr
 | 12 (v1.2) | 8 | ~13 min | ~1.6 min |
 | 13 (v1.2) | 3 | ~11 min | ~3.7 min |
 | 14 (v1.2) | 2 | ~6 min | ~3 min |
-| 15 (v1.2) | 1 | ~4 min | ~4 min |
+| 15 (v1.2) | 2 | ~8 min | ~4 min |
 
 *Updated after each plan completion*
 
@@ -77,6 +77,10 @@ v1.2 phase 15 decisions:
 - TransformationSection uses two-column grid (1 col mobile, 2 cols desktop)
 - Before/After labels with horizontal separator for visual clarity
 - Amber-500 for pain indicators, brand-500 for outcomes
+- Policy pillar featured at full width (lg:col-span-2)
+- Identity and Audit pillars compact side-by-side below Policy
+- Mini policy demo shows 3 decisions with timestamps and badges
+- Permission matrix shows 3 agents with 4 permission levels
 
 ### Phase 15 Verification Results
 
@@ -86,6 +90,14 @@ Plan 15-01 verified:
 3. Contains 2 transformation blocks (Control Crisis, Compliance Scramble)
 4. Each block has specific scenario pain statement and outcome statement
 5. Build passes without errors
+
+Plan 15-02 verified:
+1. PolicyPillar.tsx exists with mini policy demo visual
+2. IdentityPillar.tsx exists with permission matrix visual
+3. AuditPillar.tsx exists with report preview visual
+4. PillarsSection/index.tsx composes all three pillars
+5. Policy pillar has more visual weight (full width on desktop)
+6. TypeScript compiles without errors
 
 ### Phase 14 Verification Results
 
@@ -131,5 +143,5 @@ None
 ## Session Continuity
 
 Last session: 2026-01-26
-Stopped at: Completed 15-01-PLAN.md (TransformationSection)
-Resume: Execute 15-02-PLAN.md (Homepage Integration)
+Stopped at: Completed 15-02-PLAN.md (Pillars Section)
+Resume: `/gsd:execute-plan .planning/phases/15-value-proposition/15-03-PLAN.md` (Homepage Integration)
