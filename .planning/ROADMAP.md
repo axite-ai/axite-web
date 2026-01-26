@@ -119,14 +119,19 @@ Plans:
 **Requirements**: LP-14, LP-15, LP-16, LP-17, LP-18, LP-19, LP-20, LP-21, LP-22
 **Success Criteria** (what must be TRUE):
   1. Three-step "How It Works" section visible (Connect, Define, Monitor)
-  2. Primary CTA button appears after How It Works steps
+  2. Primary CTA button appears after How It Works steps (NOTE: User decision overrides - NO CTA after How It Works, CTA in Final section only)
   3. Security section with Trust Center link and data handling summary
   4. Final CTA section with outcome restatement and primary button
   5. Minimal footer with Docs, Trust Center, Terms/Privacy, and contact email
-**Plans**: TBD
+**Plans**: 6 plans in 3 waves
 
 Plans:
-- [ ] 16-01: TBD
+- [ ] 16-01: Create HowItWorksSection component (wave 1)
+- [ ] 16-02: Create SecuritySection component (wave 1)
+- [ ] 16-03: Create FinalCTASection component (wave 1)
+- [ ] 16-04: Simplify Footer component (wave 1)
+- [ ] 16-05: Homepage integration (wave 2)
+- [ ] 16-06: Verify phase success criteria (wave 3)
 
 ### Phase 17: Verification
 **Goal**: Landing page meets all requirements and functions correctly end-to-end
@@ -158,7 +163,7 @@ Phases 12-17 to be executed in order.
 | 13. Header & Hero | v1.2 | 3/3 | Complete | 2026-01-24 |
 | 14. Proof & Trust | v1.2 | 2/2 | Complete | 2026-01-25 |
 | 15. Value Proposition | v1.2 | 3/3 | Complete | 2026-01-26 |
-| 16. Action & Close | v1.2 | 0/? | Not started | - |
+| 16. Action & Close | v1.2 | 0/6 | Not started | - |
 | 17. Verification | v1.2 | 0/? | Not started | - |
 
 ---
