@@ -106,10 +106,12 @@ Plans:
   2. Enforceable Policy pillar section with visual component present
   3. Identity/Least Privilege pillar section with visual component present
   4. Audit Evidence pillar section with visual component present
-**Plans**: TBD
+**Plans**: 3 plans in 2 waves
 
 Plans:
-- [ ] 15-01: TBD
+- [ ] 15-01: Create TransformationSection with 2 pain-to-outcome blocks (wave 1)
+- [ ] 15-02: Create PillarsSection with Policy (featured), Identity, Audit components (wave 1)
+- [ ] 15-03: Homepage integration and phase verification (wave 2)
 
 ### Phase 16: Action & Close
 **Goal**: Landing page guides user through "how it works" and closes with clear CTAs
@@ -155,7 +157,7 @@ Phases 12-17 to be executed in order.
 | 12. Cleanup | v1.2 | 7/7 | Complete | 2026-01-24 |
 | 13. Header & Hero | v1.2 | 3/3 | Complete | 2026-01-24 |
 | 14. Proof & Trust | v1.2 | 2/2 | Complete | 2026-01-25 |
-| 15. Value Proposition | v1.2 | 0/? | Not started | - |
+| 15. Value Proposition | v1.2 | 0/3 | Not started | - |
 | 16. Action & Close | v1.2 | 0/? | Not started | - |
 | 17. Verification | v1.2 | 0/? | Not started | - |
 
