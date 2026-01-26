@@ -1,5 +1,3 @@
-import { PrivacySettings } from 'ui-patterns/PrivacySettings'
-
 const footerData = [
   {
     title: 'Resources',
@@ -7,10 +5,6 @@ const footerData = [
       {
         text: 'Documentation',
         url: '/docs',
-      },
-      {
-        text: 'Blog',
-        url: '/blog',
       },
       {
         text: 'Trust Center',
@@ -28,18 +22,6 @@ const footerData = [
       {
         text: 'Privacy Policy',
         url: '/privacy',
-      },
-      {
-        text: 'Privacy Settings',
-        component: PrivacySettings,
-      },
-      {
-        text: 'Security',
-        url: '/security',
-      },
-      {
-        text: 'DPA',
-        url: '/legal/dpa',
       },
     ],
   },
