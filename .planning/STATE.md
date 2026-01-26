@@ -5,17 +5,17 @@
 See: .planning/PROJECT.md (updated 2026-01-24)
 
 **Core value:** Get a professional, working marketing website deployed to axite.ai using battle-tested code instead of AI-generated slop.
-**Current focus:** v1.2 Landing Page Refactor - Phase 15 Complete
+**Current focus:** v1.2 Landing Page Refactor - Phase 16 Action & Close
 
 ## Current Position
 
 Milestone: v1.2 Landing Page Refactor
-Phase: 15 of 17 (Value Proposition)
-Plan: 3 of 3 complete
-Status: Phase complete
-Last activity: 2026-01-26 - Completed 15-03-PLAN.md (Homepage Integration)
+Phase: 16 of 17 (Action & Close)
+Plan: 1 of 6 complete
+Status: In progress
+Last activity: 2026-01-26 - Completed 16-01-PLAN.md (How It Works Section)
 
-Progress: [###################.] 99% (55/~56 plans - v1.0+v1.1+phase 12-15 complete)
+Progress: [###################.] 99% (56/~62 plans - v1.0+v1.1+phase 12-15+16-01 complete)
 
 ## Performance Metrics
 
@@ -37,6 +37,7 @@ Progress: [###################.] 99% (55/~56 plans - v1.0+v1.1+phase 12-15 compl
 | 13 (v1.2) | 3 | ~11 min | ~3.7 min |
 | 14 (v1.2) | 2 | ~6 min | ~3 min |
 | 15 (v1.2) | 3 | ~20 min | ~6.7 min |
+| 16 (v1.2) | 1 | ~1 min | ~1 min |
 
 *Updated after each plan completion*
 
@@ -81,6 +82,10 @@ v1.2 phase 15 decisions:
 - Identity and Audit pillars compact side-by-side below Policy
 - Mini policy demo shows 3 decisions with timestamps and badges
 - Permission matrix shows 3 agents with 4 permission levels
+
+v1.2 phase 16 decisions:
+- NO CTA after How It Works section (user decision - only 2 CTAs total on page)
+- Footer minimal: Docs, Trust, Terms, Privacy, contact email only
 
 ### Phase 15 Verification Results (Complete)
 
@@ -136,5 +141,5 @@ None
 ## Session Continuity
 
 Last session: 2026-01-26
-Stopped at: Completed Phase 15 (Value Proposition)
-Resume: `/gsd:plan-phase 16` (Action & Close phase)
+Stopped at: Completed 16-01-PLAN.md (How It Works Section)
+Resume: `/gsd:execute-plan 16-02` (Security Section)
