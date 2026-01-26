@@ -118,10 +118,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LP-07 | Phase 14 | Complete |
 | LP-08 | Phase 14 | Complete |
 | LP-09 | Phase 14 | Complete |
-| LP-10 | Phase 15 | Pending |
-| LP-11 | Phase 15 | Pending |
-| LP-12 | Phase 15 | Pending |
-| LP-13 | Phase 15 | Pending |
+| LP-10 | Phase 15 | Complete |
+| LP-11 | Phase 15 | Complete |
+| LP-12 | Phase 15 | Complete |
+| LP-13 | Phase 15 | Complete |
 | LP-14 | Phase 16 | Pending |
 | LP-15 | Phase 16 | Pending |
 | LP-16 | Phase 16 | Pending |
