@@ -5,24 +5,24 @@
 See: .planning/PROJECT.md (updated 2026-01-24)
 
 **Core value:** Get a professional, working marketing website deployed to axite.ai using battle-tested code instead of AI-generated slop.
-**Current focus:** v1.2 Landing Page Refactor - Phase 16 Action & Close
+**Current focus:** v1.2 Landing Page Refactor - Phase 16 Action & Close COMPLETE
 
 ## Current Position
 
 Milestone: v1.2 Landing Page Refactor
 Phase: 16 of 17 (Action & Close)
-Plan: 5 of 6 complete
-Status: In progress
-Last activity: 2026-01-27 - Completed 16-05-PLAN.md (Homepage Integration)
+Plan: 6 of 6 complete
+Status: Phase complete
+Last activity: 2026-01-27 - Completed 16-06-PLAN.md (Phase Verification)
 
-Progress: [###################.] 99% (61/~62 plans - v1.0+v1.1+phase 12-15+16-01 to 16-05 complete)
+Progress: [####################] 100% (62/62 plans - v1.0+v1.1+phase 12-16 complete)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 52 (15 v1.0 + 24 v1.1 + 13 v1.2)
+- Total plans completed: 53 (15 v1.0 + 24 v1.1 + 14 v1.2)
 - Average duration: ~17 min
-- Total execution time: ~14.7 hours
+- Total execution time: ~15 hours
 
 **By Phase:**
 
@@ -37,7 +37,7 @@ Progress: [###################.] 99% (61/~62 plans - v1.0+v1.1+phase 12-15+16-01
 | 13 (v1.2) | 3 | ~11 min | ~3.7 min |
 | 14 (v1.2) | 2 | ~6 min | ~3 min |
 | 15 (v1.2) | 3 | ~20 min | ~6.7 min |
-| 16 (v1.2) | 5 | ~25 min | ~5 min |
+| 16 (v1.2) | 6 | ~39 min | ~6.5 min |
 
 *Updated after each plan completion*
 
@@ -86,6 +86,25 @@ v1.2 phase 15 decisions:
 v1.2 phase 16 decisions:
 - NO CTA after How It Works section (user decision - only 2 CTAs total on page)
 - Footer minimal: Docs, Trust, Terms, Privacy, contact email only
+- Supabase meta tags in _app.tsx out of scope for Phase 16 (visible sections only)
+
+### Phase 16 Verification Results (Complete)
+
+All five Phase 16 success criteria verified:
+1. Three-step "How It Works" section visible (Connect, Define, Monitor)
+2. NO CTA after How It Works (user decision override)
+3. Security section with Trust Center link and data handling summary
+4. Final CTA section with outcome restatement and primary button
+5. Minimal footer with Docs, Trust Center, Terms/Privacy, and contact email
+
+Route verification:
+- / returns 200
+- /trust returns 200
+- /terms returns 200
+- /privacy returns 200
+- /contact/sales returns 200
+
+Homepage section order: Hero -> ProofSection -> Logos -> TransformationSection -> PillarsSection -> HowItWorksSection -> SecuritySection -> FinalCTASection -> Footer
 
 ### Phase 15 Verification Results (Complete)
 
@@ -94,8 +113,6 @@ All four Phase 15 success criteria verified:
 2. Enforceable Policy pillar section with mini policy demo present
 3. Identity/Least Privilege pillar section with permission matrix present
 4. Audit Evidence pillar section with report preview present
-
-Homepage section order: Hero -> ProofSection -> Logos -> TransformationSection -> PillarsSection -> HowItWorksSection -> SecuritySection -> FinalCTASection
 
 ### Phase 14 Verification Results
 
@@ -132,7 +149,8 @@ All success criteria verified:
 
 ### Pending Todos
 
-None
+- Supabase meta tags in _app.tsx need cleanup (og:url, twitter:handle, etc.)
+- postbuild sitemap script has infrastructure issue
 
 ### Blockers/Concerns
 
@@ -141,5 +159,5 @@ None
 ## Session Continuity
 
 Last session: 2026-01-27
-Stopped at: Completed 16-05-PLAN.md (Homepage Integration)
-Resume: `/gsd:execute-plan 16-06` (Visual QA checkpoint)
+Stopped at: Completed 16-06-PLAN.md (Phase Verification)
+Resume: `/gsd:execute-plan 17-01` or `/gsd:plan-phase 17`
