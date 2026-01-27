@@ -25,6 +25,16 @@ module.exports = [
     source: '/solutions/:path*',
     destination: '/',
   },
+  {
+    permanent: false,
+    source: '/features',
+    destination: '/',
+  },
+  {
+    permanent: false,
+    source: '/features/:path*',
+    destination: '/',
+  },
   // Existing redirects
   {
     permanent: true,

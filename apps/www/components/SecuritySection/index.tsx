@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { Shield, Lock, Key, Eye, Server, Globe } from 'lucide-react'
 import SectionContainer from '~/components/Layouts/SectionContainer'
 import SectionHeader from '~/components/UI/SectionHeader'
@@ -94,9 +93,7 @@ const SecuritySection = () => {
 
       {/* Trust Center link */}
       <div className="mt-10">
-        <Link href="/trust">
-          <Button type="secondary" text="View Trust Center" url="/trust" />
-        </Link>
+        <Button type="secondary" text="View Trust Center" url="/trust" />
       </div>
     </SectionContainer>
   )
