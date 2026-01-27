@@ -39,7 +39,7 @@ See `.planning/milestones/v1.0-ROADMAP.md` for full v1.0 roadmap archive.
 - [x] **Phase 13: Header & Hero** - Minimal header and outcome-first hero section (completed 2026-01-24)
 - [x] **Phase 14: Proof & Trust** - Demo component and trust indicators (completed 2026-01-25)
 - [x] **Phase 15: Value Proposition** - Problem/Transformation and Three Pillars sections (completed 2026-01-26)
-- [ ] **Phase 16: Action & Close** - How It Works, Security Detail, Final CTA, Footer
+- [x] **Phase 16: Action & Close** - How It Works, Security Detail, Final CTA, Footer (completed 2026-01-26)
 - [ ] **Phase 17: Verification** - Final verification of landing page
 
 ## Phase Details
@@ -126,12 +126,12 @@ Plans:
 **Plans**: 6 plans in 3 waves
 
 Plans:
-- [ ] 16-01: Create HowItWorksSection component (wave 1)
-- [ ] 16-02: Create SecuritySection component (wave 1)
-- [ ] 16-03: Create FinalCTASection component (wave 1)
-- [ ] 16-04: Simplify Footer component (wave 1)
-- [ ] 16-05: Homepage integration (wave 2)
-- [ ] 16-06: Verify phase success criteria (wave 3)
+- [x] 16-01: Create HowItWorksSection component (wave 1)
+- [x] 16-02: Create SecuritySection component (wave 1)
+- [x] 16-03: Create FinalCTASection component (wave 1)
+- [x] 16-04: Simplify Footer component (wave 1)
+- [x] 16-05: Homepage integration (wave 2)
+- [x] 16-06: Verify phase success criteria (wave 3)
 
 ### Phase 17: Verification
 **Goal**: Landing page meets all requirements and functions correctly end-to-end
@@ -163,9 +163,9 @@ Phases 12-17 to be executed in order.
 | 13. Header & Hero | v1.2 | 3/3 | Complete | 2026-01-24 |
 | 14. Proof & Trust | v1.2 | 2/2 | Complete | 2026-01-25 |
 | 15. Value Proposition | v1.2 | 3/3 | Complete | 2026-01-26 |
-| 16. Action & Close | v1.2 | 0/6 | Not started | - |
+| 16. Action & Close | v1.2 | 6/6 | Complete | 2026-01-26 |
 | 17. Verification | v1.2 | 0/? | Not started | - |
 
 ---
 *Roadmap created: 2026-01-23*
-*Last updated: 2026-01-24 (v1.2 milestone added)*
+*Last updated: 2026-01-26 (Phase 16 complete)*
