@@ -2,7 +2,6 @@ import authors from 'lib/authors.json'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import type Author from '~/types/author'
 import type PostTypes from '~/types/post'
 import dayjs from 'dayjs'
 
@@ -17,7 +16,7 @@ const BlogGridItem = ({ post }: Props) => {
   if (authorArray) {
     for (let i = 0; i < authorArray.length; i++) {
       author.push(
-        authors.find((authors: Author) => {
+        authors.find((authors: any) => {
           return authors.author_id === authorArray[i]
         })
       )
