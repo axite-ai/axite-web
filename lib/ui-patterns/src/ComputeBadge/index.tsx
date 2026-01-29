@@ -1,14 +1,9 @@
 import type { HTMLAttributes } from 'react'
 
-import { components } from 'api-types'
-
 import { cn } from 'ui'
 
 interface ComputeBadgeProps extends HTMLAttributes<HTMLDivElement> {
-  infraComputeSize:
-    | components['schemas']['ProjectDetailResponse']['infra_compute_size']
-    | '>16XL'
-    | undefined
+  infraComputeSize: string | undefined
 }
 
 export function ComputeBadge({ infraComputeSize, className, ...props }: ComputeBadgeProps) {

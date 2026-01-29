@@ -33,14 +33,14 @@ const CommandList = forwardRef<
       {...props}
     >
       <CommandEmpty listRef={innerRef}>No results found.</CommandEmpty>
-      {commandSections.map((section) => {
-        if (section.commands.every((command) => command.defaultHidden) && !query) return null
+      {commandSections.map((section: any) => {
+        if (section.commands.every((command: any) => command.defaultHidden) && !query) return null
 
         return (
           <CommandGroup key={section.id} heading={section.name} forceMount={section.forceMount}>
             {section.commands
-              .filter((command) => !command.defaultHidden || query)
-              .map((command) => (
+              .filter((command: any) => !command.defaultHidden || query)
+              .map((command: any) => (
                 <CommandItem key={command.id} command={command}>
                   <TextHighlighter>{command.name}</TextHighlighter>
                 </CommandItem>

@@ -21,7 +21,7 @@ import {
 import { themes } from 'ui/src/components/ThemeProvider/themes'
 
 import type { User } from '@supabase/supabase-js'
-import type { LucideIcon } from 'icons/src/createSupabaseIcon'
+import type { LucideIcon } from 'lucide-react'
 import type { Theme } from 'ui/src/components/ThemeProvider/themes'
 
 interface Props {

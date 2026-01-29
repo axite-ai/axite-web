@@ -1,11 +1,8 @@
-import type { components } from 'api-types'
 import enabledFeaturesRaw from './enabled-features.json' with { type: 'json' }
 
 const enabledFeaturesStaticObj = enabledFeaturesRaw as Omit<typeof enabledFeaturesRaw, '$schema'>
 
-type Profile = components['schemas']['ProfileResponse']
-
-export type Feature = Profile['disabled_features'][number] | keyof typeof enabledFeaturesStaticObj
+export type Feature = string | keyof typeof enabledFeaturesStaticObj
 
 const disabledFeaturesStaticArray = Object.entries(enabledFeaturesStaticObj)
   .filter(([_, value]) => !value)

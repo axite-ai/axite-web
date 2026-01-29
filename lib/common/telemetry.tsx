@@ -1,6 +1,5 @@
 'use client'
 
-import { components } from 'api-types'
 import { useRouter } from 'next/compat/router'
 import { usePathname } from 'next/navigation'
 import Script from 'next/script'
@@ -372,7 +371,7 @@ export const PageTelemetry = ({
 // EVENT TELEMETRY
 // ---
 
-type EventBody = components['schemas']['TelemetryEventBodyV2']
+type EventBody = Record<string, any>
 
 export function sendTelemetryEvent(API_URL: string, event: TelemetryEvent, pathname?: string) {
   const consent = hasConsented()
@@ -401,7 +400,7 @@ export function sendTelemetryEvent(API_URL: string, event: TelemetryEvent, pathn
 // TELEMETRY IDENTIFY
 //---
 
-type IdentifyBody = components['schemas']['TelemetryIdentifyBodyV2']
+type IdentifyBody = { user_id: string; anonymous_id?: string }
 
 export function sendTelemetryIdentify(API_URL: string, body: IdentifyBody) {
   const consent = hasConsented()

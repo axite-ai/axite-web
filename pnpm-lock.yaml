@@ -88,9 +88,6 @@ importers:
       '@octokit/rest':
         specifier: ^21.0.0
         version: 21.1.1
-      '@payloadcms/live-preview-react':
-        specifier: ^3.0.0
-        version: 3.71.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-dialog':
         specifier: ^1.0.5
         version: 1.1.15(@types/react-dom@18.3.7(@types/react@18.3.27))(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2006,15 +2003,6 @@ packages:
   '@parcel/watcher@2.5.4':
     resolution: {integrity: sha512-WYa2tUVV5HiArWPB3ydlOc4R2ivq0IDrlqhMi3l7mVsFEXNcTfxYFPIHXHXIh/ca/y/V5N4E1zecyxdIBjYnkQ==}
     engines: {node: '>= 10.0.0'}
-
-  '@payloadcms/live-preview-react@3.71.1':
-    resolution: {integrity: sha512-zSgoq90DMHf5gjvOznyWcCw8Rktk/YhpZ7hsTWVabBZFhzDHeQXZYrRiRgja91Mn34tM0puUCqi7CYnn+Jy8Ew==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.1 || ^19.1.2 || ^19.2.1
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.1 || ^19.1.2 || ^19.2.1
-
-  '@payloadcms/live-preview@3.71.1':
-    resolution: {integrity: sha512-jPW7E9EV4Ri/bd68dtVJ1TpmpSfTsxozQch5ghHjddK5yFQZKcREeA+c2E5w6btUuZLmteNBPUhWuMEAIfZJtg==}
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -8394,14 +8382,6 @@ snapshots:
       '@parcel/watcher-win32-ia32': 2.5.4
       '@parcel/watcher-win32-x64': 2.5.4
     optional: true
-
-  '@payloadcms/live-preview-react@3.71.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@payloadcms/live-preview': 3.71.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-
-  '@payloadcms/live-preview@3.71.1': {}
 
   '@pkgjs/parseargs@0.11.0':
     optional: true

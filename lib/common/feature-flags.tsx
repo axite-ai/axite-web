@@ -3,15 +3,14 @@
 import { FlagValues } from 'flags/react'
 import { createContext, PropsWithChildren, useContext, useEffect, useState } from 'react'
 
-import { components } from 'api-types'
 import { useAuth } from './auth'
 import { getFlags as getDefaultConfigCatFlags } from './configcat'
 import { hasConsented } from './consent-state'
 import { get, post } from './fetchWrappers'
 import { ensurePlatformSuffix } from './helpers'
 
-type TrackFeatureFlagVariables = components['schemas']['TelemetryFeatureFlagBody']
-export type CallFeatureFlagsResponse = components['schemas']['TelemetryCallFeatureFlagsResponse']
+type TrackFeatureFlagVariables = Record<string, any>
+export type CallFeatureFlagsResponse = Record<string, unknown>
 
 export async function getFeatureFlags(API_URL: string) {
   try {

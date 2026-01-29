@@ -13,12 +13,8 @@
       "shared-data/*": ["./../../lib/shared-data/*"],
       "config": ["./../../lib/config"],
       "config/*": ["./../../lib/config/*"],
-      "icons": ["./../../lib/icons"],
-      "icons/*": ["./../../lib/icons/*"],
       "ui-patterns": ["./../../lib/ui-patterns"],
-      "ui-patterns/*": ["./../../lib/ui-patterns/*"],
-      "api-types": ["./../../lib/api-types"],
-      "api-types/*": ["./../../lib/api-types/*"]
+      "ui-patterns/*": ["./../../lib/ui-patterns/*"]
     },
     "downlevelIteration": true,
     "target": "ES2021",
@@ -47,6 +43,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".contentlayer/generated"
+    ".contentlayer/generated",
+    "../../lib/ui/src/types/*.d.ts"
   ]
 }
