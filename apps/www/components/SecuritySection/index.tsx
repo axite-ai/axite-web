@@ -1,101 +1,38 @@
-import { Shield, Lock, Key, Eye, Server, Globe } from 'lucide-react'
-import SectionContainer from '~/components/Layouts/SectionContainer'
-import SectionHeader from '~/components/UI/SectionHeader'
-import Panel from '~/components/Panel/Panel'
-import Button from '~/components/Button'
-
-interface SecurityItem {
-  icon: React.ReactNode
-  title: string
-  description: string
-}
-
-const securityItems: SecurityItem[] = [
-  {
-    icon: <Shield className="w-5 h-5 text-brand-500" />,
-    title: 'SOC 2 Type II',
-    description: 'Controls implemented, audit in progress.',
-  },
-  {
-    icon: <Lock className="w-5 h-5 text-brand-500" />,
-    title: 'Data Encryption',
-    description: 'AES-256 at rest, TLS 1.3 in transit.',
-  },
-  {
-    icon: <Key className="w-5 h-5 text-brand-500" />,
-    title: 'Access Controls',
-    description: 'RBAC for users and agents.',
-  },
-  {
-    icon: <Eye className="w-5 h-5 text-brand-500" />,
-    title: 'Audit Logging',
-    description: 'Immutable, encrypted, exportable.',
-  },
-  {
-    icon: <Globe className="w-5 h-5 text-brand-500" />,
-    title: 'Data Residency',
-    description: 'US default, EU available.',
-  },
-  {
-    icon: <Server className="w-5 h-5 text-brand-500" />,
-    title: 'Secrets Management',
-    description: 'Never logged, always encrypted.',
-  },
-]
-
-const SecurityCard = ({ item }: { item: SecurityItem }) => {
-  return (
-    <Panel innerClassName="p-5">
-      <div className="flex items-start gap-4">
-        <div className="flex-shrink-0 mt-0.5">{item.icon}</div>
-        <div>
-          <h4 className="text-foreground font-medium mb-1">{item.title}</h4>
-          <p className="text-sm text-foreground-lighter">{item.description}</p>
-        </div>
-      </div>
-    </Panel>
-  )
-}
+import Link from 'next/link'
+import { Check } from 'lucide-react'
 
 const SecuritySection = () => {
   return (
-    <SectionContainer>
-      <SectionHeader
-        subtitle="Enterprise-ready"
-        title="Security & Compliance"
-        paragraph="Built with security-first principles for enterprise agent governance."
-      />
-
-      {/* Security posture grid */}
-      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {securityItems.map((item) => (
-          <SecurityCard key={item.title} item={item} />
-        ))}
-      </div>
-
-      {/* Data handling summary */}
-      <div className="mt-10 border-t border-default pt-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
-          <div>
-            <h4 className="text-foreground font-medium mb-2">What we store</h4>
-            <p className="text-foreground-lighter">
-              Agent requests, policy decisions, audit logs
-            </p>
+    <section className="border-t border-b border-muted bg-surface-75">
+      <div className="max-w-7xl mx-auto px-6 lg:px-16 py-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          {/* Left: Security message */}
+          <div className="flex items-center gap-2 text-sm">
+            <span className="text-foreground-light">We protect your data.</span>
+            <Link
+              href="/security"
+              className="text-brand hover:text-brand-400 transition-colors"
+            >
+              More on Security
+            </Link>
           </div>
-          <div>
-            <h4 className="text-foreground font-medium mb-2">What we don't store</h4>
-            <p className="text-foreground-lighter">
-              Secrets, credentials, unnecessary PII
-            </p>
+
+          {/* Right: Compliance badges */}
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2 text-sm">
+              <Check className="w-4 h-4 text-brand" />
+              <span className="text-foreground-light">SOC2 Type 2</span>
+              <span className="text-foreground-muted">In Progress</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm">
+              <Check className="w-4 h-4 text-brand" />
+              <span className="text-foreground-light">HIPAA</span>
+              <span className="text-foreground-muted">Ready</span>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Trust Center link */}
-      <div className="mt-10">
-        <Button type="secondary" text="View Trust Center" url="/trust" />
-      </div>
-    </SectionContainer>
+    </section>
   )
 }
 

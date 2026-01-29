@@ -16,14 +16,6 @@ import type { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import type { ComponentType } from 'react'
 
 const ShareArticleActions = dynamic(() => import('components/Blog/ShareArticleActions'))
-const CTABanner = dynamic(() => import('components/CTABanner'))
-const LW11Summary = dynamic(() => import('components/LaunchWeek/11/LW11Summary'))
-const LW12Summary = dynamic(() => import('components/LaunchWeek/12/LWSummary'))
-const LW13Summary = dynamic(() => import('components/LaunchWeek/13/Releases/LWSummary'))
-const LW14Summary = dynamic(() => import('components/LaunchWeek/14/Releases/LWSummary'))
-const LW15Summary = dynamic(() => import('components/LaunchWeek/15/LWSummary'))
-const BlogLinks = dynamic(() => import('components/LaunchWeek/7/BlogLinks'))
-const LWXSummary = dynamic(() => import('components/LaunchWeek/X/LWXSummary'))
 const DefaultLayout = dynamic(() => import('components/Layouts/Default'))
 const DraftModeBanner = dynamic(() => import('components/Blog/DraftModeBanner'))
 const ReactMarkdown = dynamic<{ children: string }>(
@@ -103,13 +95,6 @@ const BlogPostRenderer = ({
   }, [isDraftMode, shouldUseLivePreview, livePreviewData, previewData, blog])
 
   const isCMS = blogMetaData.isCMS
-  const isLaunchWeek7 = blogMetaData.launchweek === '7'
-  const isLaunchWeekX = blogMetaData.launchweek?.toString().toLocaleLowerCase() === 'x'
-  const isGAWeek = blogMetaData.launchweek?.toString().toLocaleLowerCase() === '11'
-  const isLaunchWeek12 = blogMetaData.launchweek?.toString().toLocaleLowerCase() === '12'
-  const isLaunchWeek13 = blogMetaData.launchweek?.toString().toLocaleLowerCase() === '13'
-  const isLaunchWeek14 = blogMetaData.launchweek?.toString().toLocaleLowerCase() === '14'
-  const isLaunchWeek15 = blogMetaData.launchweek?.toString().toLocaleLowerCase() === '15'
 
   type NextCardProps = {
     post: { path: string; title: string; formattedDate: string }
@@ -287,13 +272,6 @@ const BlogPostRenderer = ({
                       )}
                     </div>
                   </article>
-                  {isLaunchWeek7 && <BlogLinks />}
-                  {isLaunchWeekX && <LWXSummary />}
-                  {isGAWeek && <LW11Summary />}
-                  {isLaunchWeek12 && <LW12Summary />}
-                  {isLaunchWeek13 && <LW13Summary />}
-                  {isLaunchWeek14 && <LW14Summary />}
-                  {isLaunchWeek15 && <LW15Summary />}
                   <div className="block lg:hidden py-8">
                     <div className="text-foreground-lighter text-sm">Share this article</div>
                     <ShareArticleActions title={blogMetaData.title} slug={blogMetaData.slug} />
@@ -358,7 +336,6 @@ const BlogPostRenderer = ({
           </div>
         </div>
 
-        <CTABanner />
       </DefaultLayout>
     </>
   )

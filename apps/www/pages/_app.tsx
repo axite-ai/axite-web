@@ -41,15 +41,9 @@ export default function App({ Component, pageProps }: AppProps) {
   const isDarkLaunchWeek = useDarkLaunchWeeks()
   const forceDarkMode = isDarkLaunchWeek
 
-  let applicationName = 'Supabase'
-  let faviconRoute = DEFAULT_FAVICON_ROUTE
-  let themeColor = DEFAULT_FAVICON_THEME_COLOR
-
-  if (router.asPath?.includes('/launch-week/x')) {
-    applicationName = 'Supabase LWX'
-    faviconRoute = 'images/launchweek/lwx/favicon'
-    themeColor = 'FFFFFF'
-  }
+  const applicationName = 'Axite'
+  const faviconRoute = DEFAULT_FAVICON_ROUTE
+  const themeColor = DEFAULT_FAVICON_THEME_COLOR
 
   return (
     <>
@@ -69,20 +63,20 @@ export default function App({ Component, pageProps }: AppProps) {
         description={DEFAULT_META_DESCRIPTION}
         openGraph={{
           type: 'website',
-          url: 'https://supabase.com/',
-          site_name: 'Supabase',
+          url: 'https://axite.ai/',
+          site_name: 'Axite',
           images: [
             {
-              url: `https://supabase.com${basePath}/images/og/supabase-og.png`,
+              url: `https://axite.ai${basePath}/images/og/axite-og.png`,
               width: 800,
               height: 600,
-              alt: 'Supabase Og Image',
+              alt: 'Axite Og Image',
             },
           ],
         }}
         twitter={{
-          handle: '@supabase',
-          site: '@supabase',
+          handle: '@axaborator',
+          site: '@axaborator',
           cardType: 'summary_large_image',
         }}
       />

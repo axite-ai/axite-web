@@ -7,27 +7,27 @@ import { APP_NAME, DEFAULT_META_DESCRIPTION } from '~/lib/constants'
 import Providers from './providers'
 import type { Viewport } from 'next'
 
-const site_title = `${APP_NAME} | The Open Source Firebase Alternative`
+const site_title = `${APP_NAME} | Agent Governance Platform`
 
 export const metadata: Metadata = {
   title: site_title,
   description: DEFAULT_META_DESCRIPTION,
   openGraph: {
     type: 'website',
-    url: 'https://supabase.com/',
-    siteName: 'Supabase',
+    url: 'https://axite.ai/',
+    siteName: 'Axite',
     images: [
       {
-        url: 'https://supabase.com/images/og/supabase-og.png',
+        url: 'https://axite.ai/images/og/axite-og.png',
         width: 800,
         height: 600,
-        alt: 'Supabase Og Image',
+        alt: 'Axite Og Image',
       },
     ],
   },
   twitter: {
-    creator: '@supabase',
-    site: '@supabase',
+    creator: '@axaborator',
+    site: '@axaborator',
     card: 'summary_large_image',
   },
   icons: {

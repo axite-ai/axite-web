@@ -11,9 +11,8 @@ import { DEFAULT_EASE } from '~/lib/animations'
 import MenuItem from './MenuItem'
 
 import { useIsUserLoading } from 'common'
-import * as supabaseLogoWordmarkDark from 'common/assets/images/supabase-logo-wordmark--dark.png'
-import * as supabaseLogoWordmarkLight from 'common/assets/images/supabase-logo-wordmark--light.png'
-import { ChevronRight } from 'lucide-react'
+import axiteLogoWordmarkDark from 'common/assets/images/axite-logo-wordmark--dark.svg'
+import axiteLogoWordmarkLight from 'common/assets/images/axite-logo-wordmark--light.svg'
 import MainProductsData from '~/data/MainProducts'
 import ProductModulesData from '~/data/ProductModules'
 
@@ -79,29 +78,6 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
               ))}
             </ul>
           </div>
-          <Link
-            href="/docs/quickstart"
-            className="
-              flex items-center justify-between group text-sm
-              p-4 mt-4 gap-2
-              rounded-lg border
-              bg-alternative-200 text-foreground-light
-              hover:text-foreground hover:border-foreground-muted
-              focus-visible:text-foreground focus-visible:ring-2 focus-visible:outline-none
-              focus-visible:rounded focus-visible:ring-foreground-lighter
-            "
-          >
-            <div className="flex flex-col gap-1 !leading-3">
-              <span>Get started</span>
-              <span className="text-foreground-lighter text-xs leading-4">
-                Add governance to your AI agents in minutes.
-              </span>
-            </div>
-            <ChevronRight
-              strokeWidth={2}
-              className="w-3 -ml-1 transition-all will-change-transform -translate-x-1 opacity-80 group-hover:translate-x-0 group-hover:opacity-100"
-            />
-          </Link>
         </>
       ) : null}
     </>
@@ -157,7 +133,7 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
                 className="block w-auto h-6 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-foreground-lighter focus-visible:ring-offset-4 focus-visible:ring-offset-background-alternative focus-visible:rounded-sm"
               >
                 <Image
-                  src={supabaseLogoWordmarkLight}
+                  src={axiteLogoWordmarkLight}
                   width={124}
                   height={24}
                   alt="Axite Logo"
@@ -165,7 +141,7 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
                   priority
                 />
                 <Image
-                  src={supabaseLogoWordmarkDark}
+                  src={axiteLogoWordmarkDark}
                   width={124}
                   height={24}
                   alt="Axite Logo"
@@ -201,22 +177,13 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
             </div>
             <div className="absolute bottom-0 left-0 right-0 top-auto w-full bg-alternative flex items-stretch p-4 gap-4">
               {!isUserLoading && (
-                <>
-                  <Link href="/contact/sales" passHref legacyBehavior>
-                    <Button block type="default" asChild>
-                      <a type={undefined} className="h-10 py-4">
-                        Contact sales
-                      </a>
-                    </Button>
-                  </Link>
-                  <Link href="/docs/quickstart" passHref legacyBehavior>
-                    <Button block asChild>
-                      <a type={undefined} className="h-10 py-4">
-                        Get started
-                      </a>
-                    </Button>
-                  </Link>
-                </>
+                <Link href="/contact/sales" passHref legacyBehavior>
+                  <Button block asChild>
+                    <a type={undefined} className="h-10 py-4">
+                      Contact sales
+                    </a>
+                  </Button>
+                </Link>
               )}
             </div>
           </m.div>

@@ -49,9 +49,7 @@ const nextConfig = {
     'ui-patterns',
     'common',
     'config',
-    'icons',
     'shared-data',
-    'api-types',
     // External packages:
     '@octokit/plugin-paginate-graphql',
   ],

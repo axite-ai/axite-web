@@ -3,10 +3,6 @@ const footerData = [
     title: 'Resources',
     links: [
       {
-        text: 'Documentation',
-        url: '/docs',
-      },
-      {
         text: 'Trust Center',
         url: '/trust',
       },

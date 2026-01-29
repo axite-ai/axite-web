@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url(../pages/launch-week/launchWeek.css);
-
 @import './../../../lib/ui/src/styles/variables.css';
 
 @layer utilities {

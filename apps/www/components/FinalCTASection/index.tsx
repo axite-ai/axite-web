@@ -1,42 +1,24 @@
 import Link from 'next/link'
-import { Button, cn } from 'ui'
-import { useSendTelemetryEvent } from '~/lib/telemetry'
+import { Button } from 'ui'
 
-interface Props {
-  className?: string
-}
-
-const FinalCTASection = ({ className }: Props) => {
-  const sendTelemetryEvent = useSendTelemetryEvent()
-
+const FinalCTASection = () => {
   return (
-    <div
-      className={cn(
-        'bg-alternative grid grid-cols-12 items-center gap-4 border-t py-32 text-center px-16',
-        className
-      )}
-    >
-      <div className="col-span-12">
-        <h2 className="heading-gradient text-2xl sm:text-3xl xl:text-4xl">
-          Ship agents to production with confidence
+    <section className="py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-6 lg:px-16 text-center">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-foreground mb-8">
+          Ready to ship secure agents?
         </h2>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <Button asChild type="primary" size="medium">
+            <Link href="/docs/quickstart">Start for free</Link>
+          </Button>
+          <Button asChild type="default" size="medium">
+            <Link href="/contact/sales">Contact Sales</Link>
+          </Button>
+        </div>
       </div>
-      <div className="flex items-center justify-center col-span-12 mt-4">
-        <Button asChild size="medium">
-          <Link
-            href="/contact/sales"
-            onClick={() =>
-              sendTelemetryEvent({
-                action: 'book_security_review_clicked',
-                properties: { buttonLocation: 'Final CTA Section' },
-              })
-            }
-          >
-            Book Security Review
-          </Link>
-        </Button>
-      </div>
-    </div>
+    </section>
   )
 }
 

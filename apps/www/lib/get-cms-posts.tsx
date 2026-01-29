@@ -33,7 +33,7 @@ type CMSBlogPost = {
   categories?: string[]
   tags?: string[]
   industry?: string[]
-  supabase_products?: string[]
+  axite_products?: string[]
   company_size?: string
   region?: string
   logo?: string
@@ -162,7 +162,7 @@ type ProcessedPost = {
   formattedDate: string
   readingTime: string
   industry?: string[]
-  supabase_products?: string[]
+  axite_products?: string[]
   company_size?: string
   region?: string
   logo?: string

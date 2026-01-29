@@ -5,7 +5,7 @@ const ShareArticleActions = ({
   title,
   slug,
   iconSize = 20,
-  basePath = 'https://supabase.com/blog/',
+  basePath = 'https://axite.ai/blog/',
   className,
 }: {
   title: string

@@ -21,6 +21,7 @@
   --background-default: 0 0% 100%;
   --background-alternative-default: 0 0% 98%;
   --background-selection: 224 60% 90%;
+  --background-surface-75: 0 0% 99%;
   --background-surface-100: 0 0% 100%;
   --background-surface-200: 0 0% 98%;
   --background-surface-300: 0 0% 96%;
@@ -60,6 +61,7 @@
   --background-default: 0 0% 7%;
   --background-alternative-default: 0 0% 10%;
   --background-selection: 224 40% 25%;
+  --background-surface-75: 0 0% 8%;
   --background-surface-100: 0 0% 9%;
   --background-surface-200: 0 0% 12%;
   --background-surface-300: 0 0% 15%;
