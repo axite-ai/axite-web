@@ -25,7 +25,6 @@ import MetaFaviconsPagesRouter, {
 } from 'common/MetaFavicons/pages-router'
 import { WwwCommandMenu } from '~/components/CommandMenu'
 import { API_URL, APP_NAME, DEFAULT_META_DESCRIPTION } from '~/lib/constants'
-import useDarkLaunchWeeks from '../hooks/useDarkLaunchWeeks'
 import { useWwwCommandMenuTelemetry } from '../hooks/useWwwCommandMenuTelemetry'
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -35,11 +34,8 @@ export default function App({ Component, pageProps }: AppProps) {
 
   useThemeSandbox()
 
-  const site_title = `${APP_NAME} | The Postgres Development Platform.`
+  const site_title = `${APP_NAME} | Agent Governance Platform`
   const { basePath } = useRouter()
-
-  const isDarkLaunchWeek = useDarkLaunchWeeks()
-  const forceDarkMode = isDarkLaunchWeek
 
   const applicationName = 'Axite'
   const faviconRoute = DEFAULT_FAVICON_ROUTE
@@ -88,7 +84,7 @@ export default function App({ Component, pageProps }: AppProps) {
             themes={themes.map((theme) => theme.value)}
             enableSystem
             disableTransitionOnChange
-            forcedTheme={forceDarkMode ? 'dark' : undefined}
+            forcedTheme={undefined}
           >
             <TooltipProvider delayDuration={0}>
               <CommandProvider app="www" onTelemetry={onTelemetry}>
