@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Button } from 'ui'
+import BookACallButton from '~/components/BookACallButton'
 
 const FinalCTASection = () => {
   return (
@@ -13,9 +14,7 @@ const FinalCTASection = () => {
           <Button asChild type="primary" size="medium">
             <Link href="/docs/quickstart">Start for free</Link>
           </Button>
-          <Button asChild type="default" size="medium">
-            <Link href="/contact/sales">Contact Sales</Link>
-          </Button>
+          <BookACallButton size="medium" />
         </div>
       </div>
     </section>

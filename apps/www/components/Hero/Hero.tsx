@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Button } from 'ui'
 import SectionContainer from '~/components/Layouts/SectionContainer'
+import BookACallButton from '~/components/BookACallButton'
 
 const Hero = () => {
   return (
@@ -34,11 +35,7 @@ const Hero = () => {
                     Try the Demo
                   </Link>
                 </Button>
-                <Button asChild size="medium" type="default">
-                  <Link href="/contact/sales">
-                    Book a call
-                  </Link>
-                </Button>
+                <BookACallButton size="medium" />
               </div>
             </div>
           </div>

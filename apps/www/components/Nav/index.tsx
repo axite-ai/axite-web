@@ -6,6 +6,7 @@ import React from 'react'
 
 import { Button, cn } from 'ui'
 
+import BookACallButton from '~/components/BookACallButton'
 import RightClickBrandLogo from './RightClickBrandLogo'
 
 const ScrollProgress = dynamic(() => import('components/ScrollProgress'))
@@ -36,11 +37,7 @@ const Nav = ({ hideNavbar, stickyNavbar = true }: Props) => {
                 </div>
               </div>
               <div className="flex items-center gap-2 opacity-0 animate-fade-in !scale-100 delay-300">
-                <Button asChild>
-                  <Link href="/contact/sales">
-                    Book Security Review
-                  </Link>
-                </Button>
+                <BookACallButton />
               </div>
             </div>
           </div>
