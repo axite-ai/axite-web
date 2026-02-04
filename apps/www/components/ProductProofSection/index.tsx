@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState, useRef } from 'react'
-import { motion, AnimatePresence, useInView } from 'framer-motion'
+import { motion, AnimatePresence, useInView, useMotionValue } from 'framer-motion'
 import { cn, Badge } from 'ui'
 import SectionContainer from '~/components/Layouts/SectionContainer'
 import Panel from '~/components/Panel'
@@ -21,7 +21,7 @@ const STAGES = [
 ] as const
 
 const STAGE_DURATION = 3000
-const PROGRESS_TICK = 30
+const HOVER_SPEED = 0.3
 
 // =============================================================================
 // STAGE CONTENT COMPONENTS
@@ -332,73 +332,69 @@ const StageReceipt = () => (
 const STAGE_COMPONENTS = [StageToolCall, StagePolicyGate, StageApproval, StageExecution, StageReceipt]
 
 // =============================================================================
-// FLOW INDICATOR (PIPELINE NODES)
+// VERTICAL STEPPER (DESKTOP) & MOBILE DOT INDICATORS
 // =============================================================================
 
-const FlowIndicator = ({ activeIndex, progress }: { activeIndex: number; progress: number }) => (
-  <div className="relative flex items-center justify-between w-full max-w-lg mx-auto mb-8">
-    {/* Connector lines */}
-    <div className="absolute top-3 left-0 right-0 h-px bg-border-muted" />
-    <div
-      className="absolute top-3 left-0 h-px bg-brand transition-all duration-500 ease-out"
-      style={{ width: `${(activeIndex / (STAGES.length - 1)) * 100}%` }}
-    />
-
+const VerticalStepper = ({ activeIndex }: { activeIndex: number }) => (
+  <div className="flex flex-col gap-0 h-full justify-center">
     {STAGES.map((stage, i) => {
       const isActive = i === activeIndex
       const isVisited = i < activeIndex
 
       return (
-        <div key={stage.id} className="relative z-10 flex flex-col items-center gap-2.5">
-          {/* Node */}
-          <div className="relative">
-            <motion.div
+        <div key={stage.id}>
+          <div className="flex items-center gap-3">
+            {/* Node circle - opaque bg, no line bleed */}
+            <div
               className={cn(
-                'w-6 h-6 rounded-full border-2 transition-colors duration-300 flex items-center justify-center',
+                'relative z-10 w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 transition-colors duration-300',
                 isActive
                   ? 'border-brand bg-brand'
                   : isVisited
-                    ? 'border-brand bg-brand/20'
+                    ? 'border-brand bg-surface-75'
                     : 'border-border-muted bg-surface-200'
               )}
-              animate={isActive ? { scale: [1, 1.15, 1] } : { scale: 1 }}
-              transition={isActive ? { duration: 1.5, repeat: Infinity, ease: 'easeInOut' } : undefined}
             >
               {isVisited && (
                 <svg className="w-3 h-3 text-brand" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8.5L6.5 12L13 4" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               )}
-              {isActive && (
-                <div className="w-2 h-2 rounded-full bg-background" />
+              {isActive && <div className="w-2 h-2 rounded-full bg-background" />}
+            </div>
+            {/* Label */}
+            <span
+              className={cn(
+                'font-mono text-xs whitespace-nowrap transition-colors duration-300',
+                isActive ? 'text-brand' : isVisited ? 'text-foreground-light' : 'text-foreground-muted'
               )}
-            </motion.div>
+            >
+              {stage.label}
+            </span>
           </div>
-          {/* Label */}
-          <span
-            className={cn(
-              'font-mono text-[10px] sm:text-xs transition-colors duration-300 whitespace-nowrap',
-              isActive ? 'text-brand' : isVisited ? 'text-foreground-light' : 'text-foreground-muted'
-            )}
-          >
-            {stage.label}
-          </span>
+          {/* Connecting line between nodes (not after last) */}
+          {i < STAGES.length - 1 && (
+            <div className="ml-[11px] w-px h-6 bg-border-muted relative">
+              {i < activeIndex && <div className="absolute inset-0 bg-brand" />}
+            </div>
+          )}
         </div>
       )
     })}
+  </div>
+)
 
-    {/* Active stage progress bar (thin, under nodes) */}
-    <div className="absolute top-[18px] left-0 right-0 h-[2px]">
-      {activeIndex < STAGES.length - 1 && (
-        <div
-          className="absolute h-full bg-brand/30 rounded-full transition-all duration-100"
-          style={{
-            left: `${(activeIndex / (STAGES.length - 1)) * 100}%`,
-            width: `${(progress / (STAGES.length - 1)) * 100}%`,
-          }}
-        />
-      )}
-    </div>
+const MobileDots = ({ activeIndex }: { activeIndex: number }) => (
+  <div className="flex items-center justify-center gap-4 p-4 border-b border-border-muted">
+    {STAGES.map((stage, i) => (
+      <div
+        key={stage.id}
+        className={cn(
+          'w-3 h-3 rounded-full transition-colors duration-300',
+          i === activeIndex ? 'bg-brand' : i < activeIndex ? 'bg-brand/50' : 'bg-border-muted'
+        )}
+      />
+    ))}
   </div>
 )
 
@@ -408,45 +404,56 @@ const FlowIndicator = ({ activeIndex, progress }: { activeIndex: number; progres
 
 const ProductProofSection = () => {
   const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { margin: '-20%' })
+  const isInView = useInView(ref, { amount: 0.2 })
   const [activeStage, setActiveStage] = useState(0)
-  const [progress, setProgress] = useState(0)
   const [isHovered, setIsHovered] = useState(false)
-  const [mounted, setMounted] = useState(false)
+  const progressValue = useMotionValue('0%')
+  const progressRef = useRef(0)
+  const speedRef = useRef(1)
+  const rafRef = useRef<number>()
+  const lastFrameRef = useRef<number | null>(null)
 
+  speedRef.current = isHovered ? HOVER_SPEED : 1
+
+  // Auto-advance through stages with rAF for smooth progress
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    if (!isInView) {
+      progressRef.current = 0
+      progressValue.set('0%')
+      return
+    }
 
-  const isPlaying = isInView && !isHovered && mounted
+    const tick = (time: number) => {
+      if (lastFrameRef.current === null) {
+        lastFrameRef.current = time
+        rafRef.current = requestAnimationFrame(tick)
+        return
+      }
 
-  // Auto-advance through stages
-  useEffect(() => {
-    if (!isPlaying) return
+      const delta = time - lastFrameRef.current
+      lastFrameRef.current = time
 
-    const tick = PROGRESS_TICK
-    const increment = (100 / STAGE_DURATION) * tick
+      progressRef.current += (delta / STAGE_DURATION) * speedRef.current
 
-    const interval = setInterval(() => {
-      setProgress(prev => {
-        const next = prev + increment
-        if (next >= 100) {
-          setActiveStage(s => (s + 1) % STAGES.length)
-          return 0
-        }
-        return next
-      })
-    }, tick)
+      if (progressRef.current >= 1) {
+        progressRef.current = 0
+        progressValue.set('0%')
+        lastFrameRef.current = null
+        setActiveStage(s => (s + 1) % STAGES.length)
+        return
+      }
 
-    return () => clearInterval(interval)
-  }, [isPlaying])
+      progressValue.set(`${progressRef.current * 100}%`)
+      rafRef.current = requestAnimationFrame(tick)
+    }
 
-  // Reset progress on stage change
-  useEffect(() => {
-    setProgress(0)
-  }, [activeStage])
+    rafRef.current = requestAnimationFrame(tick)
 
-  if (!mounted) return null
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+      lastFrameRef.current = null
+    }
+  }, [isInView, activeStage])
 
   const ActiveContent = STAGE_COMPONENTS[activeStage]
 
@@ -474,29 +481,37 @@ const ProductProofSection = () => {
         >
           <Panel
             outerClassName="w-full"
-            innerClassName="p-6 sm:p-8 lg:p-10"
+            innerClassName="p-0 overflow-hidden"
             hasShimmer
             hasActiveOnHover
             activeColor="brand"
           >
-            <div className="relative z-10">
-              {/* Flow indicator nodes */}
-              <FlowIndicator activeIndex={activeStage} progress={progress / 100} />
-
-              {/* Stage content area */}
-              <div className="min-h-[260px] sm:min-h-[240px] flex items-start">
-                <AnimatePresence mode="wait">
-                  <ActiveContent key={activeStage} />
-                </AnimatePresence>
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[220px_1fr] min-h-[400px]">
+              {/* Mobile: horizontal dot indicators */}
+              <div className="lg:hidden">
+                <MobileDots activeIndex={activeStage} />
               </div>
 
-              {/* Stage progress bar */}
-              <div className="mt-6 h-[2px] bg-surface-300 rounded-full overflow-hidden">
-                <motion.div
-                  className="h-full bg-brand/60 rounded-full"
-                  style={{ width: `${progress}%` }}
-                  transition={{ duration: 0.05, ease: 'linear' }}
-                />
+              {/* Desktop: vertical stepper sidebar */}
+              <div className="hidden lg:flex flex-col justify-center border-r border-border-muted p-6 bg-surface-75">
+                <VerticalStepper activeIndex={activeStage} />
+              </div>
+
+              {/* Stage content area */}
+              <div className="relative flex-1 flex flex-col justify-center p-6 sm:p-8">
+                <div className="max-w-lg">
+                  <AnimatePresence mode="wait">
+                    <ActiveContent key={activeStage} />
+                  </AnimatePresence>
+                </div>
+
+                {/* Progress bar at bottom of content area */}
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-surface-300">
+                  <motion.div
+                    className="h-full bg-brand/60"
+                    style={{ width: progressValue }}
+                  />
+                </div>
               </div>
             </div>
           </Panel>
