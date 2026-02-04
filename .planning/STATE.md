@@ -5,7 +5,7 @@
 See: .planning/PROJECT.md (updated 2026-01-24)
 
 **Core value:** Get a professional, working marketing website deployed to axite.ai using battle-tested code instead of AI-generated slop.
-**Current focus:** v1.2 Landing Page Refactor - Phase 16 Action & Close COMPLETE
+**Current focus:** v1.2 Landing Page Refactor - Phase 16 Action & Close COMPLETE + Quick Task 001
 
 ## Current Position
 
@@ -13,9 +13,10 @@ Milestone: v1.2 Landing Page Refactor
 Phase: 16 of 17 (Action & Close)
 Plan: 6 of 6 complete
 Status: Phase complete
-Last activity: 2026-01-27 - Completed 16-06-PLAN.md (Phase Verification)
+Last activity: 2026-02-03 - Completed quick/001-PLAN.md (Homepage Outreach Alignment)
 
 Progress: [####################] 100% (62/62 plans - v1.0+v1.1+phase 12-16 complete)
+Quick tasks: 1 completed
 
 ## Performance Metrics
 
@@ -67,9 +68,9 @@ v1.2 phase 13 decisions:
 - Header shows only logo + single CTA ("Book Security Review")
 - No navigation links in header (pages still accessible via direct URL)
 - Mobile hamburger removed (no items to show)
-- Hero headline: "Complete visibility and control over every agent action" (outcome-first)
-- Hero subhead: "The agent governance platform for enterprises" (audience-identifying)
-- Hero CTAs: "Book Security Review" (primary, /contact/sales) + "View Docs" (secondary, /docs)
+- Hero headline: "Change control for agent actions in prod" (outreach-aligned, quick-001)
+- Hero description: Terraform apply, approval binding, audit evidence
+- Hero CTAs: "Request a 30-day pilot" (primary, cal embed) + "Try Demo" (secondary, /demo)
 
 v1.2 phase 14 decisions:
 - ProofSection placed after Hero, before Logos section
@@ -104,7 +105,7 @@ Route verification:
 - /privacy returns 200
 - /contact/sales returns 200
 
-Homepage section order: Hero -> ProofSection -> Logos -> TransformationSection -> PillarsSection -> HowItWorksSection -> SecuritySection -> FinalCTASection -> Footer
+Homepage section order (post quick-001): Hero -> ProductProofSection -> IntegrationsSection -> HowItWorksSection -> TransformationSection -> SecuritySection -> FinalCTASection -> Footer
 
 ### Phase 15 Verification Results (Complete)
 
@@ -156,8 +157,18 @@ All success criteria verified:
 
 - Logo and brand assets needed from user before visual rebrand phase
 
+### Quick Task 001 Results
+
+Homepage aligned with outreach narrative:
+- Hero: "Change control for agent actions in prod" (was "Complete visibility and control")
+- CTAs: "Request a 30-day pilot" + "Try Demo" (was "Try the Demo" + "Book a Call")
+- HowItWorks: 4-step approval flow (was 3 pillars)
+- New sections: ProductProofSection, IntegrationsSection
+- Removed: GetStartedSection (redundant), HIPAA badge
+- Fixed: Missing FlowDiagram component for InteractiveDemo (pre-existing build failure)
+
 ## Session Continuity
 
-Last session: 2026-01-27
-Stopped at: Completed 16-06-PLAN.md (Phase Verification)
+Last session: 2026-02-03
+Stopped at: Completed quick/001-PLAN.md (Homepage Outreach Alignment)
 Resume: `/gsd:execute-plan 17-01` or `/gsd:plan-phase 17`

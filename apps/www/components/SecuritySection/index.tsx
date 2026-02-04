@@ -7,7 +7,7 @@ const trustSignals = [
   {
     icon: Clock,
     title: 'SOC 2 Type II',
-    description: 'In Progress',
+    description: 'In preparation',
   },
   {
     icon: Lock,
@@ -34,7 +34,7 @@ const SecuritySection = () => {
           Security
         </span>
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-foreground mt-3 mb-4">
-          Built for compliance teams
+          Built for Platform + Security
         </h2>
       </div>
 

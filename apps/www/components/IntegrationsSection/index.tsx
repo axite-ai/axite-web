@@ -126,14 +126,15 @@ interface ExampleCard {
   rows: CardRow[]
   divider: true
   policyRows: CardRow[]
+  footnote?: string
 }
 
 const exampleCards: ExampleCard[] = [
   {
-    title: 'Kubernetes Deployment',
+    title: 'Terraform Apply',
     rows: [
-      { key: 'Agent', value: 'deploy-agent' },
-      { key: 'Action', value: 'kubectl apply -f deployment.yaml' },
+      { key: 'Agent', value: 'infra-agent' },
+      { key: 'Action', value: 'terraform apply' },
       { key: 'Environment', value: 'production' },
     ],
     divider: true,
@@ -143,7 +144,7 @@ const exampleCards: ExampleCard[] = [
         value: (
           <span>
             require-approval{' '}
-            <span className="text-foreground-muted">(namespace: production)</span>
+            <span className="text-foreground-muted">(workspace: production)</span>
           </span>
         ),
       },
@@ -167,9 +168,10 @@ const exampleCards: ExampleCard[] = [
         ),
       },
     ],
+    footnote: 'Approve the exact plan. Apply requires the receipt.',
   },
   {
-    title: 'Terraform Plan',
+    title: 'Terraform Block',
     rows: [
       { key: 'Agent', value: 'infra-agent' },
       { key: 'Action', value: 'terraform apply -auto-approve' },
@@ -273,6 +275,12 @@ const ExampleCardPanel = ({
               <Row key={row.key} label={row.key} value={row.value} />
             ))}
           </div>
+
+          {card.footnote && (
+            <p className="mt-4 pt-3 border-t border-muted font-mono text-xs text-foreground-muted">
+              {card.footnote}
+            </p>
+          )}
         </div>
       </Panel>
     </motion.div>

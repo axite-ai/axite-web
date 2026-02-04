@@ -9,25 +9,23 @@ const Hero = () => {
       <SectionContainer className="pt-8 pb-16 md:pt-16 md:pb-24">
         <div className="relative">
           <div className="mx-auto max-w-4xl lg:flex lg:items-center justify-center text-center">
-            <div className="relative z-10 pt-[90px] lg:pt-[90px] flex flex-col items-center justify-center gap-6">
-              {/* Small label */}
-              <span className="font-mono text-xs text-brand uppercase tracking-widest">
-                Change Control for AI Agents
-              </span>
+            <div className="relative z-10 pt-[90px] lg:pt-[90px] flex flex-col items-center justify-center gap-4 lg:gap-8">
+              <div className="flex flex-col items-center">
+                {/* Main title */}
+                <h1 className="text-foreground text-4xl sm:text-5xl sm:leading-none lg:text-7xl">
+                  <span className="block text-foreground">Change control for</span>
+                  <span className="text-brand block md:ml-0">agent actions</span>
+                </h1>
 
-              {/* Main title */}
-              <h1 className="text-foreground text-4xl sm:text-5xl lg:text-6xl font-normal leading-tight">
-                Change control for
-                <br />
-                <span className="text-foreground-light">agent actions in prod</span>
-              </h1>
-
-              {/* Description */}
-              <p className="text-foreground-lighter text-lg max-w-2xl">
-                Every tool call hits a policy gate before execution. Approvals are
-                HMAC-signed and bound to the exact action. Every decision produces a
-                tamper-evident audit receipt.
-              </p>
+                <p className="pt-2 text-foreground my-3 text-sm sm:mt-5 lg:mb-0 sm:text-base lg:text-lg">
+                  Built for Platform/SRE teams deploying agents into production.
+                </p>
+                <p className="pt-2 text-foreground-lighter text-sm sm:text-base lg:text-lg">
+                  Every tool call is <strong className="text-foreground-light font-medium">allow</strong> / <strong className="text-foreground-light font-medium">block</strong> / <strong className="text-foreground-light font-medium">require approval</strong> before it can touch prod.{' '}
+                  <br className="hidden md:block" />
+                  Approve in Slack. Export an evidence trail.
+                </p>
+              </div>
 
               {/* CTAs */}
               <div className="flex flex-wrap items-center justify-center gap-3 mt-2">

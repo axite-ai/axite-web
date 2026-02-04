@@ -48,7 +48,7 @@ const StageToolCall = () => (
     <div className="bg-surface-200/50 border border-border-muted rounded-lg p-4 space-y-2">
       <div className="flex items-center gap-2">
         <span className="font-mono text-xs text-foreground-muted select-none">$</span>
-        <span className="font-mono text-sm text-brand">stripe:refund</span>
+        <span className="font-mono text-sm text-brand">k8s:deploy</span>
       </div>
       <div className="h-px bg-border-muted/50 my-2" />
       <div className="font-mono text-xs sm:text-sm text-foreground-lighter space-y-1 pl-4">
@@ -56,15 +56,15 @@ const StageToolCall = () => (
           <span className="text-foreground-muted">{'{'}</span>
         </div>
         <div className="pl-3">
-          <span className="text-brand/80">"amount"</span>
+          <span className="text-brand/80">"image"</span>
           <span className="text-foreground-muted">: </span>
-          <span className="text-foreground-light">847</span>
+          <span className="text-foreground-light">"app:v2.4.1"</span>
           <span className="text-foreground-muted">,</span>
         </div>
         <div className="pl-3">
-          <span className="text-brand/80">"customer"</span>
+          <span className="text-brand/80">"namespace"</span>
           <span className="text-foreground-muted">: </span>
-          <span className="text-foreground-light">"cus_2m5k9x"</span>
+          <span className="text-foreground-light">"production"</span>
         </div>
         <div>
           <span className="text-foreground-muted">{'}'}</span>
@@ -87,7 +87,7 @@ const StagePolicyGate = () => (
           <div className="flex items-center gap-3 min-w-0">
             <span className="font-mono text-[10px] text-foreground-muted uppercase tracking-wider shrink-0 w-10">RBAC</span>
             <span className="font-mono text-xs sm:text-sm text-foreground-light truncate">
-              editor <span className="text-foreground-muted mx-1">{'->'}</span> write
+              deployer <span className="text-foreground-muted mx-1">{'->'}</span> write
             </span>
           </div>
           <Badge variant="default" className="text-[10px] px-1.5 shrink-0">PASS</Badge>
@@ -98,13 +98,13 @@ const StagePolicyGate = () => (
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-3 min-w-0">
             <span className="font-mono text-[10px] text-foreground-muted uppercase tracking-wider shrink-0 w-10">Policy</span>
-            <span className="font-mono text-xs sm:text-sm text-foreground-light truncate">reviewRefunds</span>
+            <span className="font-mono text-xs sm:text-sm text-foreground-light truncate">require-approval</span>
           </div>
           <Badge variant="warning" className="text-[10px] px-1.5 shrink-0">REVIEW</Badge>
         </div>
         <div className="mt-2 pt-2 border-t border-border-muted/50">
           <span className="font-mono text-[11px] text-foreground-muted">
-            amount {'>'} $500 <span className="text-foreground-muted/60 mx-1">{'->'}</span> requires human review
+            namespace: production <span className="text-foreground-muted/60 mx-1">{'->'}</span> requires human review
           </span>
         </div>
       </div>
@@ -135,11 +135,11 @@ const StageApproval = () => {
         <div className="space-y-2">
           <div className="flex items-baseline gap-2">
             <span className="font-mono text-[10px] text-foreground-muted uppercase tracking-wider shrink-0 w-12">Action</span>
-            <span className="font-mono text-xs sm:text-sm text-foreground-light">stripe:refund ($847)</span>
+            <span className="font-mono text-xs sm:text-sm text-foreground-light">k8s:deploy (app:v2.4.1 {'->'} production)</span>
           </div>
           <div className="flex items-baseline gap-2">
             <span className="font-mono text-[10px] text-foreground-muted uppercase tracking-wider shrink-0 w-12">Reason</span>
-            <span className="font-mono text-xs sm:text-sm text-foreground-lighter">Refunds over $500 require review</span>
+            <span className="font-mono text-xs sm:text-sm text-foreground-lighter">Production deployments require review</span>
           </div>
         </div>
         <div className="h-px bg-border-muted/50" />
@@ -235,7 +235,7 @@ const StageExecution = () => {
                   transition={{ duration: 0.8, repeat: Infinity, ease: 'linear' }}
                 />
                 <span className="font-mono text-xs sm:text-sm text-foreground-light">
-                  Calling stripe.refunds.create...
+                  Calling kubectl apply -f deployment.yaml...
                 </span>
               </div>
               {/* Progress bar */}
@@ -272,10 +272,10 @@ const StageExecution = () => {
               </div>
               <div className="pl-6 space-y-1">
                 <CodeLine dimmed>
-                  Duration: <span className="text-foreground-light">230ms</span>
+                  Duration: <span className="text-foreground-light">1.2s</span>
                 </CodeLine>
                 <CodeLine dimmed>
-                  Result: <span className="text-foreground-light">refund_re_1234 created</span>
+                  Result: <span className="text-foreground-light">deployment/app scaled to 3 replicas</span>
                 </CodeLine>
               </div>
             </motion.div>

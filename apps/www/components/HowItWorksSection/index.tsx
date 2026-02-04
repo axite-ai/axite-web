@@ -260,15 +260,15 @@ const ApprovalViz = ({ isActive, isInView }: { isActive?: boolean; isInView?: bo
         <div className="px-3 py-3 space-y-2">
           <div className="font-mono text-xs">
             <span className="text-foreground-muted">Action: </span>
-            <span className="text-foreground-light">stripe:refund ($847)</span>
+            <span className="text-foreground-light">k8s:deploy (app:v2.4.1 {'->'} production)</span>
           </div>
           <div className="font-mono text-xs">
             <span className="text-foreground-muted">Reason: </span>
-            <span className="text-foreground-light">Refunds over $500 require review</span>
+            <span className="text-foreground-light">Production deployments require review</span>
           </div>
           <div className="font-mono text-xs">
             <span className="text-foreground-muted">Rule: </span>
-            <span className="text-foreground-light">reviewRefunds-prod-001</span>
+            <span className="text-foreground-light">require-approval-prod-001</span>
           </div>
         </div>
 
@@ -530,7 +530,7 @@ const panels = [
   {
     id: 'intercept',
     label: '1. Intercept',
-    paragraph: 'Agent issues a tool call. Axite intercepts it at the gateway before execution.',
+    paragraph: 'Agent issues a tool call. Axite intercepts it at the gateway before execution. Deploy as an MCP gateway or CI/CD execution gate.',
     image: InterceptViz,
   },
   {
