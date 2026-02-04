@@ -7,9 +7,11 @@ import { Button } from 'ui'
 interface BookACallButtonProps {
   size?: 'medium' | 'small' | 'large'
   type?: 'primary' | 'default'
+  label?: string
+  children?: React.ReactNode
 }
 
-const BookACallButton = ({ size, type = 'default' }: BookACallButtonProps) => {
+const BookACallButton = ({ size, type = 'default', label = 'Book a Call', children }: BookACallButtonProps) => {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: 'discovery' })
@@ -25,7 +27,7 @@ const BookACallButton = ({ size, type = 'default' }: BookACallButtonProps) => {
       data-cal-link="axite/discovery"
       data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
     >
-      Book a Call
+      {children ?? label}
     </Button>
   )
 }

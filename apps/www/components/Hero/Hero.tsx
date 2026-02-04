@@ -12,30 +12,29 @@ const Hero = () => {
             <div className="relative z-10 pt-[90px] lg:pt-[90px] flex flex-col items-center justify-center gap-6">
               {/* Small label */}
               <span className="font-mono text-xs text-brand uppercase tracking-widest">
-                Agent Governance Platform
+                Change Control for AI Agents
               </span>
 
               {/* Main title */}
               <h1 className="text-foreground text-4xl sm:text-5xl lg:text-6xl font-normal leading-tight">
-                Complete visibility and control
+                Change control for
                 <br />
-                <span className="text-foreground-light">over every agent action</span>
+                <span className="text-foreground-light">agent actions in prod</span>
               </h1>
 
               {/* Description */}
               <p className="text-foreground-lighter text-lg max-w-2xl">
-                Policy enforcement, identity management, and audit-grade logging
-                for every MCP tool call. Ship agents your security team can approve.
+                Every tool call hits a policy gate before execution. Approvals are
+                HMAC-signed and bound to the exact action. Every decision produces a
+                tamper-evident audit receipt.
               </p>
 
               {/* CTAs */}
               <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
-                <Button asChild size="medium" type="primary">
-                  <Link href="/demo">
-                    Try the Demo
-                  </Link>
+                <BookACallButton label="Request a 30-day pilot" type="primary" size="medium" />
+                <Button asChild size="medium" type="default">
+                  <Link href="/demo">Watch 90-sec demo</Link>
                 </Button>
-                <BookACallButton size="medium" />
               </div>
             </div>
           </div>

@@ -7,14 +7,14 @@ const FinalCTASection = () => {
     <section className="py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-16 text-center">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-foreground mb-8">
-          Ready to ship secure agents?
+          Ready to govern agent actions in prod?
         </h2>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <Button asChild type="primary" size="medium">
-            <Link href="/docs/quickstart">Start for free</Link>
+          <BookACallButton label="Request a 30-day pilot" type="primary" size="medium" />
+          <Button asChild type="default" size="medium">
+            <Link href="/demo">Watch 90-sec demo</Link>
           </Button>
-          <BookACallButton size="medium" />
         </div>
       </div>
     </section>

@@ -5,12 +5,108 @@ import { AnimatePresence, motion, useInView, useAnimation, LazyMotion, domAnimat
 import { useBreakpoint } from 'common'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { cn, Badge } from 'ui'
-import { Check, X, Clock } from 'lucide-react'
+import { Check, Shield, Bot } from 'lucide-react'
 import dayjs from 'dayjs'
 import SectionContainer from '~/components/Layouts/SectionContainer'
 import Panel from '~/components/Panel'
 
 import 'swiper/css'
+
+// =============================================================================
+// INTERCEPT VISUALIZATION
+// =============================================================================
+
+const interceptedCalls = [
+  { tool: 'stripe:refund', params: '{ amount: 847 }', env: 'production' },
+  { tool: 'kubectl:apply', params: '{ manifest: deploy.yml }', env: 'production' },
+  { tool: 'terraform:plan', params: '{ workspace: prod }', env: 'production' },
+  { tool: 'aws:s3_delete', params: '{ bucket: logs-2024 }', env: 'staging' },
+  { tool: 'github:merge', params: '{ pr: 1482 }', env: 'production' },
+]
+
+const InterceptViz = ({ isActive, isInView }: { isActive?: boolean; isInView?: boolean }) => {
+  const [mounted, setMounted] = useState(false)
+  const isPlaying = isActive && isInView
+  const [callIndex, setCallIndex] = useState(0)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isPlaying) return
+
+    const interval = setInterval(() => {
+      setCallIndex(prev => (prev + 1) % interceptedCalls.length)
+    }, 3000)
+
+    return () => clearInterval(interval)
+  }, [isPlaying])
+
+  if (!mounted) return null
+
+  const currentCall = interceptedCalls[callIndex]
+
+  return (
+    <div className="absolute inset-0 bottom-8 overflow-hidden px-4 flex flex-col items-center justify-center">
+      {/* Connection diagram */}
+      <div className="relative w-full flex items-center justify-between px-4 mb-8">
+        {/* Agent node */}
+        <div className="flex flex-col items-center gap-1.5 z-10">
+          <div className="w-10 h-10 rounded-full bg-surface-200 border border-border flex items-center justify-center">
+            <Bot className="w-5 h-5 text-foreground-muted" />
+          </div>
+          <span className="font-mono text-xs text-foreground-muted">Agent</span>
+        </div>
+
+        {/* Dashed line with animated dot */}
+        <div className="absolute left-16 right-16 top-5 flex items-center">
+          <div className="w-full border-t border-dashed border-border-muted" />
+          {isPlaying && (
+            <motion.div
+              className="absolute w-2 h-2 bg-brand rounded-full"
+              animate={{ left: ['0%', '100%'] }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatDelay: 0.5,
+                ease: 'easeInOut',
+              }}
+            />
+          )}
+        </div>
+
+        {/* Gateway node */}
+        <div className="flex flex-col items-center gap-1.5 z-10">
+          <div className="w-10 h-10 rounded-full bg-surface-200 border border-brand/30 flex items-center justify-center">
+            <Shield className="w-5 h-5 text-brand" />
+          </div>
+          <span className="font-mono text-xs text-foreground-muted">Gateway</span>
+        </div>
+      </div>
+
+      {/* Intercepted call details */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={callIndex}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.25 }}
+          className="w-full max-w-xs space-y-1 bg-surface-100 border border-border/50 rounded-md px-3 py-2.5"
+        >
+          <div className="font-mono text-xs text-foreground-light">
+            <span className="text-brand">{currentCall.tool}</span>
+            <span className="text-foreground-muted"> {currentCall.params}</span>
+          </div>
+          <div className="font-mono text-xs text-foreground-muted">
+            env: {currentCall.env}
+          </div>
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  )
+}
 
 // =============================================================================
 // REALTIME POLICY LOGS
@@ -103,21 +199,13 @@ const PolicyLogs = ({ isActive, isInView }: { isActive?: boolean; isInView?: boo
 }
 
 // =============================================================================
-// IDENTITY & ACCESS TABLE
+// APPROVAL VISUALIZATION
 // =============================================================================
 
-const agents = [
-  { name: 'support-bot', read: true, write: false, delete: false, admin: false },
-  { name: 'data-agent', read: true, write: true, delete: false, admin: false },
-  { name: 'admin-agent', read: true, write: true, delete: true, admin: true },
-  { name: 'sales-bot', read: true, write: false, delete: false, admin: false },
-  { name: 'deploy-agent', read: true, write: true, delete: false, admin: false },
-]
-
-const IdentityAccess = ({ isActive, isInView }: { isActive?: boolean; isInView?: boolean }) => {
+const ApprovalViz = ({ isActive, isInView }: { isActive?: boolean; isInView?: boolean }) => {
   const [mounted, setMounted] = useState(false)
   const isPlaying = isActive && isInView
-  const [activeRow, setActiveRow] = useState(-1)
+  const [phase, setPhase] = useState<'form' | 'highlight' | 'click' | 'approved'>('form')
 
   useEffect(() => {
     setMounted(true)
@@ -125,72 +213,155 @@ const IdentityAccess = ({ isActive, isInView }: { isActive?: boolean; isInView?:
 
   useEffect(() => {
     if (!isPlaying) {
+      setPhase('form')
       return
     }
 
-    const interval = setInterval(() => {
-      setActiveRow(prev => (prev + 1) % agents.length)
-    }, 1500)
+    let timeout: ReturnType<typeof setTimeout>
 
-    return () => clearInterval(interval)
+    const runCycle = () => {
+      setPhase('form')
+
+      timeout = setTimeout(() => {
+        setPhase('highlight')
+
+        timeout = setTimeout(() => {
+          setPhase('click')
+
+          timeout = setTimeout(() => {
+            setPhase('approved')
+
+            timeout = setTimeout(() => {
+              runCycle()
+            }, 2000)
+          }, 800)
+        }, 1000)
+      }, 2000)
+    }
+
+    runCycle()
+
+    return () => clearTimeout(timeout)
   }, [isPlaying])
 
   if (!mounted) return null
 
+  const isApproved = phase === 'approved'
+
   return (
-    <div className="absolute inset-0 bottom-8 overflow-hidden px-4">
-      <div className="absolute z-20 pointer-events-none inset-0 top-auto h-32 bg-[linear-gradient(to_top,hsl(var(--background-surface-75))_0%,transparent_100%)]" />
-      <div className="relative z-10 w-full font-mono text-xs">
+    <div className="absolute inset-0 bottom-8 overflow-hidden px-4 flex items-center justify-center">
+      <div className="w-full max-w-xs bg-surface-100 border border-border/50 rounded-md overflow-hidden">
         {/* Header */}
-        <div className="grid grid-cols-5 gap-2 py-2 border-b border-border/50 text-foreground-muted">
-          <span>Agent</span>
-          <span className="text-center">Read</span>
-          <span className="text-center">Write</span>
-          <span className="text-center">Delete</span>
-          <span className="text-center">Admin</span>
+        <div className="px-3 py-2 border-b border-border/50">
+          <span className="font-mono text-xs text-warning">Approval Required</span>
         </div>
-        {/* Rows */}
-        {agents.map((agent, i) => (
-          <motion.div
-            key={agent.name}
-            animate={{
-              backgroundColor: activeRow === i ? 'hsl(var(--background-selection) / 0.3)' : 'transparent'
-            }}
-            className="grid grid-cols-5 gap-2 py-2.5 border-b border-border/50 items-center"
-          >
-            <span className="text-foreground-light truncate">{agent.name}</span>
-            <span className="flex justify-center">
-              {agent.read ? <Check className="w-3.5 h-3.5 text-brand" /> : <X className="w-3.5 h-3.5 text-foreground-muted" />}
-            </span>
-            <span className="flex justify-center">
-              {agent.write ? <Check className="w-3.5 h-3.5 text-brand" /> : <X className="w-3.5 h-3.5 text-foreground-muted" />}
-            </span>
-            <span className="flex justify-center">
-              {agent.delete ? <Check className="w-3.5 h-3.5 text-brand" /> : <X className="w-3.5 h-3.5 text-foreground-muted" />}
-            </span>
-            <span className="flex justify-center">
-              {agent.admin ? <Check className="w-3.5 h-3.5 text-brand" /> : <X className="w-3.5 h-3.5 text-foreground-muted" />}
-            </span>
-          </motion.div>
-        ))}
+
+        {/* Body */}
+        <div className="px-3 py-3 space-y-2">
+          <div className="font-mono text-xs">
+            <span className="text-foreground-muted">Action: </span>
+            <span className="text-foreground-light">stripe:refund ($847)</span>
+          </div>
+          <div className="font-mono text-xs">
+            <span className="text-foreground-muted">Reason: </span>
+            <span className="text-foreground-light">Refunds over $500 require review</span>
+          </div>
+          <div className="font-mono text-xs">
+            <span className="text-foreground-muted">Rule: </span>
+            <span className="text-foreground-light">reviewRefunds-prod-001</span>
+          </div>
+        </div>
+
+        {/* Actions / Result */}
+        <div className="px-3 py-2.5 border-t border-border/50">
+          <AnimatePresence mode="wait">
+            {!isApproved ? (
+              <motion.div
+                key="buttons"
+                initial={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="flex gap-2"
+              >
+                <motion.div
+                  animate={
+                    phase === 'highlight'
+                      ? { opacity: [0.7, 1, 0.7], scale: [1, 1.03, 1] }
+                      : phase === 'click'
+                        ? { scale: [1, 0.92, 1.05, 1] }
+                        : {}
+                  }
+                  transition={
+                    phase === 'highlight'
+                      ? { duration: 1, repeat: Infinity }
+                      : phase === 'click'
+                        ? { duration: 0.4 }
+                        : {}
+                  }
+                  className="px-3 py-1.5 bg-brand text-white text-xs font-mono rounded cursor-default"
+                >
+                  APPROVE
+                </motion.div>
+                <div className="px-3 py-1.5 bg-surface-200 text-foreground-muted text-xs font-mono rounded cursor-default">
+                  DENY
+                </div>
+              </motion.div>
+            ) : (
+              <motion.div
+                key="receipt"
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="space-y-1.5"
+              >
+                <div className="flex items-center gap-1.5">
+                  <Check className="w-3.5 h-3.5 text-brand" />
+                  <span className="font-mono text-xs text-brand">Approved</span>
+                </div>
+                <div className="font-mono text-[10px] text-foreground-muted leading-relaxed">
+                  Receipt: sha256:7f3a...e91d (15m TTL, 3 uses)
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   )
 }
 
 // =============================================================================
-// AUDIT TRAIL METRICS
+// EVIDENCE VISUALIZATION
 // =============================================================================
 
-const AuditMetrics = ({ isActive, isInView }: { isActive?: boolean; isInView?: boolean }) => {
+const evidenceEntries = [
+  { traceId: 'tr_8x2k4m9n1p', decision: 'APPROVED', actor: 'ops-lead@acme.com', hmac: 'sha256:7f3a...e91d' },
+  { traceId: 'tr_3j7m2p5q8r', decision: 'ALLOW', actor: 'policy-engine', hmac: 'sha256:2b4c...f8a3' },
+  { traceId: 'tr_9d1f4h6k2n', decision: 'BLOCK', actor: 'policy-engine', hmac: 'sha256:c5e7...3d2a' },
+  { traceId: 'tr_5g8j1m3p6r', decision: 'APPROVED', actor: 'admin@acme.com', hmac: 'sha256:1a9b...7c4e' },
+  { traceId: 'tr_2c4f7h9k1m', decision: 'ALLOW', actor: 'policy-engine', hmac: 'sha256:8d6f...2e5a' },
+  { traceId: 'tr_6e9h2k4m7p', decision: 'BLOCK', actor: 'policy-engine', hmac: 'sha256:4b3c...9f1d' },
+]
+
+function createEvidenceEntry(offset?: number) {
+  const t = new Date()
+  t.setSeconds(t.getSeconds() - (offset ?? 0))
+  const entry = evidenceEntries[Math.floor(Math.random() * evidenceEntries.length)]
+
+  return {
+    id: crypto.randomUUID(),
+    timestamp: t,
+    ...entry,
+  }
+}
+
+const EvidenceViz = ({ isActive, isInView }: { isActive?: boolean; isInView?: boolean }) => {
   const [mounted, setMounted] = useState(false)
   const isPlaying = isActive && isInView
-  const [metrics, setMetrics] = useState({
-    total: 12847,
-    allowed: 11542,
-    review: 892,
-    blocked: 413,
-  })
+  const INTERVAL = 800
+
+  const [activeEntries, setActiveEntries] = useState(() =>
+    Array.from({ length: 8 }, (_, i) => createEvidenceEntry(i * 1000))
+  )
 
   useEffect(() => {
     setMounted(true)
@@ -200,97 +371,60 @@ const AuditMetrics = ({ isActive, isInView }: { isActive?: boolean; isInView?: b
     if (!isPlaying) return
 
     const interval = setInterval(() => {
-      const newAction = Math.random()
-      setMetrics(prev => {
-        const total = prev.total + 1
-        if (newAction > 0.95) {
-          return { ...prev, total, blocked: prev.blocked + 1 }
-        } else if (newAction > 0.85) {
-          return { ...prev, total, review: prev.review + 1 }
-        } else {
-          return { ...prev, total, allowed: prev.allowed + 1 }
-        }
-      })
-    }, 800)
+      if (Math.random() > 0.5) return
+      setActiveEntries(prev => [createEvidenceEntry(), ...prev.slice(0, 12)])
+    }, INTERVAL)
 
     return () => clearInterval(interval)
   }, [isPlaying])
 
   if (!mounted) return null
 
-  const percentage = (value: number) => ((value / metrics.total) * 100).toFixed(1)
+  const decisionVariant = (decision: string) => {
+    if (decision === 'BLOCK') return 'destructive'
+    if (decision === 'APPROVED') return 'success'
+    return 'default'
+  }
 
   return (
-    <div className="absolute inset-0 bottom-8 overflow-hidden px-4">
+    <div className="absolute inset-0 bottom-8 overflow-hidden">
       <div className="absolute z-20 pointer-events-none inset-0 top-auto h-32 bg-[linear-gradient(to_top,hsl(var(--background-surface-75))_0%,transparent_100%)]" />
-      <div className="relative z-10 w-full space-y-4">
-        {/* Period selector */}
-        <div className="flex items-center gap-2 text-xs font-mono text-foreground-muted">
-          <Clock className="w-3.5 h-3.5" />
-          <span>Last 7 days</span>
-        </div>
-
-        {/* Total */}
-        <div className="space-y-1">
-          <span className="text-xs text-foreground-muted font-mono">Total actions</span>
-          <motion.div
-            key={metrics.total}
-            initial={{ opacity: 0.5 }}
-            animate={{ opacity: 1 }}
-            className="text-2xl font-mono text-foreground"
-          >
-            {metrics.total.toLocaleString()}
-          </motion.div>
-        </div>
-
-        {/* Breakdown */}
-        <div className="space-y-3 pt-2">
-          <div className="space-y-1.5">
-            <div className="flex justify-between text-xs font-mono">
-              <span className="text-brand">Allowed</span>
-              <span className="text-foreground-light">{metrics.allowed.toLocaleString()}</span>
-            </div>
-            <div className="h-2 bg-surface-300 rounded-full overflow-hidden">
-              <motion.div
-                className="h-full bg-brand rounded-full"
-                initial={{ width: 0 }}
-                animate={{ width: `${percentage(metrics.allowed)}%` }}
-                transition={{ duration: 0.3 }}
-              />
-            </div>
-          </div>
-
-          <div className="space-y-1.5">
-            <div className="flex justify-between text-xs font-mono">
-              <span className="text-warning">Review</span>
-              <span className="text-foreground-light">{metrics.review.toLocaleString()}</span>
-            </div>
-            <div className="h-2 bg-surface-300 rounded-full overflow-hidden">
-              <motion.div
-                className="h-full bg-warning rounded-full"
-                initial={{ width: 0 }}
-                animate={{ width: `${percentage(metrics.review)}%` }}
-                transition={{ duration: 0.3 }}
-              />
-            </div>
-          </div>
-
-          <div className="space-y-1.5">
-            <div className="flex justify-between text-xs font-mono">
-              <span className="text-destructive">Blocked</span>
-              <span className="text-foreground-light">{metrics.blocked.toLocaleString()}</span>
-            </div>
-            <div className="h-2 bg-surface-300 rounded-full overflow-hidden">
-              <motion.div
-                className="h-full bg-destructive rounded-full"
-                initial={{ width: 0 }}
-                animate={{ width: `${percentage(metrics.blocked)}%` }}
-                transition={{ duration: 0.3 }}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      <motion.ul
+        layout
+        transition={{ delay: -0.22, duration: 0.1, staggerChildren: 0.2 }}
+        className="relative z-10 w-full h-auto flex flex-col px-4 overflow-y-auto"
+      >
+        <AnimatePresence>
+          {activeEntries.map((entry, i) => (
+            <motion.li
+              layout
+              key={entry.id}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0, transition: { delay: 0.2 + i * 0.03, duration: 0.15 } }}
+              className="py-2 md:px-4 pointer-events-auto border-b border-border/50 hover:bg-selection/20 first:border-t w-full font-mono text-xs space-y-0.5"
+            >
+              {/* Line 1: trace_id + decision + timestamp */}
+              <div className="flex items-center gap-3">
+                <span className="shrink-0 text-foreground-muted">{entry.traceId}</span>
+                <Badge
+                  variant={decisionVariant(entry.decision)}
+                  className="text-[10px] px-1.5"
+                >
+                  {entry.decision}
+                </Badge>
+                <span className="ml-auto shrink-0 text-foreground-muted">
+                  {dayjs(entry.timestamp).format('HH:mm:ss')}
+                </span>
+              </div>
+              {/* Line 2: actor + hmac */}
+              <div className="flex items-center gap-3 text-foreground-muted">
+                <span className="truncate">{entry.actor}</span>
+                <span className="ml-auto shrink-0">{entry.hmac}</span>
+              </div>
+            </motion.li>
+          ))}
+        </AnimatePresence>
+      </motion.ul>
     </div>
   )
 }
@@ -394,22 +528,28 @@ const TimedPanel = ({
 
 const panels = [
   {
-    id: 'realtime-policy',
-    label: 'Realtime Policy',
-    paragraph: 'Every tool call is evaluated against your policies. Allow, block, or require approval.',
+    id: 'intercept',
+    label: '1. Intercept',
+    paragraph: 'Agent issues a tool call. Axite intercepts it at the gateway before execution.',
+    image: InterceptViz,
+  },
+  {
+    id: 'evaluate',
+    label: '2. Evaluate',
+    paragraph: 'RBAC checks identity. Policy engine evaluates rules. Decision: allow, block, or review.',
     image: PolicyLogs,
   },
   {
-    id: 'identity-access',
-    label: 'Identity & Access',
-    paragraph: 'Every agent has an identity with explicit permissions. No implicit access.',
-    image: IdentityAccess,
+    id: 'approve',
+    label: '3. Approve',
+    paragraph: 'Flagged actions pause for human review. Approval is HMAC-signed and bound to the original request.',
+    image: ApprovalViz,
   },
   {
-    id: 'audit-trail',
-    label: 'Audit Trail',
-    paragraph: 'Complete decision traces for every action. Export-ready compliance reports.',
-    image: AuditMetrics,
+    id: 'evidence',
+    label: '4. Evidence',
+    paragraph: 'Signed receipt with full decision trace. Tamper-evident timeline exportable as JSON.',
+    image: EvidenceViz,
   },
 ]
 
@@ -476,7 +616,7 @@ const HowItWorksSection = () => {
           How it works
         </h2>
         <p className="text-foreground-lighter text-lg">
-          Complete visibility and control over every agent action.
+          Four stages. Every tool call. Fully auditable.
         </p>
       </div>
 

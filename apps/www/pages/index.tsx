@@ -3,31 +3,31 @@ import Layout from '~/components/Layouts/Default'
 import Hero from '~/components/Hero/Hero'
 
 // Lazy load sections below the fold
+const ProductProofSection = dynamic(() => import('~/components/ProductProofSection'))
+const IntegrationsSection = dynamic(() => import('~/components/IntegrationsSection'))
 const HowItWorksSection = dynamic(() => import('~/components/HowItWorksSection'))
-const GetStartedSection = dynamic(() => import('~/components/GetStartedSection'))
-const TransformationSection = dynamic(() => import('~/components/TransformationSection'))
 const SecuritySection = dynamic(() => import('~/components/SecuritySection'))
 const FinalCTASection = dynamic(() => import('~/components/FinalCTASection'))
 
 const Index = () => {
   return (
     <Layout>
-      {/* 1. Hero - Clear value proposition */}
+      {/* 1. Hero - Core value proposition */}
       <Hero />
 
-      {/* 2. How it works - Axite observability style */}
+      {/* 2. Product proof - Animated pipeline visualization */}
+      <ProductProofSection />
+
+      {/* 3. Integrations - Works with your stack */}
+      <IntegrationsSection />
+
+      {/* 4. How it works - 4-stage flow */}
       <HowItWorksSection />
 
-      {/* 3. Getting Started - Three steps */}
-      <GetStartedSection />
-
-      {/* 5. Transformation - Before/After stories */}
-      <TransformationSection />
-
-      {/* 6. Trust - Security & Compliance */}
+      {/* 5. Security - Trust signals */}
       <SecuritySection />
 
-      {/* 7. Final CTA */}
+      {/* 6. Final CTA */}
       <FinalCTASection />
     </Layout>
   )
