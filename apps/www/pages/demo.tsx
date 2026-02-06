@@ -13,28 +13,65 @@ export default function DemoPage() {
   return (
     <>
       <NextSeo
-        title="Interactive Demo | Axite"
-        description="Try Axite's agent governance platform. See policy enforcement, identity-aware access control, and audit-grade logging in action."
+        title="Demo | Axite"
+        description="Watch how Axite ensures secure infrastructure changes with AI agents - enforcing approvals and providing a clear evidence chain."
         openGraph={{
-          title: 'Interactive Demo | Axite',
+          title: 'Demo | Axite',
           description:
-            'Try Axite\'s agent governance platform. See policy enforcement, identity-aware access control, and audit-grade logging in action.',
-          url: 'https://axite.dev/demo',
+            'Watch how Axite ensures secure infrastructure changes with AI agents - enforcing approvals and providing a clear evidence chain.',
+          url: 'https://axite.ai/demo',
           type: 'website',
         }}
       />
       <Layout>
-        <SectionContainer className="pt-8 pb-16 md:pt-16 md:pb-24">
-          {/* Page header */}
+        {/* Video Demo Section */}
+        <SectionContainer className="pt-8 pb-8 md:pt-16 md:pb-12">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <span className="font-mono text-xs text-brand uppercase tracking-widest">
+                Demo
+              </span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-foreground mt-4 mb-4">
+                Secure Infrastructure Changes with AI Agents
+              </h1>
+              <p className="text-foreground-lighter text-lg max-w-2xl mx-auto">
+                See how Axite enforces approvals and provides a clear evidence chain of what was
+                executed.
+              </p>
+            </div>
+
+            {/* Loom video embed */}
+            <div className="relative w-full rounded-lg overflow-hidden border border-muted bg-surface-100">
+              <div style={{ position: 'relative', paddingBottom: '64.86%', height: 0 }}>
+                <iframe
+                  src="https://www.loom.com/embed/b790d4f7728b43afa7ae342a6c596176?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
+                  frameBorder={0}
+                  allowFullScreen
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </SectionContainer>
+
+        {/* Interactive Demo Section */}
+        <SectionContainer className="pt-8 pb-16 md:pt-12 md:pb-24 border-t border-muted">
+          {/* Section header */}
           <div className="max-w-2xl mb-8">
             <span className="font-mono text-xs text-brand uppercase tracking-widest">
               Interactive Demo
             </span>
-            <h1 className="text-3xl sm:text-4xl font-normal text-foreground mt-4 mb-4">
-              See Axite in action
-            </h1>
+            <h2 className="text-2xl sm:text-3xl font-normal text-foreground mt-4 mb-4">
+              Try it yourself
+            </h2>
             <p className="text-foreground-lighter text-lg">
-              Watch how Axite enforces identity-aware policy at the point of action
+              Explore how Axite enforces identity-aware policy at the point of action
               and produces audit-grade evidence. Select a bundle, configure policies,
               and run the scenario.
             </p>
