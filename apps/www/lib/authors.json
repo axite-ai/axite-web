@@ -1,5 +1,12 @@
 [
   {
+    "author_id": "brad",
+    "author": "Brad",
+    "position": "Founder",
+    "author_url": "https://axite.ai",
+    "author_image_url": "/images/blog/avatars/brad.png"
+  },
+  {
     "author_id": "axite_team",
     "author": "Axite Team",
     "position": "",

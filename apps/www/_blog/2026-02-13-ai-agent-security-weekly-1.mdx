@@ -1,0 +1,159 @@
+---
+title: 'AI Agent Security Weekly #1: The Week Every Security Vendor Panicked'
+description: '80% of Fortune 500 are running AI agents. 1.5 million have zero oversight. And this week, the entire security industry noticed at the same time.'
+author: brad
+image: 2026-02-13-agent-security-weekly/og.png
+thumb: 2026-02-13-agent-security-weekly/thumb.png
+categories:
+  - engineering
+tags:
+  - security
+  - agents
+  - weekly
+  - industry
+date: '2026-02-13'
+toc_depth: 3
+---
+
+More than 80% of Fortune 500 companies are now running AI agents in production. Only 47% have any security controls around them. And this week, every major security vendor on the planet decided to announce an agent security product at the same time.
+
+Welcome to the first edition of the AI Agent Security Weekly.
+
+## The numbers
+
+Three reports dropped this week that, taken together, quantify what most platform teams already suspected: AI agent adoption has massively outpaced AI agent security.
+
+[Microsoft's Cyber Pulse report](https://www.microsoft.com/en-us/security/blog/2026/02/10/80-of-fortune-500-use-active-ai-agents-observability-governance-and-security-shape-the-new-frontier/), published February 10 by Corporate Vice President of Microsoft Security Vasu Jakkal, surveyed 1,700 security professionals and found that 80% of Fortune 500 companies now have active AI agents — most built with low-code or no-code tools. But just 47% of businesses have any security controls in place to manage those agents, and 29% of employees are using what the report calls "unsanctioned agents" for their work.
+
+"Agent adoption and scaling is pretty significant, but at the same time, the visibility that organizations have on the agents is very limited," Jakkal said.
+
+Her recommendation: treat AI agents like any other worker and institute zero-trust policies — verifying every agent via authentication before it can access systems or data.
+
+Meanwhile, [Gravitee](https://securityboulevard.com/2026/02/the-invisible-risk-1-5-million-unmonitored-ai-agents-threaten-corporate-security/) published a survey of 750 CTOs and technical VPs that found 3 million AI agents are now deployed across US and UK enterprises. Of those, 1.5 million — roughly 47% — are operating without governance or security protocols. The study also found that 88% of firms have experienced or suspected an AI agent-related security incident in the past 12 months.
+
+"There are now over 3 million AI agents operating within corporations — a workforce larger than the entire global employee count of Walmart," Gravitee CEO Rory Blundell said. "But far too often, these agents are left unchecked."
+
+The documented incidents include agents acting on outdated information, leaking confidential data, deleting databases without authorization, and making unauthorized financial decisions.
+
+And in a [survey of 500 C-level executives](https://www.businesswire.com/news/home/20260211693427/en/Agentic-AI-Reaches-Tipping-Point-100-of-Enterprises-Plan-to-Expand-Adoption-in-2026-New-CrewAI-Survey-Finds) at companies with more than $100M in annual revenue and 5,000+ employees, [CrewAI](https://www.crewai.com/) found that 100% plan to expand their use of AI agents in 2026. Not most of them. All of them. 65% are already using agents today, 81% say adoption is fully scaled or actively expanding across teams, and on average, organizations have automated 31% of their workflows.
+
+"Enterprise adoption of agentic AI is accelerating faster than anyone anticipated," CrewAI founder and CEO Joao Moura said, adding that organizations are actively "building, shipping, and scaling agents into production."
+
+The security gap buried in that CrewAI data: when asked what they prioritize in agent platforms, only 34% said security and governance. Integration (30%), reliability (24%), and budget (25%) all ranked close behind — suggesting that for many enterprises, security is still a secondary concern in their agent deployments.
+
+---
+
+## The vendor panic
+
+When every security vendor launches the same product category in the same week, that's not coincidence. That's the market telling you the problem is real. Here's what happened.
+
+### Proofpoint acquires Acuvity
+
+On February 12, [Proofpoint announced it had acquired Acuvity](https://www.proofpoint.com/us/newsroom/press-releases/proofpoint-acquires-acuvity-deliver-ai-security-and-governance-across), an AI enterprise security and governance startup that provides runtime protection for AI agent workflows. The acquisition price was not disclosed.
+
+Acuvity's product covers endpoints, browsers, and MCP (Model Context Protocol) servers — essentially the full surface area where agents interact with enterprise systems. Proofpoint is positioning the combined platform as security for what it calls the "agentic workspace," where humans and AI agents collaborate on business-critical workflows.
+
+"AI agents are becoming active participants in the enterprise, accessing data, executing tasks and making decisions alongside people," said Ryan Kalember, Proofpoint's Chief Strategy Officer.
+
+"In an AI-accelerated world, intelligence is no longer confined to applications or infrastructure; it lives in interactions, decisions and autonomous agents," added Acuvity co-founder and CEO Satyam Sinha.
+
+The deal is notable because Acuvity was one of the first startups to build governance specifically for MCP servers — the tool-use layer that's rapidly becoming the standard way agents interact with external systems. Proofpoint acquiring that capability signals that enterprise security vendors see MCP governance as a core product feature, not a niche add-on.
+
+### Cisco expands AI Defense at Cisco Live EMEA
+
+At [Cisco Live EMEA in Amsterdam](https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m02/cisco-redefines-security-for-the-agentic-era.html) on February 10, Cisco rolled out a significant expansion of its AI Defense product with several new capabilities:
+
+- **AI BOM (Bill of Materials)** — an inventory of all AI assets in an enterprise environment, including which agents have access to what
+- **MCP Catalog** — a registry to discover and manage MCP servers across infrastructure
+- **Real-time agentic guardrails** — runtime inspection of agent interactions, with integration into NVIDIA's NeMo Guardrails
+- **Advanced algorithmic red teaming** for testing agent behavior
+
+"In the age of AI, safety and security are prerequisites for adoption, and AI agents bring a whole new set of challenges," said Jeetu Patel, Cisco's President and Chief Product Officer. "As agents take on critical enterprise roles, we're developing protections that work both ways: preventing agents from being compromised and controlling what they can access and do on our behalf."
+
+The MCP Catalog is particularly interesting. Cisco is essentially building a service mesh for agent tool use — a central registry of every MCP server an agent can talk to, with visibility, logging, and policy control over each one. Chirag Mehta, VP and Principal Analyst at Constellation Research, noted that with "AI BOM and MCP governance plus multi-turn red teaming and real-time guardrails, Cisco AI Defense is targeting the full risk path from the AI supply chain to agentic runtime."
+
+### Datadog ships AI Agent Monitoring
+
+[Datadog expanded its LLM Observability product](https://www.datadoghq.com/about/latest-news/press-releases/datadog-expands-llm-observability-with-new-capabilities-to-monitor-agentic-ai-accelerate-development-and-improve-model-performance/) with three new capabilities: AI Agent Monitoring (now generally available), which maps agent decision paths with inputs, tool invocations, and outputs in interactive graphs; LLM Experiments (in preview), for testing prompt changes against production datasets; and an AI Agents Console (in preview) that provides visibility into both in-house and third-party agent behavior, usage metrics, and security risks.
+
+The company is also continuing to develop Bits AI, its autonomous SRE agent that moves beyond observability into actually fixing production issues.
+
+"As these agents take on more responsibility, observability becomes key to ensuring they behave safely," said Michael Gerstenhaber, VP of Product at Anthropic, in the Datadog announcement.
+
+In other words, Datadog is now building agents that monitor other agents. The observability company is becoming an agent company — and it needs governance for its own autonomous systems as much as anyone else does.
+
+### Also this week
+
+Exabeam launched "AI Agent Security." Radware launched "Agentic AI Protection." The market is supersaturating.
+
+---
+
+## The incidents that explain the panic
+
+While vendors rushed to announce products, the security incidents that make those products necessary kept rolling in.
+
+### OpenClaw's security problem
+
+Security firm [NSFOCUS published an analysis of OpenClaw](https://securityboulevard.com/2026/02/openclaw-open-source-ai-agent-application-attack-surface-and-security-risk-system-analysis/) on February 12, and the findings are grim. OpenClaw, which hit 183,000 GitHub stars within weeks of its initial release, has become one of the most popular open-source agent frameworks. NSFOCUS found that China has surpassed the US as the largest deployment region, with deployments exceeding the US by roughly 14,000 instances as of mid-February.
+
+The researchers identified at least three high-risk remote code execution (RCE) vulnerabilities disclosed in a short timeframe, and mapped four primary threat vectors:
+
+- **Entry layer** — prompt injection and API authentication gaps
+- **Decision layer** — LLM logic manipulation and memory poisoning
+- **Execution layer** — high-privilege abuse, with some agents running with root-level permissions
+- **Ecological layer** — supply chain poisoning via the ClawHub plugin ecosystem
+
+That last one is the most concerning. Agents using OpenClaw can install "skills" from the ClawHub marketplace, similar to how developers install npm packages. But skills can request broad permissions — Google Workspace access, Microsoft 365 access, database credentials — and the marketplace lacks meaningful security review. Credentials have been found exposed in plaintext through LLM context windows.
+
+This is the supply chain attack pattern that hit npm, PyPI, and Docker Hub — except agents typically have broader system access than a build script, and there's no lockfile or dependency audit to catch the problem.
+
+### Cloudflare starts building infrastructure for agents
+
+On a very different note, [Cloudflare announced Markdown for Agents](https://blog.cloudflare.com/markdown-for-agents/) on February 12, a feature that converts HTML to clean markdown on the fly when AI agent crawlers request a page. The company showed a reduction from 16,180 tokens in HTML to 3,150 tokens in markdown — roughly an 80% cut in token consumption per page.
+
+The feature uses content negotiation: when an AI system requests a page and expresses a preference for `text/markdown`, Cloudflare's network converts the HTML to markdown automatically. The converted response includes an `x-markdown-tokens` header indicating the estimated token count.
+
+It might seem like a small infrastructure feature, but the subtext matters. Cloudflare is recognizing that AI agents are now first-class internet users and is building infrastructure specifically for how they consume the web. When the company that handles a significant chunk of global web traffic starts optimizing for agent consumers, it's a signal that agents aren't an experiment anymore — they're a permanent part of the architecture.
+
+And if agents are permanent users of the internet, they need identity, authentication, and access control the same way human users did when the web scaled.
+
+---
+
+## What this means
+
+Everything announced this week falls into one of two buckets: products that help you *see* what agents did after the fact, and products that help you *control* what agents do before they do it.
+
+Most of this week's announcements are in the first bucket. Dashboards. Logs. Audit trails. Observability. That's necessary — you need to know what happened. But it's not sufficient. If an agent runs `terraform destroy` on your production state file at 2 AM, seeing it in a dashboard afterward doesn't help.
+
+The gap is in pre-execution control: the ability to intercept an agent action, evaluate it against a policy, and approve or deny it before it touches production. Cisco's guardrails and Proofpoint's Acuvity acquisition gesture in this direction, but the tooling is still early.
+
+If you're running agents in production today — or, per Microsoft's numbers, your employees are running them without your knowledge — there are three controls worth thinking about:
+
+1. **Pre-execution approval** — can you review what an agent wants to do before it does it?
+2. **Immutable audit trail** — do you have a tamper-evident record of what agents did, when, and who approved it?
+3. **Policy guardrails** — are there hard boundaries on what agents can't do, enforced at runtime rather than by convention?
+
+Most of what shipped this week addresses #2 and #3. Almost nobody is shipping #1.
+
+---
+
+## Predictions
+
+Based on this week: "MCP security" will be a standalone product category by the end of 2026 — Cisco's MCP Catalog and Proofpoint's Acuvity acquisition are the opening moves. The first major agent-caused production outage at a Fortune 500 will make national news this year. And agent identity management — scoped permissions, rotation, audit trails, the full IAM stack but for agents — will become as standard as human IAM within 18 months.
+
+The companies that figure out agent change control early will have a significant head start. The ones that don't will be the case studies.
+
+*This is the first edition of the AI Agent Security Weekly. I'm tracking what's happening at the intersection of AI agents and production infrastructure security. If your team is dealing with agents touching prod, I'd like to hear about it — [reach out](https://axite.ai/contact/sales) or drop a comment.*
+
+---
+
+## Sources
+
+- [Microsoft Security Blog — 80% of Fortune 500 use active AI agents](https://www.microsoft.com/en-us/security/blog/2026/02/10/80-of-fortune-500-use-active-ai-agents-observability-governance-and-security-shape-the-new-frontier/) (Feb 10, 2026)
+- [Gravitee / Security Boulevard — 1.5M unmonitored AI agents](https://securityboulevard.com/2026/02/the-invisible-risk-1-5-million-unmonitored-ai-agents-threaten-corporate-security/) (Feb 2026)
+- [CrewAI / BusinessWire — 100% of enterprises expanding AI agents](https://www.businesswire.com/news/home/20260211693427/en/Agentic-AI-Reaches-Tipping-Point-100-of-Enterprises-Plan-to-Expand-Adoption-in-2026-New-CrewAI-Survey-Finds) (Feb 11, 2026)
+- [Proofpoint acquires Acuvity](https://www.proofpoint.com/us/newsroom/press-releases/proofpoint-acquires-acuvity-deliver-ai-security-and-governance-across) (Feb 12, 2026)
+- [Cisco AI Defense expansion — Cisco Live EMEA](https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m02/cisco-redefines-security-for-the-agentic-era.html) (Feb 10, 2026)
+- [Datadog LLM Observability and AI Agent Monitoring](https://www.datadoghq.com/about/latest-news/press-releases/datadog-expands-llm-observability-with-new-capabilities-to-monitor-agentic-ai-accelerate-development-and-improve-model-performance/) (Feb 2026)
+- [NSFOCUS — OpenClaw security analysis](https://securityboulevard.com/2026/02/openclaw-open-source-ai-agent-application-attack-surface-and-security-risk-system-analysis/) (Feb 12, 2026)
+- [Cloudflare — Markdown for Agents](https://blog.cloudflare.com/markdown-for-agents/) (Feb 12, 2026)

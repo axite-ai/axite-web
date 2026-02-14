@@ -1,4 +1,16 @@
 {
+  "brad": {
+    "name": "Brad",
+    "job_title": "Founder",
+    "username": "brad",
+    "avatar_url": "/images/blog/avatars/brad.png"
+  },
+  "axite_team": {
+    "name": "Axite Team",
+    "job_title": "Axite",
+    "username": "axite",
+    "avatar_url": "/images/blog/axite/placeholder-thumb.png"
+  },
   "paul_copplestone": {
     "name": "Paul Copplestone",
     "job_title": "CEO and Co-Founder",
