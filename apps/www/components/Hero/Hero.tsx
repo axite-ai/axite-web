@@ -23,7 +23,7 @@ const Hero = () => {
                 <p className="pt-2 text-foreground-lighter text-sm sm:text-base lg:text-lg">
                   Every tool call is <strong className="text-foreground-light font-medium">allow</strong> / <strong className="text-foreground-light font-medium">block</strong> / <strong className="text-foreground-light font-medium">require approval</strong> before it can touch prod.{' '}
                   <br className="hidden md:block" />
-                  Approve in Slack. Export an evidence trail.
+                  Approve in Slack. Export an audit trail.
                 </p>
               </div>
 
