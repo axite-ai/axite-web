@@ -94,7 +94,7 @@ export function DemoAnimation() {
 
         {/* Slack card — absolutely positioned overlay, bottom-right */}
         {scenario.slackApproval && (
-          <div className="absolute right-0 bottom-0 z-10" style={{ transform: 'translateY(40%)' }}>
+          <div className="absolute right-0 bottom-0 z-10" style={{ transform: 'translateY(70%)' }}>
             <SlackCard
               channel={scenario.slackApproval.channel}
               requestedBy={scenario.slackApproval.requestedBy}

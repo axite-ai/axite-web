@@ -11,10 +11,19 @@ const agentIcons = {
   'credit-card': CreditCard,
 }
 
-const decisionStyles: Record<Decision, { bg: string; text: string; border: string; label: string }> = {
-  ALLOWED: { bg: 'bg-emerald-500/20', text: 'text-emerald-400', border: 'border-emerald-500/40', label: 'ALLOWED' },
-  BLOCKED: { bg: 'bg-red-500/20', text: 'text-red-400', border: 'border-red-500/40', label: 'BLOCKED' },
-  APPROVAL_REQUIRED: { bg: 'bg-amber-500/20', text: 'text-amber-400', border: 'border-amber-500/40', label: 'APPROVAL REQUIRED' },
+const decisionStyles: Record<Decision, { style: React.CSSProperties; label: string }> = {
+  ALLOWED: {
+    style: { background: 'rgba(16, 185, 129, 0.35)', color: '#a7f3d0', border: '1px solid rgba(52, 211, 153, 0.8)' },
+    label: 'ALLOWED',
+  },
+  BLOCKED: {
+    style: { background: 'rgba(239, 68, 68, 0.35)', color: '#fecaca', border: '1px solid rgba(248, 113, 113, 0.8)' },
+    label: 'BLOCKED',
+  },
+  APPROVAL_REQUIRED: {
+    style: { background: 'rgba(245, 158, 11, 0.35)', color: '#fde68a', border: '1px solid rgba(251, 191, 36, 0.8)' },
+    label: 'APPROVAL REQUIRED',
+  },
 }
 
 interface FlowSVGProps {
@@ -57,17 +66,17 @@ export function FlowSVG({ scenario, phase }: FlowSVGProps) {
       {/* Flow diagram — SVG with HTML node overlays */}
       <div className="relative w-full" style={{ maxWidth: 640, height: 120 }}>
         <svg viewBox="0 0 640 120" className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          {/* Connection paths */}
-          <line x1="100" y1="45" x2="270" y2="45" stroke="hsl(var(--border-strong))" strokeWidth="1" strokeDasharray="6 4" />
-          <line x1="370" y1="45" x2="540" y2="45" stroke="hsl(var(--border-strong))" strokeWidth="1" strokeDasharray="6 4" />
+          {/* Connection paths — aligned to HTML node centers (10%=64, 50%=320, 90%=576 of 640) */}
+          <line x1="88" y1="50" x2="296" y2="50" stroke="hsl(var(--border-strong))" strokeWidth="1" strokeDasharray="6 4" />
+          <line x1="344" y1="50" x2="552" y2="50" stroke="hsl(var(--border-strong))" strokeWidth="1" strokeDasharray="6 4" />
 
           {/* Animated packet: agent → gateway */}
           {showPacketToGateway && (
             <motion.circle
-              cx="100" cy="45" r="4"
+              cx="88" cy="50" r="4"
               fill="hsl(153 60% 53%)"
               filter="url(#glow)"
-              animate={{ cx: [100, 270] }}
+              animate={{ cx: [88, 296] }}
               transition={{ duration: 0.8, ease: 'easeInOut' }}
             />
           )}
@@ -75,10 +84,10 @@ export function FlowSVG({ scenario, phase }: FlowSVGProps) {
           {/* Animated packet: gateway → tool */}
           {showPacketToTool && !isBlocked && (
             <motion.circle
-              cx="370" cy="45" r="4"
+              cx="344" cy="50" r="4"
               fill="hsl(153 60% 53%)"
               filter="url(#glow)"
-              animate={{ cx: [370, 540] }}
+              animate={{ cx: [344, 552] }}
               transition={{ duration: 0.8, ease: 'easeInOut' }}
             />
           )}
@@ -86,7 +95,7 @@ export function FlowSVG({ scenario, phase }: FlowSVGProps) {
           {/* Gateway pulse */}
           {showGatewayPulse && (
             <motion.circle
-              cx="320" cy="45" r="32"
+              cx="320" cy="50" r="32"
               fill="none"
               stroke="hsl(153 60% 53%)"
               strokeWidth="1"
@@ -103,8 +112,8 @@ export function FlowSVG({ scenario, phase }: FlowSVGProps) {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.2 }}
             >
-              <line x1="445" y1="35" x2="465" y2="55" stroke="hsl(0 84% 60%)" strokeWidth="2.5" strokeLinecap="round" />
-              <line x1="465" y1="35" x2="445" y2="55" stroke="hsl(0 84% 60%)" strokeWidth="2.5" strokeLinecap="round" />
+              <line x1="438" y1="40" x2="458" y2="60" stroke="hsl(0 84% 60%)" strokeWidth="2.5" strokeLinecap="round" />
+              <line x1="458" y1="40" x2="438" y2="60" stroke="hsl(0 84% 60%)" strokeWidth="2.5" strokeLinecap="round" />
             </motion.g>
           )}
 
@@ -154,7 +163,8 @@ export function FlowSVG({ scenario, phase }: FlowSVGProps) {
         <AnimatePresence>
           {showDecision && (
             <motion.div
-              className={`font-mono text-xs font-medium px-3 py-1 rounded-full border ${ds.bg} ${ds.text} ${ds.border}`}
+              className="font-mono text-sm font-semibold px-4 py-1.5 rounded-full"
+              style={ds.style}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
