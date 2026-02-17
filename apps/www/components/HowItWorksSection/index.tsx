@@ -5,7 +5,8 @@ import { AnimatePresence, motion, useInView, useAnimation, LazyMotion, domAnimat
 import { useBreakpoint } from 'common'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { cn, Badge } from 'ui'
-import { Shield, Bot } from 'lucide-react'
+import { Bot } from 'lucide-react'
+import { AxiteLogo } from '~/components/DemoAnimation/FlowSVG'
 import dayjs from 'dayjs'
 import SectionContainer from '~/components/Layouts/SectionContainer'
 import Panel from '~/components/Panel'
@@ -80,7 +81,7 @@ const InterceptViz = ({ isActive, isInView }: { isActive?: boolean; isInView?: b
         {/* Gateway node */}
         <div className="flex flex-col items-center gap-1.5 z-10">
           <div className="w-10 h-10 rounded-full bg-surface-200 border border-brand/30 flex items-center justify-center">
-            <Shield className="w-5 h-5 text-brand" />
+            <AxiteLogo className="text-brand" />
           </div>
           <span className="font-mono text-xs text-foreground-muted">Gateway</span>
         </div>
