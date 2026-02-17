@@ -1,11 +1,11 @@
 import dynamic from 'next/dynamic'
 import { NextSeo } from 'next-seo'
+import { ExternalLink } from 'lucide-react'
 import Layout from '~/components/Layouts/Default'
 import SectionContainer from '~/components/Layouts/SectionContainer'
 
-// Lazy load the demo component to avoid SSR issues with framer-motion
-const InteractiveDemo = dynamic(
-  () => import('~/components/InteractiveDemo').then(mod => ({ default: mod.InteractiveDemo })),
+const DemoAnimation = dynamic(
+  () => import('~/components/DemoAnimation').then(mod => ({ default: mod.DemoAnimation })),
   { ssr: false }
 )
 
@@ -14,33 +14,62 @@ export default function DemoPage() {
     <>
       <NextSeo
         title="Demo | Axite"
-        description="Watch how Axite ensures secure infrastructure changes with AI agents - enforcing approvals and providing a clear evidence chain."
+        description="See how Axite intercepts every AI agent action before execution — approve via Slack, block destructive operations, and get tamper-evident receipts."
         openGraph={{
           title: 'Demo | Axite',
           description:
-            'Watch how Axite ensures secure infrastructure changes with AI agents - enforcing approvals and providing a clear evidence chain.',
+            'See how Axite intercepts every AI agent action before execution — approve via Slack, block destructive operations, and get tamper-evident receipts.',
           url: 'https://axite.ai/demo',
           type: 'website',
         }}
       />
       <Layout>
-        {/* Video Demo Section */}
+        {/* Hero: Animated Demo */}
         <SectionContainer className="pt-8 pb-8 md:pt-16 md:pb-12">
+          <div className="text-center mb-10">
+            <span className="font-mono text-xs text-brand uppercase tracking-widest">
+              Demo
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-foreground mt-4 mb-4">
+              Every agent action. Intercepted.
+            </h1>
+            <p className="text-foreground-lighter text-lg max-w-xl mx-auto">
+              Approve, block, or require sign-off — before execution. With receipts.
+            </p>
+          </div>
+
+          <DemoAnimation />
+        </SectionContainer>
+
+        {/* CTA: Explore full dashboard */}
+        <SectionContainer className="pt-0 pb-8 md:pt-0 md:pb-12">
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="text-foreground-lighter text-sm mb-4">
+              See the full product: agents, approval queues, policy editor, and audit timeline.
+            </p>
+            <a
+              href="https://demo.axite.dev/demo/dashboard"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-brand text-white font-medium text-sm hover:bg-brand/90 transition-colors"
+            >
+              Explore the dashboard
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
+        </SectionContainer>
+
+        {/* Loom Video (supporting content) */}
+        <SectionContainer className="pt-8 pb-16 md:pt-12 md:pb-24 border-t border-muted">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <span className="font-mono text-xs text-brand uppercase tracking-widest">
-                Demo
-              </span>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-foreground mt-4 mb-4">
-                Secure Infrastructure Changes with AI Agents
-              </h1>
-              <p className="text-foreground-lighter text-lg max-w-2xl mx-auto">
-                See how Axite enforces approvals and provides a clear evidence chain of what was
-                executed.
+            <div className="text-center mb-6">
+              <h2 className="text-xl sm:text-2xl font-normal text-foreground mb-2">
+                Watch the walkthrough
+              </h2>
+              <p className="text-foreground-lighter text-sm">
+                3-minute narrated demo of Axite in action.
               </p>
             </div>
-
-            {/* Loom video embed */}
             <div className="relative w-full rounded-lg overflow-hidden border border-muted bg-surface-100">
               <div style={{ position: 'relative', paddingBottom: '64.86%', height: 0 }}>
                 <iframe
@@ -57,40 +86,6 @@ export default function DemoPage() {
                 />
               </div>
             </div>
-          </div>
-        </SectionContainer>
-
-        {/* Interactive Demo Section */}
-        <SectionContainer className="pt-8 pb-16 md:pt-12 md:pb-24 border-t border-muted">
-          {/* Section header */}
-          <div className="max-w-2xl mb-8">
-            <span className="font-mono text-xs text-brand uppercase tracking-widest">
-              Interactive Demo
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-normal text-foreground mt-4 mb-4">
-              Try it yourself
-            </h2>
-            <p className="text-foreground-lighter text-lg">
-              Explore how Axite enforces identity-aware policy at the point of action
-              and produces audit-grade evidence. Select a bundle, configure policies,
-              and run the scenario.
-            </p>
-          </div>
-
-          {/* Demo component */}
-          <InteractiveDemo />
-
-          {/* Help text */}
-          <div className="mt-8 p-4 bg-surface-200 rounded-lg border border-border">
-            <h3 className="text-sm font-medium text-foreground mb-2">How to use</h3>
-            <ol className="text-sm text-foreground-lighter space-y-1 list-decimal list-inside">
-              <li>Select a bundle (defaults to Payment Agent)</li>
-              <li>Optionally adjust the role and policy toggles</li>
-              <li>Click <strong>Run</strong> to watch the scenario play out</li>
-              <li>When an action requires <strong>REVIEW</strong>, approve or deny it with a justification</li>
-              <li>Click any event in the stream to see the full decision trace</li>
-              <li>Export the audit bundle as JSON when done</li>
-            </ol>
           </div>
         </SectionContainer>
       </Layout>
