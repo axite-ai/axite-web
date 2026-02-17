@@ -33,10 +33,10 @@ export function FlowSVG({ scenario, phase }: FlowSVGProps) {
 
   return (
     <div className="relative w-full" style={{ maxWidth: 720, margin: '0 auto' }}>
-      <svg viewBox="0 0 720 200" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 720 220" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
         {/* Connection paths */}
-        <line x1="130" y1="80" x2="310" y2="80" stroke="hsl(240 3.7% 25%)" strokeWidth="1" strokeDasharray="6 4" />
-        <line x1="410" y1="80" x2="590" y2="80" stroke="hsl(240 3.7% 25%)" strokeWidth="1" strokeDasharray="6 4" />
+        <line x1="130" y1="80" x2="310" y2="80" stroke="hsl(var(--border-strong))" strokeWidth="1" strokeDasharray="6 4" />
+        <line x1="410" y1="80" x2="590" y2="80" stroke="hsl(var(--border-strong))" strokeWidth="1" strokeDasharray="6 4" />
 
         {/* Animated packet: agent → gateway */}
         {showPacketToGateway && (
@@ -89,43 +89,43 @@ export function FlowSVG({ scenario, phase }: FlowSVGProps) {
       <div className="absolute inset-0" style={{ maxWidth: 720, margin: '0 auto' }}>
         {/* Agent node */}
         <div className="absolute flex flex-col items-center" style={{ left: '10%', top: '50%', transform: 'translate(-50%, -70%)' }}>
-          <div className="w-14 h-14 rounded-xl bg-zinc-900 border border-zinc-700/50 flex items-center justify-center mb-2">
-            <AgentIcon className="w-6 h-6 text-zinc-400" />
+          <div className="w-14 h-14 rounded-xl bg-surface-200 border border-border flex items-center justify-center mb-2">
+            <AgentIcon className="w-6 h-6 text-foreground-muted" />
           </div>
-          <span className="font-mono text-[11px] text-zinc-500">{scenario.agentName}</span>
+          <span className="font-mono text-[11px] text-foreground-muted">{scenario.agentName}</span>
         </div>
 
         {/* Gateway node */}
         <div className="absolute flex flex-col items-center" style={{ left: '50%', top: '50%', transform: 'translate(-50%, -70%)' }}>
           <motion.div
-            className="w-14 h-14 rounded-xl bg-zinc-900 border border-emerald-500/30 flex items-center justify-center mb-2"
+            className="w-14 h-14 rounded-xl bg-surface-200 border border-brand/30 flex items-center justify-center mb-2"
             animate={showGatewayPulse ? { borderColor: ['hsla(153,60%,53%,0.3)', 'hsla(153,60%,53%,0.7)', 'hsla(153,60%,53%,0.3)'] } : {}}
             transition={showGatewayPulse ? { duration: 1, repeat: Infinity } : {}}
           >
-            <Shield className="w-6 h-6 text-emerald-400" />
+            <Shield className="w-6 h-6 text-brand" />
           </motion.div>
-          <span className="font-mono text-[11px] text-zinc-500">axite gateway</span>
+          <span className="font-mono text-[11px] text-foreground-muted">axite gateway</span>
         </div>
 
         {/* Tool node */}
         <div className="absolute flex flex-col items-center" style={{ left: '90%', top: '50%', transform: 'translate(-50%, -70%)' }}>
-          <div className="w-14 h-14 rounded-xl bg-zinc-900 border border-zinc-700/50 flex items-center justify-center mb-2">
-            <Server className="w-6 h-6 text-zinc-400" />
+          <div className="w-14 h-14 rounded-xl bg-surface-200 border border-border flex items-center justify-center mb-2">
+            <Server className="w-6 h-6 text-foreground-muted" />
           </div>
-          <span className="font-mono text-[11px] text-zinc-500">{scenario.toolName}</span>
+          <span className="font-mono text-[11px] text-foreground-muted">{scenario.toolName}</span>
         </div>
 
         {/* Tool call label */}
         <AnimatePresence>
           {['sending', 'evaluating', 'decided', 'slack-in', 'slack-approved', 'executing', 'receipt'].includes(phase) && (
             <motion.div
-              className="absolute font-mono text-xs text-zinc-400 bg-zinc-900/80 border border-zinc-800 rounded px-2 py-1"
+              className="absolute font-mono text-xs text-foreground-light bg-surface-100 border border-border rounded px-2 py-1"
               style={{ left: '50%', top: '10%', transform: 'translateX(-50%)' }}
               initial={{ opacity: 0, y: 4 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
             >
-              <span className="text-zinc-500">$ </span>{scenario.toolCall}
+              <span className="text-foreground-muted">$ </span>{scenario.toolCall}
             </motion.div>
           )}
         </AnimatePresence>
@@ -162,12 +162,12 @@ export function FlowSVG({ scenario, phase }: FlowSVGProps) {
           )}
         </AnimatePresence>
 
-        {/* Receipt */}
+        {/* Receipt — positioned below decision badge */}
         <AnimatePresence>
           {showReceipt && (
             <motion.div
-              className="absolute font-mono text-[10px] text-zinc-500 bg-zinc-900/60 border border-zinc-800/50 rounded px-2 py-1"
-              style={{ left: '50%', bottom: '2%', transform: 'translateX(-50%)' }}
+              className="absolute font-mono text-[10px] text-foreground-muted bg-surface-100/60 border border-border/50 rounded px-2 py-1"
+              style={{ left: '50%', top: '90%', transform: 'translateX(-50%)' }}
               initial={{ opacity: 0, y: 4 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}

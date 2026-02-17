@@ -89,7 +89,7 @@ export function DemoAnimation() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
           className="relative"
-          style={{ minHeight: 280 }}
+          style={{ minHeight: 200 }}
         >
           <FlowSVG scenario={scenario} phase={phase} />
 
@@ -100,9 +100,9 @@ export function DemoAnimation() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Slack card overlay - centered below flow */}
-      {scenario.slackApproval && (
-        <div className="flex justify-center mt-4">
+      {/* Slack card area - fixed height to prevent layout shift */}
+      <div className="flex justify-center mt-4" style={{ minHeight: scenario.slackApproval ? 260 : 0 }}>
+        {scenario.slackApproval && (
           <SlackCard
             channel={scenario.slackApproval.channel}
             requestedBy={scenario.slackApproval.requestedBy}
@@ -112,11 +112,8 @@ export function DemoAnimation() {
             isApproved={isSlackApproved}
             isVisible={showSlack}
           />
-        </div>
-      )}
-
-      {/* Spacer for non-slack scenarios to prevent layout shift */}
-      {!showSlack && <div style={{ height: 20 }} />}
+        )}
+      </div>
 
       {/* Scenario indicator dots */}
       <div className="flex justify-center gap-2 mt-6">
