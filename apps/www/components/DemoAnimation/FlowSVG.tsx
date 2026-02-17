@@ -104,7 +104,7 @@ export function FlowSVG({ scenario, phase }: FlowSVGProps) {
   const showDecision = ['decided', 'slack-in', 'slack-approved', 'executing', 'receipt'].includes(phase)
   const showPacketToTool = phase === 'executing'
   const showReceipt = phase === 'receipt'
-  const toolActivated = phase === 'receipt'
+  const toolActivated = phase === 'receipt' && scenario.decision !== 'BLOCKED'
   const isBlocked = scenario.decision === 'BLOCKED'
   const isActive = phase !== 'idle' && phase !== 'fade-out'
   const ds = decisionStyles[scenario.decision]
@@ -238,12 +238,12 @@ export function FlowSVG({ scenario, phase }: FlowSVGProps) {
               className={toolActivated ? 'text-foreground-light' : 'text-foreground-muted'}
               animate={
                 toolActivated
-                  ? { rotate: 360, scale: [1, 1.15, 1] }
+                  ? { rotate: 360, scale: [1, 1.1, 1] }
                   : { rotate: 0, scale: 1 }
               }
               transition={
                 toolActivated
-                  ? { rotate: { duration: 0.6, ease: 'easeOut' }, scale: { duration: 0.4 } }
+                  ? { rotate: { duration: 3, ease: 'linear', repeat: Infinity }, scale: { duration: 0.5 } }
                   : { duration: 0.2 }
               }
             >
