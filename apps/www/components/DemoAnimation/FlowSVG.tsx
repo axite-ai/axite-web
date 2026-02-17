@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { Terminal, Cloud, GitBranch, CreditCard } from 'lucide-react'
+import { useTheme } from 'next-themes'
 import type { Scenario, AnimationPhase, Decision } from './types'
 
 // =============================================================================
@@ -72,19 +73,37 @@ const toolIcons: Record<string, JSX.Element> = {
 // DECISION STYLES
 // =============================================================================
 
-const decisionStyles: Record<Decision, { style: React.CSSProperties; label: string }> = {
-  ALLOWED: {
-    style: { background: 'rgba(16, 185, 129, 0.35)', color: '#a7f3d0', border: '1px solid rgba(52, 211, 153, 0.8)' },
-    label: 'ALLOWED',
-  },
-  BLOCKED: {
-    style: { background: 'rgba(239, 68, 68, 0.35)', color: '#fecaca', border: '1px solid rgba(248, 113, 113, 0.8)' },
-    label: 'BLOCKED',
-  },
-  APPROVAL_REQUIRED: {
-    style: { background: 'rgba(245, 158, 11, 0.35)', color: '#fde68a', border: '1px solid rgba(251, 191, 36, 0.8)' },
-    label: 'APPROVAL REQUIRED',
-  },
+function getDecisionStyles(isDark: boolean): Record<Decision, { style: React.CSSProperties; label: string }> {
+  if (isDark) {
+    return {
+      ALLOWED: {
+        style: { background: 'rgba(16, 185, 129, 0.35)', color: '#a7f3d0', border: '1px solid rgba(52, 211, 153, 0.8)' },
+        label: 'ALLOWED',
+      },
+      BLOCKED: {
+        style: { background: 'rgba(239, 68, 68, 0.35)', color: '#fecaca', border: '1px solid rgba(248, 113, 113, 0.8)' },
+        label: 'BLOCKED',
+      },
+      APPROVAL_REQUIRED: {
+        style: { background: 'rgba(245, 158, 11, 0.35)', color: '#fde68a', border: '1px solid rgba(251, 191, 36, 0.8)' },
+        label: 'APPROVAL REQUIRED',
+      },
+    }
+  }
+  return {
+    ALLOWED: {
+      style: { background: '#d1fae5', color: '#065f46', border: '1px solid #6ee7b7' },
+      label: 'ALLOWED',
+    },
+    BLOCKED: {
+      style: { background: '#fee2e2', color: '#991b1b', border: '1px solid #fca5a5' },
+      label: 'BLOCKED',
+    },
+    APPROVAL_REQUIRED: {
+      style: { background: '#fef3c7', color: '#92400e', border: '1px solid #fcd34d' },
+      label: 'APPROVAL REQUIRED',
+    },
+  }
 }
 
 // =============================================================================
@@ -97,6 +116,8 @@ interface FlowSVGProps {
 }
 
 export function FlowSVG({ scenario, phase }: FlowSVGProps) {
+  const { resolvedTheme } = useTheme()
+  const isDark = resolvedTheme?.includes('dark') ?? true
   const AgentIcon = agentIcons[scenario.agentIcon]
   const ToolIcon = toolIcons[scenario.toolIcon]
   const showPacketToGateway = phase === 'sending'
@@ -107,7 +128,7 @@ export function FlowSVG({ scenario, phase }: FlowSVGProps) {
   const toolActivated = ['receipt', 'fade-out'].includes(phase) && scenario.decision !== 'BLOCKED'
   const isBlocked = scenario.decision === 'BLOCKED'
   const isActive = phase !== 'idle' && phase !== 'fade-out'
-  const ds = decisionStyles[scenario.decision]
+  const ds = getDecisionStyles(isDark)[scenario.decision]
 
   return (
     <div className="flex flex-col items-center gap-3">
