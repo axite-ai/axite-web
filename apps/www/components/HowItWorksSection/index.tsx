@@ -5,10 +5,11 @@ import { AnimatePresence, motion, useInView, useAnimation, LazyMotion, domAnimat
 import { useBreakpoint } from 'common'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { cn, Badge } from 'ui'
-import { Check, Shield, Bot } from 'lucide-react'
+import { Shield, Bot } from 'lucide-react'
 import dayjs from 'dayjs'
 import SectionContainer from '~/components/Layouts/SectionContainer'
 import Panel from '~/components/Panel'
+import { SlackCard } from '~/components/DemoAnimation/SlackCard'
 
 import 'swiper/css'
 
@@ -199,13 +200,13 @@ const PolicyLogs = ({ isActive, isInView }: { isActive?: boolean; isInView?: boo
 }
 
 // =============================================================================
-// APPROVAL VISUALIZATION
+// APPROVAL VISUALIZATION (Slack card)
 // =============================================================================
 
 const ApprovalViz = ({ isActive, isInView }: { isActive?: boolean; isInView?: boolean }) => {
   const [mounted, setMounted] = useState(false)
   const isPlaying = isActive && isInView
-  const [phase, setPhase] = useState<'form' | 'highlight' | 'click' | 'approved'>('form')
+  const [isApproved, setIsApproved] = useState(false)
 
   useEffect(() => {
     setMounted(true)
@@ -213,30 +214,22 @@ const ApprovalViz = ({ isActive, isInView }: { isActive?: boolean; isInView?: bo
 
   useEffect(() => {
     if (!isPlaying) {
-      setPhase('form')
+      setIsApproved(false)
       return
     }
 
     let timeout: ReturnType<typeof setTimeout>
 
     const runCycle = () => {
-      setPhase('form')
+      setIsApproved(false)
 
       timeout = setTimeout(() => {
-        setPhase('highlight')
+        setIsApproved(true)
 
         timeout = setTimeout(() => {
-          setPhase('click')
-
-          timeout = setTimeout(() => {
-            setPhase('approved')
-
-            timeout = setTimeout(() => {
-              runCycle()
-            }, 2000)
-          }, 800)
-        }, 1000)
-      }, 2000)
+          runCycle()
+        }, 3000)
+      }, 3500)
     }
 
     runCycle()
@@ -246,84 +239,18 @@ const ApprovalViz = ({ isActive, isInView }: { isActive?: boolean; isInView?: bo
 
   if (!mounted) return null
 
-  const isApproved = phase === 'approved'
-
   return (
-    <div className="absolute inset-0 bottom-8 overflow-hidden px-4 flex items-center justify-center">
-      <div className="w-full max-w-xs bg-surface-100 border border-border/50 rounded-md overflow-hidden">
-        {/* Header */}
-        <div className="px-3 py-2 border-b border-border/50">
-          <span className="font-mono text-xs text-warning">Approval Required</span>
-        </div>
-
-        {/* Body */}
-        <div className="px-3 py-3 space-y-2">
-          <div className="font-mono text-xs">
-            <span className="text-foreground-muted">Action: </span>
-            <span className="text-foreground-light">k8s:deploy (app:v2.4.1 {'->'} production)</span>
-          </div>
-          <div className="font-mono text-xs">
-            <span className="text-foreground-muted">Reason: </span>
-            <span className="text-foreground-light">Production deployments require review</span>
-          </div>
-          <div className="font-mono text-xs">
-            <span className="text-foreground-muted">Rule: </span>
-            <span className="text-foreground-light">require-approval-prod-001</span>
-          </div>
-        </div>
-
-        {/* Actions / Result */}
-        <div className="px-3 py-2.5 border-t border-border/50">
-          <AnimatePresence mode="wait">
-            {!isApproved ? (
-              <motion.div
-                key="buttons"
-                initial={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="flex gap-2"
-              >
-                <motion.div
-                  animate={
-                    phase === 'highlight'
-                      ? { opacity: [0.7, 1, 0.7], scale: [1, 1.03, 1] }
-                      : phase === 'click'
-                        ? { scale: [1, 0.92, 1.05, 1] }
-                        : {}
-                  }
-                  transition={
-                    phase === 'highlight'
-                      ? { duration: 1, repeat: Infinity }
-                      : phase === 'click'
-                        ? { duration: 0.4 }
-                        : {}
-                  }
-                  className="px-3 py-1.5 bg-brand text-white text-xs font-mono rounded cursor-default"
-                >
-                  APPROVE
-                </motion.div>
-                <div className="px-3 py-1.5 bg-surface-200 text-foreground-muted text-xs font-mono rounded cursor-default">
-                  DENY
-                </div>
-              </motion.div>
-            ) : (
-              <motion.div
-                key="receipt"
-                initial={{ opacity: 0, y: 4 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-                className="space-y-1.5"
-              >
-                <div className="flex items-center gap-1.5">
-                  <Check className="w-3.5 h-3.5 text-brand" />
-                  <span className="font-mono text-xs text-brand">Approved</span>
-                </div>
-                <div className="font-mono text-[10px] text-foreground-muted leading-relaxed">
-                  Receipt: sha256:7f3a...e91d (15m TTL, 3 uses)
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+    <div className="absolute inset-0 bottom-8 overflow-hidden flex items-center justify-center">
+      <div className="scale-[0.82] origin-center">
+        <SlackCard
+          channel="#prod-approvals"
+          requestedBy="k8s-deployer"
+          approvedBy="ops-lead"
+          approverAvatar="SL"
+          message="k8s-deployer wants to delete pod api-server-7d4f in production"
+          isApproved={isApproved}
+          isVisible={true}
+        />
       </div>
     </div>
   )
