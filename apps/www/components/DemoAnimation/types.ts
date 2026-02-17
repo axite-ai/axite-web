@@ -6,6 +6,7 @@ export interface Scenario {
   agentIcon: 'terminal' | 'cloud' | 'git' | 'credit-card'
   toolCall: string
   toolName: string
+  toolIcon: 'kubernetes' | 'aws-s3' | 'github' | 'stripe'
   environment: string
   decision: Decision
   policyRule: string
