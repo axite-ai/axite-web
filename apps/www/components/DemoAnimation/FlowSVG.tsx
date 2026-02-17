@@ -104,6 +104,7 @@ export function FlowSVG({ scenario, phase }: FlowSVGProps) {
   const showDecision = ['decided', 'slack-in', 'slack-approved', 'executing', 'receipt'].includes(phase)
   const showPacketToTool = phase === 'executing'
   const showReceipt = phase === 'receipt'
+  const toolActivated = phase === 'receipt'
   const isBlocked = scenario.decision === 'BLOCKED'
   const isActive = phase !== 'idle' && phase !== 'fade-out'
   const ds = decisionStyles[scenario.decision]
@@ -215,11 +216,40 @@ export function FlowSVG({ scenario, phase }: FlowSVGProps) {
           <span className="font-mono text-[10px] text-foreground-muted mt-1.5">axite gateway</span>
         </div>
 
-        {/* Tool node — right (actual company logo) */}
+        {/* Tool node — right (actual company logo, activates on packet arrival) */}
         <div className="absolute flex flex-col items-center" style={{ left: '90%', top: '50%', transform: 'translate(-50%, -50%)' }}>
-          <div className="w-12 h-12 rounded-lg bg-surface-200 border border-border flex items-center justify-center text-foreground-muted">
-            {ToolIcon}
-          </div>
+          <motion.div
+            className="w-12 h-12 rounded-lg bg-surface-200 flex items-center justify-center"
+            animate={
+              toolActivated
+                ? {
+                    borderColor: 'hsla(153,60%,53%,0.7)',
+                    boxShadow: '0 0 12px 2px hsla(153,60%,53%,0.3)',
+                  }
+                : {
+                    borderColor: 'hsla(var(--border), 1)',
+                    boxShadow: '0 0 0px 0px hsla(153,60%,53%,0)',
+                  }
+            }
+            style={{ border: '1px solid' }}
+            transition={{ duration: 0.3 }}
+          >
+            <motion.div
+              className={toolActivated ? 'text-foreground-light' : 'text-foreground-muted'}
+              animate={
+                toolActivated
+                  ? { rotate: 360, scale: [1, 1.15, 1] }
+                  : { rotate: 0, scale: 1 }
+              }
+              transition={
+                toolActivated
+                  ? { rotate: { duration: 0.6, ease: 'easeOut' }, scale: { duration: 0.4 } }
+                  : { duration: 0.2 }
+              }
+            >
+              {ToolIcon}
+            </motion.div>
+          </motion.div>
           <span className="font-mono text-[10px] text-foreground-muted mt-1.5">{scenario.toolName}</span>
         </div>
       </div>
