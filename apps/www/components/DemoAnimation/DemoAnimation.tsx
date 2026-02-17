@@ -52,7 +52,6 @@ export function DemoAnimation() {
     setPhase((prev) => {
       const next = getNextPhase(prev, scenario.decision)
       if (next === 'idle') {
-        // Move to next scenario
         setScenarioIndex((i) => (i + 1) % scenarios.length)
       }
       return next
@@ -61,12 +60,10 @@ export function DemoAnimation() {
 
   useEffect(() => {
     if (!isInView) return
-
     timeoutRef.current = setTimeout(advancePhase, PHASE_TIMING[phase])
     return () => clearTimeout(timeoutRef.current)
   }, [phase, isInView, advancePhase])
 
-  // Start the loop when component comes into view
   useEffect(() => {
     if (isInView && phase === 'idle') {
       timeoutRef.current = setTimeout(advancePhase, PHASE_TIMING.idle)
@@ -80,48 +77,44 @@ export function DemoAnimation() {
 
   return (
     <div ref={ref} className="relative w-full max-w-4xl mx-auto">
-      {/* SVG Flow */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={scenario.id}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.4 }}
-          className="relative"
-          style={{ minHeight: 200 }}
-        >
-          <FlowSVG scenario={scenario} phase={phase} />
+      {/* Fixed-height animation container — no layout shift */}
+      <div className="relative" style={{ minHeight: 240 }}>
+        {/* Flow visualization */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={scenario.id}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            <FlowSVG scenario={scenario} phase={phase} />
+          </motion.div>
+        </AnimatePresence>
 
-          {/* Environment badge */}
-          <div className="absolute top-2 right-2 font-mono text-[10px] text-amber-400/60 bg-amber-500/5 border border-amber-500/10 rounded px-1.5 py-0.5">
-            {scenario.environment}
-          </div>
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Slack card area - fixed height to prevent layout shift */}
-      <div className="flex justify-center mt-4" style={{ minHeight: scenario.slackApproval ? 260 : 0 }}>
+        {/* Slack card — absolutely positioned overlay, bottom-right */}
         {scenario.slackApproval && (
-          <SlackCard
-            channel={scenario.slackApproval.channel}
-            requestedBy={scenario.slackApproval.requestedBy}
-            approvedBy={scenario.slackApproval.approvedBy}
-            approverAvatar={scenario.slackApproval.approverAvatar}
-            message={scenario.slackApproval.message}
-            isApproved={isSlackApproved}
-            isVisible={showSlack}
-          />
+          <div className="absolute right-0 bottom-0 z-10" style={{ transform: 'translateY(40%)' }}>
+            <SlackCard
+              channel={scenario.slackApproval.channel}
+              requestedBy={scenario.slackApproval.requestedBy}
+              approvedBy={scenario.slackApproval.approvedBy}
+              approverAvatar={scenario.slackApproval.approverAvatar}
+              message={scenario.slackApproval.message}
+              isApproved={isSlackApproved}
+              isVisible={showSlack}
+            />
+          </div>
         )}
       </div>
 
       {/* Scenario indicator dots */}
-      <div className="flex justify-center gap-2 mt-6">
+      <div className="flex justify-center gap-2 mt-8">
         {scenarios.map((s, i) => (
           <div
             key={s.id}
             className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${
-              i === scenarioIndex ? 'bg-emerald-400' : 'bg-zinc-700'
+              i === scenarioIndex ? 'bg-brand' : 'bg-foreground-muted/30'
             }`}
           />
         ))}
