@@ -1,0 +1,62 @@
+---
+title: 'Microsoft Copilot Was Reading Your Confidential Emails for a Month'
+description: 'A bug in Copilot Chat let it read and summarize emails in Sent Items and Drafts, bypassing every DLP policy meant to stop exactly that.'
+author: brad
+categories:
+  - engineering
+tags:
+  - security
+  - agents
+  - microsoft
+  - incident
+date: '2026-02-18'
+toc_depth: 3
+---
+
+Microsoft confirmed a bug in Copilot Chat that allowed the AI to read and summarize confidential emails sitting in users' Sent Items and Drafts folders. The bug has been active since January 21st.
+
+That's almost a month of an AI agent having access to content it was never supposed to touch.
+
+## What happened
+
+Copilot Chat, the AI assistant baked into Microsoft 365, was pulling content from Sent Items and Drafts when users interacted with it. Legal documents. Health records. Anything sitting in those folders was fair game for summarization.
+
+The problem wasn't just unauthorized access. The bug bypassed data loss prevention (DLP) policies. Those are the exact controls organizations deploy to prevent automated tools from accessing sensitive content. The policies were in place. Copilot ignored them.
+
+Microsoft began rolling out a fix in early February but hasn't disclosed how many users were affected or provided a full remediation timeline.
+
+## Why this matters for platform teams
+
+DLP policies are supposed to be the last line of defense. When an organization configures a DLP rule that says "no automated tool can access emails tagged as confidential," that's a hard boundary. Or at least it's supposed to be.
+
+Copilot operated outside its authorized scope and nobody knew until Microsoft acknowledged it. There was no alert when it started reading restricted content. No approval gate. No audit trail showing which emails were summarized or where those summaries went.
+
+This is the fundamental problem with agent security right now. The controls exist at the policy layer, but nothing enforces them at the action layer.
+
+Microsoft had DLP policies. They had sensitivity labels. They had all the configuration in place. But the AI agent's actual behavior, the tool calls it made to fetch email content, had no independent enforcement mechanism.
+
+## The pattern keeps repeating
+
+This isn't the first time Copilot's tool access has been the vulnerability.
+
+In October 2025, Varonis disclosed the "Reprompt" attack, a single-click hijack of Copilot sessions that enabled continuous, invisible data exfiltration. Then in January 2026, Datadog published the "CoPhish" attack, which weaponized Copilot Studio agents to steal OAuth tokens through fake consent flows hosted on legitimate Microsoft domains. And just this month, Check Point proved that AI assistants with web browsing capabilities (including Copilot) can be abused as command-and-control relays for malware.
+
+Every one of these exploits the same gap. Copilot can take actions (fetch URLs, read emails, initiate OAuth flows) and nothing sits between the intent and the execution.
+
+## What would have prevented this
+
+A change control layer that intercepts the agent's tool calls before they execute. When Copilot attempts to read an email from the Sent Items folder, the request hits a policy engine first.
+
+Is this tool call authorized? Check the agent's permissions against the content's sensitivity label. Does this action require approval? Route to a human reviewer if the content is tagged as legal or health-related. Log it regardless. Create a tamper-evident record of every email access, capturing what was read, when, by which agent, and in what context.
+
+DLP policies tell you what should happen. An enforcement layer at the tool-call level ensures it does happen.
+
+The bug in Copilot wouldn't have mattered if the tool call to access restricted emails was blocked before it reached the mailbox. The policy was already written. It just wasn't enforced where it counted, at the point of action.
+
+## The takeaway
+
+If your AI agent can bypass your DLP policies for a month and nobody notices, you don't have an agent security problem. You have an agent observability and enforcement problem.
+
+Policies without enforcement are documentation. Enforcement without audit trails is trust. Neither is enough on its own.
+
+Every tool call an AI agent makes in your infrastructure should be intercepted, evaluated against policy, and logged. Before it executes. Not after. Not on a best-effort basis. Every time.
